@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import styled from "styled-components";
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'micro-react': any;
+      'randombits-blog': any;
     }
   }
 }
@@ -13,12 +12,6 @@ interface Params {
   appId: string;
   url: string;
 }
-
-const FrontendContainer = styled.div`
-  border: 1px dashed #555;
-  padding: 20px;
-  margin: 20px 0;
-`;
 
 const MicroFrontendReact = ({appId, url}: Params) => {
   const scriptName = 'app_script_' + appId;
@@ -39,10 +32,7 @@ const MicroFrontendReact = ({appId, url}: Params) => {
 
   return (
     <>
-      <div>The following is being pulled from {url}:</div>
-      <FrontendContainer>
-        <micro-react></micro-react>
-      </FrontendContainer>
+      <randombits-blog></randombits-blog>
     </>
   );
 }

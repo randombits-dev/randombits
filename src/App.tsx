@@ -1,24 +1,12 @@
 import {Route, Routes} from "react-router-dom";
 import MainPage from "MainPage";
 import Header from "Header";
-import MicroFrontendAngular from "MicroFrontendAngular";
 import MicroFrontendReact from "MicroFrontendReact";
 
-const {REACT_APP_REACT, REACT_APP_ANGULAR} = process.env;
+const {REACT_APP_BLOG} = process.env;
 
-const ReactApp = () => {
-  return <MicroFrontendReact appId="react" url={REACT_APP_REACT}></MicroFrontendReact>;
-};
-
-const AngularApp = () => {
-  return <MicroFrontendAngular appId="angular" url={REACT_APP_ANGULAR}></MicroFrontendAngular>;
-};
-
-const BothApps = () => {
-  return <>
-    <ReactApp/>
-    <AngularApp/>
-  </>
+const BlogApp = () => {
+  return <MicroFrontendReact appId="blog" url={REACT_APP_BLOG}></MicroFrontendReact>;
 };
 
 function App() {
@@ -26,9 +14,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path="/" element={<MainPage/>}></Route>
-      <Route path="/react" element={<ReactApp/>}></Route>
-      <Route path="/angular" element={<AngularApp/>}></Route>
-      <Route path="/both" element={<BothApps/>}></Route>
+      <Route path="/blog" element={<BlogApp/>}></Route>
     </Routes>
   </>;
 }

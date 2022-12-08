@@ -21,11 +21,9 @@ const AppLink = styled.div`
 
 const Header = () => {
   return <HeaderContainer>
-    <HeaderTitle>Micro Frontend Demo</HeaderTitle>
-    <Link to="/"><AppLink>Home</AppLink></Link>
-    <Link to="/react"><AppLink>React App</AppLink></Link>
-    <Link to="/angular"><AppLink>Angular App</AppLink></Link>
-    <Link to="/both"><AppLink>Both Apps</AppLink></Link>
+    <HeaderTitle>Random Bits</HeaderTitle>
+    <Link to="/blog"><AppLink>Blog</AppLink></Link>
+    <Link to="/tools"><AppLink>Tools</AppLink></Link>
   </HeaderContainer>
 }
 
