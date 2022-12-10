@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import React from "react";
-import {Link} from "react-router-dom";
+
+import {h} from 'preact';
+import Link from "Link";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -20,11 +21,13 @@ const AppLink = styled.div`
 `;
 
 const Header = () => {
+
   return <HeaderContainer>
     <HeaderTitle>Random Bits</HeaderTitle>
-    <Link to="/blog"><AppLink>Blog</AppLink></Link>
-    <Link to="/tools"><AppLink>Tools</AppLink></Link>
+    <Link path="/"><AppLink>Home</AppLink></Link>
+    <Link path="/blog"><AppLink>Blog</AppLink></Link>
+    <Link path="/tools"><AppLink>Tools</AppLink></Link>
   </HeaderContainer>
-}
+};
 
 export default Header

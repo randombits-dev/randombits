@@ -1,0 +1,2 @@
+// setupRouting();
+// setupPrecaching(getFiles());
