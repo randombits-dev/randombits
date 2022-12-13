@@ -1,13 +1,11 @@
-import {h} from "preact";
-import {useEffect, useRef} from "preact/hooks";
+import React, {useEffect} from "react";
+
 
 const Blog = () => {
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
   useEffect(() => {
-    import("blog/BlogIndex").then(({mount}) => {
-      mount(ref.current);
-    });
+    import("blog/BlogIndex");
 
   }, []);
 
@@ -19,7 +17,9 @@ const Blog = () => {
   //   // });
   // }, []);
 
-  return <div ref={ref}></div>
+  // return <div ref={ref}></div>
+  // @ts-ignore
+  return <my-blog basename="/blog"></my-blog>;
 };
 
 export default Blog;

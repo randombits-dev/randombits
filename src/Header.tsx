@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import {h} from 'preact';
+import React from "react";
+
 import Link from "Link";
 
 const HeaderContainer = styled.div`

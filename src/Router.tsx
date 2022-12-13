@@ -1,11 +1,11 @@
-import {createContext, h} from "preact";
-import {useContext, useEffect, useState} from "preact/hooks";
+import React, {createContext, useContext, useEffect, useState} from "react";
 import MainPage from "MainPage";
 import Tools from "Tools";
 import Blog from "Blog";
 
 const ROUTES = [
   {path: '/', element: () => <MainPage/>},
+  // {path: '/blog/.*', element: () => <Blog/>},
   {path: '/blog', element: () => <Blog/>},
   {path: '/tools', element: () => <Tools/>}
 ];
@@ -31,20 +31,31 @@ export const useRouter = () => {
 
 const Router = ({children}) => {
   const [url, setUrl] = useState(location.pathname);
-  console.log('url: ' + url);
 
   const navigate = (newUrl) => {
     setUrl(newUrl);
+
+    // use timeout so it doesn't interfere with react render
+    setTimeout(() => {
+      window.dispatchEvent(
+        new CustomEvent("[container] navigated", {
+          detail: newUrl
+        } as any)
+      );
+    });
   };
 
   // const current = cloneElement(children.find(child => child.props.path === url) || <div>No route found</div>);
-  // console.log(current);
+
+  const onPopState = () => {
+    navigate(location.pathname);
+  };
 
   useEffect(() => {
-    window.addEventListener('popstate', () => {
-      console.log('change: ' + location.pathname);
-      setUrl(location.pathname);
-    });
+    window.addEventListener('popstate', onPopState);
+    return () => {
+      window.removeEventListener('popstate', onPopState);
+    }
   }, []);
 
   return (

@@ -9,11 +9,11 @@
 // };
 // import {lazy} from "preact/compat";
 
-import {h} from 'preact';
 import {GlobalStyle} from "./GlobalStyle";
 import Header from "Header";
 import Router from "Router";
 import RouterOutlet from "RouterOutlet";
+import React from "react";
 
 const App = () => {
   // const loadBlog = () => {

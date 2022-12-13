@@ -11,28 +11,6 @@ module.exports = {
   optimization: {
     minimize: false
   },
-  // entry: {
-  //   app: './src/index.tsx'
-  // },
-  // target: 'web',
-  // output: {
-  //   path: path.resolve(__dirname, 'dist'),
-  //   filename: '[name].js'
-  // },
-  // optimization: {
-  //   minimize: true,
-  //   splitChunks: {
-  //     // always create vendor.js
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name: 'vendor',
-  //         chunks: 'initial',
-  //         enforce: true,
-  //       },
-  //     },
-  //   },
-  // },
   module: {
     rules: [
       {
@@ -43,47 +21,18 @@ module.exports = {
         },
       },
     ]
-    // rules: [
-    //   {
-    //     test: /\.tsx?$/,
-    //     use: 'ts-loader',
-    //     exclude: /node_modules/,
-    //   },
-    // ],
-    // rules: [
-    //   {
-    //     test: /\.(tsx|js)$/,
-    //     include: path.resolve(__dirname, 'src'),
-    //     exclude: /node_modules/,
-    //     use: [{
-    //       loader: 'babel-loader',
-    //       options: {
-    //         presets: [
-    //           ['@babel/preset-env', {
-    //             "targets": "defaults"
-    //           }],
-    //           '@babel/preset-react'
-    //         ]
-    //       }
-    //     }]
-    //   }
-    // ]
   },
   resolve: {
     modules: [
       'node_modules',
       'src'
     ],
-    extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      "react": "preact/compat",
-      "react-dom": "preact/compat",
-      "react/jsx-runtime": "preact/jsx-runtime"
-    },
+    extensions: ['.tsx', '.ts', '.js']
   },
   devServer: {
     port: 8080,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -95,14 +44,20 @@ module.exports = {
       exposes: {},
       shared: {
         ...deps,
-        preact: {
+        react: {
           singleton: true,
-          requiredVersion: deps.preact
+          requiredVersion: deps.react
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: deps["react-dom"]
         }
       },
     }),
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement',
+      template: "./src/index.html",
+
     }),
   ],
 };

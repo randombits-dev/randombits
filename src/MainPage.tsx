@@ -1,8 +1,14 @@
-import { h } from 'preact';
+import React from "react";
+import styled from "styled-components";
+
+
+const BlueText = styled.div`
+  color: blue;
+`;
 
 const MainPage = () => {
   return (
-    <div>This is the homepage. It exists in the container app.</div>
+    <BlueText>This is the homepage. It exists in the container app.</BlueText>
   );
 }
 
