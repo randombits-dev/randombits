@@ -1,6 +1,6 @@
 import React from "react";
 
-import {useRouter} from "Router";
+import {useRouter} from "router/Router";
 
 interface Params {
   path: string;

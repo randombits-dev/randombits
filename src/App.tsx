@@ -11,16 +11,25 @@
 
 import {GlobalStyle} from "./GlobalStyle";
 import Header from "Header";
-import Router from "Router";
-import RouterOutlet from "RouterOutlet";
+import Router from "router/Router";
+import RouterOutlet from "router/RouterOutlet";
 import React from "react";
+import MainPage from "MainPage";
+import Blog from "Blog";
+import Tools from "Tools";
 
+const ROUTES = [
+  {path: '/', element: <MainPage/>},
+  // {path: '/blog/.*', element: () => <Blog/>},
+  {path: '/blog/*', element: <Blog/>},
+  {path: '/tools', element: <Tools/>}
+];
 const App = () => {
   // const loadBlog = () => {
   //   import ('./Blog');
   // };
 
-  return <Router>
+  return <Router routes={ROUTES}>
     <GlobalStyle/>
     <Header></Header>
     <div>Yo</div>

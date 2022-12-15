@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import React from "react";
 
-import Link from "Link";
+import Link from "router/Link";
 
 const HeaderContainer = styled.div`
   display: flex;
