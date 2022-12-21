@@ -1,11 +1,17 @@
 import React from "react";
 
 import {useRouter} from "router/Router";
+import styled from "styled-components";
 
 interface Params {
   path: string;
   children: any;
 }
+
+const LinkContainer = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
 
 const Link = ({path, children}: Params) => {
 
@@ -13,12 +19,11 @@ const Link = ({path, children}: Params) => {
 
   const goTo = (e) => {
     e.preventDefault();
-    window.history.pushState({}, null, path);
     navigate(path);
   };
 
   return (
-    <a href={path} onClick={goTo}>{children}</a>
+    <LinkContainer href={path} onClick={goTo}>{children}</LinkContainer>
   );
 }
 

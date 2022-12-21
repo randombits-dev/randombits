@@ -5,29 +5,42 @@ import React from "react";
 import Link from "router/Link";
 
 const HeaderContainer = styled.div`
-  display: flex;
-  padding: 10px 20px;
   border-bottom: 1px solid #ccc;
-  align-items: center;
   margin-bottom: 30px;
+
+`;
+
+const HeaderContent = styled.div`
+  display: flex;
+  padding: 10px 0;
+  align-items: baseline;
+  background-color: #eff1f4;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const HeaderTitle = styled.div`
   font-size: 24px;
   padding-right: 50px;
+  letter-spacing: 2px;
+  font-weight: 600;
 `;
 
 const AppLink = styled.div`
-  padding: 5px;
+  padding: 0 15px;
+  letter-spacing: 2px;
 `;
 
 const Header = () => {
 
   return <HeaderContainer>
-    <HeaderTitle>Random Bits</HeaderTitle>
-    <Link path="/"><AppLink>Home</AppLink></Link>
-    <Link path="/blog"><AppLink>Blog</AppLink></Link>
-    <Link path="/tools"><AppLink>Tools</AppLink></Link>
+    <HeaderContent>
+      <Link path="/"><HeaderTitle>Random Bits</HeaderTitle></Link>
+      <Link path="/articles"><AppLink>Articles</AppLink></Link>
+      <Link path="/tools"><AppLink>Tools</AppLink></Link>
+      <Link path="/puzzles"><AppLink>Puzzles</AppLink></Link>
+    </HeaderContent>
   </HeaderContainer>
 };
 

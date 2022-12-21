@@ -1,6 +1,14 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {routeTest} from "router/route-test";
+import {importRemote} from "import-remote";
 
+
+export interface IRoute {
+  path: string;
+  element: JSX.Element;
+  title?: string;
+  remote?: string;
+}
 
 interface IRouterContext {
   url: string;
@@ -25,36 +33,70 @@ export const useRouter = () => {
 const Router = ({routes, children}) => {
   const [url, setUrl] = useState(location.pathname);
 
-  const [current, setCurrent] = useState(null);
+  const [current, setCurrent] = useState<IRoute>(null);
   const calcRoute = (newUrl) => {
     setUrl(newUrl);
-    setCurrent(routes.find(child => {
+    // setCurrent(prevCurrent => {
+    const newCurrent = routes.find(child => {
       return routeTest(newUrl, child.path);
-    }));
+    });
+    if (current === newCurrent) {
+      // use timeout so it doesn't interfere with react render
+      setTimeout(() => {
+        window.dispatchEvent(
+          new CustomEvent("[container] navigate", {
+            detail: newUrl
+          } as any)
+        );
+      });
+    } else if (newCurrent) {
+      if (newCurrent.remote) {
+        importRemote(newCurrent.remote).then(() => {
+          console.log('set remote route: ' + newCurrent.title);
+          setCurrent(newCurrent);
+          document.title = newCurrent.title;
+        }).catch(() => {
+          // alert('could not load: ' + appName);
+        });
+      } else {
+        console.log('set route: ' + newCurrent.title);
+        setCurrent(newCurrent);
+        document.title = newCurrent.title;
+      }
+
+    }
+
+    return newCurrent;
+    // });
   };
 
-  const navigate = (newUrl) => {
+  const navigate = (newUrl, skipHistory = false) => {
+    if (!skipHistory) {
+      window.history.pushState({}, null, newUrl);
+    }
     calcRoute(newUrl);
-    // use timeout so it doesn't interfere with react render
-    setTimeout(() => {
-      window.dispatchEvent(
-        new CustomEvent("[container] navigated", {
-          detail: newUrl
-        } as any)
-      );
-    });
   };
 
   const onPopState = () => {
-    navigate(location.pathname);
+    navigate(location.pathname, true);
+  };
+
+  const onChildNavigate = (event) => {
+    const url = (event as any).detail;
+    navigate(url);
   };
 
   useEffect(() => {
-    calcRoute(url);
     window.addEventListener('popstate', onPopState);
+    window.addEventListener("[child] navigate", onChildNavigate);
     return () => {
       window.removeEventListener('popstate', onPopState);
+      window.removeEventListener("[child] navigate", onChildNavigate);
     }
+  }, [current]);
+
+  useEffect(() => {
+    calcRoute(url);
   }, []);
 
   return (
