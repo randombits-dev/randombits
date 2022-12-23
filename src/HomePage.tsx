@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import RemoteApp from "RemoteApp";
+import ActionButton from "ActionButton";
+import Link from "router/Link";
+import ArticleListVertical from "ArticleListVertical";
 
 const FeaturedContent = styled.div`
   display: flex;
@@ -47,16 +49,18 @@ const BioText = styled.div`
 `;
 
 const HomePage = () => {
+
   return (
     <div>
       <FeaturedContent>
         <LatestArticles>
           <Heading>- Latest Articles -</Heading>
-          <RemoteApp appName="blog"/>
+          {/*<RemoteApp appName="blog"/>*/}
+          <ArticleListVertical limit={5}/>
         </LatestArticles>
         <PopularTools>
           <Heading>- Featured Tools -</Heading>
-          <div>Snowrunner Save Editor</div>
+          <Link path="/tools/snowrunner">Snowrunner Save Editor</Link>
         </PopularTools>
       </FeaturedContent>
       {/*TODO:<Bio>*/}
@@ -64,16 +68,16 @@ const HomePage = () => {
       {/*  <ActionButton onClick={() => {*/}
       {/*  }}>About Me</ActionButton>*/}
       {/*</Bio>*/}
-      {/*TODO:<MicroInfo>*/}
-      {/*  <div>*/}
-      {/*    <img src="/micro.png"/>*/}
-      {/*  </div>*/}
-      {/*  <MicroText>This website is built with micro frontends, using module federation.</MicroText>*/}
-      {/*  <div>*/}
-      {/*    <ActionButton onClick={() => {*/}
-      {/*    }}>Learn More</ActionButton>*/}
-      {/*  </div>*/}
-      {/*</MicroInfo>*/}
+      <MicroInfo>
+        <div>
+          <img src="/micro.png"/>
+        </div>
+        <MicroText>This website is built with micro frontends, using module federation.</MicroText>
+        <div>
+          <Link path="/micro-frontend"><ActionButton onClick={() => {
+          }}>Learn More</ActionButton></Link>
+        </div>
+      </MicroInfo>
     </div>
   );
 }

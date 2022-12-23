@@ -20,6 +20,13 @@ export const routeTest = (url: string, route: string) => {
   const testSegment = (urlSegment, routeSegment) => {
     if (!routeSegment && hasWildcard) {
       return true;
+    } else if (routeSegment && routeSegment.charAt(0) === ':') {
+      const param = routeSegment.replace(':', '');
+      const val = urlSegment || '';
+      if (!val) {
+        return false;
+      }
+      matches[param] = decodeURIComponent(val);
     } else if (routeSegment !== urlSegment) {
       return false;
     }

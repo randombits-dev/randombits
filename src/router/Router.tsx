@@ -5,9 +5,11 @@ import {importRemote} from "import-remote";
 
 export interface IRoute {
   path: string;
-  element: JSX.Element;
+  element?: JSX.Element;
   title?: string;
   remote?: string;
+  params?: { [key: string]: any };
+  preloadRemote?: string;
 }
 
 interface IRouterContext {
@@ -15,13 +17,15 @@ interface IRouterContext {
   routes: { path: string, element: any }[];
   navigate: (newUrl) => void;
   current: any;
+  params: any;
 }
 
 const GLOBAL_ROUTE_CONTEXT = {
   url: location.pathname,
   routes: [],
   navigate: null,
-  current: null
+  current: null,
+  params: {}
 };
 
 const RouterContext = createContext<IRouterContext>(GLOBAL_ROUTE_CONTEXT);
@@ -34,11 +38,13 @@ const Router = ({routes, children}) => {
   const [url, setUrl] = useState(location.pathname);
 
   const [current, setCurrent] = useState<IRoute>(null);
+  const [params, setParams] = useState<any>({});
   const calcRoute = (newUrl) => {
     setUrl(newUrl);
-    // setCurrent(prevCurrent => {
+    let params;
     const newCurrent = routes.find(child => {
-      return routeTest(newUrl, child.path);
+      params = routeTest(newUrl, child.path);
+      return !!params;
     });
     if (current === newCurrent) {
       // use timeout so it doesn't interfere with react render
@@ -52,22 +58,22 @@ const Router = ({routes, children}) => {
     } else if (newCurrent) {
       if (newCurrent.remote) {
         importRemote(newCurrent.remote).then(() => {
-          console.log('set remote route: ' + newCurrent.title);
           setCurrent(newCurrent);
+          setParams(params);
+          console.log(params);
           document.title = newCurrent.title;
         }).catch(() => {
-          // alert('could not load: ' + appName);
+          console.error('could not load: ' + newCurrent.remote);
         });
       } else {
-        console.log('set route: ' + newCurrent.title);
         setCurrent(newCurrent);
+        setParams(params);
         document.title = newCurrent.title;
       }
 
     }
 
     return newCurrent;
-    // });
   };
 
   const navigate = (newUrl, skipHistory = false) => {
@@ -100,7 +106,7 @@ const Router = ({routes, children}) => {
   }, []);
 
   return (
-    <RouterContext.Provider value={{url, routes, current, navigate}}>{children}</RouterContext.Provider>
+    <RouterContext.Provider value={{url, routes, current, params, navigate}}>{children}</RouterContext.Provider>
   );
 }
 

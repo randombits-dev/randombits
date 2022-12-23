@@ -1,7 +1,7 @@
 import React from "react";
-import {useRouter} from "router/Router";
+import {IRoute, useRouter} from "router/Router";
 import styled from "styled-components";
-// import {routeTest} from "route-test";
+import RemoteApp from "RemoteApp";
 
 const OutletContainer = styled.div`
   max-width: 1000px;
@@ -9,11 +9,21 @@ const OutletContainer = styled.div`
   margin-right: auto;
 `;
 
+const getElementToRender = (current: IRoute) => {
+  if (current) {
+    if (current.element) {
+      return current.element;
+    } else if (current.remote) {
+      return <RemoteApp key={current.path} appName={current.remote} params={current.params}/>;
+    }
+  }
+  return <div>Route not found (container)</div>;
+};
+
 const RouterOutlet = () => {
   const {current} = useRouter();
-  const el = current ? current.element : <div>Route not found (container)</div>;
   return (
-    <OutletContainer id="outlet">{el}</OutletContainer>
+    <OutletContainer id="outlet">{getElementToRender(current)}</OutletContainer>
   );
 }
 
