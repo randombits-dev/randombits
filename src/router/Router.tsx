@@ -1,6 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {routeTest} from "router/route-test";
 import {importRemote} from "import-remote";
+import {DEV_MODE} from "../utils";
 
 
 export interface IRoute {
@@ -39,12 +40,18 @@ const Router = ({routes, children}) => {
 
   const [current, setCurrent] = useState<IRoute>(null);
   const [params, setParams] = useState<any>({});
+
+  const updateCurrent = (newCurrent, newParams) => {
+    setCurrent(newCurrent);
+    setParams(newParams);
+    document.title = newCurrent.title;
+  };
   const calcRoute = (newUrl) => {
     setUrl(newUrl);
-    let params;
+    let newParams;
     const newCurrent = routes.find(child => {
-      params = routeTest(newUrl, child.path);
-      return !!params;
+      newParams = routeTest(newUrl, child.path);
+      return !!newParams;
     });
     if (current === newCurrent) {
       // use timeout so it doesn't interfere with react render
@@ -56,21 +63,16 @@ const Router = ({routes, children}) => {
         );
       });
     } else if (newCurrent) {
-      if (newCurrent.remote) {
+      if (newCurrent.remote && !DEV_MODE) {
         importRemote(newCurrent.remote).then(() => {
-          setCurrent(newCurrent);
-          setParams(params);
-          console.log(params);
-          document.title = newCurrent.title;
+          updateCurrent(newCurrent, newParams);
         }).catch(() => {
           console.error('could not load: ' + newCurrent.remote);
+          updateCurrent(newCurrent, newParams);
         });
       } else {
-        setCurrent(newCurrent);
-        setParams(params);
-        document.title = newCurrent.title;
+        updateCurrent(newCurrent, newParams);
       }
-
     }
 
     return newCurrent;
