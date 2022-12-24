@@ -1,0 +1,7 @@
+{
+  "MarkdownRenderer": {
+    "repo": "https://github.com/nienow/markdown-renderer",
+    "name": "Markdown Renderer",
+    "desc": "Converts markdown to HTML during build. Renders the HTML with syntax highlighting at runtime."
+  }
+}

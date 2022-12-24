@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRouter} from "router/Router";
-import RemoteApp from "RemoteApp";
+import RemoteApp from "components/RemoteApp";
 
 const Article = () => {
   const {params} = useRouter();

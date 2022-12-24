@@ -21,7 +21,7 @@ const SocialLinks = styled.div`
   padding: 10px;
 `;
 
-const SocalLink = styled.a`
+const SocialLink = styled.a`
   text-decoration: none;
   color: inherit;
 `;
@@ -43,9 +43,9 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <SocialLinks>
-          <SocalLink href="https://github.com/nienow">
-            <img src="/github.svg" width="30px"/>
-          </SocalLink>
+          <SocialLink href="https://github.com/nienow">
+            <img src="/github.svg" alt="Github Link" width="30px"/>
+          </SocialLink>
           {/*TODO:<SocalLink href="https://twitter.com/randombits">Twitter</SocalLink>*/}
         </SocialLinks>
         {/*<NavigationLinks>*/}

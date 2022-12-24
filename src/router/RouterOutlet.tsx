@@ -1,7 +1,7 @@
 import React from "react";
 import {IRoute, useRouter} from "router/Router";
 import styled from "styled-components";
-import RemoteApp from "RemoteApp";
+import RemoteApp from "components/RemoteApp";
 
 const OutletContainer = styled.div`
   max-width: 1000px;

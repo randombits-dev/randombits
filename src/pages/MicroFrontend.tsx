@@ -1,5 +1,5 @@
 import React from 'react';
-import RemoteApp from "RemoteApp";
+import RemoteApp from "components/RemoteApp";
 
 const MicroFrontend = () => {
   // const apps = {};

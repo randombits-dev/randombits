@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {routeTest} from "router/route-test";
-import {importRemote} from "import-remote";
-import {DEV_MODE} from "../utils";
+import {importRemote} from "utils/import-remote";
+import {DEV_MODE} from "../utils/utils";
 
 
 export interface IRoute {

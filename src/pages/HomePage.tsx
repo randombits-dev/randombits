@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import ActionButton from "ActionButton";
+import ActionButton from "components/ActionButton";
 import Link from "router/Link";
-import ArticleListVertical from "ArticleListVertical";
+import ArticleListVertical from "pages/ArticleListVertical";
 
 const FeaturedContent = styled.div`
   display: flex;
@@ -70,7 +70,7 @@ const HomePage = () => {
       {/*</Bio>*/}
       <MicroInfo>
         <div>
-          <img src="/micro.png"/>
+          <img src="/micro.png" alt=""/>
         </div>
         <MicroText>This website is built with micro frontends, using module federation.</MicroText>
         <div>

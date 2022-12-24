@@ -1,5 +1,5 @@
 import React from "react";
-import {importRemote} from "import-remote";
+import {importRemote} from "utils/import-remote";
 
 interface Params {
   appName: string;

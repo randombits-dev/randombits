@@ -1,11 +1,11 @@
 import {IRoute} from 'router/Router';
-import HomePage from 'HomePage';
-import Tools from 'Tools';
-import Puzzles from 'Puzzles';
+import HomePage from 'pages/HomePage';
+import Tools from 'pages/Tools';
+import Puzzles from 'pages/Puzzles';
 import React from 'react';
-import MicroFrontend from "MicroFrontend";
-import ArticleListVertical from "ArticleListVertical";
-import Article from "Article";
+import MicroFrontend from "pages/MicroFrontend";
+import ArticleListVertical from "pages/ArticleListVertical";
+import Article from "pages/Article";
 
 export const ROUTES: IRoute[] = [
   {path: '/', element: <HomePage/>, remote: 'blog', title: 'Random Bits'},

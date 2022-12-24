@@ -29,7 +29,7 @@ const Tools = () => {
 
       <Link path="/tools/snowrunner">
         <Tool>
-          <img src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=75"/>
+          <img src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=75" alt="Snowrunner Logo"/>
           <ToolText>Snowrunner Save Editor</ToolText>
         </Tool>
       </Link>

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 import styled from "styled-components";
-import ActionButton from "ActionButton";
-import {importRemoteWithParams} from "import-remote";
+import ActionButton from "components/ActionButton";
+import {importRemoteWithParams} from "utils/import-remote";
 import {useRouter} from "router/Router";
 
 const ArticleListContainer = styled.div`
