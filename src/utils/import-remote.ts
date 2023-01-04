@@ -62,7 +62,7 @@ export const importRemoteWithParams = async <T>(url: string, scope: string, modu
   }
 };
 
-export const importRemote = (name: string) => {
+export const importRemote = (name: string, module = 'bootstrap') => {
   const url = RANDOMBITS_CONFIG[`RANDOMBITS_REMOTE_${name.toUpperCase()}`];
-  return importRemoteWithParams(url, name, 'bootstrap');
+  return importRemoteWithParams(url, name, module);
 };

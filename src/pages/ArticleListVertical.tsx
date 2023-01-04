@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 
 import styled from "styled-components";
 import ActionButton from "components/ActionButton";
-import {importRemoteWithParams} from "utils/import-remote";
+import {importRemote} from "utils/import-remote";
 import {useRouter} from "router/Router";
 
 const ArticleListContainer = styled.div`
@@ -50,7 +50,7 @@ interface Params {
 }
 
 const ArticleListVertical = ({limit}: Params) => {
-  const [blogs, setBlogs] = useState<any[]>([]);
+  const [articles, setArticles] = useState<any[]>([]);
   const {navigate} = useRouter();
   const seeAll = () => {
     // navigateTo('/articles');
@@ -58,12 +58,12 @@ const ArticleListVertical = ({limit}: Params) => {
   };
 
   useEffect(() => {
-    importRemoteWithParams('http://localhost:8081', 'blog', 'articles').then((result: any) => {
-      setBlogs(result);
+    importRemote('markdown', 'articles').then((result: any) => {
+      setArticles(result);
     });
   }, []);
 
-  const blogsToShow = limit ? blogs.slice(0, limit) : blogs;
+  const blogsToShow = limit ? articles.slice(0, limit) : articles;
 
   return (
     <ArticleListContainer>

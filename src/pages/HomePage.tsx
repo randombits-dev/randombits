@@ -16,7 +16,6 @@ const Heading = styled.div`
 `;
 
 const LatestArticles = styled.div`
-  //flex: 1 1 auto;
   padding: 20px 0;
 `;
 

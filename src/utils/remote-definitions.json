@@ -1,7 +1,12 @@
 {
-  "MarkdownRenderer": {
-    "repo": "https://github.com/nienow/markdown-renderer",
+  "markdown": {
+    "repo": "https://github.com/nienow/randombits-markdown",
     "name": "Markdown Renderer",
     "desc": "Converts markdown to HTML during build. Renders the HTML with syntax highlighting at runtime."
+  },
+  "container": {
+    "repo": "https://github.com/nienow/randombits-container",
+    "name": "Container App",
+    "desc": "The main app that contains the header, footer, and links to everything."
   }
 }

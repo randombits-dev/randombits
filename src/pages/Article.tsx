@@ -4,7 +4,7 @@ import RemoteApp from "components/RemoteApp";
 const Article = () => {
   const {params} = useRouter();
   return (
-    <RemoteApp appName="blog" params={{article: params.id}}/>
+    <RemoteApp appName="markdown" params={{article: params.id}}/>
   );
 }
 

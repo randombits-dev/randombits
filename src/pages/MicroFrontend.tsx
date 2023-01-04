@@ -8,13 +8,13 @@ const MicroFrontend = () => {
 
   return (
     <div>
-      <RemoteApp appName="blog" params={{page: 'micro-frontend'}}/>
+      <RemoteApp appName="markdown" params={{page: 'micro-frontend'}}/>
       <h2>Full list of apps that are pulled in:</h2>
       <table>
         <tr>
           <td>Article Renderer</td>
           <td>Renders markdown</td>
-          <td>{RANDOMBITS_CONFIG.RANDOMBITS_REMOTE_BLOG}/articles</td>
+          <td>{RANDOMBITS_CONFIG.RANDOMBITS_REMOTE_MARKDOWN}</td>
         </tr>
       </table>
       {/*{*/}

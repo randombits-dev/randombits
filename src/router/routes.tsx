@@ -16,21 +16,14 @@ export const ROUTES: IRoute[] = [
   {
     path: '/article/:id',
     title: 'Random Bits - Articles',
-    remote: 'blog',
-    element: <Article/>,
-    params: {
-      type: 'article',
-      name: 'one'
-    }
+    remote: 'markdown',
+    element: <Article/>
   },
   {
     path: '/micro-frontend',
     title: 'Random Bits - Micro Frontend',
     element: <MicroFrontend/>,
-    remote: 'blog',
-    params: {
-      page: 'micro-frontend'
-    }
+    remote: 'markdown'
   },
   {
     path: '/tools/snowrunner',
