@@ -1,5 +1,3 @@
-import React from "react";
-
 import {useRouter} from "router/Router";
 import styled from "styled-components";
 

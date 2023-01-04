@@ -7,8 +7,8 @@ interface Params {
 }
 
 const RemoteApp = ({appName, params}: Params) => {
-  importRemote(appName).catch(() => {
-    alert('could not load: ' + appName);
+  importRemote(appName).catch((e) => {
+    console.error(e);
   });
   const CustomElement = `randombits-${appName}`;
   return <CustomElement {...params}/>;

@@ -2,7 +2,6 @@ import {GlobalStyle} from "./GlobalStyle";
 import Header from "Header";
 import Router from "router/Router";
 import RouterOutlet from "router/RouterOutlet";
-import React from "react";
 
 import './index.scss';
 import Footer from "Footer";

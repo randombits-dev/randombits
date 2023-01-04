@@ -2,7 +2,6 @@ import {IRoute} from 'router/Router';
 import HomePage from 'pages/HomePage';
 import Tools from 'pages/Tools';
 import Puzzles from 'pages/Puzzles';
-import React from 'react';
 import MicroFrontend from "pages/MicroFrontend";
 import ArticleListVertical from "pages/ArticleListVertical";
 import Article from "pages/Article";

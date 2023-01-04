@@ -1,7 +1,8 @@
-import React, {createContext, useContext, useEffect, useState} from "react";
+import React, {createContext, useContext, useEffect} from "react";
 import {routeTest} from "router/route-test";
 import {importRemote} from "utils/import-remote";
 import {DEV_MODE} from "../utils/utils";
+import {useState} from "preact/hooks";
 
 
 export interface IRoute {
@@ -66,8 +67,8 @@ const Router = ({routes, children}) => {
       if (newCurrent.remote && !DEV_MODE) {
         importRemote(newCurrent.remote).then(() => {
           updateCurrent(newCurrent, newParams);
-        }).catch(() => {
-          console.error('could not load: ' + newCurrent.remote);
+        }).catch((e) => {
+          console.error(e);
           updateCurrent(newCurrent, newParams);
         });
       } else {

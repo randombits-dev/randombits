@@ -1,4 +1,3 @@
-import React from "react";
 import {IRoute, useRouter} from "router/Router";
 import styled from "styled-components";
 import RemoteApp from "components/RemoteApp";

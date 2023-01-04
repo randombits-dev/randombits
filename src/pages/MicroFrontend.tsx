@@ -1,4 +1,3 @@
-import React from 'react';
 import RemoteApp from "components/RemoteApp";
 
 const MicroFrontend = () => {

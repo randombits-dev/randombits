@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import styled from "styled-components";
 import ActionButton from "components/ActionButton";
@@ -58,8 +58,7 @@ const ArticleListVertical = ({limit}: Params) => {
   };
 
   useEffect(() => {
-    importRemoteWithParams(
-      {url: 'http://localhost:8081', scope: 'blog', module: 'blog-list'}).then((result: any) => {
+    importRemoteWithParams('http://localhost:8081', 'blog', 'articles').then((result: any) => {
       setBlogs(result);
     });
   }, []);

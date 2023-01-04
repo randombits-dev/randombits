@@ -38,7 +38,11 @@ module.exports = {
       'node_modules',
       'src'
     ],
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      react: "preact/compat",
+      'react-dom': "preact/compat"
+    }
   },
   devServer: {
     port: 8080,
@@ -49,20 +53,15 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "container",
       filename: "remoteEntry.js",
-      remotes: {
-        // blog: 'blog@http://localhost:8081/remoteEntry.js',
-        // snowrunner: 'snowrunner@http://localhost:8082/remoteEntry.js'
-      },
+      remotes: {},
       exposes: {},
       shared: {
         ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react
+        'preact': {
+          singleton: true
         },
-        'react-dom': {
-          singleton: true,
-          requiredVersion: deps["react-dom"]
+        'preact/hooks': {
+          singleton: true
         }
       },
     }),

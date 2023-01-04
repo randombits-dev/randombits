@@ -7,8 +7,8 @@
     "deploy": "yarn build && gh-pages -d build"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "@preact/compat": "^17.1.2",
+    "preact": "^10.11.3",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

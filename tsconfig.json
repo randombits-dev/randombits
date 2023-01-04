@@ -19,7 +19,8 @@
     "strict": false,
     "target": "esnext",
     "incremental": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "sourceMap": true
   },
   "exclude": [],
   "include": [
