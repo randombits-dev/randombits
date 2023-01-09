@@ -6,7 +6,7 @@ module.exports = {
   ...prodConfig,
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:8080/'
+    publicPath: 'http://localhost:3000/'
   },
   optimization: {
     minimize: false

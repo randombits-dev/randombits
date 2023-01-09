@@ -7,7 +7,7 @@ import ArticleListVertical from "pages/ArticleListVertical";
 import Article from "pages/Article";
 
 export const ROUTES: IRoute[] = [
-  {path: '/', element: <HomePage/>, remote: 'blog', title: 'Random Bits'},
+  {path: '/', element: <HomePage/>, remote: 'markdown', title: 'Random Bits'},
   {
     path: '/articles',
     title: 'Random Bits - Articles',
