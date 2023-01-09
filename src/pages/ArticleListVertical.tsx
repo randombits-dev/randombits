@@ -53,7 +53,6 @@ const ArticleListVertical = ({limit}: Params) => {
   const [articles, setArticles] = useState<any[]>([]);
   const {navigate} = useRouter();
   const seeAll = () => {
-    // navigateTo('/articles');
     navigate('/articles');
   };
 

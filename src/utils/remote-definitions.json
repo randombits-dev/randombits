@@ -1,12 +1,20 @@
 {
-  "markdown": {
-    "repo": "https://github.com/nienow/randombits-markdown",
-    "name": "Markdown Renderer",
-    "desc": "Converts markdown to HTML during build. Renders the HTML with syntax highlighting at runtime."
-  },
   "container": {
     "repo": "https://github.com/nienow/randombits-container",
     "name": "Container App",
-    "desc": "The main app that contains the header, footer, and links to everything."
+    "desc": "The main app that contains the header, footer, and links to everything.",
+    "libraries": "preact"
+  },
+  "markdown": {
+    "repo": "https://github.com/nienow/randombits-markdown",
+    "name": "Markdown Renderer",
+    "desc": "Converts markdown to HTML during build. Renders the HTML with syntax highlighting at runtime.",
+    "libraries": "showdown, highlightjs"
+  },
+  "snowrunner": {
+    "repo": "https://github.com/nienow/snowrunner-save-editor",
+    "name": "SnowRunner Save Editor",
+    "desc": "Video Game Save Editor",
+    "libraries": "react"
   }
 }

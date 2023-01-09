@@ -8,12 +8,6 @@ const remoteVars = Object.fromEntries(
   Object.entries(process.env).filter(([key, value]) => key.indexOf('RANDOMBITS_REMOTE') === 0));
 
 module.exports = {
-  output: {
-    publicPath: 'http://localhost:8080/'
-  },
-  optimization: {
-    minimize: false
-  },
   module: {
     rules: [
       {
@@ -44,33 +38,28 @@ module.exports = {
       'react-dom': "preact/compat"
     }
   },
-  devServer: {
-    port: 8080,
-    hot: true,
-    historyApiFallback: true
-  },
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
       shared: {
         ...deps,
         'preact': {
-          singleton: true
+          singleton: true,
+          requiredVersion: deps.preact
         },
         'preact/hooks': {
-          singleton: true
+          singleton: true,
+          requiredVersion: deps.preact
         }
       },
     }),
     new HtmlWebpackPlugin({
-      title: 'Hot Module Replacement',
-      template: "./public/index.html"
+      title: 'Random Bits',
+      template: "./src/index.html"
     }),
     new DefinePlugin({
       'RANDOMBITS_CONFIG': JSON.stringify(remoteVars)
     }),
-  ],
+  ]
 };
