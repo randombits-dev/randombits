@@ -12,7 +12,8 @@ module.exports = {
   mode: 'production',
   output: {
     filename: "[contenthash].js",
-    clean: true
+    clean: true,
+    publicPath: "/"
   },
   module: {
     rules: [
