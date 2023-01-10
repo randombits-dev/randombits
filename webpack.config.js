@@ -2,11 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const InlineScriptPlugin = require('./webpack.inline-plugin');
 
 require('dotenv').config();
 const deps = require("./package.json").dependencies;
 const remoteVars = Object.fromEntries(
-  Object.entries(process.env).filter(([key, value]) => key.indexOf('RANDOMBITS_REMOTE') === 0));
+  Object.entries(process.env).filter(([key]) => key.indexOf('RANDOMBITS_REMOTE') === 0));
 
 module.exports = {
   mode: 'production',
@@ -72,6 +73,7 @@ module.exports = {
       patterns: [
         {from: "public", to: ""}
       ],
-    })
+    }),
+    new InlineScriptPlugin()
   ]
 };
