@@ -30,6 +30,11 @@ export const ROUTES: IRoute[] = [
     title: 'Random Bits - Snowrunner Save Editor',
     remote: 'snowrunner'
   },
+  {
+    path: '/tools/image',
+    title: 'Random Bits - Image Generation',
+    remote: 'diffusion'
+  },
   {path: '/tools', element: <Tools/>, title: 'Random Bits - Tools'},
   {path: '/puzzles', element: <Puzzles/>, title: 'Random Bits - Puzzles'}
 ];
