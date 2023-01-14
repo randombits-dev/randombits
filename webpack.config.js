@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const DefinePlugin = require('webpack/lib/DefinePlugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const InlineScriptPlugin = require('./webpack.inline-plugin');
 
 require('dotenv').config();
@@ -68,11 +67,6 @@ module.exports = {
     }),
     new DefinePlugin({
       'RANDOMBITS_CONFIG': JSON.stringify(remoteVars)
-    }),
-    new CopyPlugin({
-      patterns: [
-        {from: "public", to: ""}
-      ],
     }),
     new InlineScriptPlugin()
   ]

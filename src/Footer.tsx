@@ -43,7 +43,7 @@ const Footer = () => {
       <FooterContent>
         <SocialLinks>
           <SocialLink href="https://github.com/nienow">
-            <img src="/github.svg" alt="Github Link" width="30"/>
+            <img src="https://storage.googleapis.com/randombits/images/github.svg" alt="Github Link" width="30"/>
           </SocialLink>
           {/*TODO:<SocalLink href="https://twitter.com/randombits">Twitter</SocalLink>*/}
         </SocialLinks>

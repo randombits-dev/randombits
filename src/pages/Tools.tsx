@@ -29,12 +29,12 @@ const MoreComingSoon = styled.div`
 const TOOLS = [
   {
     title: 'Snowrunner Save Editor',
-    img: 'https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=75',
+    img: 'https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100',
     link: '/tools/snowrunner'
   },
   {
     title: 'Image Generation',
-    img: 'https://storage.googleapis.com/randombits/images/inkpunk1.jfif',
+    img: 'https://storage.googleapis.com/randombits/images/inkpunk1-100.jpg',
     link: '/tools/image'
   }
 ]
@@ -47,7 +47,7 @@ const Tools = () => {
         TOOLS.map(tool => <ToolContainer>
           <Link path={tool.link}>
             <Tool>
-              <img width="75" src={tool.img}/>
+              <img width="100" src={tool.img}/>
               <ToolText>{tool.title}</ToolText>
             </Tool>
           </Link>

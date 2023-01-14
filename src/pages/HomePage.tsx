@@ -24,6 +24,7 @@ const PopularTools = styled.div`
   margin-left: 50px;
   border-left: 1px solid #ccc;
   padding-left: 50px;
+  padding-top: 20px;
 `;
 
 const MicroInfo = styled.div`
@@ -46,6 +47,14 @@ const BioText = styled.div`
   padding: 20px 0;
 `;
 
+const PopularTool = styled.div`
+  padding: 5px 0;
+`;
+
+const SeeAllTools = styled.div`
+  margin-top: 20px;
+`;
+
 const HomePage = () => {
 
   return (
@@ -58,7 +67,9 @@ const HomePage = () => {
         </LatestArticles>
         <PopularTools>
           <Heading>- Featured Tools -</Heading>
-          <Link path="/tools/snowrunner">Snowrunner Save Editor</Link>
+          <Link path="/tools/snowrunner"><PopularTool>Snowrunner Save Editor</PopularTool></Link>
+          <Link path="/tools/image"><PopularTool>Image Generation</PopularTool></Link>
+          <SeeAllTools><ActionButton url="/tools">See All Tools</ActionButton></SeeAllTools>
         </PopularTools>
       </FeaturedContent>
       {/*TODO:<Bio>*/}
@@ -68,7 +79,7 @@ const HomePage = () => {
       {/*</Bio>*/}
       <MicroInfo>
         <div>
-          <img src="/micro.png" alt=""/>
+          <img src="https://storage.googleapis.com/randombits/images/micro.png" alt=""/>
         </div>
         <MicroText>This website is built with micro frontends, using module federation.</MicroText>
         <div>

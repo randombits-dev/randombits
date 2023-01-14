@@ -1,8 +1,10 @@
 import {ReactNode} from 'react';
 import styled from "styled-components";
+import {useRouter} from "router/Router";
 
 interface Params {
-  onClick: () => void;
+  onClick?: () => void;
+  url?: string;
   children: ReactNode;
 }
 
@@ -16,9 +18,14 @@ const Button = styled.button`
   font-size: 16px;
 `;
 
-const ActionButton = ({onClick, children}: Params) => {
+const ActionButton = ({onClick, url, children}: Params) => {
+  const {navigate} = useRouter();
+  const handleClick = () => {
+    onClick && onClick();
+    url && navigate(url);
+  };
   return (
-    <Button onClick={onClick}>{children}</Button>
+    <Button onClick={handleClick}>{children}</Button>
   );
 }
 
