@@ -47,8 +47,12 @@ const BioText = styled.div`
   padding: 20px 0;
 `;
 
-const PopularTool = styled.div`
+const PopularTool = styled.h2`
   padding: 5px 0;
+  margin: 0;
+`;
+const ToolImage = styled.img`
+  margin: 5px;
 `;
 
 const SeeAllTools = styled.div`
@@ -65,10 +69,18 @@ const HomePage = () => {
           {/*<RemoteApp appName="blog"/>*/}
           <ArticleListVertical limit={5}/>
         </LatestArticles>
+        {/*<PopularTools>*/}
+        {/*  <Heading>- Featured Tools -</Heading>*/}
+        {/*  <Link path="/tools/snowrunner"><PopularTool>Snowrunner Save Editor</PopularTool></Link>*/}
+        {/*  <Link path="/tools/image"><PopularTool>Image Generation</PopularTool></Link>*/}
+        {/*  <SeeAllTools><ActionButton url="/tools">See All Tools</ActionButton></SeeAllTools>*/}
+        {/*</PopularTools>*/}
         <PopularTools>
           <Heading>- Featured Tools -</Heading>
-          <Link path="/tools/snowrunner"><PopularTool>Snowrunner Save Editor</PopularTool></Link>
-          <Link path="/tools/image"><PopularTool>Image Generation</PopularTool></Link>
+          <Link path="/tools/snowrunner"><ToolImage
+            src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100" width="100"/></Link>
+          <Link path="/tools/image"><ToolImage src="https://storage.googleapis.com/randombits/images/inkpunk1-100.jpg"
+                                               width="100"/></Link>
           <SeeAllTools><ActionButton url="/tools">See All Tools</ActionButton></SeeAllTools>
         </PopularTools>
       </FeaturedContent>

@@ -16,6 +16,7 @@ const Button = styled.button`
   border: 1px solid #ccc;
   border-radius: 0;
   font-size: 16px;
+  color: inherit;
 `;
 
 const ActionButton = ({onClick, url, children}: Params) => {

@@ -37,7 +37,7 @@ const Header = () => {
       <Link path="/"><HeaderTitle>Random Bits</HeaderTitle></Link>
       <Link path="/articles"><AppLink>Articles</AppLink></Link>
       <Link path="/tools"><AppLink>Tools</AppLink></Link>
-      <Link path="/puzzles"><AppLink>Puzzles</AppLink></Link>
+      {/*<Link path="/puzzles"><AppLink>Puzzles</AppLink></Link>*/}
     </HeaderContent>
   </HeaderContainer>
 };

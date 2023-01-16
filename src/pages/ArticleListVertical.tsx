@@ -13,20 +13,20 @@ const ArticleContainer = styled.div`
   padding: 10px 0;
 `;
 
-const ArticleTitle = styled.div`
-  font-size: 22px;
-  font-weight: 500;
-  color: #333;
+const ArticleTitle = styled.h2`
+  letter-spacing: 2px;
+  margin: 0;
 `;
 
 const ArticleQuick = styled.div`
-  font-size: 16px;
-  margin: 20px 0;
-  font-weight: 400;
+  font-size: 14px;
+  margin: 10px 0;
   -webkit-line-clamp: 5;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  letter-spacing: 1px;
+  color: #555;
 `;
 
 const ArticleSummary = ({blog}) => {
