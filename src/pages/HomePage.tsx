@@ -7,12 +7,24 @@ const FeaturedContent = styled.div`
   display: flex;
 `;
 
-const Heading = styled.div`
-  font-size: 18px;
-  padding-bottom: 20px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 3px;
+const Heading = styled.h2`
+  font-size: 16px;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 20px;
+  }
+
+  &:before {
+    margin-right: 10px;
+  }
+
+  &:after {
+    margin-left: 10px;
+  }
 `;
 
 const LatestArticles = styled.div`
@@ -65,7 +77,7 @@ const HomePage = () => {
     <div>
       <FeaturedContent>
         <LatestArticles>
-          <Heading>- Latest Articles -</Heading>
+          <Heading>Latest Articles</Heading>
           {/*<RemoteApp appName="blog"/>*/}
           <ArticleListVertical limit={5}/>
         </LatestArticles>
@@ -76,7 +88,7 @@ const HomePage = () => {
         {/*  <SeeAllTools><ActionButton url="/tools">See All Tools</ActionButton></SeeAllTools>*/}
         {/*</PopularTools>*/}
         <PopularTools>
-          <Heading>- Featured Tools -</Heading>
+          <Heading>Featured Tools</Heading>
           <Link path="/tools/snowrunner"><ToolImage
             src="https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100" width="100"/></Link>
           <Link path="/tools/image"><ToolImage src="https://storage.googleapis.com/randombits/images/inkpunk1-100.jpg"

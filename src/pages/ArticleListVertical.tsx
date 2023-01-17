@@ -13,9 +13,16 @@ const ArticleContainer = styled.div`
   padding: 10px 0;
 `;
 
-const ArticleTitle = styled.h2`
+const ArticleTitle = styled.div`
+  font-size: 20px;
   letter-spacing: 2px;
   margin: 0;
+`;
+
+
+const ArticleDate = styled.div`
+  font-size: 12px;
+  color: #666;
 `;
 
 const ArticleQuick = styled.div`
@@ -29,6 +36,10 @@ const ArticleQuick = styled.div`
   color: #555;
 `;
 
+const formatDate = (value) => {
+  return new Date(value).toLocaleDateString();
+};
+
 const ArticleSummary = ({blog}) => {
   const {navigate} = useRouter();
   const url = `/article/${blog.id}`;
@@ -38,6 +49,7 @@ const ArticleSummary = ({blog}) => {
     navigate(url);
   };
   return <a href={url} onClick={goTo}><ArticleContainer>
+    {/*<ArticleDate>{formatDate(blog.created)}</ArticleDate>*/}
     <ArticleTitle>{blog.title}</ArticleTitle>
     <ArticleQuick>
       {blog.summary}

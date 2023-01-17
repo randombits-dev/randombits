@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     display: flex;
     align-items: center;
-    color: #26A69C;
+    color: #00897B;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
