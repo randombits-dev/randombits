@@ -22,7 +22,13 @@ const SocialLinks = styled.div`
 
 const SocialLink = styled.a`
   text-decoration: none;
-  color: inherit;
+  color: #ccc;
+  padding: 0 10px;
+  fill: currentColor;
+
+  img {
+    filter: invert(.3);
+  }
 `;
 
 const NavigationLinks = styled.div`
@@ -42,10 +48,15 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <SocialLinks>
-          <SocialLink href="https://github.com/nienow">
+          <SocialLink href="https://github.com/nienow" target="_blank">
             <img src="https://storage.googleapis.com/randombits/images/github.svg" alt="Github Link" width="30"/>
           </SocialLink>
-          {/*TODO:<SocalLink href="https://twitter.com/randombits">Twitter</SocalLink>*/}
+          <SocialLink href="https://discordapp.com/users/806661811143049216" target="_blank">
+            <img src="https://storage.googleapis.com/randombits/images/discord.svg" alt="Discord Link" width="30"/>
+          </SocialLink>
+          <SocialLink href="https://twitter.com/RandomBitsDev" target="_blank">
+            <img src="https://storage.googleapis.com/randombits/images/twitter.svg" alt="Twitter Link" width="30"/>
+          </SocialLink>
         </SocialLinks>
         {/*<NavigationLinks>*/}
         {/*TODO:<NavigationLink><Link path="/about">About Me</Link></NavigationLink>*/}
