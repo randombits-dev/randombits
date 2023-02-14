@@ -1,0 +1,45 @@
+---
+import HtmlLayout from '../layouts/HtmlLayout.astro';
+import ArticleList from '../components/ArticleList.astro';
+import FeaturedTools from "../components/FeaturedTools.astro";
+
+---
+<HtmlLayout title="Developer articles and tools" description="Developer articles, tools, and more" >
+    <div style="display: flex">
+        <div>
+            <h2>Latest Articles</h2>
+            <ArticleList limit="5"/>
+        </div>
+        <div class="featured-tools">
+            <h2>Featured Tools</h2>
+            <FeaturedTools/>
+        </div>
+    </div>
+</HtmlLayout>
+<style>
+    .featured-tools {
+        margin-left: 50px;
+        min-width: 250px;
+        border-left: 1px solid #ccc;
+        padding-left: 50px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h2::before, h2::after {
+        content: '';
+                display: block;
+                border-bottom: 1px solid #ccc;
+                width: 20px;
+    }
+
+    h2::before {
+        margin-right: 10px;
+    }
+
+    h2::after {
+        margin-left: 10px;
+    }
+</style>

@@ -1,0 +1,7 @@
+---
+import HtmlLayout from '../../layouts/HtmlLayout.astro';
+import LoadRemote from "../../components/LoadRemote.astro";
+---
+<HtmlLayout title="Random Bits" description="Developer articles, tools, and more" >
+    <LoadRemote url={import.meta.env.RANDOMBITS_REMOTE_SNOWRUNNER}/>
+</HtmlLayout>

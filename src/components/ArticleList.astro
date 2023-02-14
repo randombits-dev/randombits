@@ -1,0 +1,20 @@
+---
+import Article from './Article.astro';
+
+const { limit } = Astro.props;
+
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob('../pages/articles/*.{md,mdx}')).filter(item => !item.frontmatter.draft).sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+);
+
+const postsToShow = limit ? posts.slice(0, limit) : posts;
+
+---
+
+{
+    postsToShow.map((post) => (
+        <Article article={post.frontmatter} url={post.url}/>
+    ))
+}

@@ -1,0 +1,15 @@
+---
+const TOOLS = [
+    {
+        title: 'Snowrunner Save Editor',
+        img: 'https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100',
+        link: '/tools/snowrunner'
+    }
+]
+---
+
+{
+    TOOLS.map(({link, title}) => {
+        return <a href={link}>{title}</a>
+    })
+}
