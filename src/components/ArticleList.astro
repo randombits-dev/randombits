@@ -1,20 +1,19 @@
 ---
-import Article from './Article.astro';
+import Article from './Article.astro'; import {getCollection} from "astro:content";
 
-const { limit } = Astro.props;
+const {limit} = Astro.props;
 
-
-// Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('../pages/articles/*.{md,mdx}')).filter(item => !item.frontmatter.draft).sort(
-	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+const posts = (await getCollection('articles')).filter(item => !item.data.draft).sort(
+    (a, b) => new Date(b.data.published).valueOf() - new Date(a.data.published).valueOf()
 );
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+// const posts = (await Astro.glob('../pages/articles/*.{md,mdx}')).filter(item => !item.frontmatter.draft)
 
 const postsToShow = limit ? posts.slice(0, limit) : posts;
-
 ---
 
 {
     postsToShow.map((post) => (
-        <Article article={post.frontmatter} url={post.url}/>
-    ))
-}
+    <Article article={post.data} url={'/articles/' + post.slug}/>
+        ))
+    }

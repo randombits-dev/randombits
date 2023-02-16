@@ -1,11 +1,12 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "Creating a blog with react and markdown"
-summary: "We are accustomed to separating data from code. When I was thinking about the architecture for a simple blog, I immediately assumed I would need a server side part to the application, with a database or the likes. But after doing a little pondering, there is a much simpler way."
-date: "January 01, 2023"
+summary: "Markdown is by far the best approach to writing static content, like blog posts. The markdown can be converted to HTML at build time, improving the application performance."
+published: 2022-11-02
+updated: 2022-01-05
+desc: "How to create a blog by compiling markdown into html, highlighting code snippets, and rendering the html inside react."
 ---
 
-# Creating a blog with react and markdown
+## Intro
 
 We are accustomed to separating data from code. When I was thinking about the architecture for a simple blog, I immediately
 assumed I would need a server side part to the application, with a database or the likes. But after doing a little
@@ -74,7 +75,7 @@ fs.writeFileSync('src/generated/blog-list.json', JSON.stringify(blogList), {enco
 
 ## Article List Page
 
-This page simply reads the metadata that we gathered about the blogs, and generates a list of the articles. 
+This page simply reads the metadata that we gathered about the blogs, and generates a list of the articles.
 If using typescript, make sure you set `"resolveJsonModule": true` in tsconfig.json.
 
 ```javascript
@@ -94,7 +95,7 @@ const ArticleList = () => {
 ## Article Content Page
 
 Since the HTML of the article is static and doesn't contain scripts, we can simply fetch the html and set it into the
-innerHTML property. 
+innerHTML property.
 
 Then I'm using highlight.js to syntax highlight the code blocks. The highlighting is completely optional but
 looks good.
@@ -127,7 +128,7 @@ const Article = () => {
 
 ## Styling
 
-For styling, you can create a single SASS file that is scoped to the **.article** classname. 
+For styling, you can create a single SASS file that is scoped to the **.article** classname.
 I normally use styled-components for styling, but of course that won't work in this scenario, since the article HTML is plain HTML.
 
 ```scss

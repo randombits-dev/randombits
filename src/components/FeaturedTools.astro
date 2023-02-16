@@ -8,8 +8,17 @@ const TOOLS = [
 ]
 ---
 
-{
-    TOOLS.map(({link, title}) => {
-        return <a href={link}>{title}</a>
-    })
-}
+<div>
+    {
+        TOOLS.map(({link, title}) => {
+            return <a href={link}>{title}</a>
+        })
+    }
+</div>
+
+<style>
+    a {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+</style>

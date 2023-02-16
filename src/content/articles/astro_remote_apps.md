@@ -1,16 +1,13 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "Micro frontends in astro with remote loading"
-description: ""
-date: "January 01, 2023"
+summary: ""
+published: 2023-01-01
 draft: true
 ---
 
 # Micro frontends in astro with remote loading
 
 ## Loading the HTML in astro
-
-
 
 ## Remote app configuration (vite)
 

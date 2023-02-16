@@ -1,6 +1,6 @@
 ---
 import HtmlLayout from '../../layouts/HtmlLayout.astro';
-import MarkdownContent from '../../content/tools.mdx';
+import MarkdownContent from '../../snippits/tools.mdx';
 
 const TOOLS = [
     {
@@ -11,39 +11,54 @@ const TOOLS = [
     }
 ]
 ---
-<HtmlLayout title="Developer Tools | Random Bits" description="Developer articles, tools, and more" >
+<HtmlLayout title="Developer Tools" description="List of all tools • For software developers and more">
+    <h1>All tools</h1>
     <MarkdownContent/>
     <tools-list>
         {
-            TOOLS.map(tool => <tool-container>
-                <a href={tool.link}>
-                    <tool>
-                        <img width="100" src={tool.img}/>
-                        <tool-text>
-                            <h2>{tool.title}</h2>
-                            <tool-desc>{tool.desc || ''}</tool-desc>
-                        </tool-text>
-                    </tool>
-                </a>
-            </tool-container>)
+            TOOLS.map(tool =>
+                    <tool-container>
+                        <a href={tool.link}>
+                            <tool>
+                                <img width="100" src={tool.img}/>
+                                <tool-text>
+                                    <h2>{tool.title}</h2>
+                                    <tool-desc>{tool.desc || ''}</tool-desc>
+                                </tool-text>
+                            </tool>
+                        </a>
+                    </tool-container>)
         }
     </tools-list>
 </HtmlLayout>
 
 <style>
+    tools-list {
+        display: block;
+        padding-top: 20px;
+    }
+
     tool {
         display: flex;
         align-items: center;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
     }
+
     tool img {
         margin-right: 50px;
     }
+
     tool-title {
         display: block;
     }
+
     tool-desc {
         display: block;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
     }
 </style>

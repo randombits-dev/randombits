@@ -1,8 +1,7 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "Yarn & Pnp - I love not having a million files stored in each project"
-description: ""
-date: "January 01, 2023"
+summary: ""
+published: 2023-01-01
 draft: true
 ---
 

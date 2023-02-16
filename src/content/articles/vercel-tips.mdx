@@ -1,23 +1,19 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "Advanced Vercel Guide without NextJS"
-summary: "Even if you are not using the NextJS framework, Vercel is a great option for running your static or nodejs applications. It is super easy to use, fast, and free. This guide is intended to show you some tips and tricks."
-date: "January 01, 2023"
+title: "Vercel Configuration Guide without NextJS"
+summary: "Even if you are not using the NextJS framework, Vercel is a great option for running your static or nodejs applications.
+It is super easy to get started, and its fast and free. This guide is intended to show you some common configuration settings for your production application."
+desc: "Configuration guide for deploying to Vercel without using NextJS. Rewrites for SPAs, Serverless Functions, and Caching."
+published: 2023-02-01
 ---
-
-# Advanced Vercel Guide without NextJS
-
-Even if you are not using the NextJS framework, Vercel is a great option for running your static or nodejs applications. 
-It is super easy to use, fast, and free. This guide is intended to show you some tips and tricks
 
 ## Rewrites for Single Page Application
 
-When I first deployed my Simple Page Application (SPA) to Vercel, it looked great. 
-But when I refreshed the page on any page but the homepage, I received an error page - **404 - This page could not be found**. 
-The url was `randombits.dev/articles`, so the server was looking for a file called `/articles/index.html`. 
+When I first deployed my Simple Page Application (SPA) to Vercel, it looked great.
+But when I refreshed the page on any page but the homepage, I received an error page - **404 - This page could not be found**.
+The url was `randombits.dev/articles`, so the server was looking for a file called `/articles/index.html`.
 But I have only 1 html file at the root location, so it gave the 404 error.
 
-The solution is easy. You need to tell vercel to rewrite the request to the root `index.html` file no matter what path was asked for:
+The solution is easy. You need to tell Vercel to rewrite the request to the root `index.html` file no matter what path was asked for:
 
 ```json
 {
@@ -27,8 +23,8 @@ The solution is easy. You need to tell vercel to rewrite the request to the root
 }
 ```
 
-Vercel will prioritize the file system first: if the path exists, it will return the file, 
-Otherwise, it will rewrite the url. 
+Vercel will prioritize the file system first: if the path exists, it will return the file,
+Otherwise, it will rewrite the url.
 That way you can keep the rule simple and still fetch static assets like JS and image files.
 
 If you have apis deployed on the same host, you can change the rewrite to the following:
@@ -44,14 +40,14 @@ If you have apis deployed on the same host, you can change the rewrite to the fo
 This will match everything except the /api path.
 
 ## Deploying Serverless Functions
-If you have an `api` directory in your project, vercel will automatically deploy the contents as serverless functions. 
+If you have an `api` directory in your project, Vercel will automatically deploy the contents as serverless functions.
 The path of the API endpoint will be the same as the path of the file system. For example:
 * /api/index.js => /api
 * /api/login.js => /api/login
 * /api/user/index.js => /api/user
 * /api/user/[id].js => /api/user/45
 
-Serverless Function example: 
+Serverless Function example:
 
 ```javascript
 export default function handler(request, response) {
@@ -63,7 +59,7 @@ export default function handler(request, response) {
 
 ### Change the base /api path
 
-Unfortunately, you cannot change the base /api path. 
+Unfortunately, you cannot change the base /api path.
 However, you can rewrite the url in your `vercel.json` settings file:
 
 ```json
@@ -79,7 +75,7 @@ However, you can rewrite the url in your `vercel.json` settings file:
 By default, Vercel puts a max-age of 0 on all assets, which means the browser won't cache them.
 The reason for this is so that when a new deployment is made, users get the new version right away.
 
-But if your like me, and you use proper cache busting techniques, you will want to change these settings. 
+But if your like me, and you use proper cache busting techniques, you will want to change these settings.
 I have webpack generating the **content hash** for the file name of all my JS/CSS files:
 
 ```javascript
@@ -88,8 +84,8 @@ output: {
 }
 ```
 
-The filename is generated based on the content of the file, so if the content changes, the name will change. 
-When I update code and redeploy, the file name is different, so the cached content cannot be returned to the user. 
+The filename is generated based on the content of the file, so if the content changes, the name will change.
+When I update code and redeploy, the file name is different, so the cached content cannot be returned to the user.
 Therefore, you can change the **Cache-Control** settings to use a very long **max-age** value, and the **immutable** keyword, effectively telling the browser the file will never change.
 
 ```json
@@ -109,12 +105,12 @@ Therefore, you can change the **Cache-Control** settings to use a very long **ma
 ```
 The reason you need both max-age and immutable is that the immutable keyword is not well-supported in browsers yet.
 
-The current example is modifying the cache settings for all served files. 
+The current example is modifying the cache settings for all served files.
 But by changing the source pattern, you can adjust which files you want to target.
 
 ## Closing Thoughts
 
-While Vercel is a great experience for simple applications that fit the typical nodejs structure, 
-its lack of customizability for building/deploying can be frustrating for more complex applications. 
-If you want to have full control over your rewrites, api paths, headers, etc, I would suggest a more full-featured 
+While Vercel is a great experience for simple applications that fit the typical nodejs structure,
+its lack of customizability for building/deploying can be frustrating for more complex applications.
+If you want to have full control over your rewrites, api paths, headers, etc, I would suggest a more full-featured
 platform like Google Cloud Run.

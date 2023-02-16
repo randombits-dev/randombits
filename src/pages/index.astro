@@ -1,18 +1,19 @@
 ---
 import HtmlLayout from '../layouts/HtmlLayout.astro';
 import ArticleList from '../components/ArticleList.astro';
-import FeaturedTools from "../components/FeaturedTools.astro";
-
+import FeaturedTools from "../components/FeaturedTools.astro"; import Button from "../components/Button.astro";
 ---
-<HtmlLayout title="Developer articles and tools" description="Developer articles, tools, and more" >
+<HtmlLayout title="Developer articles and tools" description="Developer articles, tools, and more">
     <div style="display: flex">
         <div>
             <h2>Latest Articles</h2>
             <ArticleList limit="5"/>
+            <a class="button" href="/articles">See All Articles</a>
         </div>
         <div class="featured-tools">
             <h2>Featured Tools</h2>
             <FeaturedTools/>
+            <a class="button" href="/tools">See All Tools</a>
         </div>
     </div>
 </HtmlLayout>
@@ -26,13 +27,14 @@ import FeaturedTools from "../components/FeaturedTools.astro";
 
     h2 {
         font-size: 16px;
+        margin-bottom: 20px;
     }
 
     h2::before, h2::after {
         content: '';
-                display: block;
-                border-bottom: 1px solid #ccc;
-                width: 20px;
+        display: block;
+        border-bottom: 1px solid #ccc;
+        width: 20px;
     }
 
     h2::before {
@@ -41,5 +43,9 @@ import FeaturedTools from "../components/FeaturedTools.astro";
 
     h2::after {
         margin-left: 10px;
+    }
+
+    a.button {
+        margin-top: 20px;
     }
 </style>
