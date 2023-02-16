@@ -14,5 +14,6 @@
     "@astrojs/mdx": "^0.16.0",
     "@astrojs/sitemap": "^1.0.1",
     "astro": "^2.0.11"
-  }
+  },
+  "packageManager": "yarn@3.4.1"
 }
