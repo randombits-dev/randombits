@@ -8,6 +8,12 @@ const TOOLS = [
         desc: 'Edit task and mission progress · Reveal or obtain upgrades',
         img: 'https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100',
         link: '/tools/snowrunner'
+    },
+    {
+        title: 'Printable Daily Schedule',
+        desc: 'Generates a daily planner for appointments · One page a day · Printable',
+        img: 'https://storage.googleapis.com/randombits/images/print-schedule-100.png',
+        link: '/tools/print-schedule'
     }
 ]
 ---
@@ -17,17 +23,14 @@ const TOOLS = [
     <tools-list>
         {
             TOOLS.map(tool =>
-                    <tool-container>
-                        <a href={tool.link}>
-                            <tool>
-                                <img width="100" src={tool.img}/>
-                                <tool-text>
-                                    <h2>{tool.title}</h2>
-                                    <tool-desc>{tool.desc || ''}</tool-desc>
-                                </tool-text>
-                            </tool>
-                        </a>
-                    </tool-container>)
+                    <a href={tool.link}>
+                        <img width="100" src={tool.img}/>
+                        <tool-text>
+                            <h2>{tool.title}</h2>
+                            <tool-desc>{tool.desc || ''}</tool-desc>
+                        </tool-text>
+                    </a>
+            )
         }
     </tools-list>
 </HtmlLayout>
@@ -38,14 +41,17 @@ const TOOLS = [
         padding-top: 20px;
     }
 
-    tool {
+    a {
         display: flex;
         align-items: center;
         border-top: 1px solid #ccc;
+    }
+
+    a:last-child {
         border-bottom: 1px solid #ccc;
     }
 
-    tool img {
+    a img {
         margin-right: 50px;
     }
 

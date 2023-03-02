@@ -1,11 +1,13 @@
 import {defineConfig} from 'astro/config';
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
     site: 'https://randombits.dev/',
     markdown: {
         syntaxHighlight: 'prism'
     },
-    integrations: [mdx(), sitemap()]
+    integrations: [mdx()],
+    build: {
+        assets: '_astro'
+    }
 });
