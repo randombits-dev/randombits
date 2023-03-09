@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> · Number Localization · Random Bits</title>
+  <meta name="description">
+<link rel="stylesheet" href="/number-localization/_astro/index.36568cc5.css" />
+<link rel="stylesheet" href="/number-localization/_astro/formatting.5674a9f9.css" /></head>
+<body>
+<main-with-sidebar>
+  <sidebar>
+    <div class="sidebar-title">Number Localization</div>
+    <a class="nav" href="/number-localization/">Intro</a>
+    <a class="nav" href="/number-localization/formatting">Formatting</a>
+    <a class="nav" href="/number-localization/parsing">Parsing</a>
+    <a class="nav" href="/number-localization/numbering-systems">Numbering Systems</a>
+    <a class="nav" href="/number-localization/locale-list">Full Locale List</a>
+  </sidebar>
+  <sidebar-spacing></sidebar-spacing>
+  <content>
+    <h1 id="number-localization-introduction">Number Localization Introduction</h1>
+<p>A <em>number</em> consists of the integer part and decimal part, separated by the <strong>decimal symbol</strong>.
+The integer part may be separated by the <strong>grouping symbol</strong> (sometimes called the <strong>thousand symbol</strong>), which makes long numbers easier to read.</p>
+<p>In the United States, we use a period for the decimal symbol and a comma for the grouping symbol.</p>
+<h2 id="decimal-symbols">Decimal Symbols</h2>
+<p>The three different decimal symbols are the <strong>comma</strong>, the <strong>period</strong>, and the <strong>arabic decimal separator</strong>.</p>
+<div class="row"><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">.</span><div class="locale-symbol-card__example">1.0</div><div class="locale-symbol-card__desc">Period</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+002E">U+002E</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">,</span><div class="locale-symbol-card__example">1,0</div><div class="locale-symbol-card__desc">Comma</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+002C">U+002C</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">٫</span><div class="locale-symbol-card__example">1٫0</div><div class="locale-symbol-card__desc">Arabic Decimal Separator</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+066B">U+066B</a></div></div></div>
+<h2 id="grouping-symbols">Grouping Symbols</h2>
+<p>The six different grouping symbols are the <strong>comma</strong>, the <strong>period</strong>, a <strong>space</strong>, a <strong>narrow space</strong>, the <strong>arabic thousands separator</strong>, and the <strong>right quotation mark</strong>.</p>
+<div class="row"><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">,</span><div class="locale-symbol-card__example">1,000</div><div class="locale-symbol-card__desc">Comma</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+002C">U+002C</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">.</span><div class="locale-symbol-card__example">1.000</div><div class="locale-symbol-card__desc">Period</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+002E">U+002E</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol"> </span><div class="locale-symbol-card__example">1 000</div><div class="locale-symbol-card__desc">No-Break Space</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+00A0">U+00A0</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol"> </span><div class="locale-symbol-card__example">1 000</div><div class="locale-symbol-card__desc">Narrow No-Break Space</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+202F">U+202F</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">٬</span><div class="locale-symbol-card__example">1٬000</div><div class="locale-symbol-card__desc">Arabic Thousands Separator</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+066C">U+066C</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">’</span><div class="locale-symbol-card__example">1’000</div><div class="locale-symbol-card__desc">Right Single Quotation Mark</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+2019">U+2019</a></div></div></div>
+<h2 id="grouping-patterns">Grouping Patterns</h2>
+<p>The most common pattern for grouping is every 3 digits. But some locales in and around <strong>India</strong> use a unique 2-digit grouping system.</p>
+<p>Here is what the number 1 billion looks like with both grouping patterns, and a comma as the grouping symbol.</p>
+<div class="row"><div class="locale-symbol-card"><div class="locale-symbol-card__desc">3 digit</div><div class="locale-symbol-card__example">1,000,000,000</div></div><div class="locale-symbol-card"><div class="locale-symbol-card__desc">2 digit</div><div class="locale-symbol-card__example">1,00,00,00,000</div></div></div>
+<p>Notice that the 2-digit grouping still uses 3 digits for the right-most group, but groups by 2 digits for everything else.</p>
+<h2 id="distinct-formatting-patterns">Distinct Formatting Patterns</h2>
+<p>Here are the different combinations of formatting patterns across all supported locales:</p>
+<table><tr><th></th><th>Grouping Pattern</th><th>Grouping Symbol</th><th>Decimal Symbol</th><th>Used By</th></tr><tr><td style="font-size: 24px">1,000,000.22</td><td>3 digit</td><td>Comma</td><td>Period</td><td>298 locales</td></tr><tr><td style="font-size: 24px">1.000.000,22</td><td>3 digit</td><td>Period</td><td>Comma</td><td>151 locales</td></tr><tr><td style="font-size: 24px">1 000 000,22</td><td>3 digit</td><td>No-Break Space</td><td>Comma</td><td>129 locales</td></tr><tr><td style="font-size: 24px">1 000 000,22</td><td>3 digit</td><td>Narrow No-Break Space</td><td>Comma</td><td>44 locales</td></tr><tr><td style="font-size: 24px">1,000,000.22</td><td>3 digit</td><td>Arabic Thousands Separator</td><td>Arabic Decimal Separator</td><td>43 locales</td></tr><tr><td style="font-size: 24px">10,00,000.22</td><td>2 digit</td><td>Comma</td><td>Period</td><td>34 locales</td></tr><tr><td style="font-size: 24px">1’000’000.22</td><td>3 digit</td><td>Right Single Quotation Mark</td><td>Period</td><td>10 locales</td></tr><tr><td style="font-size: 24px">1 000 000.22</td><td>3 digit</td><td>No-Break Space</td><td>Period</td><td>10 locales</td></tr><tr><td style="font-size: 24px">1’000’000,22</td><td>3 digit</td><td>Right Single Quotation Mark</td><td>Comma</td><td>2 locales</td></tr></table>
+<h2 id="minus-signs">Minus Signs</h2>
+<p>There are two different symbols used for minus signs. The <strong>hyphen</strong> is used in most locales, but there is a longer <strong>minus sign</strong> symbol that is used as well.</p>
+<div class="row"><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">-</span><div class="locale-symbol-card__example">-1</div><div class="locale-symbol-card__desc">Hyphen-Minus</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+002D">U+002D</a></div></div><div class="locale-symbol-card"><span class="locale-symbol-card__symbol">−</span><div class="locale-symbol-card__example">−1</div><div class="locale-symbol-card__desc">Minus Sign</div><div class="locale-symbol-card__unicode"><a target="_blank" href="https://www.compart.com/en/unicode/U+2212">U+2212</a></div></div></div>
+<h2 id="numbering-systems">Numbering Systems</h2>
+<p>The numbers 0-9 are called <strong>arabic numerals</strong>, <strong>latin numerals</strong>, or <strong>western numerals</strong>.</p>
+<blockquote>
+<p>The term <strong>arabic numerals</strong> can be confusing, because although they invented the number system, they no longer use it.</p>
+</blockquote>
+<p>Here is a small sample of common numbering systems, but there are many others:</p>
+<table><tr><th>Key</th><th>Name</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr><tr><td>latn</td><td>Western</td><td class="digit">0</td><td class="digit">1</td><td class="digit">2</td><td class="digit">3</td><td class="digit">4</td><td class="digit">5</td><td class="digit">6</td><td class="digit">7</td><td class="digit">8</td><td class="digit">9</td></tr><tr><td>arab</td><td>Arabic-Indic</td><td class="digit">٠</td><td class="digit">١</td><td class="digit">٢</td><td class="digit">٣</td><td class="digit">٤</td><td class="digit">٥</td><td class="digit">٦</td><td class="digit">٧</td><td class="digit">٨</td><td class="digit">٩</td></tr><tr><td>arabext</td><td>Extended Arabic-Indic</td><td class="digit">۰</td><td class="digit">۱</td><td class="digit">۲</td><td class="digit">۳</td><td class="digit">۴</td><td class="digit">۵</td><td class="digit">۶</td><td class="digit">۷</td><td class="digit">۸</td><td class="digit">۹</td></tr><tr><td>beng</td><td>Bangla</td><td class="digit">০</td><td class="digit">১</td><td class="digit">২</td><td class="digit">৩</td><td class="digit">৪</td><td class="digit">৫</td><td class="digit">৬</td><td class="digit">৭</td><td class="digit">৮</td><td class="digit">৯</td></tr><tr><td>deva</td><td>Devanagari</td><td class="digit">०</td><td class="digit">१</td><td class="digit">२</td><td class="digit">३</td><td class="digit">४</td><td class="digit">५</td><td class="digit">६</td><td class="digit">७</td><td class="digit">८</td><td class="digit">९</td></tr></table>
+<p>See the <a href="numbering-systems">full list of numbering systems</a>.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>See the <a href="formatting">number formatting guide</a> for formatting numbers in javascript.</p>
+<p>See the <a href="parsing">number parsing guide</a> for parsing numbers in javascript.</p>
+  </content>
+</main-with-sidebar>
+</body></html>
