@@ -1,5 +1,6 @@
 import {defineConfig} from 'astro/config';
 import mdx from '@astrojs/mdx';
+import solid from '@astrojs/solid-js';
 
 export default defineConfig({
     base: '/',
@@ -7,7 +8,7 @@ export default defineConfig({
     markdown: {
         syntaxHighlight: 'prism'
     },
-    integrations: [mdx()],
+    integrations: [mdx(), solid()],
     build: {
         assets: '_astro'
     }

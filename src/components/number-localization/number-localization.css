@@ -1,0 +1,125 @@
+.locale-symbol-card {
+    align-self: stretch;
+    margin: 20px 0;
+    padding: 10px 25px;
+    text-align: center;
+}
+
+.locale-symbol-card:not(:first-child) {
+    border-left: 1px dashed #ccc;
+}
+
+.locale-symbol-card__symbol {
+/ / background-color: #eee;
+    border: 1px solid #ccc;
+    font-size: 50px;
+    height: 60px;
+    padding: 0 5px;
+}
+
+.locale-symbol-card__symbol-blank {
+    height: 60px;
+    display: inline-block;
+}
+
+.locale-symbol-card__example {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.locale-symbol-card__desc {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.locale-symbol-card__unicode {
+    margin-top: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+}
+
+.digit {
+    font-size: 24px;
+    text-align: center;
+}
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.exec {
+    font-family: monospace;
+    border: 1px solid #ccc;
+}
+
+.exec input {
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+
+}
+
+.exec-input {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.exec-out {
+    display: flex;
+    align-items: center;
+    background-color: #eaeaea;
+    padding: 10px 20px 10px 27px;
+}
+
+.exec-symbol {
+    border-right: #ccc;
+    display: flex;
+    align-self: stretch;
+    background-color: #fafafa;
+    padding: 5px 12px 5px 8px;
+}
+
+.arrow-right {
+    align-self: center;
+    border: solid #555;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    flex: 0 0 auto;
+}
+
+.equals {
+    width: 2px;
+    border: solid #555;
+    border-width: 1px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.exec-text {
+    background-color: #ccc;
+    padding: 5px 10px 5px 5px;
+    font-size: 12px;
+}
+
+.exec-reset {
+    visibility: hidden;
+    cursor: pointer;
+    color: #555;
+    padding: 5px 10px;
+}
+
+.exec-reset.visible {
+    visibility: visible;
+}

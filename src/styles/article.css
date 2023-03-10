@@ -27,18 +27,10 @@ td, th {
     padding: 3px 10px;
 }
 
-/*date {*/
-/*    display: block;*/
-/*    margin-top: 50px;*/
-/*    color: #777;*/
-/*}*/
-
 .title-container {
-    /*display: inline-block;*/
-    /*text-align: center;*/
-    /*display: flex;*/
     padding-bottom: 5px;
     border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
 }
 
 .summary {
@@ -54,7 +46,6 @@ td, th {
     margin-top: 5px;
     color: #666;
     font-style: italic;
-    /*justify-content: center;*/
 }
 
 .meta.date {

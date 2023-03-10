@@ -1,8 +1,8 @@
 ---
-const { article, url } = Astro.props;
+const {article, url} = Astro.props;
 ---
 
-<a href={url}>
+<a class="nav" href={url}>
     <div class="article-container">
         <div class="article-title">{article.title}</div>
         <div class="article-summary">{article.summary}</div>
@@ -14,19 +14,21 @@ const { article, url } = Astro.props;
         box-sizing: border-box;
         padding: 10px 0;
     }
+
     .article-title {
         font-size: 20px;
         letter-spacing: 2px;
         margin: 0;
     }
+
     .article-summary {
-      font-size: 14px;
-      margin: 10px 0;
-      -webkit-line-clamp: 5;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      letter-spacing: 1px;
-      color: #555;
+        font-size: 14px;
+        margin: 10px 0;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        letter-spacing: 1px;
+        color: #555;
     }
 </style>

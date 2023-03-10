@@ -136,3 +136,24 @@ pre[class*="language-"] > code {
 .token.namespace {
     opacity: .7;
 }
+
+blockquote {
+    margin: 0;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+blockquote:before {
+    content: url("/i.svg");
+    flex: 0 0 auto;
+    display: inline-block;
+    width: 25px;
+    margin-right: 20px;
+}
+
+blockquote > p {
+    margin: 0;
+}

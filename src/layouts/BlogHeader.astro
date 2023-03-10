@@ -1,0 +1,21 @@
+---
+const {
+    content: {title, summary, published, tags, desc, updated = published},
+} = Astro.props;
+---
+
+<div class="title-container">
+    <h1>{title}</h1>
+    <p class="summary">{summary}</p>
+    <div class="meta-container">
+        <div class="meta date">
+            <date>last updated on {updated.toLocaleDateString()}</date>
+        </div>
+        <div class="meta tags">
+            {
+                tags && tags.map(tag =>
+                            <div class="tag">{tag}</div>)
+            }
+        </div>
+    </div>
+</div>

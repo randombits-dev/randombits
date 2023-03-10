@@ -17,6 +17,48 @@ main {
     margin-right: auto;
 }
 
+main-with-sidebar {
+    display: flex;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+sidebar-spacing {
+    flex: 0 0 auto;
+    width: 200px;
+    padding: 20px 10px;
+}
+
+.sidebar-title {
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+sidebar {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding: 20px 10px;
+    flex: 0 0 auto;
+    position: fixed;
+    height: 250px;
+}
+
+sidebar a {
+    display: block;
+    padding: 5px 10px;
+}
+
+sidebar a:hover {
+    background-color: #e5e5e5;
+}
+
+content {
+    flex: 1 1 auto;
+    padding-left: 50px;
+    overflow: hidden;
+}
+
 h1 {
     letter-spacing: 2px;
 }
@@ -33,11 +75,15 @@ h2 {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
 }
 
+a.nav {
+    text-decoration: none;
+}
+
 a.button {
+    text-decoration: none;
     display: inline-block;
     padding: 10px 20px;
     cursor: pointer;

@@ -1,0 +1,73 @@
+---
+title: "Number Localization - An Introduction"
+summary: "A breakdown of the different decimal symbols, grouping patterns, grouping symbols, minus signs, and numbering systems that are used in different locales from around the world."
+tags: [i18n]
+desc: "An introduction to number localization, decimal symbols, grouping symbols, numbering systems."
+published: 2023-03-08
+---
+
+import DecimalSymbols from "@/components/number-localization/DecimalSymbols";
+import GroupingSymbols from "@/components/number-localization/GroupingSymbols";
+import GroupingPatterns from "@/components/number-localization/GroupingPatterns";
+import NumeralSystems from "@/components/number-localization/NumeralSystems";
+import UniquePatterns from "@/components/number-localization/UniquePatterns";
+import NegativeSymbols from "@/components/number-localization/NegativeSymbols";
+import '@/components/number-localization/number-localization.css';
+
+
+A *number* consists of the integer part and decimal part, separated by the **decimal symbol**.
+The integer part may be separated by the **grouping symbol** (sometimes called the **thousand symbol**), which makes long numbers easier to read.
+
+In the United States, we use a period for the decimal symbol and a comma for the grouping symbol.
+
+## Decimal Symbols
+
+The three different decimal symbols are the **comma**, the **period**, and the **arabic decimal separator**.
+
+<DecimalSymbols/>
+
+## Grouping Symbols
+
+The six different grouping symbols are the **comma**, the **period**, a **space**, a **narrow space**, the **arabic thousands separator**, and the **right quotation mark**.
+
+<GroupingSymbols/>
+
+## Grouping Patterns
+
+The most common pattern for grouping is every 3 digits. But some locales in and around **India** use a unique 2-digit grouping system.
+
+Here is what the number 1 billion looks like with both grouping patterns, and a comma as the grouping symbol.
+
+<GroupingPatterns/>
+
+Notice that the 2-digit grouping still uses 3 digits for the right-most group, but groups by 2 digits for everything else.
+
+## Distinct Formatting Patterns
+
+Here are the different combinations of formatting patterns across all supported locales:
+
+<UniquePatterns/>
+
+## Minus Signs
+
+There are two different symbols used for minus signs. The **hyphen** is used in most locales, but there is a longer **minus sign** symbol that is used as well.
+
+<NegativeSymbols/>
+
+## Numbering Systems
+
+The numbers 0-9 are called **arabic numerals**, **latin numerals**, or **western numerals**.
+
+> The term **arabic numerals** can be confusing, because although they invented the number system, they no longer use it.
+
+Here is a small sample of common numbering systems, but there are many others:
+
+<NumeralSystems list={0}/>
+
+See the [full list of numbering systems](numbering-systems).
+
+## Further Reading
+
+See the [number formatting guide](formatting) for formatting numbers in javascript.
+
+See the [number parsing guide](parsing) for parsing numbers in javascript.

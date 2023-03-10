@@ -1,0 +1,63 @@
+---
+title: "Number Localization - Formatting Guide"
+summary: "A quick guide to the most common examples of the Intl.FormatNumber API, to format numbers in any locale. This API is supported by all modern browsers."
+tags: [i18n, react, angular]
+desc: "The most common examples of using the Intl.NumberFormat API to format numbers in any locale."
+published: 2023-03-09
+---
+
+import ExecuteJavascript from "@/components/number-localization/ExecuteJavascript";
+import '@/components/number-localization/number-localization.css';
+
+## Number Formatting
+
+The `format()` method formats the number to a localized string.
+
+<ExecuteJavascript code="new Intl.NumberFormat('en-US').format(1234.56);" client:load/>
+
+The `formatToParts()` method outputs an array with each part of the number separated by parts.
+This is useful for determining the properties of a locale, which can be useful for parsing numbers. See the [parsing guide](parsing).
+
+<ExecuteJavascript code="new Intl.NumberFormat('en-US').formatToParts(1234.56);" client:load/>
+
+## Changing the numbering system
+
+You can change the numbering system in your locale by adding `-u-nu-{code}`.
+
+One common example is the Chinese locale of `zh` that uses `latn` as the default numbering system:
+
+<ExecuteJavascript code="new Intl.NumberFormat('zh').format(1234.56);" client:load/>
+
+But `hanidec` is also very common in this locale, and would look like this:
+
+<ExecuteJavascript code="new Intl.NumberFormat('zh-u-nu-hanidec').format(1234.56);" client:load/>
+
+Another way to change the numbering system is to specify the `numberingSystem` option.
+
+<ExecuteJavascript code="new Intl.NumberFormat('zh', {numberingSystem: 'hanidec'}).format(1234.56);" client:load/>
+
+## Number of Decimals Places
+
+By default, decimals are rounded to 3 digits:
+
+<ExecuteJavascript code="new Intl.NumberFormat('en-US').format(0.5555555);" client:load/>
+
+To override the default number of decimal places, use the `minimumFractionDigits` option:
+
+<ExecuteJavascript code="new Intl.NumberFormat('en-US', {maximumFractionDigits: 5}).format(0.5555555);" client:load/>
+
+## Currency Formatting
+
+To format a number as a currency, you need to set the **style** and **currency** options:
+
+<ExecuteJavascript code="new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(12.99);" client:load/>
+
+## Percent Formatting
+
+To format a number as a percent, the number should be between 0 and 1, and the style should be set to **percent**:
+
+<ExecuteJavascript code="new Intl.NumberFormat('en-US', {style: 'percent'}).format(0.75);" client:load/>
+
+## Links
+
+[Full Intl.NumberFormat API Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)

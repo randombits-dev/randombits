@@ -3,7 +3,7 @@ import Article from './Article.astro'; import {getCollection} from "astro:conten
 
 const {limit} = Astro.props;
 
-const posts = (await getCollection('articles')).filter(item => !item.data.draft).sort(
+const posts = (await getCollection('articles')).filter(item => !item.data.draft && !item.data.hide).sort(
     (a, b) => new Date(b.data.published).valueOf() - new Date(a.data.published).valueOf()
 );
 // Use Astro.glob() to fetch all posts, and then sort them by date.

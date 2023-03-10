@@ -9,7 +9,8 @@ const articleCollection = defineCollection({
         summary: z.string(),
         desc: z.string().optional(),
         tags: z.array(z.string()).optional(),
-        draft: z.boolean().optional()
+        draft: z.boolean().optional(),
+        hide: z.boolean().optional()
     })
 });
 // Export a single `collections` object to register your collection(s)

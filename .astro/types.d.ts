@@ -109,9 +109,37 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
-"numeric-locales.mdx": {
-  id: "numeric-locales.mdx",
-  slug: "numeric-locales",
+"number-localization/formatting.mdx": {
+  id: "number-localization/formatting.mdx",
+  slug: "number-localization/formatting",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
+"number-localization/intro.mdx": {
+  id: "number-localization/intro.mdx",
+  slug: "number-localization/intro",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
+"number-localization/locale-list.mdx": {
+  id: "number-localization/locale-list.mdx",
+  slug: "number-localization/locale-list",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
+"number-localization/numbering-systems.mdx": {
+  id: "number-localization/numbering-systems.mdx",
+  slug: "number-localization/numbering-systems",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
+"number-localization/parsing.mdx": {
+  id: "number-localization/parsing.mdx",
+  slug: "number-localization/parsing",
   body: string,
   collection: "articles",
   data: InferEntrySchema<"articles">

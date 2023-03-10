@@ -1,0 +1,23 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import '../styles/article.css';
+import '../styles/prism-custom.css';
+import BlogHeader from "./BlogHeader.astro";
+
+const {
+    content: {title, summary, published, tags, desc, updated = published},
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={desc}>
+    <main-with-sidebar>
+        <sidebar>
+            <slot name="sidebar"/>
+        </sidebar>
+        <sidebar-spacing/>
+        <content>
+            <BlogHeader {...Astro.props}/>
+            <slot name="content"/>
+        </content>
+    </main-with-sidebar>
+</BaseLayout>

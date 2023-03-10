@@ -1,0 +1,22 @@
+---
+title: "Number Localization - All Locales"
+summary: ""
+tags: [i18n]
+desc: "Full list of locales and their number formatting properties."
+published: 2023-03-10
+hide: true
+---
+
+
+import LocaleList from "@/components/number-localization/LocaleList";
+import '@/components/number-localization/number-localization.css';
+
+This is the full list of locales, as maintained by the *International Components for Unicode*.
+For each locale, the grouping pattern, grouping symbol, decimal symbol, and numeric system are shown.
+For descriptions of these properties, see the [Number Localization Introduction](/number-localization/).
+
+> Some of these properties are not consistent between javascript runtimes.
+For example, the numbering system and grouping pattern may differ between nodejs and chrome.
+This list was generated using Node v18.
+
+<LocaleList/>

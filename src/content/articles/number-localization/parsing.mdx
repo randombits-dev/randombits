@@ -1,0 +1,160 @@
+---
+title: "Number Localization - Parsing Guide"
+summary: "Unfortunately, the Intl.NumberFormat API does not have the ability to parse a number from localized string.
+          So in order to parse user inputs, we will need to determine the properties of the locale on the fly. No library is needed."
+tags: [i18n]
+desc: "A guide to parsing numbers in any locale, using the Intl.NumberFormat API, without any library."
+published: 2023-03-10
+---
+
+
+import '@/components/number-localization/number-localization.css';
+
+> As an example locale, I'm using `ar-DZ-u-nu-arab` (an arabic locale with an arabic numbering system).
+This number format does not share anything in common with U.S. english.
+
+The following number is what we will be parsing:
+```javascript
+const localizedString = '-١٬٢٣٤٫٥٦'; // will result in -1234.56
+```
+
+{/*
+# Strict number parsing - specified locale
+
+This first section shows how to perform strict parsing.
+Strict parsing requires that a locale is specified, and validates against the locale.
+This is the best option if:
+
+1. The locale of the user is known - perhaps it is a user setting
+2. Number inputs should be validated that they are in the correct format
+*/}
+
+## Replacing the group and decimal symbols
+
+First we need to **determine the group and decimal symbols** of the locale, by formatting a test number:
+
+```javascript
+const parts = new Intl.NumberFormat('ar-DZ-u-nu-arab').formatToParts(1111.11);
+const groupSymbol = parts.find((d) => d.type === 'group').value; // ٫
+const decimalSymbol = parts.find((d) => d.type === 'decimal').value; // ٬
+```
+
+Now that we know the symbols used by the locale, we can **remove the grouping symbols** and **replace the decimal symbol** with a period.
+
+```javascript
+localizedString.replace(new Regex(groupSymbol, 'g'), '').replace(decimalSymbol, '.'); // -١٢٣٤.٥٦
+```
+
+## Replacing the numerals
+
+Now we need to **determine the numerals** used in the locale.
+We do this by formatting all digits, and ordering them from 0 to 9 so that the index equals the digit.
+
+```javascript
+const numerals = new Intl.NumberFormat('ar-DZ-u-nu-arab', {useGrouping: false})
+.format(9876543210).split('').reverse().join(''); // ٠١٢٣٤٥٦٧٨٩
+```
+
+Now we create a regular expression with the numbers:
+
+```javascript
+const numeralRegex = new RegExp(`[${numerals}]`, 'g');
+```
+
+Now we can replace the digits with the standard 0-9 digits:
+
+```javascript
+.replace(numeralRegex, (group: string) => {
+  return numerals.indexOf(group).toString();
+}); // -1234.56
+```
+
+## Final steps
+
+We want to allow the use of either minus sign character (remember that some locales use a different character for the minus sign):
+
+```javascript
+.replace(/[−-]\s?/, '-') // -1234.56
+```
+
+Finally, we can **parse to a Number**. After this step, any invalid values will be *NaN*.
+
+```javascript
+Number(...) // -1234.56
+```
+
+## Putting it altogether
+
+Here is what a reusable class might look like:
+
+```javascript
+export class NumberParser {
+  private groupSymbol: string;
+  private decimalSymbol: string;
+  private numerals;
+  private numeralRegex;
+
+  constructor(private readonly locale: string) {
+    const parts = Intl.NumberFormat(locale).formatToParts(1111.11);
+    this.groupSymbol = parts.find(part => part.type === 'group').value;
+    this.decimalSymbol = parts.find(part => part.type === 'decimal').value;
+    this.numerals = new Intl.NumberFormat(locale, {useGrouping: false}).format(9876543210).split('').reverse().join('');
+    this.numeralRegex = new RegExp(`[${this.numerals}]`, 'g');
+  }
+
+  parse(localizedNumber: string): number {
+    if (!localizedNumber) {
+      return null;
+    }
+    return Number(
+      localizedNumber.replace(new Regex(this.groupSymbol, 'g'), '')
+      .replace(this.decimalSymbol, '.')
+      .replace(/[−-]\s?/, '-')
+      .replace(this.numeralRegex, (group: string) => {
+        return this.numerals.indexOf(group).toString();
+      })
+    );
+  }
+}
+```
+
+## Number inputs in any locale
+
+If you need to allow number inputs to work with any locale, you need to use `<input type="text"/>`, since the localized number can contain symbols that are not allowed in `<input type="number"/>`.
+
+Then, whenever the user changes the number, you need to parse the localized string back to a javascript number, so it can be sent to the server in the right format.
+
+## React Example
+
+Here is an example of a number input component in react:
+
+```javascript
+export default function NumberInput({locale, initialValue}) {
+  const [localeValue, setLocaleValue] = useState(new Intl.NumberFormat(locale).format(initialValue));
+  const [numberValue, setNumberValue] = useState(initialValue);
+  const parser = new NumberParser(locale);
+
+  const handleChange = (e) => {
+    setLocaleValue(e.target.value);
+    setNumberValue(parser.parse(e.target.value));
+  };
+  return (
+    <div>
+      <input type="text" value={localeValue} onChange={handleChange}/>
+      <div>Number value: {numberValue}</div>
+    </div>
+  );
+}
+```
+
+The `localeValue` (type string) is what we want to use for the input field. And the `numberValue` (type number) is what we use for the system value (the value we get and send from the server).
+
+## Localizing a number input in angular
+
+I published a NPM package for angular called *ngx-decimal*: https://www.npmjs.com/package/ngx-decimal
+
+It handles everything for you. Example usage is:
+
+```html
+<input type="text" ngxDecimal [(ngModel)]="numberValue">
+```
