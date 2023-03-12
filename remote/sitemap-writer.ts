@@ -3,7 +3,9 @@ import {readFilesInDir} from "./utils";
 
 export const writeSitemap = () => {
     const filesInDist = readFilesInDir('dist');
-    const urls = filesInDist.filter(file => file.endsWith('index.html')).map(file => {
+    const urls = filesInDist.filter(file => {
+        return file.endsWith('index.html') && !file.startsWith('dist/layout');
+    }).map(file => {
         const path = file.replace(/^dist/, '');
         return `<url><loc>https://randombits.dev${path.slice(0, -10)}</loc></url>`;
     });
