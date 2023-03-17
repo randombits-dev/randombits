@@ -1,0 +1,12 @@
+{
+  "identifier": "randombits.splitter",
+  "name": "Splitter",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "0.1.0",
+  "description": "Split a note into different sections",
+  "url": "https://nienow.github.io/note-splitter/",
+  "download_url": "",
+  "latest_url": "https://nienow.github.io/note-splitter/package.json",
+  "thumbnail_url": "https://nienow.github.io/note-splitter/splitter.svg"
+}

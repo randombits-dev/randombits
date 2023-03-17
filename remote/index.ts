@@ -15,7 +15,7 @@ import {readFilesInDir} from "./utils";
 // const styleLinks = fs.readdirSync('remote/styles').map(name => writeCommonCss(name));
 
 
-const fileList = readFilesInDir('remote/content');
+const contentList = readFilesInDir('remote/content');
 
 const header = fs.readFileSync('dist/layout/header/index.html', {encoding: 'utf8'});
 const footer = fs.readFileSync('dist/layout/footer/index.html', {encoding: 'utf8'});
@@ -30,9 +30,9 @@ function renderHTML(file: string, newFile: string) {
     fs.outputFileSync(newFile, html);
 }
 
-fileList.forEach(file => {
+contentList.forEach(file => {
     const newPath = file.replace(/^remote\/content/, 'dist');
-    if (file.endsWith('index.html')) {
+    if (file.endsWith('/index.html')) {
         renderHTML(file, newPath);
     } else {
         fs.copySync(file, newPath);
