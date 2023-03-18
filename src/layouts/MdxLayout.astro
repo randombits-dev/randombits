@@ -1,0 +1,13 @@
+---
+import HtmlLayout from "./HtmlLayout.astro";
+import '../styles/article.css';
+import '../styles/prism-custom.css';
+
+const {
+    frontmatter: {title, desc},
+} = Astro.props;
+---
+
+<HtmlLayout title={title} description={desc}>
+    <slot/>
+</HtmlLayout>

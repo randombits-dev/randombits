@@ -69,3 +69,14 @@ td, th {
     content: '·';
     margin-left: 10px;
 }
+
+iframe {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+li {
+    letter-spacing: 1px;
+    padding: 3px 0;
+}

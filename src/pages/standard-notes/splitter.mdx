@@ -1,0 +1,38 @@
+---
+title: "Number Localization - Formatting Guide"
+desc: "The most common examples of using the Intl.NumberFormat API to format numbers in any locale."
+layout: ../../layouts/MdxLayout.astro
+---
+
+# Standard Notes Splitter
+
+This is a standard notes extension that "splits" the note into multiple areas.
+
+## Installation
+
+1. Go to the extensions of standard notes (Settings · General · Advanced Options · Install External Plugin)
+2. Enter the following url: https://randombits.dev/standard-notes/splitter.json
+3. Click Install, and proceed through the prompts
+
+## Demo
+
+<iframe src="https://nienow.github.io/note-splitter/demo.html" width="100%" height="800"></iframe>
+
+## Documentation
+
+### Mode
+
+* Grid - Splits the note into equally sized areas. Each area can have its own scrollbar if the content grows too big.
+* Sections - Collapses the height of the rows to the largest content in the row. It auto-expands if the content grows.
+
+### Columns
+
+Controls the column count. Decreasing the columns will automatically add rows to preserve the data.
+
+### Rows
+
+Controls the row count. This is how you add and remove areas. Removing rows with content will warn the user.
+
+### Show Title
+
+Whether or not to show a title field above the area.
