@@ -1,0 +1,87 @@
+---
+title: "Creating Standard Notes Extensions"
+desc: ""
+layout: ../../layouts/MdxLayout.astro
+---
+
+# Creating standard notes extensions
+
+Standard notes allows you to install 3rd party extensions, allowing for even more note editor options.
+The editor area turns into an iframe, hosting the 3rd party application, which communicates back and forth with standard notes load the note and save it.
+
+You can choose any framework / technology to write an extension.
+
+## Standard Notes API
+
+There are two choices for what to use as your API to communicate with standard notes:
+
+1. The **ComponentRelay** API (https://github.com/standardnotes/component-relay)
+2. The **EditorKit** API (https://github.com/standardnotes/editor-kit), which wraps the ComponentRelay API and provides some helper logic
+
+I personally recommend just using the **ComponentRelay** API, because it gives you more flexibility and the EditorKit does not do that much extra.
+
+## Example
+
+```typescript:index.tsx
+import React from 'react';
+import {createRoot} from "react-dom/client";
+import {EditorProvider} from "./providers/EditorProvider";
+import ComponentRelay from "@standardnotes/component-relay";
+
+let currentNote;
+
+const componentRelay = new ComponentRelay({
+  targetWindow: window,
+  options: {
+    coallesedSaving: true, // saving uses a debounce value
+    coallesedSavingDelay: 400 // 400 ms
+  }
+});
+
+componentRelay.streamContextItem((note) => {
+  currentNote = note;
+  if (note.isMetadataUpdate) {
+    return; // don't care about metadata updates
+  }
+  const text = note.content?.text || '';
+  const isLocked = componentRelay.getItemAppDataValue(note, 'locked');
+
+  createRoot(document.getElementById('root')).render(
+     <EditorProvider text={text} save={save} isLocked={isLocked}/> // my custom editor component
+  );
+});
+
+const save = (data: any) => {
+  componentRelay.saveItemWithPresave(currentNote, () => {
+    currentNote.content.text = JSON.stringify(data);
+    currentNote.content.preview_plain = data.text;
+  });
+};
+```
+
+### coallesedSaving
+
+When setting up the ComponentRelay, I'm specifying the **coallesedSaving** option, which is more commonly known as **debounce**. This option is optional but I highly recommend using it, or implementing your own debounce.
+Without it, standard notes has to encrypt and save the note on every edit (every keystroke). I found that 250ms to 400ms is a good delay. Any higher and the user may have time to leave the note before its saved.
+
+```typescript
+options: {
+    coallesedSaving: true,
+    coallesedSavingDelay: 400
+}
+```
+
+### streamContextItem
+
+Standard Notes will call our function we pass to **streamContextItem** and give us the note that the user selected.
+The note will always be stored as a string. This is when we render our custom editor component.
+
+The **locked** metadata property is tied to the **Prevent Editing** control. For the best experience, we probably want to disable our editor when the note is locked.
+However, its not strictly required, because if the user tries to change the note while its locked, Standard Notes will prevent the save and warn the user.
+
+There are many other metadata values you can get with the `getItemAppDataValue` method, like *pinned* and *archived*, but I don't foresee any extension needing those values.
+
+## EditorProvider
+
+While you can write your root react component, any way you prefer, I recommend using the **provider pattern**.
+With a provider, you don't need to pass the data, the save function, or the isLocked property throughout your components.
