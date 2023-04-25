@@ -3,9 +3,10 @@ import BaseLayout from "./BaseLayout.astro";
 import '../styles/article.css';
 import '../styles/prism-custom.css';
 import BlogHeader from "./BlogHeader.astro";
+import Card from "../components/Card.astro";
 
 const {
-    content: {title, summary, published, tags, desc, updated = published},
+    content: {title, summary, published, tags, desc, updated = published, img},
 } = Astro.props;
 ---
 
@@ -17,7 +18,10 @@ const {
         <sidebar-spacing/>
         <content>
             <BlogHeader {...Astro.props}/>
-            <slot name="content"/>
+            <Card>
+
+                <slot name="content"/>
+            </Card>
         </content>
     </main-with-sidebar>
 </BaseLayout>

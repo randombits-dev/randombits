@@ -1,0 +1,14 @@
+---
+import Article from "./Article.astro";
+
+import * as localization from '../content/articles/number-localization/intro.mdx';
+import Card from "./Card.astro";
+import CardRow from "./CardRow.astro";
+---
+<Article article={localization.frontmatter} url={'/articles/number-localization/intro'}/>
+
+<Card title="Featured Guides">
+    <CardRow title="The Ultimate Guide to Number Localization"
+             desc="An introduction to number localization, decimal symbols, grouping symbols, numbering systems."
+             img="/images/chalkboard.jpg"/>
+</Card>

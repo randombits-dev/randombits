@@ -1,7 +1,6 @@
-p {
-    letter-spacing: 1px;
-    font-size: 16px;
-}
+/*p {*/
+/*    font-size: 16px;*/
+/*}*/
 
 p code {
     background-color: #ddd;
@@ -15,7 +14,6 @@ h2 {
 
 h1 {
     margin: 0;
-    letter-spacing: 2px;
 }
 
 table {
@@ -77,6 +75,5 @@ iframe {
 }
 
 li {
-    letter-spacing: 1px;
     padding: 3px 0;
 }

@@ -2,10 +2,15 @@
 const {article, url} = Astro.props;
 ---
 
-<a class="nav" href={url}>
-    <div class="article-container">
-        <div class="article-title">{article.title}</div>
-        <div class="article-summary">{article.summary}</div>
+<a href={url} class="nav">
+    <div class="card card-large">
+        <div class="card-row">
+            <img width="200" height="200" src={article.img}/>
+            <div>
+                <div class="card-row-title">{article.title}</div>
+                <div class="card-row-desc">{article.desc}</div>
+            </div>
+        </div>
     </div>
 </a>
 

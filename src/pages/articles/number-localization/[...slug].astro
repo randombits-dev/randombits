@@ -2,6 +2,7 @@
 import {getCollection} from 'astro:content';
 import BlogPost from "../../../layouts/BlogPost.astro";
 import BlogSidebar from "../../../layouts/BlogSidebar.astro";
+import Card from "../../../components/Card.astro";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection('articles', ({id}) => {
@@ -16,13 +17,13 @@ const {entry} = Astro.props;
 const {Content, headings} = await entry.render();
 ---
 <BlogSidebar content={entry.data}>
-    <div slot="sidebar">
+    <Card title="Navigation" slot="sidebar">
         <div class="sidebar-title">Number Localization</div>
         <a class="nav" href="intro">Intro</a>
         <a class="nav" href="formatting">Formatting</a>
         <a class="nav" href="parsing">Parsing</a>
         <a class="nav" href="numbering-systems">Numbering Systems</a>
         <a class="nav" href="locale-list">Full Locale List</a>
-    </div>
+    </Card>
     <Content slot="content"/>
 </BlogSidebar>

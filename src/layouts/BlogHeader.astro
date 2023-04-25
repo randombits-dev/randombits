@@ -1,21 +1,43 @@
 ---
+import Card from "../components/Card.astro";
 const {
-    content: {title, summary, published, tags, desc, updated = published},
+    content: {title, summary, published, tags, desc, updated = published, img},
 } = Astro.props;
 ---
+<Card>
+    <div class="container">
+        <div>
+            <h1>{title}</h1>
+            <p class="summary">{summary}</p>
+            <div class="meta-container">
+                <div class="meta date">
+                    <date>last updated on {updated.toLocaleDateString()}</date>
+                </div>
+                <div class="meta tags">
+                    {
+                        tags && tags.map(tag =>
+                                    <div class="tag">{tag}</div>)
+                    }
+                </div>
+            </div>
+        </div>
 
-<div class="title-container">
-    <h1>{title}</h1>
-    <p class="summary">{summary}</p>
-    <div class="meta-container">
-        <div class="meta date">
-            <date>last updated on {updated.toLocaleDateString()}</date>
-        </div>
-        <div class="meta tags">
-            {
-                tags && tags.map(tag =>
-                            <div class="tag">{tag}</div>)
-            }
-        </div>
+        {img && <img src={img} height="300"/>}
     </div>
-</div>
+
+</Card>
+
+<style>
+    .container {
+        display: flex;
+        /*border-bottom: 3px solid var(--border-color);*/
+    }
+
+    img {
+        margin-top: -20px;
+        margin-right: -20px;
+        margin-bottom: -20px;
+        border-left: 1px solid var(--border-color);
+        border-radius: 0 10px 10px 0;
+    }
+</style>

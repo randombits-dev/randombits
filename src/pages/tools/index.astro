@@ -1,70 +1,60 @@
 ---
 import HtmlLayout from '../../layouts/HtmlLayout.astro';
 import MarkdownContent from '../../snippits/tools.mdx';
+import Card from "../../components/Card.astro";
+import CardRow from "../../components/CardRow.astro";
+import CardV from "../../components/CardV.astro";
 
 const TOOLS = [
     {
         title: 'Snowrunner Save Editor',
         desc: 'Edit task and mission progress · Reveal or obtain upgrades',
-        img: 'https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100',
+        img: '/images/snowrunner.jpg',
         link: '/tools/snowrunner'
     },
     {
         title: 'Printable Daily Schedule',
         desc: 'Generates a daily planner for appointments · One page a day · Printable',
-        img: 'https://storage.googleapis.com/randombits/images/print-schedule-100.png',
+        img: '/images/book.jpg',
         link: '/tools/print-schedule'
     }
 ]
 ---
 <HtmlLayout title="Developer Tools" description="List of all tools • For software developers and more">
-    <h1>All tools</h1>
-    <MarkdownContent/>
-    <tools-list>
+    <!--<Card>
+        <h1>All tools</h1>
+        <MarkdownContent/>
+    </Card>
+
+    {
+        TOOLS.map(tool =>
+                <Card>
+                    <CardRow title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
+                </Card>
+        )
+    }
+
+    <Card title="All Tools">
+        <MarkdownContent/>
         {
             TOOLS.map(tool =>
-                    <a class="nav" href={tool.link}>
-                        <img width="100" src={tool.img}/>
-                        <tool-text>
-                            <h2>{tool.title}</h2>
-                            <tool-desc>{tool.desc || ''}</tool-desc>
-                        </tool-text>
-                    </a>
+                    <CardRow title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
             )
         }
-    </tools-list>
+    </Card>-->
+
+    <Card>
+        <h1>All tools</h1>
+        <MarkdownContent/>
+    </Card>
+
+    <div class="card-v-layout">
+        {
+            TOOLS.map(tool =>
+                    <Card>
+                        <CardV title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
+                    </Card>
+            )
+        }
+    </div>
 </HtmlLayout>
-
-<style>
-    tools-list {
-        display: block;
-        padding-top: 20px;
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        border-top: 1px solid #ccc;
-    }
-
-    a:last-child {
-        border-bottom: 1px solid #ccc;
-    }
-
-    a img {
-        margin-right: 50px;
-    }
-
-    tool-title {
-        display: block;
-    }
-
-    tool-desc {
-        display: block;
-    }
-
-    h2 {
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-</style>

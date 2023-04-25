@@ -1,11 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Molengo&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Snippet&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import './variables.css';
+@import './card.css';
 
 body {
-    font-family: "Open Sans";
+    font-family: var(--font-2);
     margin: 0;
-    background-color: #eff1f4;
+    background-color: var(--background-base);
     color: #444;
     overflow-y: scroll;
+    font-size: var(--font-size-text);
+    letter-spacing: var(--letter-spacing-text);
+
     /*display: flex;*/
     /*flex-direction: column;*/
     /*min-height: 100vh;*/
@@ -26,7 +38,7 @@ main-with-sidebar {
 
 sidebar-spacing {
     flex: 0 0 auto;
-    width: 200px;
+    width: 300px;
     padding: 20px 10px;
 }
 
@@ -36,8 +48,7 @@ sidebar-spacing {
 }
 
 sidebar {
-    width: 200px;
-    border-right: 1px solid #ccc;
+    width: 300px;
     padding: 20px 10px;
     flex: 0 0 auto;
     position: fixed;
@@ -60,17 +71,17 @@ content {
 }
 
 h1 {
-    letter-spacing: 2px;
+    font-family: var(--font-1);
 }
 
 h2 {
+    font-family: var(--font-1);
     margin: 0;
     font-weight: 700;
     font-size: 20px;
     display: flex;
     align-items: center;
     color: #00897B;
-    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -83,16 +94,17 @@ a.nav {
 }
 
 a.button {
+    text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     padding: 10px 20px;
     cursor: pointer;
     font-family: inherit;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 0px;
-    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-border-radius);
+    font-size: 15px;
     background-color: #fff;
-    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 /*pre {*/

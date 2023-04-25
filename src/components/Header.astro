@@ -1,6 +1,7 @@
 ---
 import '../styles/header.css';
 import '../styles/global.css';
+import ThemeChanger from "./ThemeChanger";
 ---
 
 <header class="header">
@@ -8,5 +9,6 @@ import '../styles/global.css';
         <a class="header-title nav" href="/">Random Bits</a>
         <a class="nav" href="/articles">Articles</a>
         <a class="nav" href="/tools">Tools</a>
+        <ThemeChanger client:load/>
     </nav>
 </header>

@@ -1,24 +1,33 @@
 ---
+import Card from "./Card.astro";
 const TOOLS = [
     {
         title: 'Snowrunner Save Editor',
-        img: 'https://assets1.ignimgs.com/2020/04/23/snowrunner---button-fin-1587603559932.jpg?width=100',
+        desc: 'Edit task and mission progress · Reveal or obtain upgrades',
+        img: '/images/snowrunner.jpg',
         link: '/tools/snowrunner'
+    },
+    {
+        title: 'Printable Daily Schedule',
+        desc: 'Generates a daily planner for appointments · One page a day · Printable',
+        img: '/images/book.jpg',
+        link: '/tools/print-schedule'
     }
 ]
 ---
 
-<div>
+<Card title="Featured Tools">
     {
-        TOOLS.map(({link, title}) => {
-            return <a class="nav" href={link}>{title}</a>
+        TOOLS.map(({link, title, desc, img}) => {
+            return <a href={link} class="nav card-row">
+                <img width="75" height="75" src={img}/>
+                <div>
+                    <div class="card-row-title">{title}</div>
+                    <div class="card-row-desc">{desc}</div>
+                </div>
+            </a>
         })
     }
-</div>
+    <a class="button card-action-btn" href="/tools">See All Tools</a>
 
-<style>
-    a {
-        font-size: 18px;
-        letter-spacing: 2px;
-    }
-</style>
+</Card>

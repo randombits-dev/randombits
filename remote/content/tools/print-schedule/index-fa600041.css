@@ -1,1 +1,9 @@
-body{margin:0;height:100%;display:flex;flex-direction:column}form{display:flex}field{padding:0 10px}iframe{height:500px;width:100%}button{margin:0 10px;padding:0 10px}button#printBtn{visibility:hidden}
+:root {
+    --background-base: #ffe9c2;
+    --card-background: #e1eefe;
+    --card-border-radius: 10px;
+    --card-border-width: 1px;
+    --border-color: rgba(39, 39, 39, 0.75);
+    --button-border-radius: 20px;
+}
+body{margin:0;height:100%;display:flex;flex-direction:column}form{display:flex}field{padding:0 10px}iframe{height:500px;width:100%}button{margin:0 10px;padding:0 10px;border-radius: var(--button-border-radius)}button#printBtn{visibility:hidden}

@@ -1,0 +1,96 @@
+.card {
+    border: var(--card-border-width) solid var(--border-color);
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    padding: 20px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.card-large:hover {
+    box-shadow: 2px 2px;
+    translate: -2px -2px;
+}
+
+.card-title {
+    font-family: var(--font-1);
+    background-color: white;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    top: -25px;
+    left: 25px;
+    border: var(--card-border-width) solid var(--border-color);
+    border-radius: 20px;
+}
+
+.card-title + .card-contents {
+    margin-top: 20px;
+
+}
+
+.card-row {
+    display: flex;
+}
+
+.card-row + .card-row {
+    margin-top: 20px;
+}
+
+
+.card-row > img {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.card-row:hover > img {
+    box-shadow: 2px 2px;
+    translate: -2px -2px;
+}
+
+.card-row > div {
+    margin-left: 20px;
+}
+
+.card-row-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.card-large .card-row-title {
+    font-size: 22px;
+}
+
+.card-row-desc {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.card-action-btn {
+    margin-top: 20px;
+}
+
+.card-v-layout {
+    display: flex;
+}
+
+.card-v-layout .card {
+    margin: 20px;
+    width: 300px;
+}
+
+.card-v-layout .card-row-title {
+    margin-top: 20px;
+}
+
+.card-v-layout .card:hover {
+    box-shadow: 2px 2px;
+    translate: -2px -2px;
+    cursor: pointer;
+}
+
+.card-v-layout img {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}

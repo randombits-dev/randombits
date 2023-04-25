@@ -1,0 +1,8 @@
+---
+const {img, title, desc, url} = Astro.props;
+---
+<a href={url} class="nav">
+    <img width="300" height="300" src={img}/>
+    <div class="card-row-title">{title}</div>
+    <div class="card-row-desc">{desc}</div>
+</a>

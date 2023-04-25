@@ -1,5 +1,7 @@
 ---
 import Article from './Article.astro'; import {getCollection} from "astro:content";
+import CardRow from "./CardRow.astro";
+import Card from "./Card.astro";
 
 const {limit} = Astro.props;
 
@@ -12,8 +14,15 @@ const posts = (await getCollection('articles')).filter(item => !item.data.draft 
 const postsToShow = limit ? posts.slice(0, limit) : posts;
 ---
 
-{
-    postsToShow.map((post) => (
-    <Article article={post.data} url={'/articles/' + post.slug}/>
+<Card title="Latest Articles">
+    {
+        postsToShow.map((post) => (
+                <CardRow title={post.data.title}
+                         desc={post.data.desc}
+                         img={post.data.img}
+                         url={'/articles/' + post.slug}/>
         ))
     }
+
+</Card>
+
