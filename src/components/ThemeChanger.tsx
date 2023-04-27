@@ -1,6 +1,6 @@
 import { createSignal } from "solid-js";
 
-const themes = ["one", "two", "bee"];
+const themes = ["one", "two", "bee", "dark"];
 
 const initialTheme = localStorage.getItem("theme") || "one";
 
@@ -17,21 +17,41 @@ const ThemeChanger = () => {
   };
 
   return (
+    // <select
+    //   class="theme-changer-2"
+    //   onChange={(e) => changeTheme(e.target.value)}
+    // >
+    //   {themes.map((theme) => {
+    //     if (currentTheme() === theme) {
+    //       return (
+    //         <option selected={true} onSelect={() => changeTheme(theme)}>
+    //           {theme}
+    //         </option>
+    //       );
+    //     }
+    //     return <option onSelect={() => changeTheme(theme)}>{theme}</option>;
+    //   })}
+    // </select>
     <div class="theme-changer">
-      <div class="theme-changer-container">
-        {themes.map((theme) => {
-          let className = `theme-${theme}-btn`;
-          if (currentTheme() === theme) {
-            className += " theme-active-btn";
-          }
-          return (
-            <button class={className} onClick={() => changeTheme(theme)}>
-              <div class="theme-box"></div>
-              <div class="theme-box"></div>
-            </button>
-          );
-        })}
-      </div>
+      {/*<div class="theme-changer-container">*/}
+      {themes.map((theme, i) => {
+        let className = `theme-${theme}-btn `;
+        if (currentTheme() === theme) {
+          className += " theme-active-btn";
+        }
+        return (
+          <button class={className} onClick={() => changeTheme(theme)}>
+            {/*{i + 1}*/}
+            <div class="theme-box">
+              <div class={`theme-sample theme-${theme}`}></div>
+            </div>
+            <div class="theme-box">
+              <div class={`theme-sample theme-${theme}`}></div>
+            </div>
+          </button>
+        );
+      })}
+      {/*</div>*/}
     </div>
   );
 };

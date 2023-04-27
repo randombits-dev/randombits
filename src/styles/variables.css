@@ -2,11 +2,11 @@
     --back-base: #ffe9c2;
     --back-1: #e1eefe;
     --back-2: #fafafa;
+    --text: #444;
     --card-border-radius: 10px;
     --border-width: 1px;
     --border-color: rgba(39, 39, 39, 0.75);
     --button-border-radius: 20px;
-    --btn-back: white;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
     --font-size-1: 20px;
@@ -17,7 +17,21 @@
 }
 
 .theme-one {
-
+    --back-base: #ffe9c2;
+    --back-1: #e1eefe;
+    --back-2: #fafafa;
+    --text: #444;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: rgba(39, 39, 39, 0.75);
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
 }
 
 .theme-two {
@@ -36,4 +50,12 @@
     --border-width: 3px;
     --border-color: #333;
     --hover-shadow: 4px;
+}
+
+.theme-dark {
+    --back-base: #555;
+    --back-1: #333;
+    --back-2: #111;
+    --text: #ddd;
+    --border-color: #ccc;
 }

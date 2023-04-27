@@ -2,7 +2,6 @@
 import HtmlLayout from '../layouts/HtmlLayout.astro';
 import ArticleList from '../components/ArticleList.astro';
 import FeaturedTools from "../components/FeaturedTools.astro";
-import ThemeChanger from "../components/ThemeChanger.tsx";
 import GuideList from "../components/GuideList.astro";
 import Card from "../components/Card.astro";
 ---
@@ -15,25 +14,13 @@ import Card from "../components/Card.astro";
 
         <div class="right-side">
             <FeaturedTools/>
-            <Card title="About Me">
+            <!--<Card title="About Me">
                 <div>Some bogus text that goes on and on. Some bogus text that goes on and on.Some bogus text that goes
                     on and on.Some bogus text that goes on and on.Some bogus text that goes on and on.Some bogus text
                     that goes on and on.Some bogus text that goes on and on.
                 </div>
-            </Card>
+            </Card>-->
         </div>
-
-
-        <!-- <div>
-            <h2>Latest Articles</h2>
-
-            <a class="button" href="/articles">See All Articles</a>
-        </div>
-        <div class="featured-tools">
-            <FeaturedTools/>
-        </div>
-
-        -->
     </div>
 </HtmlLayout>
 <style>
@@ -42,29 +29,5 @@ import Card from "../components/Card.astro";
         min-width: 250px;
         max-width: 350px;
         padding-left: 50px;
-    }
-
-    h2 {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    h2::before, h2::after {
-        content: '';
-        display: block;
-        border-bottom: 1px solid #ccc;
-        width: 20px;
-    }
-
-    h2::before {
-        margin-right: 10px;
-    }
-
-    h2::after {
-        margin-left: 10px;
-    }
-
-    a.button {
-        margin-top: 20px;
     }
 </style>
