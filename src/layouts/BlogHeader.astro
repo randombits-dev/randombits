@@ -1,22 +1,29 @@
 ---
 import Card from "../components/Card.astro";
+import Tag from "../components/Tag.astro";
 const {
     content: {title, summary, published, tags, desc, updated = published, img},
 } = Astro.props;
 ---
 <Card>
     <div class="container">
-        <div>
-            <h1>{title}</h1>
-            <p class="summary">{summary}</p>
+        <div class="c2">
+            <div style="flex: 1 1 auto">
+                <h1>{title}</h1>
+                <p class="summary">{summary}</p>
+            </div>
             <div class="meta-container">
                 <div class="meta date">
-                    <date>last updated on {updated.toLocaleDateString()}</date>
+                    <date>{updated.toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    })}</date>
                 </div>
                 <div class="meta tags">
                     {
                         tags && tags.map(tag =>
-                                    <div class="tag">{tag}</div>)
+                                    <Tag>{tag}</Tag>)
                     }
                 </div>
             </div>
@@ -30,7 +37,14 @@ const {
 <style>
     .container {
         display: flex;
+        /*align-items: center;*/
         /*border-bottom: 3px solid var(--border-color);*/
+    }
+
+    .c2 {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
     }
 
     img {

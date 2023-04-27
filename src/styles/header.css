@@ -1,6 +1,7 @@
 .header {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 30px;
+    background-color: var(--back-2);
 }
 
 .header-content {
@@ -21,3 +22,78 @@
     padding: 0 50px 0 0;
     font-weight: 600;
 }
+
+.theme-changer {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.theme-changer-container {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--back-2);
+    border-radius: 10px;
+}
+
+.theme-changer button {
+    border-radius: 15px;
+    padding: 0;
+    background-color: var(--back-2);
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.theme-active-btn {
+    /*border: 2px solid var(--border-color) !important;*/
+}
+
+.theme-box {
+    display: inline-block;
+    height: 100%;
+    width: 50%;
+}
+
+.theme-one-btn .theme-box:first-child {
+    background-color: #ffe9c2;
+}
+
+.theme-one-btn .theme-box:last-child {
+    background-color: #e1eefe;
+}
+
+.theme-two-btn .theme-box:first-child {
+    background-color: #c2fff3;
+}
+
+.theme-two-btn .theme-box:last-child {
+    background-color: #fffacd;
+}
+
+.theme-bee-btn .theme-box:first-child {
+    background-color: #ccc;
+}
+
+.theme-bee-btn .theme-box:last-child {
+    background-color: #fffacd;
+}
+
+/*.theme-changer .theme-one-btn div {*/
+/*    background-color: blue;*/
+/*}*/
+
+/*.theme-changer .theme-two-btn div {*/
+/*    background-color: red;*/
+/*}*/
+
+/*.theme-changer .theme-bee-btn div {*/
+/*    background-color: yellow;*/
+/*}*/

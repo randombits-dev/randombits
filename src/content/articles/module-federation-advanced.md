@@ -2,7 +2,7 @@
 title: "Advanced Guide to Module Federation"
 summary: "There are plenty of articles about setting up Webpack's Module Federation. But almost all the articles focus on the basics. Here I will go over steps you want to consider in a production app."
 published: 2023-01-01
-draft: true
+img: '/images/mf1.png'
 ---
 
 There are plenty of articles about setting up Webpack's Module Federation.

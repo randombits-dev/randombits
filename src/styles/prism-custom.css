@@ -12,10 +12,24 @@ pre {
     margin: 0;
 }
 
-code[class*="language-"] {
-    background-color: #fafafa;
+p {
+    line-height: 1.75rem;
+}
+
+p code {
+    background-color: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 2px 10px;
     font-size: 14px;
-    border: 2px solid #ccc;
+    white-space: nowrap;
+}
+
+code[class*="language-"] {
+    white-space: pre-wrap;
+    background-color: var(--back-2);
+    font-size: 14px;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 20px;
     line-height: 1.5;
@@ -150,8 +164,11 @@ blockquote {
     padding: 8px 20px;
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
+    background-color: #fafafa;
+    box-shadow: 0 0 2px 2px;
     border-radius: 3px;
+    font-size: var(--font-size-caption);
 }
 
 blockquote:before {

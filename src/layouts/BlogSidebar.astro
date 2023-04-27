@@ -12,16 +12,22 @@ const {
 
 <BaseLayout title={title} description={desc}>
     <main-with-sidebar>
-        <sidebar>
-            <slot name="sidebar"/>
-        </sidebar>
-        <sidebar-spacing/>
-        <content>
-            <BlogHeader {...Astro.props}/>
-            <Card>
+        <BlogHeader {...Astro.props}/>
+        <div style="display: flex">
 
-                <slot name="content"/>
-            </Card>
-        </content>
+
+            <content>
+
+                <Card>
+                    <div style="padding: 20px">
+                        <slot name="content"/>
+                    </div>
+                </Card>
+            </content>
+
+            <sidebar>
+                <slot name="sidebar"/>
+            </sidebar>
+        </div>
     </main-with-sidebar>
 </BaseLayout>

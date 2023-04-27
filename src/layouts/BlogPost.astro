@@ -11,8 +11,8 @@ const {
 ---
 
 <HtmlLayout title={title} description={desc}>
+    <BlogHeader {...Astro.props}/>
     <Card>
-        <BlogHeader {...Astro.props}/>
         <slot/>
     </Card>
 

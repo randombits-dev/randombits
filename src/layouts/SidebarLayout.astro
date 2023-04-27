@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BaseHead from '../components/BaseHead.astro';
+import Card from "../components/Card.astro";
+import BlogHeader from "./BlogHeader.astro";
 
 export interface Props {
     title: string;
@@ -22,13 +24,23 @@ const {title, description, image = '/placeholder-social.jpg', frontmatter} = Ast
 <body>
 <Header/>
 <main-with-sidebar>
-    <sidebar>
-        <slot name="sidebar"/>
-    </sidebar>
-    <sidebar-spacing/>
-    <content>
-        <slot name="content"/>
-    </content>
+    <BlogHeader {...Astro.props}/>
+    <div style="display: flex">
+        <content>
+            <Card title="Navigation" slot="sidebar">
+                <div class="sidebar-title">Number Localization</div>
+                <a class="nav" href="intro">Intro</a>
+                <a class="nav" href="formatting">Formatting</a>
+                <a class="nav" href="parsing">Parsing</a>
+                <a class="nav" href="numbering-systems">Numbering Systems</a>
+                <a class="nav" href="locale-list">Full Locale List</a>
+            </Card>
+        </content>
+
+        <sidebar>
+            <slot name="sidebar"/>
+        </sidebar>
+    </div>
 </main-with-sidebar>
 <Footer/>
 </body>

@@ -10,8 +10,9 @@
 }
 
 .locale-symbol-card__symbol {
-/ / background-color: #eee;
-    border: 1px solid #ccc;
+    background-color: #fafafa;
+    border: 1px solid #333;
+    border-radius: 5px;
     font-size: 50px;
     height: 60px;
     padding: 0 5px;
@@ -43,18 +44,23 @@
 
 .digit {
     font-size: 24px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 table {
     margin-top: 30px;
-    width: 100%;
+    /*width: 100%;*/
     border-collapse: collapse;
+}
+
+.table-narrow th,
+.table-narrow td {
+    padding: 5px;
 }
 
 .exec {
     font-family: monospace;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
 }
 
 .exec input {
@@ -71,7 +77,7 @@ table {
 .exec-input {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .exec-out {
@@ -82,7 +88,7 @@ table {
 }
 
 .exec-symbol {
-    border-right: #ccc;
+    border-right: var(--border-color);
     display: flex;
     align-self: stretch;
     background-color: #fafafa;

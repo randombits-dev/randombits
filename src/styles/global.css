@@ -12,7 +12,7 @@
 body {
     font-family: var(--font-2);
     margin: 0;
-    background-color: var(--background-base);
+    background-color: var(--back-base);
     color: #444;
     overflow-y: scroll;
     font-size: var(--font-size-text);
@@ -30,7 +30,7 @@ main {
 }
 
 main-with-sidebar {
-    display: flex;
+    display: block;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -38,7 +38,7 @@ main-with-sidebar {
 
 sidebar-spacing {
     flex: 0 0 auto;
-    width: 300px;
+    width: 0px;
     padding: 20px 10px;
 }
 
@@ -49,10 +49,11 @@ sidebar-spacing {
 
 sidebar {
     width: 300px;
-    padding: 20px 10px;
+    padding: 20px 0 20px 10px;
     flex: 0 0 auto;
-    position: fixed;
-    height: 250px;
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*height: 250px;*/
 }
 
 sidebar a {
@@ -66,7 +67,7 @@ sidebar a:hover {
 
 content {
     flex: 1 1 auto;
-    padding-left: 50px;
+    padding-right: 50px;
     overflow: hidden;
 }
 
@@ -100,10 +101,10 @@ a.button {
     padding: 10px 20px;
     cursor: pointer;
     font-family: inherit;
-    border: 1px solid var(--border-color);
+    border: var(--border-width) solid var(--border-color);
     border-radius: var(--button-border-radius);
     font-size: 15px;
-    background-color: #fff;
+    background-color: var(--btn-back);
     font-weight: bold;
 }
 
