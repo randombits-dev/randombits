@@ -6,11 +6,12 @@
 
 .header-content {
     display: flex;
-    padding: 10px 0;
+    padding: 15px 0;
     align-items: baseline;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    /*margin-bottom: 15px;*/
 }
 
 .header-content a {
@@ -25,11 +26,11 @@
 
 .theme-changer {
     position: absolute;
-    top: 36px;
+    top: 43px;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    text-align: center;
+    text-align: right;
+    margin-right: 20px;
 }
 
 .theme-changer-container {
@@ -43,11 +44,11 @@
 .theme-changer button {
     font-family: var(--font-1);
     border-radius: 5px;
-    padding: 0;
+    padding: 5px 10px;
     background-color: var(--back-2);
     margin: 0 5px;
-    width: 25px;
-    height: 25px;
+    /*width: 25px;*/
+    /*height: 25px;*/
     border: 1px solid var(--border-color);
     cursor: pointer;
     overflow: hidden;
@@ -55,7 +56,7 @@
 }
 
 .theme-changer .theme-active-btn {
-    /*border: 2px solid var(--border-color) !important;*/
+    border: 2px solid var(--border-color) !important;
     /*background-color: var(--back-1);*/
 }
 

@@ -2,9 +2,10 @@
 import HtmlLayout from '../../layouts/HtmlLayout.astro';
 
 import ArticleList from '../../components/ArticleList.astro';
+import Card from "../../components/Card.astro";
 ---
 
 <HtmlLayout title="Developer Articles" description="List of all developer articles • For software developers">
-    <h1>All articles</h1>
+    <Card><h1>All articles</h1></Card>
     <ArticleList/>
 </HtmlLayout>

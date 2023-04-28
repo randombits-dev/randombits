@@ -14,7 +14,7 @@ const posts = (await getCollection('articles')).filter(item => !item.data.draft 
 const postsToShow = limit ? posts.slice(0, limit) : posts;
 ---
 
-<Card title="Latest Articles">
+<Card title={limit ? 'Latest Articles' : ''}>
     {
         postsToShow.map((post) => (
                 <CardRow title={post.data.title}
@@ -22,6 +22,10 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
                          img={post.data.img}
                          url={'/articles/' + post.slug}/>
         ))
+    }
+    {
+        limit && <a class="button card-action-btn" href="/articles">See All Articles</a>
+
     }
 
 </Card>

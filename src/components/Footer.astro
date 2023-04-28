@@ -2,19 +2,23 @@
 import '../styles/footer.css';
 
 const today = new Date();
+
+const githubSVG = await fetch('https://storage.googleapis.com/randombits/images/github.svg');
+const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
+const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/twitter.svg');
 ---
 
 <footer>
     <div class="footer-content">
         <div class="social-links">
             <a href="https://github.com/nienow" target="_blank">
-                <img src="https://storage.googleapis.com/randombits/images/github.svg" alt="Github Link" width="30"/>
+                <div set:html={githubSVG}/>
             </a>
             <a href="https://discordapp.com/users/806661811143049216" target="_blank">
-                <img src="https://storage.googleapis.com/randombits/images/discord.svg" alt="Discord Link" width="30"/>
+                <div set:html={discordSVG}/>
             </a>
             <a href="https://twitter.com/RandomBitsDev" target="_blank">
-                <img src="https://storage.googleapis.com/randombits/images/twitter.svg" alt="Twitter Link" width="30"/>
+                <div set:html={twitterSVG}/>
             </a>
         </div>
     </div>

@@ -21,13 +21,14 @@ footer {
 
 .social-links a {
     text-decoration: none;
-    color: #ccc;
+    color: var(--text);
     padding: 0 10px;
-    fill: currentColor;
+    fill: var(--text);
 }
 
-.social-links a img {
-    filter: invert(.3);
+.social-links svg {
+    width: 32px;
+    height: 32px;
 }
 
 .copyright {

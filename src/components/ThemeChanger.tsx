@@ -1,6 +1,11 @@
 import { createSignal } from "solid-js";
 
-const themes = ["one", "two", "bee", "dark"];
+const themes = [
+  { id: "one", name: "Inspire" },
+  { id: "two", name: "Bubble Gum" },
+  { id: "bee", name: "Buzz Buzz" },
+  { id: "dark", name: "Metallic" },
+];
 
 const initialTheme = localStorage.getItem("theme") || "one";
 
@@ -35,19 +40,13 @@ const ThemeChanger = () => {
     <div class="theme-changer">
       {/*<div class="theme-changer-container">*/}
       {themes.map((theme, i) => {
-        let className = `theme-${theme}-btn `;
-        if (currentTheme() === theme) {
+        let className = `theme-${theme.id}-btn `;
+        if (currentTheme() === theme.id) {
           className += " theme-active-btn";
         }
         return (
-          <button class={className} onClick={() => changeTheme(theme)}>
-            {/*{i + 1}*/}
-            <div class="theme-box">
-              <div class={`theme-sample theme-${theme}`}></div>
-            </div>
-            <div class="theme-box">
-              <div class={`theme-sample theme-${theme}`}></div>
-            </div>
+          <button class={className} onClick={() => changeTheme(theme.id)}>
+            {theme.name}
           </button>
         );
       })}

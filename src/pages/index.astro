@@ -6,9 +6,9 @@ import GuideList from "../components/GuideList.astro";
 import Card from "../components/Card.astro";
 ---
 <HtmlLayout title="Developer articles and tools" description="Developer articles, tools, and more">
-    <div style="display: flex; margin-top: 80px;">
+    <div style="display: flex; margin-top: 30px;">
         <div>
-            <ArticleList/>
+            <ArticleList limit={5}/>
             <GuideList/>
         </div>
 
