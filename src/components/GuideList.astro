@@ -1,11 +1,13 @@
 ---
 import Article from "./Article.astro";
 
-import * as localization from '../content/articles/number-localization/intro.mdx';
-import Card from "./Card.astro";
-import CardRow from "./CardRow.astro";
+const article = {
+    img: '/images/chalkboard.jpg',
+    title: 'Number Localization - The Ultimate Guide',
+    desc: 'All of the different ways a number can be formatted. Decimal symbols, grouping symbols, and numbering systems. How to format and parse a number in any locale with javascript.'
+}
 ---
-<Article article={localization.frontmatter} url={'/articles/number-localization/intro'}/>
+<Article article={article} url={'/articles/number-localization/intro'}/>
 
 <!--
 <Card title="Featured Guides">

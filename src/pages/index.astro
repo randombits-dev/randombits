@@ -4,6 +4,7 @@ import ArticleList from '../components/ArticleList.astro';
 import FeaturedTools from "../components/FeaturedTools.astro";
 import GuideList from "../components/GuideList.astro";
 import Card from "../components/Card.astro";
+import Random from "../components/Random.astro";
 ---
 <HtmlLayout title="Developer articles and tools" description="Developer articles, tools, and more">
     <div style="display: flex; margin-top: 30px;">
@@ -20,13 +21,14 @@ import Card from "../components/Card.astro";
                     that goes on and on.Some bogus text that goes on and on.
                 </div>
             </Card>-->
+            <Random/>
         </div>
     </div>
 </HtmlLayout>
 <style>
     .right-side {
         margin-left: 50px;
-        min-width: 250px;
+        min-width: 350px;
         max-width: 350px;
         padding-left: 50px;
     }
