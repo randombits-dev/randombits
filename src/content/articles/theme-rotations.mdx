@@ -35,20 +35,32 @@ It is possible to have a complex webapp that is segregated into simple pages, an
 
 ## What to change
 
-**The font.** There are a lot of amazing looking fonts out there, and the list keeps growing.
+Some suggestions of what to change:
 
-**Colors.** If the app has branded colors, this won't apply.
-Otherwise, you can change the primary color, secondary color, greyscale colors like text, etc.
+**The font.** There are a lot of amazing looking fonts out there. It is ok to change headings to a fun looking font, but make sure to keep the regular font somewhat normal and readable.
 
-**Text Styles.** Stuff like headings, subheadings, captions, etc.
+**Colors.** If the app has branded colors, this might not apply.
 
-**Elevation.** Change it, add it, remove it.
+**Text Styles.** Heading sizes, letter spacing, boldness.
 
+**Elevation.** Adding, removing, or changing the box-shadow will give the app a new look.
+
+**Borders.** The border-radius is probably the best thing to change, because a rounded border has a completely different look than a square border.
+
+**Padding and Margins**. Increasing the padding and margins of cards, buttons, and other components will usually make the app look better. But too much space will make it annoying to use since the user has to scroll more.
+
+## Implementing themes
+
+If your implementing a new application, its good practice to **start with multiple themes early on**.
+By implementing multiple themes right away, you will force yourself to write more structured and reusable CSS code.
+If you wait too long, it will be a pain to implement themes.
+
+While there are a lot of libraries available to help with theming, I prefer to simply use **CSS variables**.
 
 ## Closing Points
 
-* If you properly separated out your theme from the rest of your styles, changing the theme is somewhat easy. If you didn't... it might be pretty hard, and not worth the risk of causing side effects.
+If you properly separated out your theme from the rest of your styles, changing the theme is somewhat easy. If you didn't... it might be pretty hard, and not worth the risk of causing side effects.
 
-* I am not advocating that the theme should only be updated every 3 to 12 months.
-Feel free to fix do enhancements at any point.
+I am not advocating that the theme should only be updated every 3 to 12 months.
+Feel free to do enhancements at any point.
 My main point is that even if there are no features or bugs that affect the theme, it should be at least updated every 3 to 12 months to keep it fresh.

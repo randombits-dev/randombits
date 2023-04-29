@@ -1,6 +1,7 @@
 ---
 title: "Advanced Guide to Module Federation"
 summary: "There are plenty of articles about setting up Webpack's Module Federation. But almost all the articles focus on the basics. Here I will go over steps you want to consider in a production app."
+desc: "Beyond the basics of module federation to cover what a production app will most likely need. Dynamic Imports, Sharing Files and Libraries, Web Components, Routers, Prefetching, Cache Busting, Dynamic URLS."
 published: 2023-01-01
 img: '/images/mf1.png'
 ---
@@ -129,6 +130,63 @@ export const importRemoteByName = (remoteName: string, module = 'bootstrap') => 
 > Although you still may want to if you are sharing dependencies.
 
 ## Shared Libraries
+
+Sharing dependencies between apps is easy. Simply load the dependencies from package.json, and then pass the list to
+module federation:
+
+```javascript
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const deps = require("./package.json").dependencies;
+module.exports = {
+    plugins: [
+        new ModuleFederationPlugin({
+            name: "app1",
+            filename: "remoteEntry.js",
+            shared: {
+                ...deps
+            }
+        })
+    ]
+}
+```
+
+Any libraries that need to be **singletons** (can only be initialized once), can be declared as such.
+This is overriding the **react** dependency from package.json:
+
+```javascript
+new ModuleFederationPlugin({
+    name: "app1",
+    filename: "remoteEntry.js",
+    shared: {
+        ...deps,
+        'react': {
+            singleton: true,
+            requiredVersion: deps.react
+        }
+    }
+})
+```
+
+Most notably, **react** and **preact** have to be singletons to work properly.
+Also, if preact hooks are used, it also needs to be declared separately, even though they come from the same dependency:
+
+```javascript
+new ModuleFederationPlugin({
+    name: "app1",
+    filename: "remoteEntry.js",
+    shared: {
+        ...deps,
+        'preact': {
+            singleton: true,
+            requiredVersion: deps.preact
+        },
+        'preact/hooks': {
+            singleton: true,
+            requiredVersion: deps.preact
+        }
+    }
+})
+```
 
 ## Sharing Static Files
 
@@ -363,9 +421,45 @@ const App = () => {
 
 ## Prefetch remotes
 
-## Separate build config for running alone???
+If using the dynamic imports script, you could start preloading apps that users are likely to need.
+After the app is done loading, you can simply call `importRemote` for each app you want to preload:
 
-## Cache Busting
+```javascript
+importRemote('http://localhost:3001/remoteEntry.js', 'app1', 'bootstrap');
+importRemote('http://localhost:3002/remoteEntry.js', 'app2', 'bootstrap');
+```
+
+## Caching Strategy
+
+Everytime a remote app is loaded, we want to load the latest version of the remote app, but we also want to cache as
+much as we can to improve loading time.
+
+The answer to this is always fetching `remoteEntry.js` fresh, and then caching everything else.
+If you are using the *dynamic imports script*, the remoteEntry.js file is cache busted through a timestamp in the
+request, so it is loaded fresh every time:
+
+```
+http://localhost:3002/remoteEntry.js?t=1682726535364
+```
+
+This is fine, since remoteEntry.js is very tiny, and only points at the rest of the files to load.
+
+Then, if we make sure to use content hashes for our script names when we build, and mark the files as immutable though
+the **Cache-Control** header, the browser will cache everything besides that initial remoteEntry.js.
+
+Webpack output config:
+
+```javascript
+output: {
+    filename: "[contenthash].js" // d0fb3aa6b14ecb0578b5.js
+}
+```
+
+Cache-Control header:
+
+```
+Cache-Control: public, max-age=31536000, immutable
+```
 
 ## Dynamic URLs - env variables
 
@@ -384,7 +478,7 @@ But I want to work on remote2, so I'm pointing it to the local version.
 
 On the server, you would set these environment variables in your CI pipeline (github, vercel, etc).
 And when they are set in your CI environment, they take priority over anything in your .env file.
-So you can check in the lcoal .env if you wish.
+So you can check in the local .env if you wish.
 
 Here is an example of loading the environment variables in webpack:
 
@@ -431,3 +525,15 @@ declare global {
     const REMOTE_CONFIG: { [key: string]: string };
 }
 ```
+
+## Closing Thoughts
+
+Module Federation is a great pattern to use for SPA micro frontends.
+
+This patten is also easy to implement for **SSR** (server side render) webapps, as long as the remote app is the only
+app
+generated on the server.
+It is entirely possible to implement with all remotes coming from SSR, but it gets more complex and I wouldn't recommend
+it for that.
+
+It is also not the best option for SSG webapps (static site generation).
