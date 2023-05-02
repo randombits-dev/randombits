@@ -4,7 +4,7 @@ import Tag from "../components/Tag.astro";
 import QuickLink from "../components/QuickLink.astro";
 
 const {
-    meta: {title, summary, published, tags, desc, updated = published, img},
+    meta: {title, summary, tags, desc, updated, img},
 } = Astro.props;
 
 const quickLinks = [
@@ -21,9 +21,9 @@ const quickLinks = [
                 <h1>{title}</h1>
                 <p class="summary">{desc}</p>
             </div>
-            <div>
+            <!--<div>
                 <QuickLink links={quickLinks}/>
-            </div>
+            </div>-->
             {updated &&
                     <div class="meta-container">
                         <div class="meta date">

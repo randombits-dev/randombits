@@ -1,7 +1,7 @@
 ---
 title: "Yarn & Pnp - I love not having a million files stored in each project"
 summary: ""
-published: 2023-01-01
+updated: 2023-01-01
 draft: true
 ---
 

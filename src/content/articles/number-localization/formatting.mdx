@@ -3,11 +3,12 @@ title: "Number Localization - Formatting Guide"
 summary: "A quick guide to the most common examples of the Intl.FormatNumber API, to format numbers in any locale. This API is supported by all modern browsers."
 tags: [i18n, react, angular]
 desc: "The most common examples of using the Intl.NumberFormat API to format numbers in any locale."
-published: 2023-03-09
+updated: 2023-03-09
 img: '/images/chalkboard.jpg'
 hide: true
 
 ---
+
 
 import ExecuteJavascript from "@/components/number-localization/ExecuteJavascript";
 import '@/components/number-localization/number-localization.css';
@@ -53,7 +54,8 @@ To override the default number of decimal places, use the `minimumFractionDigits
 
 To format a number as a currency, you need to set the **style** and **currency** options:
 
-<ExecuteJavascript code="new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(12.99);" client:load/>
+<ExecuteJavascript code="new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(12.99);"
+                   client:load/>
 
 ## Percent Formatting
 
