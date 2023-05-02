@@ -1,13 +1,30 @@
 ---
 import Article from "./Article.astro";
 
-const article = {
+const numberLocalization = {
     img: '/images/chalkboard.jpg',
     title: 'Number Localization - The Ultimate Guide',
-    desc: 'All of the different ways a number can be formatted. Decimal symbols, grouping symbols, and numbering systems. How to format and parse a number in any locale with javascript.'
-}
+    desc: 'All of the different ways a number can be formatted. Decimal symbols, grouping symbols, and numbering systems. How to format and parse a number in any locale with javascript.',
+    links: [
+        ['Intro to Number Localization', '/articles/number-localization/intro'],
+        ['Formatting Numbers', '/articles/number-localization/formatting'],
+        ['Parsing Numbers', '/articles/number-localization/parsing']
+    ]
+};
+
+const standardNotes = {
+    img: '/images/book.jpg',
+    title: 'Standard Notes Extensions',
+    desc: 'One of the best parts of Standard Notes is the ability to write extensions. The guide covers how to install extensions and how to write extensions.',
+    links: [
+        ['Intro to Extensions', '/standard-notes'],
+        ['Cosmos Extension', '/standard-notes/cosmos'],
+        ['Creating your own extension', '/standard-notes/creating-extensions']
+    ]
+};
 ---
-<Article article={article} url={'/articles/number-localization/intro'}/>
+<Article article={numberLocalization} url={'/articles/number-localization/intro'}/>
+<Article article={standardNotes} url={'/standard-notes'}/>
 
 <!--
 <Card title="Featured Guides">

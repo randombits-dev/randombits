@@ -13,5 +13,7 @@ const {entry} = Astro.props;
 const {Content} = await entry.render();
 ---
 <BlogPost content={entry.data}>
-    <Content/>
+    <div class="article-body">
+        <Content/>
+    </div>
 </BlogPost>

@@ -1,0 +1,70 @@
+---
+import '../styles/article.css';
+import '../styles/prism-custom.css';
+import BlogHeader from "./BlogHeader.astro";
+import Card from "../components/Card.astro";
+
+import CardRow from "../components/CardRow.astro";
+import HtmlLayout from "./HtmlLayout.astro";
+
+const {
+    frontmatter,
+} = Astro.props;
+---
+
+<!--<BlogSidebar content={frontmatter}>
+    <Card title="Navigation" slot="sidebar">
+        <a class="nav" href="/standard-notes">Intro</a>
+        <a class="nav" href="/standard-notes/cosmos">Cosmos</a>
+        <a class="nav" href="parsing">Parsing</a>
+        <a class="nav" href="numbering-systems">Numbering Systems</a>
+        <a class="nav" href="locale-list">Full Locale List</a>
+    </Card>
+    <div slot="content">
+        <slot/>
+    </div>
+</BlogSidebar>-->
+
+<HtmlLayout title={frontmatter.title} description={frontmatter.desc}>
+    <BlogHeader meta={frontmatter}/>
+    <Card title="Quick Links">
+        <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <div>
+                <CardRow title="Writing Extensions" desc="A guide to writing your own editor extension"
+                         url="/standard-notes/creating-extensions"
+                         img="/images/chalkboard.jpg"/>
+            </div>
+            <div>
+                <CardRow title="Extension Template" desc="A starter repo for creating editor extensions"
+                         url="/standard-notes/creating-extensions"
+                         img="/images/chalkboard.jpg"/>
+            </div>
+            <div style="margin-top:20px;">
+                <CardRow title="Cosmos Extension"
+                         desc="Split a note into multiple areas. Each area can use a different editor. Marketplace for installing new extensions."
+                         url="/standard-notes/cosmos"
+                         img="/images/solar6.jpg"/>
+            </div>
+        </div>
+    </Card>
+    <Card>
+        <div class="article-body">
+            <slot/>
+        </div>
+    </Card>
+</HtmlLayout>
+
+<script>
+    const path = window.location.pathname;
+    const activeLink = document.querySelector(`a.nav[href="${path}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active-quick-link');
+    }
+</script>
+
+<style>
+    .active-quick-link {
+        pointer-events: none;
+        text-decoration: none !important;
+    }
+</style>

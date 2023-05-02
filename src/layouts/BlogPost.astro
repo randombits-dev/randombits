@@ -6,12 +6,12 @@ import BlogHeader from "./BlogHeader.astro";
 import Card from "../components/Card.astro";
 
 const {
-    content: {title, summary, published, tags, desc, updated = published},
+    content,
 } = Astro.props;
 ---
 
-<HtmlLayout title={title} description={desc}>
-    <BlogHeader {...Astro.props}/>
+<HtmlLayout title={content.title} description={content.desc}>
+    <BlogHeader meta={content}/>
     <Card>
         <slot/>
     </Card>

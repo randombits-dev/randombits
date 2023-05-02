@@ -1,0 +1,55 @@
+---
+title: "Standard Notes Cosmos Extension"
+desc: "Standard Notes extension that allows splitting a note into multiple areas. Each area can use a separate editor type. Contains an extension marketplace."
+layout: ../../layouts/StandardNotesLayout.astro
+img: '/images/solar6.jpg'
+---
+
+
+
+## Features
+
+1. Split a note into multiple areas
+2. Each area can have a different editor type
+3. Extension marketplace to install new editors
+
+## Installation
+
+1. Go to the extensions of standard notes (Settings · General · Advanced Options · Install External Plugin)
+2. Enter the following url: https://randombits.dev/standard-notes/cosmos.json
+3. Click Install, and proceed through the prompts
+
+## Demos
+
+<iframe src="https://nienow.github.io/cosmos/demo.html" width="100%" height="800"></iframe>
+
+## How it works
+
+<img src="/images/cosmos-instr.png" width="100%"/>
+
+The **columns** and **rows** controls allows you to change the number of areas in the note.
+
+By default, the title of each area only shows up when the toolbar is open. The **Always Show Title** option enables always showing the title.
+
+The bottom toolbar opens automatically when creating a new note, but will be collapsed when opening that note again. Use the expand/collapse arrow to show/hide the toolbar.
+
+## History
+
+I first built an extension called "Splitter" because I was consistently wanting to separate a note into multiple sections.
+Originally, it just worked with the plain text editor, and it was not polished, so I didn't share it publicly.
+
+Later, I had the idea to create some sort of marketplace, where users could install new extensions without having to find the ext.json of each extension.
+
+Finally, I combined the two ideas, and created Cosmos.
+
+## Security
+
+I plan to audit the code of all extensions that are included in the marketplace.
+Basically, an extension should never be sending any note data across the network.
+It should only communicate back and forth with Standard Notes.
+
+## FAQ
+
+**I built an extension. How can I add it to the Cosmos Marketplace?**
+
+Instructions at https://github.com/nienow/cosmos#adding-your-extension

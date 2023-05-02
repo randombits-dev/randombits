@@ -2,12 +2,19 @@
 import HtmlLayout from "./HtmlLayout.astro";
 import '../styles/article.css';
 import '../styles/prism-custom.css';
+import Card from "../components/Card.astro";
+import BlogHeader from "./BlogHeader.astro";
 
 const {
-    frontmatter: {title, desc},
+    frontmatter,
 } = Astro.props;
 ---
 
-<HtmlLayout title={title} description={desc}>
-    <slot/>
+<HtmlLayout title={frontmatter.title} description={frontmatter.desc}>
+    <BlogHeader meta={frontmatter}/>
+    <Card>
+        <div class="article-body">
+            <slot/>
+        </div>
+    </Card>
 </HtmlLayout>

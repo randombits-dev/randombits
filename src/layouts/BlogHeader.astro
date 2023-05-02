@@ -1,9 +1,18 @@
 ---
 import Card from "../components/Card.astro";
 import Tag from "../components/Tag.astro";
+import QuickLink from "../components/QuickLink.astro";
+
 const {
-    content: {title, summary, published, tags, desc, updated = published, img},
+    meta: {title, summary, published, tags, desc, updated = published, img},
 } = Astro.props;
+
+const quickLinks = [
+    ['Intro to Extensions', '/standard-notes'],
+    ['Cosmos Extension', '/standard-notes/cosmos'],
+    ['Creating your own extension', '/standard-notes/creating-extensions'],
+    ['Extension Starter Template', '/standard-notes/template']
+]
 ---
 <Card>
     <div class="container">
@@ -12,24 +21,29 @@ const {
                 <h1>{title}</h1>
                 <p class="summary">{desc}</p>
             </div>
-            <div class="meta-container">
-                <div class="meta date">
-                    <date>{updated.toLocaleDateString('en-US', {
-                        month: 'long',
-                        day: 'numeric',
-                        year: 'numeric'
-                    })}</date>
-                </div>
-                <div class="meta tags">
-                    {
-                        tags && tags.map(tag =>
-                                    <Tag>{tag}</Tag>)
-                    }
-                </div>
+            <div>
+                <QuickLink links={quickLinks}/>
             </div>
+            {updated &&
+                    <div class="meta-container">
+                        <div class="meta date">
+                            <date>{updated.toLocaleDateString('en-US', {
+                                month: 'long',
+                                day: 'numeric',
+                                year: 'numeric'
+                            })}</date>
+                        </div>
+                        <div class="meta tags">
+                            {
+                                tags && tags.map(tag =>
+                                            <Tag>{tag}</Tag>)
+                            }
+                        </div>
+                    </div>}
         </div>
 
-        {img && <img src={img} height="300"/>}
+        {img &&
+                <div class="c3"><img src={img} height="300"/></div>}
     </div>
 
 </Card>
@@ -37,8 +51,6 @@ const {
 <style>
     .container {
         display: flex;
-        /*align-items: center;*/
-        /*border-bottom: 3px solid var(--border-color);*/
     }
 
     .c2 {
@@ -47,11 +59,16 @@ const {
         flex-direction: column;
     }
 
-    img {
-        margin-top: -20px;
-        margin-right: -20px;
-        margin-bottom: -20px;
+    .c3 {
+        margin: -20px -20px -20px 15px;
         border-left: 1px solid var(--border-color);
-        border-radius: 0 10px 10px 0;
+        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        max-width: 300px;
+        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
     }
 </style>

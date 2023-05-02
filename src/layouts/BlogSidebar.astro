@@ -6,13 +6,13 @@ import BlogHeader from "./BlogHeader.astro";
 import Card from "../components/Card.astro";
 
 const {
-    content: {title, summary, published, tags, desc, updated = published, img},
+    content,
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={desc}>
+<BaseLayout title={content.title} description={content.desc}>
     <main-with-sidebar>
-        <BlogHeader {...Astro.props}/>
+        <BlogHeader meta={content}/>
         <div style="display: flex">
 
 
