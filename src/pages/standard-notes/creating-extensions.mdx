@@ -2,7 +2,7 @@
 title: "Creating Standard Notes Extensions"
 desc: "How to create your own Standard Notes editor extensions."
 layout: ../../layouts/StandardNotesLayout.astro
-img: '/images/book.jpg'
+img: '/images/notebook2.jpg'
 ---
 
 Standard notes allows you to install 3rd party extensions, allowing for even more note editor options.
@@ -157,6 +157,9 @@ Our own **metadata** we might be storing. This is optional if there is no metada
 const metadata = note.content.appData['dev.randombits.my-editor'];
 ```
 
+You will notice we are immediately returning out of the function if `isMetadataUpdate` is true.
+When this flag is true, there is only an update to metadata (e.g. the updated_at timestamp), and normally we will not care about these types of updates.
+
 ### saveItemWithPresave
 
 When the user makes a change in your editor, you need to pass the new data to Standard Notes.
@@ -273,6 +276,6 @@ However, this value is optional, because the desktop version will simply fallbac
 It is only required if "download_url" is specified. The file it points at should be a json file containing a "version" property.
 The package.json or the ext.json file could be used for this, since they both contain the version.
 
-## Further Reading
+{/*## Further Reading*/}
 
-Check out the [React Template Repo](/standard-notes/template) to help you get started.
+{/*Check out the [React Template Repo](/standard-notes/template) to help you get started.*/}
