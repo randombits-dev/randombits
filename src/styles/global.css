@@ -42,11 +42,6 @@ sidebar-spacing {
     padding: 20px 10px;
 }
 
-.sidebar-title {
-    font-weight: bold;
-    margin: 20px 0;
-}
-
 sidebar {
     width: 300px;
     padding: 20px 0 20px 10px;
@@ -107,9 +102,3 @@ a.button {
     background-color: var(--back-2);
     font-weight: bold;
 }
-
-/*pre {*/
-/*    */
-/*}*/
-
-

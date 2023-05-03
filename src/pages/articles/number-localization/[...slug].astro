@@ -14,11 +14,10 @@ export async function getStaticPaths() {
 }
 
 const {entry} = Astro.props;
-const {Content, headings} = await entry.render();
+const {Content} = await entry.render();
 ---
 <BlogSidebar content={entry.data}>
     <Card title="Navigation" slot="sidebar">
-        <div class="sidebar-title">Number Localization</div>
         <a class="nav" href="intro">Intro</a>
         <a class="nav" href="formatting">Formatting</a>
         <a class="nav" href="parsing">Parsing</a>
