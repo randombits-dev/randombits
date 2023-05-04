@@ -3,6 +3,7 @@
     --back-1: #e1eefe;
     --back-2: #fafafa;
     --text: #444;
+    --text-2: var(--text);
     --card-border-radius: 10px;
     --border-width: 1px;
     --border-color: rgba(39, 39, 39, 0.75);
@@ -16,9 +17,156 @@
     --hover-shadow: 2px;
 }
 
-.theme-one {
-    --back-base: #ffe9c2;
-    --back-1: #e1eefe;
+.theme-camo {
+    --back-base: #ccd5ae;
+    --back-1: #fefae0;
+    --back-2: #faedcd;
+    --text: #444;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #444;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+.theme-clay {
+    --back-base: #d6ccc2;
+    --back-1: #edede9;
+    --back-2: #d5bdaf;
+    --text: #444;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #444;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+.theme-rust {
+    --back-base: #1d1716;
+    --back-1: #2d1d19;
+    --back-2: #9f3e20;
+    --text: #eee;
+    --card-border-radius: 10px;
+    --border-width: 0px;
+    --border-color: #555;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+.theme-daring {
+    --back-base: #696464;
+    --back-1: #e9e5dd;
+    --back-2: #c5564d;
+    --text: #444;
+    --text-2: #eee;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #444;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+.theme-green {
+    --back-base: #f5e1da;
+    --back-1: #f1f1f1;
+    --back-2: #409ba7;
+    --text: #444;
+    --text-2: #eee;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #444;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+.theme-bubble {
+    --back-base: #9ddcdc;
+    --back-1: #fff4e1;
+    --back-2: #fafafa;
+    --text: #444;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #444;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+
+.theme-blue {
+    --back-base: #36413d;
+    --back-1: #232c2f;
+    --back-2: #213f5b;
+    --text: #eee;
+    --card-border-radius: 10px;
+    --border-width: 1px;
+    --border-color: #aaa;
+    --button-border-radius: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+.theme-bee {
+    --back-base: #333;
+    --back-1: #f5f5f5;
+    --back-2: #e1d93d;
+    --text-2: #444;
+    --border-width: 1px;
+    --border-color: #444;
+    --hover-shadow: 4px;
+}
+
+.theme-dark {
+    --back-base: #555;
+    --back-1: #333;
+    --back-2: #111;
+    --text: #ddd;
+    --border-color: #ccc;
+}
+
+.theme-strawberry {
+    --back-base: #eca2a2; /* ffcab0 */
+    --back-1: #f7e8d9;
     --back-2: #fafafa;
     --text: #444;
     --card-border-radius: 10px;
@@ -32,30 +180,4 @@
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
     --hover-shadow: 2px;
-}
-
-.theme-two {
-    --back-base: #c2fff3;
-    --back-1: #fffacd;
-    --card-border-radius: 10px;
-    --border-width: 1px;
-    --border-color: rgba(39, 39, 39, 0.75);
-    --button-border-radius: 0px;
-}
-
-.theme-bee {
-    --back-base: #ccc;
-    --back-1: #fffacd;
-    --btn-back: #fff700;
-    --border-width: 3px;
-    --border-color: #333;
-    --hover-shadow: 4px;
-}
-
-.theme-dark {
-    --back-base: #555;
-    --back-1: #333;
-    --back-2: #111;
-    --text: #ddd;
-    --border-color: #ccc;
 }

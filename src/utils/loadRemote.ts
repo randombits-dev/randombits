@@ -8,7 +8,3 @@ export const loadRemote = async (url: string) => {
         return '<div>Not found</div>';
     }
 };
-
-const test = {
-    one: 'one'
-}

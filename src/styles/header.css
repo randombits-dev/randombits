@@ -2,6 +2,7 @@
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 30px;
     background-color: var(--back-2);
+    color: var(--text-2);
 }
 
 .header-content {
@@ -52,7 +53,7 @@
     border: 1px solid var(--border-color);
     cursor: pointer;
     overflow: hidden;
-    color: var(--text);
+    color: inherit;
 }
 
 .theme-changer .theme-active-btn {
@@ -60,33 +61,33 @@
     /*background-color: var(--back-1);*/
 }
 
-.theme-box {
-    height: 100%;
-    width: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-}
+/*.theme-box {*/
+/*    height: 100%;*/
+/*    width: 50%;*/
+/*    display: inline-block;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
-.theme-box:first-child {
-    border-right: 1px solid var(--border-color);
-
-
-}
-
-.theme-sample {
-    height: 100%;
-    /*width: 100%;*/
-}
+/*.theme-box:first-child {*/
+/*    border-right: 1px solid var(--border-color);*/
 
 
-.theme-box:first-child .theme-sample {
-    background-color: var(--back-base);
+/*}*/
 
-}
+/*.theme-sample {*/
+/*    height: 100%;*/
+/*    !*width: 100%;*!*/
+/*}*/
 
-.theme-box:last-child .theme-sample {
-    background-color: var(--back-1);
-}
+
+/*.theme-box:first-child .theme-sample {*/
+/*    background-color: var(--back-base);*/
+
+/*}*/
+
+/*.theme-box:last-child .theme-sample {*/
+/*    background-color: var(--back-1);*/
+/*}*/
 
 /*.theme-one-btn .theme-box:first-child {*/
 /*    background-color: #ffe9c2;*/
@@ -132,15 +133,15 @@
 /*    background-color: yellow;*/
 /*}*/
 
-.theme-changer-2 {
-    padding: 5px 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    background-color: var(--back-2);
-    color: var(--text);
-    outline: none;
-}
+/*.theme-changer-2 {*/
+/*    padding: 5px 10px;*/
+/*    border: 1px solid var(--border-color);*/
+/*    border-radius: 10px;*/
+/*    background-color: var(--back-2);*/
+/*    color: var(--text);*/
+/*    outline: none;*/
+/*}*/
 
-select.theme-changer-2 option {
-    padding: 5px 10px;
-}
+/*select.theme-changer-2 option {*/
+/*    padding: 5px 10px;*/
+/*}*/

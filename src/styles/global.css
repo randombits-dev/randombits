@@ -100,5 +100,6 @@ a.button {
     border-radius: var(--button-border-radius);
     font-size: 15px;
     background-color: var(--back-2);
+    color: var(--text-2);
     font-weight: bold;
 }

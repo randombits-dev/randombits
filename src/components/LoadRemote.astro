@@ -1,5 +1,5 @@
 ---
-import {loadRemote} from '../loadRemote.ts';
+import {loadRemote} from '../utils/loadRemote.ts';
 
 const {url} = Astro.props;
 const remoteHTML = await loadRemote(url);
