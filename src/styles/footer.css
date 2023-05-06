@@ -1,8 +1,8 @@
 footer {
     margin-top: 80px;
     background-color: var(--back-2);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top: var(--border-width) solid var(--border-color);
+    border-bottom: var(--border-width) solid var(--border-color);
     padding: 40px 0;
     color: var(--text-2);
 }
@@ -23,7 +23,11 @@ footer {
 .social-links a {
     text-decoration: none;
     padding: 0 10px;
-    fill: var(--text);
+    fill: var(--text-1);
+}
+
+.social-links a:hover {
+    translate: -1px -1px;
 }
 
 .social-links svg {

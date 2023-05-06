@@ -14,61 +14,54 @@ const quickLinks = [
     ['Extension Starter Template', '/standard-notes/template']
 ]
 ---
-<Card>
-    <div class="container">
-        <div class="c2">
-            <div style="flex: 1 1 auto">
-                <h1>{title}</h1>
-                <p class="summary">{desc}</p>
-            </div>
-            <!--<div>
-                <QuickLink links={quickLinks}/>
-            </div>-->
-            {updated &&
-                    <div class="meta-container">
-                        <div class="meta date">
-                            <date>{updated.toLocaleDateString('en-US', {
-                                month: 'long',
-                                day: 'numeric',
-                                year: 'numeric'
-                            })}</date>
-                        </div>
-                        <div class="meta tags">
-                            {
-                                tags && tags.map(tag =>
-                                            <Tag>{tag}</Tag>)
-                            }
-                        </div>
-                    </div>}
+<div class="card flex">
+    <div class="card-contents">
+        <div style="flex: 1 1 auto">
+            <h1>{title}</h1>
+            <p class="summary">{desc}</p>
         </div>
-
-        {img &&
-                <div class="c3"><img src={img} height="300"/></div>}
+        <!--<div>
+            <QuickLink links={quickLinks}/>
+        </div>-->
+        {updated &&
+                <div class="meta-container">
+                    <div class="meta date">
+                        <date>{updated.toLocaleDateString('en-US', {
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric'
+                        })}</date>
+                    </div>
+                    <div class="meta tags">
+                        {
+                            tags && tags.map(tag =>
+                                        <Tag>{tag}</Tag>)
+                        }
+                    </div>
+                </div>}
     </div>
 
-</Card>
+    {img &&
+            <img src={img} height="300"/>}
+
+</div>
 
 <style>
-    .container {
-        display: flex;
+
+    .card {
+        overflow: hidden;
     }
 
-    .c2 {
+    .card-contents {
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
     }
 
-    .c3 {
-        margin: -20px -20px -20px 15px;
-        border-left: var(--border-width) solid var(--border-color);
-        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
-    }
-
     img {
+        border-left: var(--border-width) solid var(--border-color);
         object-fit: cover;
         height: 100%;
         max-width: 300px;
-        border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
     }
 </style>

@@ -6,12 +6,13 @@
 }
 
 .locale-symbol-card:not(:first-child) {
-    border-left: 1px dashed #ccc;
+    border-left: 1px dashed var(--border-color);
 }
 
 .locale-symbol-card__symbol {
-    background-color: #fafafa;
-    border: 1px solid #333;
+    background-color: var(--back-1);
+    color: var(--text-1);
+    border: 1px solid var(--text-1);
     border-radius: 5px;
     font-size: 50px;
     height: 60px;

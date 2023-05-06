@@ -19,7 +19,7 @@ p {
 }
 
 p code {
-    background-color: var(--back-2);
+    background-color: var(--back-4);
     border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 2px 10px;
@@ -29,7 +29,7 @@ p code {
 
 code[class*="language-"] {
     white-space: pre-wrap;
-    background-color: var(--back-2);
+    background-color: var(--back-4);
     font-size: 14px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
@@ -120,7 +120,6 @@ pre[class*="language-"] > code {
 .token.url,
 .token.variable {
     color: #a67f59;
-    background: rgba(255, 255, 255, 0.5);
 }
 
 .token.atrule,
@@ -162,25 +161,111 @@ pre[class*="language-"] > code {
 }
 
 blockquote {
+    color: var(--text-1);
     margin: 20px 0;
     padding: 8px 20px;
     display: flex;
     align-items: center;
     /*border: 1px solid #ddd;*/
-    background-color: #fafafa;
-    box-shadow: 0 0 2px 2px;
+    background-color: var(--back-1);
+    box-shadow: 0 0 2px 2px var(--shadow-color);
     border-radius: 3px;
     font-size: var(--font-size-caption);
 }
 
-blockquote:before {
-    content: url("/i.svg");
-    flex: 0 0 auto;
-    display: inline-block;
-    width: 25px;
-    margin-right: 20px;
-}
+/*blockquote:before {*/
+/*    fill: var(--text-1);*/
+/*    content: url("/i.svg");*/
+/*    flex: 0 0 auto;*/
+/*    display: inline-block;*/
+/*    width: 25px;*/
+/*    margin-right: 20px;*/
+/*}*/
 
 blockquote > p {
     margin: 0;
+}
+
+
+/**
+ * Dracula Theme originally by Zeno Rocha [@zenorocha]
+ * https://draculatheme.com/
+ *
+ * Ported for PrismJS by Albert Vallverdu [@byverdu]
+ */
+
+
+.theme-dark .token.comment,
+.theme-dark .token.prolog,
+.theme-dark .token.doctype,
+.theme-dark .token.cdata {
+    color: #6272a4;
+}
+
+.theme-dark .token.punctuation {
+    color: #f8f8f2;
+}
+
+.theme-dark .namespace {
+    opacity: .7;
+}
+
+.theme-dark .token.property,
+.theme-dark .token.tag,
+.theme-dark .token.constant,
+.theme-dark .token.symbol,
+.theme-dark .token.deleted {
+    color: #ff79c6;
+}
+
+.theme-dark .token.boolean,
+.theme-dark .token.number {
+    color: #bd93f9;
+}
+
+.theme-dark .token.selector,
+.theme-dark .token.attr-name,
+.theme-dark .token.string,
+.theme-dark .token.char,
+.theme-dark .token.builtin,
+.theme-dark .token.inserted {
+    color: #50fa7b;
+}
+
+.theme-dark .token.operator,
+.theme-dark .token.entity,
+.theme-dark .token.url,
+.theme-dark .language-css .token.string,
+.theme-dark .style .token.string,
+.theme-dark .token.variable {
+    color: #f8f8f2;
+}
+
+.theme-dark .token.atrule,
+.theme-dark .token.attr-value,
+.theme-dark .token.function,
+.theme-dark .token.class-name {
+    color: #f1fa8c;
+}
+
+.theme-dark .token.keyword {
+    color: #8be9fd;
+}
+
+.theme-dark .token.regex,
+.theme-dark .token.important {
+    color: #ffb86c;
+}
+
+.theme-dark .token.important,
+.theme-dark .token.bold {
+    font-weight: bold;
+}
+
+.theme-dark .token.italic {
+    font-style: italic;
+}
+
+.theme-dark .token.entity {
+    cursor: help;
 }

@@ -1,44 +1,58 @@
 import {createSignal} from "solid-js";
-import {isSSR} from "../utils/utils";
 
 const themes = [
-    {id: "camo", name: "Camo"},
+    {id: "base", name: "Peach"},
+    {id: "fruity", name: "Fruity"},
     {id: "clay", name: "Clay"},
-    {id: "rust", name: "Rust"},
-    {id: "blue", name: "Blue"},
-    {id: "daring", name: "Daring"},
-    {id: "green", name: "Green"},
-    {id: "bubble", name: "Bubblegum"},
+    {id: "camo", name: "Camo"},
+    {id: "strawberry", name: "Berry"},
+    {id: "pine", name: "Pine"},
     {id: "bee", name: "Buzz"},
-    {id: "dark", name: "Metallic"},
-    {id: "strawberry", name: "Strawberry"},
+    {id: "daring", name: "Dare"},
+    {id: "dusk", name: "Dusk", dark: true},
+    {id: "rust", name: "Rust", dark: true},
+    {id: "metal", name: "Metal", dark: true},
 ];
 
-const initialTheme = isSSR() ? '' : localStorage.getItem("theme") || 'one';
+const initialTheme = localStorage.getItem("theme") || 'base';
 
 const ThemeChanger = () => {
-    const [currentTheme, setCurrentTheme] = createSignal(initialTheme);
+    const [currentTheme, setCurrentTheme] = createSignal('');
 
-    const changeTheme = (value: string) => {
-        document.documentElement.classList.remove(`theme-${currentTheme()}`);
+    const changeTheme = (newTheme: any) => {
+        const htmlClass = document.documentElement.classList;
+        htmlClass.remove(`theme-${currentTheme()}`, 'theme-dark');
 
-        setCurrentTheme(value);
-        document.documentElement.classList.add(`theme-${value}`);
-        localStorage.setItem("theme", value);
+        setCurrentTheme(newTheme.id);
+        if (newTheme.dark) {
+            htmlClass.add(`theme-${newTheme.id}`, 'theme-dark');
+        } else {
+            htmlClass.add(`theme-${newTheme.id}`);
+        }
+        localStorage.setItem("theme", newTheme.id);
     };
+
+    queueMicrotask(() => {
+        setCurrentTheme(initialTheme);
+    });
 
     return (
         <div class="theme-changer">
-            {themes.map((theme, i) => {
-                let className = `theme-${theme.id}-btn `;
+            {themes.map((theme) => {
                 if (currentTheme() === theme.id) {
-                    className += " theme-active-btn";
+                    return (
+                        <button class="theme-active-btn">
+                            {theme.name}
+                        </button>
+                    );
+                } else {
+                    return (
+                        <button onClick={() => changeTheme(theme)}>
+                            {theme.name}
+                        </button>
+                    );
                 }
-                return (
-                    <button class={className} onClick={() => changeTheme(theme.id)}>
-                        {theme.name}
-                    </button>
-                );
+
             })}
         </div>
     );

@@ -1,22 +1,26 @@
 .header {
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 30px;
+    font-family: var(--font-1);
+    border-bottom: var(--border-width) solid var(--border-color);
+    margin-bottom: 10px;
     background-color: var(--back-2);
     color: var(--text-2);
 }
 
 .header-content {
     display: flex;
-    padding: 15px 0;
+    padding: 10px 0;
     align-items: baseline;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    /*margin-bottom: 15px;*/
 }
 
 .header-content a {
     padding: 0 15px;
+}
+
+.header-content a:hover {
+    translate: -1px -1px;
 }
 
 .header-content a.header-title {
@@ -26,122 +30,29 @@
 }
 
 .theme-changer {
-    position: absolute;
-    top: 43px;
-    left: 0;
-    right: 0;
-    text-align: right;
-    margin-right: 20px;
-}
-
-.theme-changer-container {
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid var(--border-color);
-    background-color: var(--back-2);
-    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .theme-changer button {
-    font-family: var(--font-1);
-    border-radius: 5px;
+    border-radius: var(--border-radius-1);
     padding: 5px 10px;
-    background-color: var(--back-2);
+    background-color: var(--back-1);
     margin: 0 5px;
-    /*width: 25px;*/
-    /*height: 25px;*/
-    border: 1px solid var(--border-color);
+    border: var(--border-width) solid var(--border-color);
     cursor: pointer;
     overflow: hidden;
-    color: inherit;
+    color: var(--text-1);
+
+}
+
+.theme-changer button:not(.theme-active-btn):hover {
+    box-shadow: 1px 1px var(--shadow-color);
+    translate: -1px -1px;
 }
 
 .theme-changer .theme-active-btn {
-    border: 2px solid var(--border-color) !important;
-    /*background-color: var(--back-1);*/
+    cursor: default;
+    box-shadow: 2px 2px var(--shadow-color);
+    translate: -2px -2px;
 }
-
-/*.theme-box {*/
-/*    height: 100%;*/
-/*    width: 50%;*/
-/*    display: inline-block;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.theme-box:first-child {*/
-/*    border-right: 1px solid var(--border-color);*/
-
-
-/*}*/
-
-/*.theme-sample {*/
-/*    height: 100%;*/
-/*    !*width: 100%;*!*/
-/*}*/
-
-
-/*.theme-box:first-child .theme-sample {*/
-/*    background-color: var(--back-base);*/
-
-/*}*/
-
-/*.theme-box:last-child .theme-sample {*/
-/*    background-color: var(--back-1);*/
-/*}*/
-
-/*.theme-one-btn .theme-box:first-child {*/
-/*    background-color: #ffe9c2;*/
-/*}*/
-
-/*.theme-one-btn .theme-box:last-child {*/
-/*    background-color: #e1eefe;*/
-/*}*/
-
-/*.theme-two-btn .theme-box:first-child {*/
-/*    background-color: #c2fff3;*/
-/*}*/
-
-/*.theme-two-btn .theme-box:last-child {*/
-/*    background-color: #fffacd;*/
-/*}*/
-
-/*.theme-bee-btn .theme-box:first-child {*/
-/*    background-color: #ccc;*/
-/*}*/
-
-/*.theme-bee-btn .theme-box:last-child {*/
-/*    background-color: #fffacd;*/
-/*}*/
-
-/*.theme-dark-btn .theme-box:first-child {*/
-/*    background-color: #ccc;*/
-/*}*/
-
-/*.theme-dark-btn .theme-box:last-child {*/
-/*    background-color: #fffacd;*/
-/*}*/
-
-/*.theme-changer .theme-one-btn div {*/
-/*    background-color: blue;*/
-/*}*/
-
-/*.theme-changer .theme-two-btn div {*/
-/*    background-color: red;*/
-/*}*/
-
-/*.theme-changer .theme-bee-btn div {*/
-/*    background-color: yellow;*/
-/*}*/
-
-/*.theme-changer-2 {*/
-/*    padding: 5px 10px;*/
-/*    border: 1px solid var(--border-color);*/
-/*    border-radius: 10px;*/
-/*    background-color: var(--back-2);*/
-/*    color: var(--text);*/
-/*    outline: none;*/
-/*}*/
-
-/*select.theme-changer-2 option {*/
-/*    padding: 5px 10px;*/
-/*}*/

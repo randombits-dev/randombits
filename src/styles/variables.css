@@ -1,34 +1,93 @@
+/*
+--back-0: page background color
+--back-1: background color 1 - cards, content
+--back-2: primary color - header, footer, buttons
+--back-3: secondary color - accent
+--back-4: grayscale - code
+--text-1: text color on top of back-1
+--text-2: text color on top of back-2
+--border-radius-1: cards
+--border-radius-2: buttons
+--border-width
+--border-color
+--font-1: text content
+--font-2: headers, buttons, etc
+--font-size-1: headers
+--font-size-text: normal text
+--font-size-caption: small text
+--letter-spacing-text: 0px;
+--hover-shadow: hover shadow on buttons, cards
+ */
+
 :root {
-    --back-base: #ffe9c2;
+    --back-0: #ffe9c2;
     --back-1: #e1eefe;
     --back-2: #fafafa;
-    --text: #444;
-    --text-2: var(--text);
-    --card-border-radius: 10px;
+    --back-3: var(--text-1);
+    --back-4: var(--back-2);
+    --text-1: #444;
+    --text-2: var(--text-1);
+    --border-radius-1: 10px;
+    --border-radius-2: 20px;
     --border-width: 1px;
-    --border-color: rgba(39, 39, 39, 0.75);
-    --button-border-radius: 20px;
+    --border-color: #444;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+    --shadow-color: var(--text-1);
+}
+
+.theme-base {
+    --back-0: #ffe9c2;
+    --back-1: #e1eefe;
+    --back-2: #fafafa;
+    --text-1: #444;
+    --text-2: var(--text-1);
+    --border-radius-1: 5px;
+    --border-radius-2: 10px;
+    --border-width: 1px;
+    --border-color: #444;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
     --hover-shadow: 2px;
 }
 
-.theme-camo {
-    --back-base: #ccd5ae;
-    --back-1: #fefae0;
-    --back-2: #faedcd;
-    --text: #444;
-    --card-border-radius: 10px;
+
+.theme-fruity {
+    --back-0: #9ddcdc;
+    --back-1: #fff4e1;
+    --back-2: #fafafa;
+    --text-1: #444;
+    --border-radius-1: 10px;
     --border-width: 1px;
     --border-color: #444;
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+
+.theme-camo {
+    --back-0: #ccd5ae;
+    --back-1: #fefae0;
+    --back-2: #faedcd;
+    --text-1: #444;
+    --border-radius-1: 10px;
+    --border-radius-2: 20px;
+    --border-width: 1px;
+    --border-color: #444;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
@@ -36,17 +95,17 @@
 }
 
 .theme-clay {
-    --back-base: #d6ccc2;
+    --back-0: #d6ccc2;
     --back-1: #edede9;
     --back-2: #d5bdaf;
-    --text: #444;
-    --card-border-radius: 10px;
+    --back-4: #fafafa;
+    --text-1: #444;
+    --border-radius-1: 10px;
     --border-width: 1px;
     --border-color: #444;
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
@@ -54,17 +113,17 @@
 }
 
 .theme-rust {
-    --back-base: #1d1716;
+    --back-0: #1d1716;
     --back-1: #2d1d19;
     --back-2: #9f3e20;
-    --text: #eee;
-    --card-border-radius: 10px;
+    --back-4: #222;
+    --text-1: #eee;
+    --border-radius-1: 10px;
     --border-width: 0px;
     --border-color: #555;
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
@@ -72,55 +131,37 @@
 }
 
 .theme-daring {
-    --back-base: #696464;
+    --back-0: #696464;
     --back-1: #e9e5dd;
     --back-2: #c5564d;
-    --text: #444;
+    --back-4: #fafafa;
+    --text-1: #444;
     --text-2: #eee;
-    --card-border-radius: 10px;
+    --border-radius-1: 10px;
     --border-width: 1px;
     --border-color: #444;
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
     --hover-shadow: 2px;
 }
 
-.theme-green {
-    --back-base: #f5e1da;
+.theme-pine {
+    --back-0: #f5e1da;
     --back-1: #f1f1f1;
     --back-2: #409ba7;
-    --text: #444;
+    --back-4: #fafafa;
+    --text-1: #444;
     --text-2: #eee;
-    --card-border-radius: 10px;
+    --border-radius-1: 10px;
     --border-width: 1px;
     --border-color: #444;
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
-    --font-size-text: 18px;
-    --letter-spacing-text: 0px;
-    --font-size-caption: 15px;
-    --hover-shadow: 2px;
-}
-
-.theme-bubble {
-    --back-base: #9ddcdc;
-    --back-1: #fff4e1;
-    --back-2: #fafafa;
-    --text: #444;
-    --card-border-radius: 10px;
-    --border-width: 1px;
-    --border-color: #444;
-    --button-border-radius: 20px;
-    --font-1: 'Capriola', sans-serif;
-    --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
@@ -128,18 +169,18 @@
 }
 
 
-.theme-blue {
-    --back-base: #36413d;
+.theme-dusk {
+    --back-0: #36413d;
     --back-1: #232c2f;
     --back-2: #213f5b;
-    --text: #eee;
-    --card-border-radius: 10px;
+    --back-4: #222;
+    --text-1: #eee;
+    --border-radius-1: 10px;
     --border-width: 1px;
     --border-color: #aaa;
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
-    --font-size-1: 20px;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;
@@ -147,32 +188,37 @@
 }
 
 .theme-bee {
-    --back-base: #333;
-    --back-1: #f5f5f5;
+    --back-0: #333;
+    --back-1: #eee;
     --back-2: #e1d93d;
+    --back-4: #fafafa;
     --text-2: #444;
     --border-width: 1px;
     --border-color: #444;
     --hover-shadow: 4px;
 }
 
-.theme-dark {
-    --back-base: #555;
+.theme-metal {
+    --back-0: #555;
     --back-1: #333;
     --back-2: #111;
-    --text: #ddd;
-    --border-color: #ccc;
+    --text-1: #ddd;
+    --border-color: #111;
+    --border-width: 1px;
+    --shadow-color: #111;
+    --border-radius-1: 0;
+    --border-radius-2: 0;
 }
 
 .theme-strawberry {
-    --back-base: #eca2a2; /* ffcab0 */
+    --back-0: #eca2a2; /* ffcab0 */
     --back-1: #f7e8d9;
     --back-2: #fafafa;
-    --text: #444;
-    --card-border-radius: 10px;
+    --text-1: #444;
+    --border-radius-1: 10px;
     --border-width: 1px;
     --border-color: rgba(39, 39, 39, 0.75);
-    --button-border-radius: 20px;
+    --border-radius-2: 20px;
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
     --font-size-1: 20px;
