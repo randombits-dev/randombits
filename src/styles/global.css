@@ -30,22 +30,15 @@ main {
 }
 
 main-with-sidebar {
-    display: block;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-sidebar-spacing {
-    flex: 0 0 auto;
-    width: 0px;
-    padding: 20px 10px;
-}
-
 sidebar {
-    width: 300px;
-    padding: 20px 0 20px 10px;
-    flex: 0 0 auto;
+    /*width: 300px;*/
+    /*padding: 20px 0 20px 10px;*/
+    /*flex: 0 0 auto;*/
     /*position: fixed;*/
     /*left: 0;*/
     /*height: 250px;*/
@@ -63,7 +56,7 @@ sidebar a:hover {
 
 content {
     flex: 1 1 auto;
-    padding-right: 50px;
+    /*padding-right: 50px;*/
     overflow: hidden;
 }
 

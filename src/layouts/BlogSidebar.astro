@@ -13,7 +13,7 @@ const {
 <BaseLayout title={content.title} description={content.desc}>
     <main-with-sidebar>
         <BlogHeader meta={content}/>
-        <div style="display: flex">
+        <div class="two-column">
 
 
             <content>
@@ -29,3 +29,22 @@ const {
         </div>
     </main-with-sidebar>
 </BaseLayout>
+
+<style>
+    .two-column {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: auto 300px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .two-column > content {
+            order: 1;
+        }
+    }
+</style>

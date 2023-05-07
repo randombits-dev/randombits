@@ -7,13 +7,13 @@ import Card from "../components/Card.astro";
 import Random from "../components/Random.astro";
 ---
 <HtmlLayout title="Developer articles and tools" description="Developer articles, tools, and more">
-    <div style="display: flex; margin-top: 30px;">
+    <div class="dashboard">
         <div>
             <ArticleList limit={5}/>
             <GuideList/>
         </div>
 
-        <div class="right-side">
+        <div>
             <FeaturedTools/>
             <!--<Card title="About Me">
                 <div>Some bogus text that goes on and on. Some bogus text that goes on and on.Some bogus text that goes
@@ -26,10 +26,15 @@ import Random from "../components/Random.astro";
     </div>
 </HtmlLayout>
 <style>
-    .right-side {
-        margin-left: 50px;
-        min-width: 350px;
-        max-width: 350px;
-        padding-left: 50px;
+    .dashboard {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 30px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .dashboard {
+            grid-template-columns: 1fr;
+        }
     }
 </style>

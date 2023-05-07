@@ -89,12 +89,16 @@
 }
 
 .card-v-layout {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    /*grid-template-columns: auto;*/
+    gap: 30px;
+    justify-items: center;
+    justify-content: center;
 }
 
 .card-v-layout .card {
-    margin-right: 30px;
-    width: 300px;
+    /*margin-right: 30px;*/
     overflow: hidden;
 }
 
