@@ -26,7 +26,7 @@ const ExecuteJavascript = ({code: initalCode}) => {
                 <div class="exec-symbol">
                     <div class="arrow-right"></div>
                 </div>
-                <input type="text" value={code()} oninput={updateCode}/>
+                <input spellcheck="false" type="text" value={code()} oninput={updateCode}/>
                 <div class={'exec-reset' + (changed() ? ' visible' : '')} onClick={reset}>Reset</div>
             </div>
 

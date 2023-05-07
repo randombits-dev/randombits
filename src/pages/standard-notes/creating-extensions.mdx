@@ -1,15 +1,22 @@
 ---
 title: "Creating Standard Notes Extensions"
-desc: "How to create your own Standard Notes editor extensions."
+desc: "A guide for creating your own Standard Notes editor extensions."
 layout: ../../layouts/StandardNotesLayout.astro
 img: '/images/notebook2.jpg'
 ---
 
-Standard notes allows you to install 3rd party extensions, allowing for even more note editor options.
-The editor area turns into an iframe, hosting the 3rd party application,
-which communicates back and forth with standard notes to load the note and save it.
+## Overview
 
-You can choose any framework / technology to write an extension.
+This guide will go over the following:
+1. The structure of a note
+2. The API for communicating back and forth with Standard Notes
+3. API Implementation Example
+4. Styling your extension with the chosen theme
+5. JSON descriptor file
+
+## Technology
+
+Because editor extensions load in an iframe inside Standard Notes, you are free to choose any javascript framework / technology to write an extension.
 
 ## The structure of a note
 
@@ -51,6 +58,7 @@ The remaining properties are either edited outside of our editor (like the title
 
 ## Standard Notes API
 
+An extension communicates back and forth with Standard Notes to load and save the note.
 There are two choices for what to use as your API to communicate with standard notes:
 
 1. The **ComponentRelay** API (https://github.com/standardnotes/component-relay)

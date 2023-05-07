@@ -12,8 +12,8 @@ const {
 
 <HtmlLayout title={content.title} description={content.desc}>
     <BlogHeader meta={content}/>
-    <Card>
+    <div class="card article-body">
         <slot/>
-    </Card>
+    </div>
 
 </HtmlLayout>

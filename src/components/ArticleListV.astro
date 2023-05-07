@@ -18,9 +18,10 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
 <div class="card-v-layout">
     {
         postsToShow.map(post =>
-                <Card>
-                    <CardV title={post.data.title} desc={post.data.desc} img={post.data.img} url={post.data.link}/>
-                </Card>
+                <div class="card">
+                    <CardV title={post.data.title} desc={post.data.desc} img={post.data.img}
+                           url={'/articles/' + post.slug}/>
+                </div>
         )
     }
 </div>

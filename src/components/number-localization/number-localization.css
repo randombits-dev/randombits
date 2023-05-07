@@ -60,11 +60,18 @@ table {
 }
 
 .exec {
+
+    background-color: var(--back-5);
+
+    margin: 0 -40px;
     font-family: monospace;
-    border: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color-light);
+    border-bottom: 1px solid var(--border-color-light);
 }
 
 .exec input {
+    background-color: inherit;
+    color: inherit;
     font-family: inherit;
     box-sizing: border-box;
     width: 100%;
@@ -76,29 +83,29 @@ table {
 }
 
 .exec-input {
+    padding: 0 40px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px dashed var(--border-color-light);
 }
 
 .exec-out {
     display: flex;
     align-items: center;
-    background-color: #eaeaea;
-    padding: 10px 20px 10px 27px;
+    padding: 10px 20px 10px 67px;
+    font-size: var(--font-size-caption);
 }
 
 .exec-symbol {
     border-right: var(--border-color);
     display: flex;
     align-self: stretch;
-    background-color: #fafafa;
     padding: 5px 12px 5px 8px;
 }
 
 .arrow-right {
     align-self: center;
-    border: solid #555;
+    border: solid var(--text-1);
     border-width: 0 1px 1px 0;
     display: inline-block;
     padding: 3px;
@@ -123,7 +130,7 @@ table {
 .exec-reset {
     visibility: hidden;
     cursor: pointer;
-    color: #555;
+    color: var(--text-1);
     padding: 5px 10px;
 }
 

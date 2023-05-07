@@ -43,17 +43,16 @@ const TOOLS = [
         }
     </Card>-->
 
-    <Card>
-        <h1>All tools</h1>
-        <MarkdownContent/>
-    </Card>
+    <div class="card">
+        <h1>Awesome Tools</h1>
+    </div>
 
     <div class="card-v-layout">
         {
             TOOLS.map(tool =>
-                    <Card>
+                    <div class="card">
                         <CardV title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
-                    </Card>
+                    </div>
             )
         }
     </div>
