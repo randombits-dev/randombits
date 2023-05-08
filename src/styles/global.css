@@ -108,7 +108,7 @@ a.button {
 }
 
 a.button:hover, button:hover {
-    box-shadow: 1px 1px;
+    box-shadow: 1px 1px var(--shadow-color);
     translate: -1px -1px;
 }
 

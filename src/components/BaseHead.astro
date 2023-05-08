@@ -21,5 +21,9 @@ const {title, description, image = '/placeholder-social.jpg'} = Astro.props;
 <meta name="description" content={description}/>
 <script is:inline>
     const initialTheme = localStorage.getItem("theme") || 'base';
-    document.documentElement.classList.add(`theme-${initialTheme}`);
+    if (initialTheme.startsWith('dark-')) {
+        document.documentElement.classList.add(`theme-${initialTheme}`, `theme-dark`);
+    } else {
+        document.documentElement.classList.add(`theme-${initialTheme}`);
+    }
 </script>

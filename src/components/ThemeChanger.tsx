@@ -1,6 +1,6 @@
 import {createSignal} from "solid-js";
 
-const themes = [
+const THEME_LIST = [
     {id: "base", name: "Peach"},
     {id: "fruity", name: "Fruity"},
     {id: "clay", name: "Clay"},
@@ -9,11 +9,11 @@ const themes = [
     {id: "pine", name: "Pine"},
     {id: "bee", name: "Buzz"},
     {id: "daring", name: "Dare"},
-    {id: "dusk", name: "Dusk", dark: true},
-    {id: "rust", name: "Rust", dark: true},
-    {id: "metal", name: "Metal", dark: true},
+    {id: "dark-dusk", name: "Dusk"},
+    // {id: "dark-rust", name: "Rust"},
+    {id: "dark-metal", name: "Metal"},
+    {id: "dark-fear", name: "Fear"},
 ];
-
 const initialTheme = localStorage.getItem("theme") || 'base';
 
 const ThemeChanger = () => {
@@ -24,10 +24,10 @@ const ThemeChanger = () => {
         htmlClass.remove(`theme-${currentTheme()}`, 'theme-dark');
 
         setCurrentTheme(newTheme.id);
-        if (newTheme.dark) {
-            htmlClass.add(`theme-${newTheme.id}`, 'theme-dark');
+        if (newTheme.id.startsWith('dark-')) {
+            document.documentElement.classList.add(`theme-${newTheme.id}`, `theme-dark`);
         } else {
-            htmlClass.add(`theme-${newTheme.id}`);
+            document.documentElement.classList.add(`theme-${newTheme.id}`);
         }
         localStorage.setItem("theme", newTheme.id);
     };
@@ -38,7 +38,7 @@ const ThemeChanger = () => {
 
     return (
         <div class="theme-changer">
-            {themes.map((theme) => {
+            {THEME_LIST.map((theme) => {
                 if (currentTheme() === theme.id) {
                     return (
                         <button class="theme-active-btn">

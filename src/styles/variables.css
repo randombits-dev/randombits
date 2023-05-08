@@ -24,13 +24,14 @@
     --back-1: #e1eefe;
     --back-2: #fafafa;
     --back-3: var(--text-1);
-    --back-4: var(--back-2);
-    --back-5: var(--back-4);
+    --back-article: #f5f5f5;
+    --back-code: #fafafa;
     --text-1: #444;
     --text-2: var(--text-1);
     --border-radius-1: 10px;
     --border-radius-2: 20px;
     --border-width: 1px;
+    --border-width-light: 1px;
     --border-color: #444;
     --border-color-light: var(--border-color);
     --font-1: 'Capriola', sans-serif;
@@ -42,6 +43,11 @@
     --font-size-caption: 15px;
     --hover-shadow: 2px;
     --shadow-color: var(--text-1);
+}
+
+.theme-dark {
+    --back-article: #111;
+    --back-code: #060606;
 }
 
 .theme-base {
@@ -68,8 +74,6 @@
     --back-0: #9ddcdc;
     --back-1: #fff4e1;
     --back-2: #fafafa;
-    --back-4: #f5f5f5;
-    --back-5: #fafafa;
     --text-1: #444;
     --border-radius-1: 10px;
     --border-width: 1px;
@@ -106,7 +110,6 @@
     --back-0: #d6ccc2;
     --back-1: #edede9;
     --back-2: #d5bdaf;
-    --back-4: #fafafa;
     --text-1: #444;
     --border-radius-1: 10px;
     --border-width: 1px;
@@ -120,29 +123,11 @@
     --hover-shadow: 2px;
 }
 
-.theme-rust {
-    --back-0: #1d1716;
-    --back-1: #2d1d19;
-    --back-2: #9f3e20;
-    --back-4: #222;
-    --text-1: #eee;
-    --border-radius-1: 10px;
-    --border-width: 0px;
-    --border-color: #555;
-    --border-radius-2: 20px;
-    --font-1: 'Capriola', sans-serif;
-    --font-2: 'Montserrat', sans-serif;
-    --font-size-text: 18px;
-    --letter-spacing-text: 0px;
-    --font-size-caption: 15px;
-    --hover-shadow: 2px;
-}
 
 .theme-daring {
     --back-0: #696464;
     --back-1: #e9e5dd;
     --back-2: #c5564d;
-    --back-4: #fafafa;
     --text-1: #444;
     --text-2: #eee;
     --border-radius-1: 10px;
@@ -161,7 +146,6 @@
     --back-0: #f5e1da;
     --back-1: #f1f1f1;
     --back-2: #409ba7;
-    --back-4: #fafafa;
     --text-1: #444;
     --text-2: #eee;
     --border-radius-1: 10px;
@@ -177,48 +161,16 @@
 }
 
 
-.theme-dusk {
-    --back-0: #36413d;
-    --back-1: #232c2f;
-    --back-2: #213f5b;
-    --back-4: #222;
-    --text-1: #eee;
-    --border-radius-1: 10px;
-    --border-width: 1px;
-    --border-color: #aaa;
-    --border-radius-2: 20px;
-    --font-1: 'Capriola', sans-serif;
-    --font-2: 'Montserrat', sans-serif;
-    --font-size-text: 18px;
-    --letter-spacing-text: 0px;
-    --font-size-caption: 15px;
-    --hover-shadow: 2px;
-}
-
 .theme-bee {
     --back-0: #333;
     --back-1: #eee;
     --back-2: #e1d93d;
-    --back-4: #fafafa;
     --text-2: #444;
-    --border-width: 1px;
-    --border-color: #444;
-    --hover-shadow: 4px;
+    --border-width: 0;
+    --border-color: #ccc;
+    --shadow-color: #333;
 }
 
-.theme-metal {
-    --back-0: #555;
-    --back-1: #333;
-    --back-2: #111;
-    --back-4: #111;
-    --back-5: #060606;
-    --text-1: #ddd;
-    --border-color: #111;
-    --border-width: 1px;
-    --shadow-color: #111;
-    --border-radius-1: 0;
-    --border-radius-2: 0;
-}
 
 .theme-strawberry {
     --back-0: #eca2a2; /* ffcab0 */
@@ -232,6 +184,75 @@
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
     --font-size-1: 20px;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+}
+
+/* DARK DARK DARK */
+
+.theme-dark-fear {
+    --back-0: #111;
+    --back-1: #222;
+    --back-2: #050505;
+    --back-article: #111;
+    --back-code: #050505;
+
+    --text-1: #ddd;
+    --border-width: 0;
+    --border-width-light: 0;
+    --shadow-color: #000;
+    --border-radius-1: 5px;
+    --border-radius-2: 5px;
+}
+
+.theme-dark-metal {
+    --back-0: #555;
+    --back-1: #333;
+    --back-2: #111;
+    --back-article: #333;
+    --back-code: #111;
+
+    --text-1: #ddd;
+    --border-color: #111;
+    --border-width: 1px;
+    --shadow-color: #111;
+    --border-radius-1: 0;
+    --border-radius-2: 0;
+}
+
+.theme-dark-dusk {
+    --back-0: #36413d;
+    --back-1: #232c2f;
+    --back-2: #213f5b;
+    --back-article: #232c2f;
+    --back-code: #222;
+    --text-1: #eee;
+    --border-radius-1: 10px;
+    --border-width: 0;
+    --border-color: #aaa;
+    --border-radius-2: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
+    --hover-shadow: 2px;
+    --shadow-color: #111;
+}
+
+.theme-dark-rust {
+    --back-0: #1d1716;
+    --back-1: #2d1d19;
+    --back-2: #9f3e20;
+    --text-1: #eee;
+    --border-radius-1: 10px;
+    --border-width: 0px;
+    --border-color: #555;
+    --border-radius-2: 20px;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
     --font-size-text: 18px;
     --letter-spacing-text: 0px;
     --font-size-caption: 15px;

@@ -61,12 +61,12 @@ table {
 
 .exec {
 
-    background-color: var(--back-5);
+    background-color: var(--back-code);
 
     margin: 0 -40px;
     font-family: monospace;
-    border-top: 1px solid var(--border-color-light);
-    border-bottom: 1px solid var(--border-color-light);
+    border-top: var(--border-width-light) solid var(--border-color-light);
+    border-bottom: var(--border-width-light) solid var(--border-color-light);
 }
 
 .exec input {
@@ -86,7 +86,7 @@ table {
     padding: 0 40px;
     display: flex;
     align-items: center;
-    border-bottom: 1px dashed var(--border-color-light);
+    border-bottom: var(--border-width-light) dashed var(--border-color-light);
 }
 
 .exec-out {
