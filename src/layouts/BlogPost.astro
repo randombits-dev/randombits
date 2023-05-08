@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 ---
 
-<HtmlLayout title={content.title} description={content.desc}>
+<HtmlLayout title={content.title} description={content.desc} img={content.img}>
     <BlogHeader meta={content}/>
     <div class="card article-body">
         <slot/>

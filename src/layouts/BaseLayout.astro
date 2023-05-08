@@ -9,13 +9,13 @@ export interface Props {
     image?: string;
 }
 
-const {title, description, image = '/placeholder-social.jpg'} = Astro.props;
+const {title, description, img} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <BaseHead title={title} description={description}/>
+    <BaseHead title={title} description={description} img={img}/>
 </head>
 <body>
 <Header/>

@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={content.title} description={content.desc}>
+<BaseLayout title={content.title} description={content.desc} img={content.img}>
     <main-with-sidebar>
         <BlogHeader meta={content}/>
         <div class="two-column">

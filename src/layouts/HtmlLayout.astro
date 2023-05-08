@@ -7,13 +7,11 @@ export interface Props {
     image?: string;
 }
 
-// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const {title, description, image = '/placeholder-social.jpg', frontmatter} = Astro.props;
+const {title, description, img} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<BaseLayout {...Astro.props}>
+<BaseLayout title={title} description={description} img={img}>
     <main>
         <slot/>
     </main>

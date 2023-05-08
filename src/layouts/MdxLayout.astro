@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 ---
 
-<HtmlLayout title={frontmatter.title} description={frontmatter.desc}>
+<HtmlLayout title={frontmatter.title} description={frontmatter.desc} img={frontmatter.img}>
     <BlogHeader meta={frontmatter}/>
     <Card>
         <div class="article-body">
