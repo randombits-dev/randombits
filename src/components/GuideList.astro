@@ -1,5 +1,9 @@
 ---
+import {getCollection} from "astro:content";
+
 import Article from "./Article.astro";
+import CardRow from "./CardRow.astro";
+import ImageCard from "./ImageCard.astro";
 
 const numberLocalization = {
     img: '/images/chalkboard.jpg',
@@ -22,9 +26,24 @@ const standardNotes = {
         ['Creating your own extension', '/standard-notes/creating-extensions']
     ]
 };
+
+const posts = (await getCollection('articles')).filter(item => !item.data.draft && !item.data.hide).sort(
+    (a, b) => new Date(b.data.published).valueOf() - new Date(a.data.published).valueOf()
+);
+
+const limit = 5;
+const postsToShow = limit ? posts.slice(0, limit) : posts;
 ---
-<Article article={numberLocalization} url={'/articles/number-localization/intro'}/>
-<Article article={standardNotes} url={'/standard-notes/creating-extensions'}/>
+<ImageCard img={numberLocalization.img} title={numberLocalization.title} desc={numberLocalization.desc}
+           url={'/articles/number-localization/intro'}/>
+<ImageCard img={standardNotes.img} title={standardNotes.title} desc={standardNotes.desc}
+           url={'/standard-notes/creating-extensions'}/>
+
+{
+    postsToShow.map((post) => (
+    <ImageCard img={post.data.img} title={post.data.title} desc={post.data.desc} url={'/articles/' + post.slug}/>
+        ))
+    }
 
 <!--
 <Card title="Featured Guides">

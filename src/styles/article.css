@@ -108,6 +108,15 @@ li {
     padding: 3px 0;
 }
 
+.article {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.article-sidebar {
+    max-width: 1200px;
+}
+
 .article-body img {
     border: 1px solid var(--border-color);
     margin: 20px 0;
@@ -117,4 +126,5 @@ li {
     overflow: hidden;
     padding: 20px 40px !important;
     background-color: var(--back-article) !important;
+
 }

@@ -4,6 +4,7 @@ import MarkdownContent from '../../snippits/tools.mdx';
 import Card from "../../components/Card.astro";
 import CardRow from "../../components/CardRow.astro";
 import CardV from "../../components/CardV.astro";
+import FeaturedTools from "../../components/FeaturedTools.astro";
 
 const TOOLS = [
     {
@@ -43,17 +44,24 @@ const TOOLS = [
         }
     </Card>-->
 
-    <div class="card">
-        <h1>Awesome Tools</h1>
-    </div>
-
-    <div class="card-v-layout">
-        {
-            TOOLS.map(tool =>
-                    <div class="card">
-                        <CardV title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
-                    </div>
-            )
-        }
+    <h1>Awesome Tools</h1>
+    <div class="two-columns">
+        <FeaturedTools/>
     </div>
 </HtmlLayout>
+
+<style>
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    @media screen and (max-width: 1400px) {
+        .two-columns {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

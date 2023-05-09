@@ -11,9 +11,10 @@ const {
 ---
 
 <HtmlLayout title={content.title} description={content.desc} img={content.img}>
-    <BlogHeader meta={content}/>
-    <div class="card article-body">
-        <slot/>
+    <div class="article">
+        <BlogHeader meta={content}/>
+        <div class="card article-body">
+            <slot/>
+        </div>
     </div>
-
 </HtmlLayout>

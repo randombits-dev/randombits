@@ -1,14 +1,14 @@
 .header {
     font-family: var(--font-1);
     border-bottom: var(--border-width) solid var(--border-color);
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     background-color: var(--back-2);
     color: var(--text-2);
 }
 
 .header-content {
     display: flex;
-    padding: 10px 0;
+    padding: 10px 30px;
     align-items: baseline;
     max-width: 1000px;
     margin-left: auto;
@@ -31,7 +31,7 @@
 
 .theme-changer {
     text-align: center;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 
 .theme-changer button {

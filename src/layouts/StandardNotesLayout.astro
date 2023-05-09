@@ -26,29 +26,31 @@ const {
 </BlogSidebar>-->
 
 <HtmlLayout title={frontmatter.title} description={frontmatter.desc} img={frontmatter.img}>
-    <BlogHeader meta={frontmatter}/>
-    <!--<Card title="Quick Links">
-        <div style="display: grid; grid-template-columns: 1fr 1fr">
-            <div>
-                <CardRow title="Writing Extensions" desc="A guide to writing your own editor extension"
-                         url="/standard-notes/creating-extensions"
-                         img="/images/chalkboard.jpg"/>
+    <div class="article">
+        <BlogHeader meta={frontmatter}/>
+        <!--<Card title="Quick Links">
+            <div style="display: grid; grid-template-columns: 1fr 1fr">
+                <div>
+                    <CardRow title="Writing Extensions" desc="A guide to writing your own editor extension"
+                             url="/standard-notes/creating-extensions"
+                             img="/images/chalkboard.jpg"/>
+                </div>
+                <div>
+                    <CardRow title="Extension Template" desc="A starter repo for creating editor extensions"
+                             url="/standard-notes/creating-extensions"
+                             img="/images/chalkboard.jpg"/>
+                </div>
+                <div style="margin-top:20px;">
+                    <CardRow title="Cosmos Extension"
+                             desc="Split a note into multiple areas. Each area can use a different editor. Marketplace for installing new extensions."
+                             url="/standard-notes/cosmos"
+                             img="/images/solar6.jpg"/>
+                </div>
             </div>
-            <div>
-                <CardRow title="Extension Template" desc="A starter repo for creating editor extensions"
-                         url="/standard-notes/creating-extensions"
-                         img="/images/chalkboard.jpg"/>
-            </div>
-            <div style="margin-top:20px;">
-                <CardRow title="Cosmos Extension"
-                         desc="Split a note into multiple areas. Each area can use a different editor. Marketplace for installing new extensions."
-                         url="/standard-notes/cosmos"
-                         img="/images/solar6.jpg"/>
-            </div>
+        </Card>-->
+        <div class="card article-body">
+            <slot/>
         </div>
-    </Card>-->
-    <div class="card article-body">
-        <slot/>
     </div>
 </HtmlLayout>
 

@@ -4,9 +4,28 @@ import HtmlLayout from '../../layouts/HtmlLayout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import Card from "../../components/Card.astro";
 import ArticleListV from "../../components/ArticleListV.astro";
+import GuideList from "../../components/GuideList.astro";
 ---
 
 <HtmlLayout title="Developer Articles" description="List of all developer articles • For software developers">
-    <div class="card"><h1>Software Articles</h1></div>
-    <ArticleListV/>
+    <h1 class="center">All Software Articles</h1>
+    <div class="two-columns">
+        <GuideList/>
+    </div>
 </HtmlLayout>
+
+<style>
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    @media screen and (max-width: 1400px) {
+        .two-columns {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

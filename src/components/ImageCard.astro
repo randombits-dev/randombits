@@ -1,0 +1,48 @@
+---
+const {url, img, title, desc} = Astro.props;
+---
+
+<a href={url} class="nav">
+    <div class="card card-large">
+        <div class="card-flex">
+            <img src={img}/>
+            <div class="card-text">
+                <div class="card-row-title">{title}</div>
+                <div class="card-row-desc">{desc}</div>
+            </div>
+        </div>
+    </div>
+</a>
+
+<style>
+    .card-flex {
+        display: flex;
+    }
+
+    .card-text {
+        flex: 1 1 auto;
+        padding: 20px;
+    }
+
+    img {
+        flex: 0 0 auto;
+        border-right: var(--border-width) solid var(--border-color);
+        max-width: 150px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 500px) {
+        .card-flex {
+            display: block;
+        }
+
+        img {
+            border-bottom: var(--border-width) solid var(--border-color);
+            max-width: 100%;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+</style>

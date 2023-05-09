@@ -4,14 +4,15 @@ import '../styles/article.css';
 import '../styles/prism-custom.css';
 import BlogHeader from "./BlogHeader.astro";
 import Card from "../components/Card.astro";
+import HtmlLayout from "./HtmlLayout.astro";
 
 const {
     content,
 } = Astro.props;
 ---
 
-<BaseLayout title={content.title} description={content.desc} img={content.img}>
-    <main-with-sidebar>
+<HtmlLayout title={content.title} description={content.desc} img={content.img}>
+    <div class="article article-sidebar">
         <BlogHeader meta={content}/>
         <div class="two-column">
 
@@ -27,8 +28,8 @@ const {
                 <slot name="sidebar"/>
             </sidebar>
         </div>
-    </main-with-sidebar>
-</BaseLayout>
+    </div>
+</HtmlLayout>
 
 <style>
     .two-column {

@@ -11,10 +11,12 @@ const {
 ---
 
 <HtmlLayout title={frontmatter.title} description={frontmatter.desc} img={frontmatter.img}>
-    <BlogHeader meta={frontmatter}/>
-    <Card>
-        <div class="article-body">
-            <slot/>
-        </div>
-    </Card>
+    <div class="article">
+        <BlogHeader meta={frontmatter}/>
+        <Card>
+            <div class="article-body">
+                <slot/>
+            </div>
+        </Card>
+    </div>
 </HtmlLayout>

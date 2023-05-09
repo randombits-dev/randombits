@@ -1,9 +1,9 @@
 .card {
     border: var(--border-width) solid var(--border-color);
-    background-color: var(--back-1);
+    background-color: var(--back-article);
     border-radius: var(--border-radius-1);
     position: relative;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
 }
 
 .card > h1 {
@@ -107,8 +107,8 @@
 }
 
 .card-v-layout .card:hover {
-    box-shadow: var(--hover-shadow) var(--hover-shadow) var(--shadow-color);
-    translate: calc(-1 * var(--hover-shadow)) calc(-1 * var(--hover-shadow));
+    box-shadow: 2px 2px var(--shadow-color);
+    translate: -2px -2px;
     cursor: pointer;
 }
 

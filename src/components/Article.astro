@@ -5,7 +5,7 @@ const {article, url} = Astro.props;
 <a href={url} class="nav">
     <div class="card card-large">
         <div class="card-flex">
-            <img width="200" height="200" src={article.img}/>
+            <img src={article.img}/>
             <div class="card-text">
                 <div class="card-row-title">{article.title}</div>
                 <div class="card-row-desc">{article.desc}</div>
@@ -32,6 +32,8 @@ const {article, url} = Astro.props;
     img {
         flex: 0 0 auto;
         border-right: var(--border-width) solid var(--border-color);
-        height: 200px;
+        max-width: 150px;
+        height: auto;
+        object-fit: cover;
     }
 </style>
