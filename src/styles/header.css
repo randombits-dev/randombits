@@ -2,8 +2,8 @@
     font-family: var(--font-1);
     border-bottom: var(--border-width) solid var(--border-color);
     /*margin-bottom: 10px;*/
-    background-color: var(--back-2);
-    color: var(--text-2);
+    background-color: var(--back-header);
+    color: var(--color-header);
 }
 
 .header-content {
@@ -31,28 +31,28 @@
 
 .theme-changer {
     text-align: center;
+    padding-top: 10px;
+    background-color: var(--back-0);
     /*margin-bottom: 30px;*/
 }
 
-.theme-changer button {
+.homepage .theme-changer {
+    background-color: var(--back-1);
+}
+
+.theme-changer > div {
+    display: inline-block;
     border-radius: var(--border-radius-1);
     padding: 5px 10px;
-    background-color: var(--back-1);
     margin: 0 5px;
-    border: var(--border-width) solid var(--border-color);
     cursor: pointer;
-    overflow: hidden;
-    color: var(--text-1);
+    color: var(--color-1);
 
 }
 
-.theme-changer button:not(.theme-active-btn):hover {
-    box-shadow: 1px 1px var(--shadow-color);
-    translate: -1px -1px;
-}
-
-.theme-changer .theme-active-btn {
+.theme-changer .theme-active {
     cursor: default;
     box-shadow: 2px 2px var(--shadow-color);
     translate: -2px -2px;
+    border: 1px solid var(--border-color);
 }

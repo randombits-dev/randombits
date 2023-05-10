@@ -8,7 +8,8 @@ import Random from "../components/Random.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../layouts/BlogPost.astro";
 ---
-<BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more">
+<BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more" bodyClass="homepage">
+
 
     <div class="hero-container">
         <div class="hero">
@@ -24,29 +25,35 @@ import BlogPost from "../layouts/BlogPost.astro";
             </div>
         </div>
     </div>
-    <h1 style="text-align: center; margin-top: 50px">Featured Tools</h1>
-    <div class="c-1200">
-        <div class="card-list">
-            <FeaturedTools/>
-            <!--<a href={''} class="nav">-->
-            <!--    <div class="card card-large"><h3>See All Tools</h3></div>-->
-            <!--</a>-->
-        </div>
-        <a class="button">See All Tools</a>
+    <div class="color-2">
+        <div class="c-1200">
+            <h1 style="text-align: center; margin-top: 50px">Featured Tools</h1>
 
+            <div class="card-list">
+                <FeaturedTools/>
+                <!--<a href={''} class="nav">-->
+                <!--    <div class="card card-large"><h3>See All Tools</h3></div>-->
+                <!--</a>-->
+            </div>
+            <a class="button">See All Tools</a>
+
+        </div>
     </div>
 
+    <hr/>
 
-    <h1 style="text-align: center; margin-top: 50px">Latest Articles</h1>
+    <div class="color-3">
+        <div class="c-1200">
+            <h1 style="text-align: center; margin-top: 50px">Latest Articles</h1>
 
-    <div class="c-1200">
-        <div class="card-list">
-            <GuideList/>
-            <!--<a href={''} class="nav">-->
-            <!--    <div class="card card-large"><h3>See All Articles</h3></div>-->
-            <!--</a>-->
+            <div class="card-list">
+                <GuideList/>
+                <!--<a href={''} class="nav">-->
+                <!--    <div class="card card-large"><h3>See All Articles</h3></div>-->
+                <!--</a>-->
+            </div>
+            <a class="button" href="/">See All Articles</a>
         </div>
-        <a class="button" href="/">See All Articles</a>
     </div>
 
 </BaseLayout>
@@ -59,8 +66,9 @@ import BlogPost from "../layouts/BlogPost.astro";
     }
 
     .hero-container {
-        padding: 50px 30px;
-        background-color: #c3e1ff;
+        padding: 80px 30px 50px;
+        background-color: var(--back-1);
+        color: var(--color-1);
         text-align: center;
         border-bottom: var(--border-width) solid var(--border-color);
     }
@@ -103,6 +111,27 @@ import BlogPost from "../layouts/BlogPost.astro";
 
     }
 
+    .back-0 {
+        background-color: var(--back-0);
+        color: var(--color-0);
+        text-align: center;
+    }
+
+    .color-1 {
+        background-color: var(--back-1);
+        color: var(--color-1);
+    }
+
+    .color-2 {
+        background-color: var(--back-2);
+        color: var(--color-2);
+    }
+
+    .color-3 {
+        background-color: var(--back-3);
+        color: var(--color-3);
+    }
+
     .card-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -114,6 +143,11 @@ import BlogPost from "../layouts/BlogPost.astro";
     .card-list + a.button {
         max-width: 500px;
         margin: 30px auto;
+    }
+
+    svg {
+        width: 300px;
+        height: auto;
     }
 
     @media screen and (max-width: 1400px) {

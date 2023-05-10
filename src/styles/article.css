@@ -42,7 +42,7 @@ th {
 }
 
 td, th {
-    border-bottom: 1px solid var(--text-1);
+    border-bottom: 1px solid var(--color-content);
     padding: 5px 15px;
     /*white-space: nowrap;*/
     font-size: var(--font-size-caption)
@@ -125,6 +125,6 @@ li {
 .article-body {
     overflow: hidden;
     padding: 20px 40px !important;
-    background-color: var(--back-article) !important;
+    background-color: var(--back-content) !important;
 
 }

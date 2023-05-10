@@ -1,16 +1,14 @@
-import {createSignal} from "solid-js";
+import {createSignal, onMount} from "solid-js";
 
 const THEME_LIST = [
-    {id: "base", name: "Peach"},
-    {id: "fruity", name: "Fruity"},
+    {id: "base", name: "Fruity"},
+    {id: "bold", name: "Bold"},
     {id: "clay", name: "Clay"},
     {id: "camo", name: "Camo"},
     {id: "strawberry", name: "Berry"},
-    {id: "pine", name: "Pine"},
     {id: "bee", name: "Buzz"},
     {id: "daring", name: "Dare"},
-    {id: "dark-dusk", name: "Dusk"},
-    // {id: "dark-rust", name: "Rust"},
+    {id: "gray", name: "Overcast"},
     {id: "dark-metal", name: "Metal"},
     {id: "dark-fear", name: "Fear"},
 ];
@@ -32,7 +30,7 @@ const ThemeChanger = () => {
         localStorage.setItem("theme", newTheme.id);
     };
 
-    queueMicrotask(() => {
+    onMount(() => {
         setCurrentTheme(initialTheme);
     });
 
@@ -41,15 +39,15 @@ const ThemeChanger = () => {
             {THEME_LIST.map((theme) => {
                 if (currentTheme() === theme.id) {
                     return (
-                        <button class="theme-active-btn">
+                        <div class="theme-active">
                             {theme.name}
-                        </button>
+                        </div>
                     );
                 } else {
                     return (
-                        <button onClick={() => changeTheme(theme)}>
+                        <div onClick={() => changeTheme(theme)}>
                             {theme.name}
-                        </button>
+                        </div>
                     );
                 }
 

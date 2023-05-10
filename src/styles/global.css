@@ -13,7 +13,7 @@ body {
     font-family: var(--font-2);
     margin: 0;
     background-color: var(--back-0);
-    color: var(--text-1);
+    color: var(--color-content);
     font-size: var(--font-size-text);
     letter-spacing: var(--letter-spacing-text);
 }
@@ -35,7 +35,7 @@ sidebar a {
 }
 
 sidebar a:hover {
-    background-color: var(--back-2)
+    background-color: var(--back-contrast)
     /*padding-left: 20px;*/
 }
 
@@ -57,7 +57,7 @@ h2 {
     font-weight: 700;
     display: flex;
     align-items: center;
-    color: var(--text-1);
+    color: var(--color-content);
     /*text-transform: uppercase;*/
 }
 
@@ -81,8 +81,8 @@ a.button, button {
     border-radius: var(--border-radius-2);
     font-size: var(--font-size-caption);
     font-weight: bold;
-    background-color: var(--back-2);
-    color: var(--text-2);
+    background-color: var(--back-header);
+    color: var(--color-header);
     cursor: pointer;
 }
 
@@ -98,4 +98,10 @@ a.button:hover, button:hover {
 
 .flex {
     display: flex;
+}
+
+hr {
+    margin: 0;
+    border: none;
+    border-bottom: var(--border-width) solid var(--border-color);
 }

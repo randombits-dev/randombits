@@ -1,6 +1,7 @@
 .card {
     border: var(--border-width) solid var(--border-color);
-    background-color: var(--back-article);
+    background-color: var(--back-content);
+    color: var(--color-content);
     border-radius: var(--border-radius-1);
     position: relative;
     /*margin-top: 30px;*/
@@ -21,8 +22,8 @@
 
 .card-title {
     font-family: var(--font-1);
-    background-color: var(--back-2);
-    color: var(--text-2);
+    background-color: var(--back-header);
+    color: var(--color-header);
     padding: 8px 20px;
     font-weight: bold;
     font-size: 18px;

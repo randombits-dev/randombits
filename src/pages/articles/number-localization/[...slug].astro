@@ -17,7 +17,7 @@ const {entry} = Astro.props;
 const {Content} = await entry.render();
 ---
 <BlogSidebar content={entry.data}>
-    <Card title="Navigation" slot="sidebar">
+    <Card slot="sidebar">
         <a class="nav" href="intro">Intro</a>
         <a class="nav" href="formatting">Formatting</a>
         <a class="nav" href="parsing">Parsing</a>
