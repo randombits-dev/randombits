@@ -42,7 +42,7 @@
     --font-1: 'Capriola', sans-serif;
     --font-2: 'Montserrat', sans-serif;
     --font-size-text: 18px;
-    --font-size-1: 40px;
+    --font-size-1: 28px;
     --font-size-2: 32px;
     --letter-spacing-text: 0px;
     --font-size-caption: 16px;
@@ -55,13 +55,14 @@
 }
 
 .theme-base {
-    --back-1: #ffebbb;
-    --back-2: #fff8d1;
-    --back-3: #e8fcdc;
+    --back-0: #ffe9c2;
+    --back-1: #e1eefe;
+    --back-2: #ffe9c2;
+    --back-3: #e1eefe;
     --color-4: #222;
-    --back-0: #fefae0;
+    --back-content: #fafafa;
     --back-contrast: #ffebbb;
-    --back-header: #ffcab0;
+    --back-header: #fafafa;
     --color-content: #444;
     --color-header: #444;
     --border-radius-1: 5px;
@@ -71,25 +72,22 @@
     --border-color-light: #aaa;
 }
 
-.theme-minty {
-    --back-1: #eaf6f6;
-    --back-2: #dff6f6;
-    --back-3: #d3f5f0;
-    --color-4: #222;
-    --back-0: #faf2ee;
-    --back-contrast: #dff6f6;
-    --back-header: #66bfbf;
-    --color-content: #444;
-    --color-header: #333;
+.theme-base_old {
+    --back-0: #ffe9c2;
+    --back-1: #e1eefe;
+    --back-2: #fafafa;
+    --text-1: #444;
+    --text-2: var(--text-1);
     --border-radius-1: 5px;
     --border-radius-2: 10px;
     --border-width: 1px;
-    --border-color: #222;
-    --font-size-text: 22px;
-    --font-size-1: 55px;
-    --font-size-2: 42px;
-    --font-size-caption: 19px;
+    --border-color: #444;
     --border-color-light: #aaa;
+    --font-1: 'Capriola', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+    --font-size-text: 18px;
+    --letter-spacing-text: 0px;
+    --font-size-caption: 15px;
 }
 
 .theme-bold {

@@ -36,9 +36,9 @@
     /*margin-bottom: 30px;*/
 }
 
-.homepage .theme-changer {
-    background-color: var(--back-1);
-}
+/*.homepage .theme-changer {*/
+/*    background-color: var(--back-1);*/
+/*}*/
 
 .theme-changer > div {
     display: inline-block;

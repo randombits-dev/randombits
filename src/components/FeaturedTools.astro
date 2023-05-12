@@ -1,5 +1,6 @@
 ---
 import ImageCard from "./ImageCard.astro";
+import Card from "./Card.astro";
 const TOOLS = [
     {
         title: 'Snowrunner Save Editor',
@@ -15,6 +16,22 @@ const TOOLS = [
     }
 ]
 ---
+<!--<Card title="Featured Tools">-->
+<!--    {-->
+<!--        TOOLS.map(({link, title, desc, img}) => {-->
+<!--            return <a href={link} class="nav card-row">-->
+<!--                <img width="75" height="75" src={img}/>-->
+<!--                <div>-->
+<!--                    <div class="card-row-title">{title}</div>-->
+<!--                    <div class="card-row-desc">{desc}</div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        })-->
+<!--    }-->
+<!--    <a class="button card-action-btn" href="/tools">See All Tools</a>-->
+
+<!--</Card>-->
+
 
 {
     TOOLS.map(({link, title, desc, img}) => (

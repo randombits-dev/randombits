@@ -1,0 +1,1 @@
+When I implement or research something, if there isn't already a good source of information on the topic, I will try to publish an article on what I learned. 

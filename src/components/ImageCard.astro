@@ -4,19 +4,18 @@ const {url, img, title, desc} = Astro.props;
 
 <a href={url} class="nav">
     <div class="card card-large">
-        <div class="card-flex">
-            <img src={img}/>
-            <div class="card-text">
-                <div class="card-row-title">{title}</div>
-                <div class="card-row-desc">{desc}</div>
-            </div>
+        <img src={img}/>
+        <div class="card-text">
+            <div class="card-row-title">{title}</div>
+            <div class="card-row-desc">{desc}</div>
         </div>
     </div>
 </a>
 
 <style>
-    .card-flex {
+    .card {
         display: flex;
+        min-height: 425px;
     }
 
     .card-text {
@@ -24,16 +23,16 @@ const {url, img, title, desc} = Astro.props;
         padding: 20px;
     }
 
-    img {
+    img[horizonal] {
         flex: 0 0 auto;
         border-right: var(--border-width) solid var(--border-color);
-        max-width: 150px;
+        width: 200px;
         height: auto;
         object-fit: cover;
     }
 
-    @media screen and (max-width: 500px) {
-        .card-flex {
+    @media screen and (max-width: 4500px) {
+        .card {
             display: block;
         }
 
@@ -41,7 +40,7 @@ const {url, img, title, desc} = Astro.props;
             border-bottom: var(--border-width) solid var(--border-color);
             max-width: 100%;
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
         }
     }
