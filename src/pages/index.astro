@@ -1,25 +1,19 @@
 ---
-import HtmlLayout from '../layouts/HtmlLayout.astro';
-import ArticleList from '../components/ArticleList.astro';
-import FeaturedTools from "../components/FeaturedTools.astro";
 import GuideList from "../components/GuideList.astro";
-import Card from "../components/Card.astro";
-import Random from "../components/Random.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../layouts/BlogPost.astro";
 import ArticleDesc from '../snippits/articles-desc.md';
 import ToolDesc from '../snippits/tools-desc.md';
 import WelcomeDesc from '../snippits/welcome.md';
+import ToolList from "../components/ToolList.astro";
 ---
 <BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more" bodyClass="homepage">
 
-    <div class="hero-container color-2">
+    <div class="hero-container welcome">
         <div class="hero">
             <div class="hero-title">Welcome to Random Bits</div>
             <div class="hero-desc">
                 <WelcomeDesc/>
             </div>
-            <!--<a class="button" href="/">Read Full Article</a>-->
         </div>
     </div>
 
@@ -37,76 +31,24 @@ import WelcomeDesc from '../snippits/welcome.md';
             </div>
         </div>
     </div>
-    <div class="color-2">
-        <div class="c-1200">
-            <h1 style="text-align: center; margin-top: 50px">Featured Tools</h1>
-            <div class="desc">
-                <ToolDesc/>
-            </div>
-            <div class="card-list">
-                <FeaturedTools/>
-                <!--<a href={''} class="nav">-->
-                <!--    <div class="card card-large"><h3>See All Tools</h3></div>-->
-                <!--</a>-->
-            </div>
-            <a class="button">See All Tools</a>
-
+    <div class="list-container">
+        <h1 style="text-align: center; margin-top: 50px">Featured Tools</h1>
+        <div class="desc">
+            <ToolDesc/>
         </div>
+        <ToolList/>
+        <a class="button">See All Tools</a>
     </div>
-
-    <!--<hr/>-->
-
-    <div class="color-2">
-        <div class="c-1200">
-            <h1 style="text-align: center">Latest Articles</h1>
-            <div class="desc">
-                <ArticleDesc/>
-            </div>
-            <div class="card-list">
-                <GuideList/>
-                <!--<a href={''} class="nav">-->
-                <!--    <div class="card card-large"><h3>See All Articles</h3></div>-->
-                <!--</a>-->
-            </div>
-            <a class="button" href="/">See All Articles</a>
+    <div class="list-container">
+        <h1 style="text-align: center">Latest Articles</h1>
+        <div class="desc">
+            <ArticleDesc/>
         </div>
+        <GuideList/>
+        <a class="button" href="/">See All Articles</a>
     </div>
-
-    <!--<div class="lists">-->
-    <!--    <div>-->
-    <!--        <h1>Latest Articles</h1>-->
-
-    <!--        <div class="card-list">-->
-    <!--            <GuideList/>-->
-    <!--            &lt;!&ndash;<a href={''} class="nav">&ndash;&gt;-->
-    <!--            &lt;!&ndash;    <div class="card card-large"><h3>See All Articles</h3></div>&ndash;&gt;-->
-    <!--            &lt;!&ndash;</a>&ndash;&gt;-->
-    <!--        </div>-->
-    <!--        <a class="button" href="/">See All Articles</a>-->
-    <!--    </div>-->
-    <!--    <div>-->
-    <!--        <h1>Featured Tools</h1>-->
-
-    <!--        <div class="card-list">-->
-    <!--            <FeaturedTools/>-->
-    <!--            &lt;!&ndash;<a href={''} class="nav">&ndash;&gt;-->
-    <!--            &lt;!&ndash;    <div class="card card-large"><h3>See All Tools</h3></div>&ndash;&gt;-->
-    <!--            &lt;!&ndash;</a>&ndash;&gt;-->
-    <!--        </div>-->
-    <!--        <a class="button">See All Tools</a>-->
-    <!--    </div>-->
-
-    <!--</div>-->
-
 </BaseLayout>
 <style>
-    .lists {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        gap: 30px;
-    }
 
     .desc {
         max-width: 800px;
@@ -122,17 +64,21 @@ import WelcomeDesc from '../snippits/welcome.md';
     }
 
     .hero-container {
-        padding: 80px 30px 50px;
         background-color: var(--back-1);
         color: var(--color-1);
+        padding: 80px 30px 50px;
         text-align: center;
         border-bottom: var(--border-width) solid var(--border-color);
+    }
+
+    .hero-container.welcome {
+        background-color: var(--back-2);
     }
 
     .hero-container img {
         max-width: 300px;
         height: auto;
-        border: 1px solid #444;
+        border: var(--border-width) solid var(--border-color);
         flex: 0 0 auto;
         object-fit: cover;
         border-radius: 20px;
@@ -159,57 +105,19 @@ import WelcomeDesc from '../snippits/welcome.md';
         margin-bottom: 20px;
     }
 
-    .c-1200 {
+    .list-container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 30px;
-
-    }
-
-    .back-0 {
-        background-color: var(--back-0);
-        color: var(--color-0);
-        text-align: center;
-    }
-
-    .color-1 {
-        background-color: var(--back-1);
-        color: var(--color-1);
-    }
-
-    .color-2 {
         background-color: var(--back-2);
         color: var(--color-2);
     }
 
-    .color-3 {
-        background-color: var(--back-3);
-        color: var(--color-3);
-    }
-
-    .card-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-flow: row;
-        gap: 30px;
-        align-items: stretch;
-    }
-
-    .card-list + a.button {
+    a.button:last-child {
         max-width: 500px;
         margin: 30px auto;
     }
 
-    svg {
-        width: 300px;
-        height: auto;
-    }
-
-    @media screen and (max-width: 1400px) {
-        .card-list {
-            grid-template-columns: 1fr;
-        }
-    }
 
     @media screen and (max-width: 1000px) {
         .hero-container img {

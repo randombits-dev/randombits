@@ -1,8 +1,7 @@
 ---
 import {getCollection} from "astro:content";
 
-import Article from "./Article.astro";
-import CardRow from "./CardRow.astro";
+
 import ImageCard from "./ImageCard.astro";
 
 const numberLocalization = {
@@ -34,21 +33,17 @@ const posts = (await getCollection('articles')).filter(item => !item.data.draft 
 const limit = 5;
 const postsToShow = limit ? posts.slice(0, limit) : posts;
 ---
-<ImageCard img={numberLocalization.img} title={numberLocalization.title} desc={numberLocalization.desc}
-           url={'/articles/number-localization/intro'}/>
-<ImageCard img={standardNotes.img} title={standardNotes.title} desc={standardNotes.desc}
-           url={'/standard-notes/creating-extensions'}/>
 
-{
-    postsToShow.map((post) => (
-    <ImageCard img={post.data.img} title={post.data.title} desc={post.data.desc} url={'/articles/' + post.slug}/>
+<div class="card-list">
+    <ImageCard img={numberLocalization.img} title={numberLocalization.title} desc={numberLocalization.desc}
+               url={'/articles/number-localization/intro'}/>
+    <ImageCard img={standardNotes.img} title={standardNotes.title} desc={standardNotes.desc}
+               url={'/standard-notes/creating-extensions'}/>
+
+    {
+        postsToShow.map((post) => (
+                <ImageCard img={post.data.img} title={post.data.title} desc={post.data.desc}
+                           url={'/articles/' + post.slug}/>
         ))
     }
-
-<!--
-<Card title="Featured Guides">
-    <CardRow title="The Ultimate Guide to Number Localization"
-             desc="An introduction to number localization, decimal symbols, grouping symbols, numbering systems."
-             img="/images/chalkboard.jpg"/>
-</Card>
--->
+</div>

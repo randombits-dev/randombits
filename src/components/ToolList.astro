@@ -1,0 +1,14 @@
+---
+import ImageCard from "./ImageCard.astro";
+import Card from "./Card.astro";
+import {TOOLS} from "../data/tools";
+---
+
+<div class="card-list-v">
+{
+    TOOLS.map(({link, title, desc, img}) => (
+    <ImageCard style="v" url={link} title={title} desc={desc} img={img}/>
+        ))
+    }
+
+    </div>

@@ -5,6 +5,7 @@ import Card from "../../components/Card.astro";
 import CardRow from "../../components/CardRow.astro";
 import CardV from "../../components/CardV.astro";
 import FeaturedTools from "../../components/FeaturedTools.astro";
+import ToolList from "../../components/ToolList.astro";
 
 const TOOLS = [
     {
@@ -44,10 +45,8 @@ const TOOLS = [
         }
     </Card>-->
 
-    <h1>Awesome Tools</h1>
-    <div class="two-columns">
-        <FeaturedTools/>
-    </div>
+    <h1 class="center">Awesome Tools</h1>
+    <ToolList/>
 </HtmlLayout>
 
 <style>

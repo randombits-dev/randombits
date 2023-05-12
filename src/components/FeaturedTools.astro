@@ -1,40 +1,21 @@
 ---
 import ImageCard from "./ImageCard.astro";
 import Card from "./Card.astro";
-const TOOLS = [
-    {
-        title: 'Snowrunner Save Editor',
-        desc: 'Edit task and mission progress · Reveal or obtain upgrades',
-        img: '/images/snowrunner.jpg',
-        link: '/tools/snowrunner'
-    },
-    {
-        title: 'Printable Daily Schedule',
-        desc: 'Generates a daily planner for appointments · One page a day · Printable',
-        img: '/images/book.jpg',
-        link: '/tools/print-schedule'
-    }
-]
+import {TOOLS} from "../data/tools";
 ---
-<!--<Card title="Featured Tools">-->
-<!--    {-->
-<!--        TOOLS.map(({link, title, desc, img}) => {-->
-<!--            return <a href={link} class="nav card-row">-->
-<!--                <img width="75" height="75" src={img}/>-->
-<!--                <div>-->
-<!--                    <div class="card-row-title">{title}</div>-->
-<!--                    <div class="card-row-desc">{desc}</div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        })-->
-<!--    }-->
-<!--    <a class="button card-action-btn" href="/tools">See All Tools</a>-->
 
-<!--</Card>-->
-
-
-{
-    TOOLS.map(({link, title, desc, img}) => (
-    <ImageCard url={link} title={title} desc={desc} img={img}/>
-        ))
+<Card title="Featured Tools">
+    {
+        TOOLS.map(({link, title, desc, img}) => {
+            return <a href={link} class="nav card-row">
+                <img width="75" height="75" src={img}/>
+                <div>
+                    <div class="card-row-title">{title}</div>
+                    <div class="card-row-desc">{desc}</div>
+                </div>
+            </a>
+        })
     }
+    <a class="button card-action-btn" href="/tools">See All Tools</a>
+
+</Card>

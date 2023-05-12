@@ -2,7 +2,6 @@ import {createSignal, onMount} from "solid-js";
 
 const THEME_LIST = [
     {id: "base", name: "Fruity"},
-    {id: "bold", name: "Bold"},
     {id: "clay", name: "Clay"},
     {id: "camo", name: "Camo"},
     {id: "strawberry", name: "Berry"},
@@ -11,6 +10,7 @@ const THEME_LIST = [
     {id: "gray", name: "Overcast"},
     {id: "dark-metal", name: "Metal"},
     {id: "dark-fear", name: "Fear"},
+    {id: "bold", name: "Bold"},
 ];
 const initialTheme = localStorage.getItem("theme") || 'base';
 
