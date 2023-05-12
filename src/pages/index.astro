@@ -7,6 +7,9 @@ import Card from "../components/Card.astro";
 import Random from "../components/Random.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../layouts/BlogPost.astro";
+import ArticleDesc from '../snippits/articles-desc.md';
+import ToolDesc from '../snippits/tools-desc.md';
+import WelcomeDesc from '../snippits/welcome.md';
 ---
 <BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more" bodyClass="homepage">
 
@@ -14,10 +17,7 @@ import BlogPost from "../layouts/BlogPost.astro";
         <div class="hero">
             <div class="hero-title">Welcome to Random Bits</div>
             <div class="hero-desc">
-                <div>I'm Matthew Nienow, a (mostly) frontend developer.
-                </div>
-                <div>This is my personal site with some (hopefully) helpful articles and tools.
-                </div>
+                <WelcomeDesc/>
             </div>
             <!--<a class="button" href="/">Read Full Article</a>-->
         </div>
@@ -40,7 +40,9 @@ import BlogPost from "../layouts/BlogPost.astro";
     <div class="color-2">
         <div class="c-1200">
             <h1 style="text-align: center; margin-top: 50px">Featured Tools</h1>
-
+            <div class="desc">
+                <ToolDesc/>
+            </div>
             <div class="card-list">
                 <FeaturedTools/>
                 <!--<a href={''} class="nav">-->
@@ -57,10 +59,8 @@ import BlogPost from "../layouts/BlogPost.astro";
     <div class="color-2">
         <div class="c-1200">
             <h1 style="text-align: center">Latest Articles</h1>
-            <div class="desc">When I implement or research something, if
-                there isn't
-                already a good source
-                of information on the topic, I will try to publish an article on what I learned.
+            <div class="desc">
+                <ArticleDesc/>
             </div>
             <div class="card-list">
                 <GuideList/>
@@ -189,7 +189,7 @@ import BlogPost from "../layouts/BlogPost.astro";
 
     .card-list {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-auto-flow: row;
         gap: 30px;
         align-items: stretch;
@@ -205,9 +205,9 @@ import BlogPost from "../layouts/BlogPost.astro";
         height: auto;
     }
 
-    @media screen and (max-width: 100px) {
+    @media screen and (max-width: 1400px) {
         .card-list {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
     }
 
