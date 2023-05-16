@@ -74,6 +74,13 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
+"automatic1111-in-google-cloud.md": {
+  id: "automatic1111-in-google-cloud.md",
+  slug: "automatic1111-in-google-cloud",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
 "browser-storage.md": {
   id: "browser-storage.md",
   slug: "browser-storage",

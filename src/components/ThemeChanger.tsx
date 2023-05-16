@@ -2,12 +2,12 @@ import {createSignal, onMount} from "solid-js";
 
 const THEME_LIST = [
     {id: "base", name: "Fruity"},
-    {id: "clay", name: "Clay"},
-    {id: "camo", name: "Camo"},
-    {id: "strawberry", name: "Berry"},
-    {id: "bee", name: "Buzz"},
-    {id: "daring", name: "Dare"},
+    // {id: "clay", name: "Clay"},
+    // {id: "camo", name: "Camo"},
+    // {id: "strawberry", name: "Berry"},
     {id: "gray", name: "Overcast"},
+    {id: "daring", name: "Dare"},
+    {id: "bee", name: "Buzz"},
     {id: "dark-metal", name: "Metal"},
     {id: "dark-fear", name: "Fear"},
     {id: "bold", name: "Bold"},
