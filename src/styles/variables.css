@@ -54,10 +54,10 @@
 
 .theme-base {
     --back-0: #fdf2dd;
-    --back-1: #feeae1;
+    --back-1: #e1eefe;
     --back-content: #fafafa;
-    --back-contrast: #fee5e1;
-    --back-header: #fee5e1;
+    --back-contrast: #ffebbb;
+    --back-header: #e1eefe;
     --color-content: #444;
     --color-header: #444;
     --border-radius-1: 5px;
