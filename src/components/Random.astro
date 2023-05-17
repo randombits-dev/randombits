@@ -1,5 +1,6 @@
 ---
 import Card from "./Card.astro";
+import BlogPost from "../layouts/BlogPost.astro";
 ---
 
 <h1 id="rdm-text">I came here for the random bits!</h1>
@@ -8,6 +9,7 @@ import Card from "./Card.astro";
 <style>
     #rdm-text {
         margin-bottom: 30px;
+        color: var(--color-back);
     }
 
     #rdm-btn {
@@ -15,20 +17,11 @@ import Card from "./Card.astro";
         max-width: 500px;
     }
 
-
-</style>
-
-<style is:global>
-    .rdm-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: white;
-        font-size: 32px;
-        padding: 30px;
-        font-family: var(--font-2);
-        /*pointer-events: none;*/
+    #rdm-out {
+        color: var(--color-back);
     }
+
+
 </style>
 
 <script>

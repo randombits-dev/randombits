@@ -18,7 +18,7 @@ import Random from "../components/Random.astro";
         </div>
     </div>
 
-    <div class="hero-container">
+    <div class="hero-container featured-article">
         <div class="hero flex">
             <img src="/images/notebook2.jpg"/>
             <div class="hero-info">
@@ -71,9 +71,12 @@ import Random from "../components/Random.astro";
         margin-bottom: 20px;
     }
 
-    .hero-container {
+    .featured-article {
         background-color: var(--back-1);
-        color: var(--color-1);
+        color: var(--color-hero);
+    }
+
+    .hero-container {
         padding: 80px 30px 50px;
         text-align: center;
         border-bottom: var(--border-width) solid var(--border-color);
@@ -81,6 +84,7 @@ import Random from "../components/Random.astro";
 
     .hero-container.welcome {
         background-color: var(--back-2);
+        color: var(--color-back);
     }
 
     .hero-container img {
@@ -118,7 +122,7 @@ import Random from "../components/Random.astro";
         margin: 0 auto;
         padding: 30px;
         background-color: var(--back-2);
-        color: var(--color-2);
+        color: var(--color-back);
     }
 
     a.button:last-child {
