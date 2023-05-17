@@ -2,14 +2,17 @@
 import Card from "./Card.astro";
 ---
 
-<Card>
-    <div id="rdm-text">I came here for the random bits!</div>
-    <a id="rdm-btn" class="button">Generate!</a>
-</Card>
-
+<h1 id="rdm-text">I came here for the random bits!</h1>
+<a id="rdm-btn" class="button">Generate!</a>
+<div id="rdm-out"/>
 <style>
     #rdm-text {
         margin-bottom: 30px;
+    }
+
+    #rdm-btn {
+        margin: 0 auto;
+        max-width: 500px;
     }
 
 
@@ -38,19 +41,15 @@ import Card from "./Card.astro";
     let el;
     const btn = document.getElementById('rdm-btn');
     const text = document.getElementById('rdm-text');
+    const out = document.getElementById('rdm-out');
     btn.addEventListener('click', () => {
         if (intervalId) {
             clearInterval(intervalId);
             intervalId = undefined;
-            el.remove();
             btn.innerText = 'Again!';
         } else {
-            // btn.remove();
-            el = document.createElement('div');
-            el.setAttribute('class', 'rdm-overlay');
-            document.body.appendChild(el);
             intervalId = setInterval(() => {
-                el.innerText += ' ' + randomBit();
+                out.innerText += ' ' + randomBit();
             }, 50);
             text.innerHTML = 'Your Welcome!';
             btn.innerText = 'Please Stop!';

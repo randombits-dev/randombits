@@ -46,7 +46,7 @@
     --font-size-2: 32px;
     --letter-spacing-text: 0px;
     --font-size-caption: 16px;
-    --shadow-color: var(--color-content);
+    --shadow-color: var(--border-color);
 }
 
 .theme-dark {
@@ -55,7 +55,7 @@
 }
 
 .theme-base {
-    --back-0: #ffedcb;
+    --back-0: #fdf2dd;
     --back-1: #e1eefe;
     --back-content: #fafafa;
     --back-contrast: #ffebbb;
@@ -80,10 +80,9 @@
     --border-radius-2: 10px;
     --border-width: 3px;
     --border-color: #222;
-    --font-size-text: 20px;
-    --font-size-1: 45px;
-    --font-size-2: 35px;
-    --font-size-caption: 18px;
+    --font-size-text: 19px;
+    --font-size-caption: 17px;
+
 }
 
 .theme-gray {

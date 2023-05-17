@@ -5,6 +5,7 @@ import ArticleDesc from '../snippits/articles-desc.md';
 import ToolDesc from '../snippits/tools-desc.md';
 import WelcomeDesc from '../snippits/welcome.md';
 import ToolList from "../components/ToolList.astro";
+import Random from "../components/Random.astro";
 ---
 <BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more" bodyClass="homepage">
 
@@ -27,7 +28,7 @@ import ToolList from "../components/ToolList.astro";
                     is a
                     comprehensive guide for how to write editor extensions.
                 </div>
-                <a class="button" href="/">Read Full Article</a>
+                <a class="button" href="/standard-notes/creating-extensions">Read Full Article</a>
             </div>
         </div>
     </div>
@@ -37,15 +38,22 @@ import ToolList from "../components/ToolList.astro";
             <ToolDesc/>
         </div>
         <ToolList/>
-        <a class="button">See All Tools</a>
+        <a class="button" href="/tools">See All Tools</a>
     </div>
+
     <div class="list-container">
         <h1 style="text-align: center">Latest Articles</h1>
         <div class="desc">
             <ArticleDesc/>
         </div>
         <GuideList/>
-        <a class="button" href="/">See All Articles</a>
+        <a class="button" href="/articles">See All Articles</a>
+    </div>
+
+    <div class="other-area">
+        <div class="random">
+            <Random/>
+        </div>
     </div>
 </BaseLayout>
 <style>
@@ -116,6 +124,19 @@ import ToolList from "../components/ToolList.astro";
     a.button:last-child {
         max-width: 500px;
         margin: 30px auto;
+    }
+
+    .other-area {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        text-align: center;
+        background-color: var(--back-2);
+    }
+
+    .other-area a.button {
+        max-width: 500px;
+        margin: 0 auto;
     }
 
 
