@@ -5,6 +5,8 @@ layout: ../../layouts/StandardNotesLayout.astro
 img: '/images/notebook2.jpg'
 ---
 
+If you don't like reading, and want to jump straight into coding, you can checkout my [Starter Template Repo](/standard-notes/template).
+
 ## Overview
 
 This guide will go over the following:
@@ -126,7 +128,7 @@ options: {
 
 Standard Notes will call our function we pass to **streamContextItem** and give us the selected note. We grab the following from the note:
 
-The **text**.
+1. The **text**.
 
 ```javascript
 const text = note.content.text || '';
@@ -151,7 +153,7 @@ try {
 }
 ```
 
-The **locked** metadata property, which is tied to the **Prevent Editing** control. For the best experience, we probably want to disable our editor when the note is locked.
+2. The **locked** metadata property, which is tied to the **Prevent Editing** control. For the best experience, we probably want to disable our editor when the note is locked.
 However, it's not strictly required, because if the user tries to change the note while its locked, Standard Notes will prevent the save and warn the user.
 There is many other metadata values you can get with the `getItemAppDataValue` method, like *pinned* and *archived*, but I don't foresee any extension needing those values.
 
@@ -159,7 +161,7 @@ There is many other metadata values you can get with the `getItemAppDataValue` m
 const isLocked = componentRelay.getItemAppDataValue(note, 'locked');
 ```
 
-Our own **metadata** we might be storing. This is optional if there is no metadata you need to store.
+3. Our own **metadata** we might be storing. This is optional if there is no metadata you need to store.
 
 ```javascript
 const metadata = note.content.appData['dev.randombits.my-editor'];
@@ -244,8 +246,9 @@ When you use these variables, and the user switches themes, your editor will aut
 
 ## JSON Descriptor File
 
-When users install your extension, they will enter a url pointing to your JSON descriptor file.
-The file is normally hosted at the same url of your application at `/ext.json`, but it does't have to be.
+You will need to create a descriptor file, which is how people will install your extension.
+
+The file is normally hosted at the same url of your application at `/ext.json`, but it doesn't have to be.
 Here is an example file:
 
 ```json
@@ -284,6 +287,12 @@ However, this value is optional, because the desktop version will simply fallbac
 It is only required if "download_url" is specified. The file it points at should be a json file containing a "version" property.
 The package.json or the ext.json file could be used for this, since they both contain the version.
 
-{/*## Further Reading*/}
+## Deploy / Hosting
 
-{/*Check out the [React Template Repo](/standard-notes/template) to help you get started.*/}
+The most common way to host an extension is through **Github Pages**. Not only is it the easiest way, but also users will trust your extension if it is hosted next to your source code.
+
+## Starter Template Repo
+
+You can use the official starter template: https://github.com/standardnotes/editor-template-cra-typescript
+
+But I've created a more complete starter template, which includes a demo/testing environment. See my [Starter Template Documentation](/standard-notes/template) or go directly to the github repo: https://github.com/nienow/sn-extension-template

@@ -1,13 +1,17 @@
 .remark-code-title {
-    background-color: var(--back-header);
-    border: 1px solid var(--border-color);
-    margin-bottom: -3px;
-    padding: 8px 20px;
+    /*background-color: var(--back-header);*/
+    /*color: var(--color-header);*/
+    background-color: var(--back-code);
+    border-top: var(--border-width-light) solid var(--border-color-light);
+    padding: 8px 60px;
     font-weight: bold;
+    font-family: monospace;
     font-size: var(--font-size-caption);
-    letter-spacing: 2px;
-    margin-top: 20px;
-    border-radius: 5px 5px 0 0;
+    margin: 20px -40px 0;
+    /*text-decoration: underline;*/
+
+
+    /*border-radius: 5px 5px 0 0;*/
 }
 
 pre {
@@ -29,7 +33,7 @@ p code {
 }
 
 code[class*="language-"] {
-    margin: 20px -40px 40px;
+    margin: 0 -40px 40px;
     white-space: pre-wrap;
     background-color: var(--back-code);
     font-size: 14px;
@@ -48,6 +52,10 @@ code[class*="language-"] {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+}
+
+.remark-code-title + pre code {
+    border-top-style: none;
 }
 
 /* Code blocks */

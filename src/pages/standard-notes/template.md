@@ -2,11 +2,21 @@
 title: "Standard Notes Editor Extension Template"
 desc: "A better starter template for creating standard notes extensions"
 layout: ../../layouts/StandardNotesLayout.astro
+img: /images/covers/planetnote.jpg
 ---
 
 ## Getting Started
 
-On the github page, https://github.com/nienow/sn-extension-template, there is a `Use this template` button, which will create a new repo based on this template.
+https://github.com/nienow/sn-extension-template - Click the **Use This Template** button.
+
+The project is setup to use **pnpm**, but you can use **npm** if you want to be inferior.
+
+```
+pnpm install
+pnpm run start
+```
+
+The demo page (demo.html) is automatically opened.
 
 ## Demo Page
 
@@ -24,9 +34,27 @@ The demo page can also be used to demonstrate your extension on your personal we
 ## Extension JSON
 
 When users install your extension, they will be using the ext.json file, which contains information about your extension.
-You will want to edit this file at `public/ext.json`, changing the urls, identifier, and name.
+You will want to edit this file at `public/ext.json`, changing the urls, identifier, name, and description:
 
-The `public/local.json` file can be used if you want to install your editor into standard notes while it is running on localhost.
+```
+{
+  "identifier": "dev.randombits.template",
+  "name": "Extension Template",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "$VERSION$",
+  "description": "A custom editor",
+  "url": "https://nienow.github.io/sn-extension-template/",
+  "download_url": "https://nienow.github.io/sn-extension-template/latest.zip",
+  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json"
+}
+```
+
+The version variable (`$VERSION$`) is written during build, and is copied from the version in your **package.json** file.
+
+The build automatically creates a `latest.zip` distribution that is used by the desktop application.
+
+The `public/local.json` file can be used if you want to install your editor into standard notes while it is running on localhost. Sometimes it is necessary to do this to debug issues.
 It has a separate name and identifier so that you can install both the production version and dev version in standard notes at the same time.
 
 ## Preact Framework
@@ -42,44 +70,4 @@ functionality, so there is no reason not to use it.
 There is a github workflow setup in `.github/workflows/node.js.yml`, which will automatically build and deploy your
 extension to github pages.
 
-Make sure you have your Workflow Permissions set to "Read and write permissions" (under Settings -> Actions -> General).
-
-
-
-```typescript:index.tsx
-import React from 'react';
-import {createRoot} from "react-dom/client";
-import {EditorProvider} from "./providers/EditorProvider";
-import ComponentRelay from "@standardnotes/component-relay";
-
-let currentNote;
-
-const componentRelay = new ComponentRelay({
-  targetWindow: window,
-  options: {
-    coallesedSaving: true, // saving uses a debounce value
-    coallesedSavingDelay: 400 // 400 ms
-  }
-});
-
-const root = createRoot(document.getElementById('root'));
-componentRelay.streamContextItem((note) => {
-  currentNote = note;
-  if (note.isMetadataUpdate) {
-    return; // don't care about metadata updates
-  }
-  const text = note.content?.text || '';
-  const isLocked = componentRelay.getItemAppDataValue(note, 'locked');
-
-  root.render(
-     <EditorProvider text={text} save={save} isLocked={isLocked}/> // my custom editor component
-  );
-});
-
-const save = (data: any) => {
-  componentRelay.saveItemWithPresave(currentNote, () => {
-    currentNote.content.text = JSON.stringify(data);
-    currentNote.content.preview_plain = data.text;
-  });
-};
-```
+If you use this workflow, make sure you have your Workflow Permissions set to "Read and write permissions" (under Settings -> Actions -> General).

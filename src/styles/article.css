@@ -100,9 +100,13 @@ td:last-child {
 }
 
 iframe {
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
+    width: calc(100% + 80px);
+    border-width: var(--border-width-light) 0;
+    border-color: var(--border-color-light);
+    /*border: 2px solid #ccc;*/
+    /*border-radius: 5px;*/
+    margin-left: -40px;
+    margin-right: -40px;
 }
 
 li {
@@ -123,9 +127,22 @@ li {
     margin: 20px 0;
 }
 
+.article-body img.full-img {
+    border-width: var(--border-width-light) 0;
+    border-color: var(--border-color-light);
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    margin-right: -40px;
+}
+
 .article-body {
     overflow: hidden;
     padding: 20px 40px !important;
     background-color: var(--back-content) !important;
 
+}
+
+.further-reading {
+    margin-top: 50px;
+    padding: 20px 40px !important;
 }

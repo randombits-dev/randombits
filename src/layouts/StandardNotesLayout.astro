@@ -7,6 +7,8 @@ import Card from "../components/Card.astro";
 import CardRow from "../components/CardRow.astro";
 import HtmlLayout from "./HtmlLayout.astro";
 
+const articles = await Astro.glob('../pages/standard-notes/*.md');
+
 const {
     frontmatter,
 } = Astro.props;
@@ -27,44 +29,28 @@ const {
 
 <HtmlLayout title={frontmatter.title} description={frontmatter.desc} img={frontmatter.img}>
     <div class="article">
+
         <BlogHeader meta={frontmatter}/>
-        <!--<Card title="Quick Links">
-            <div style="display: grid; grid-template-columns: 1fr 1fr">
-                <div>
-                    <CardRow title="Writing Extensions" desc="A guide to writing your own editor extension"
-                             url="/standard-notes/creating-extensions"
-                             img="/images/chalkboard.jpg"/>
-                </div>
-                <div>
-                    <CardRow title="Extension Template" desc="A starter repo for creating editor extensions"
-                             url="/standard-notes/creating-extensions"
-                             img="/images/chalkboard.jpg"/>
-                </div>
-                <div style="margin-top:20px;">
-                    <CardRow title="Cosmos Extension"
-                             desc="Split a note into multiple areas. Each area can use a different editor. Marketplace for installing new extensions."
-                             url="/standard-notes/cosmos"
-                             img="/images/solar6.jpg"/>
-                </div>
-            </div>
-        </Card>-->
+
+
+
         <div class="card article-body">
             <slot/>
         </div>
+
+        <div class="card further-reading">
+            <h2>Further Reading</h2>
+            {
+                articles.map(article => {
+                    const showLink = Astro.url.pathname !== article.url;
+                    if (showLink) {
+                        return <CardRow title={article.frontmatter.title}
+                                         desc={article.frontmatter.desc}
+                                         url={article.url}
+                                         img={article.frontmatter.img}/>;
+                    }
+                })
+            }
+        </div>
     </div>
 </HtmlLayout>
-
-<script>
-    const path = window.location.pathname;
-    const activeLink = document.querySelector(`a.nav[href="${path}"]`);
-    if (activeLink) {
-        activeLink.classList.add('active-quick-link');
-    }
-</script>
-
-<style>
-    .active-quick-link {
-        pointer-events: none;
-        text-decoration: none !important;
-    }
-</style>
