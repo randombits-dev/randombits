@@ -12,6 +12,8 @@ const articles = await Astro.glob('../pages/standard-notes/*.md');
 const {
     frontmatter,
 } = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <!--<BlogSidebar content={frontmatter}>
@@ -42,7 +44,7 @@ const {
             <h2>Further Reading</h2>
             {
                 articles.map(article => {
-                    const showLink = Astro.url.pathname !== article.url;
+                    const showLink = path !== article.url;
                     if (showLink) {
                         return <CardRow title={article.frontmatter.title}
                                          desc={article.frontmatter.desc}
