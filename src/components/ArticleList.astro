@@ -17,8 +17,8 @@ const numberLocalization = {
 
 const standardNotes = {
     img: '/images/notebook2.jpg',
-    title: 'Standard Notes Extensions',
-    desc: 'One of the best parts of Standard Notes is the ability to write extensions. This is a comprehensive guide for how to write editor extensions.',
+    title: 'Standard Notes Extension Guide',
+    desc: 'One of the best parts of Standard Notes is the ability to use extensions. This is a comprehensive guide for how to install and write editor extensions.',
     links: [
         ['Intro to Extensions', '/standard-notes'],
         ['Cosmos Extension', '/standard-notes/cosmos'],
@@ -38,7 +38,7 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
     <ImageCard img={numberLocalization.img} title={numberLocalization.title} desc={numberLocalization.desc}
                url={'/articles/number-localization/intro'}/>
     <ImageCard img={standardNotes.img} title={standardNotes.title} desc={standardNotes.desc}
-               url={'/standard-notes/creating-extensions'}/>
+               url={'/standard-notes'}/>
 
     {
         postsToShow.map((post) => (

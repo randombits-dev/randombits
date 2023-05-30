@@ -1,1 +1,21 @@
-<div>Hello</div>
+---
+import ImageCard from "../../components/ImageCard.astro";
+import HtmlLayout from "../../layouts/HtmlLayout.astro";
+const articles = await Astro.glob('./*.md');
+
+---
+
+<HtmlLayout title="Standard Notes Articles" description="List of standard notes articles">
+
+<h1 class="center">Standard Notes Extension Guide</h1>
+    <p>One of the best parts of Standard Notes is the ability to use extensions. This is a comprehensive guide for how to install and write editor extensions.</p>
+
+    <div class="card-list">
+{
+    articles.map(article => {
+        return <ImageCard img={article.frontmatter.img} title={article.frontmatter.title} desc={article.frontmatter.desc}
+                          url={article.url}/>
+    })
+}
+    </div>
+</HtmlLayout>
