@@ -1,8 +1,7 @@
 ---
 title: "Standard Notes Cosmos Extension"
 desc: "Standard Notes extension that allows splitting a note into multiple areas. Each area can use a separate editor type. Contains an extension marketplace."
-layout: ../../layouts/StandardNotesLayout.astro
-img: '/images/solar6.jpg'
+img: ./cosmos.jpg
 ---
 
 
@@ -25,7 +24,7 @@ Extension Descriptor: https://nienow.github.io/cosmos/ext.json
 
 ## How it works
 
-<img src="/images/cosmos-instr.png" class="full-img"/>
+<img src="/images/sn/cosmos-instr.png" class="full-img"/>
 
 The **columns** and **rows** controls allows you to change the number of areas in the note.
 

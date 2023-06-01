@@ -1,8 +1,9 @@
 ---
+import {getCollection} from "astro:content";
+
 import ImageCard from "../../components/ImageCard.astro";
 import HtmlLayout from "../../layouts/HtmlLayout.astro";
-const articles = await Astro.glob('./*.md');
-
+const posts = (await getCollection('standard-notes'));
 ---
 
 <HtmlLayout title="Standard Notes Articles" description="List of standard notes articles">
@@ -12,9 +13,9 @@ const articles = await Astro.glob('./*.md');
 
     <div class="card-list">
 {
-    articles.map(article => {
-        return <ImageCard img={article.frontmatter.img} title={article.frontmatter.title} desc={article.frontmatter.desc}
-                          url={article.url}/>
+    posts.map(article => {
+        return <ImageCard img={article.data.img} title={article.data.title} desc={article.data.desc}
+                          url={'standard-notes/' + article.slug}/>
     })
 }
     </div>

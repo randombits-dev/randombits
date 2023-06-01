@@ -1,8 +1,7 @@
 ---
 title: "Creating Standard Notes Extensions"
 desc: "A guide for creating your own Standard Notes editor extensions."
-layout: ../../layouts/StandardNotesLayout.astro
-img: '/images/notebook2.jpg'
+img: './creating-extensions.jpg'
 ---
 
 If you don't like reading, and want to jump straight into coding, you can checkout my [Starter Template Repo](/standard-notes/template).

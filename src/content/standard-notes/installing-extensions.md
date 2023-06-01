@@ -1,8 +1,7 @@
 ---
 title: "Installing Standard Notes Extensions"
 desc: "One of the best parts of Standard Notes is the ability to write extensions. The guide covers how to install extensions."
-layout: ../../layouts/StandardNotesLayout.astro
-img: '/images/covers/machines.png'
+img: ./installing-extensions.png
 tags: ['standard-notes']
 ---
 

@@ -1,14 +1,16 @@
 ---
-import ImageCard from "./ImageCard.astro";
 import Card from "./Card.astro";
 import {TOOLS} from "../data/tools";
+import { Image } from 'astro:assets';
+import notebook from "../assets/notebook2.jpg";
+import CoverImage from "./CoverImage.astro";
 ---
 
 <Card title="Featured Tools">
     {
         TOOLS.map(({link, title, desc, img}) => {
             return <a href={link} class="nav card-row">
-                <img width="75" height="75" src={img}/>
+                <Image src={img}/>
                 <div>
                     <div class="card-row-title">{title}</div>
                     <div class="card-row-desc">{desc}</div>

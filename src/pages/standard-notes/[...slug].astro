@@ -1,0 +1,43 @@
+---
+import {getCollection} from 'astro:content';
+import Card from "../../components/Card.astro";
+import BlogSidebar from "../../layouts/BlogSidebar.astro";
+import CardRow from "../../components/CardRow.astro";
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection('standard-notes');
+    return blogEntries.map(entry => ({
+        params: {slug: entry.slug}, props: {entry},
+    }));
+}
+
+const {entry} = Astro.props;
+const {Content} = await entry.render();
+
+const articles = (await getCollection('standard-notes'));
+const path = Astro.url.pathname.replace(/\/+$/, '');
+
+---
+<BlogSidebar content={entry.data}>
+    <Card slot="sidebar">
+        <a class="nav" href="installing-extensions">Installing Extensions</a>
+        <a class="nav" href="creating-extensions">Creating Extensions</a>
+        <a class="nav" href="template">Starter Template</a>
+        <a class="nav" href="cosmos">Cosmos</a>
+    </Card>
+    <Content slot="content"/>
+        <div slot="after" class="card further-reading">
+            <h2>Further Reading</h2>
+            {
+                articles.map(article => {
+                    const showLink = path !== article.url;
+                    if (showLink) {
+                        return <CardRow title={article.data.title}
+                                        desc={article.data.desc}
+                                        url={article.slug}
+                                        img={article.data.img}/>;
+                    }
+                })
+            }
+        </div>
+</BlogSidebar>

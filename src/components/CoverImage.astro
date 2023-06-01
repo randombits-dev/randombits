@@ -1,0 +1,16 @@
+---
+import { getImage } from "astro:assets";
+
+import notebook from "../assets/notebook2.jpg";
+
+const {image} = Astro.props;
+
+// const fullSrc = typeof src === 'string' ? '/images/covers/' + src : src;
+
+// const image = await getImage({src: fullSrc, format: 'avif'})
+
+---
+
+<img src={image.src} alt="Article Cover Image"/>
+
+<!--<Image src={fullSrc} format="webp" alt="Article Cover Image" width={500} height={500}/>-->

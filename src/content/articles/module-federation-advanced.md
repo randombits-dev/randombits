@@ -3,7 +3,7 @@ title: "Advanced Guide to Module Federation"
 summary: "There are plenty of articles about setting up Webpack's Module Federation. But almost all the articles focus on the basics. Here I will go over steps you want to consider in a production app."
 desc: "Beyond the basics of module federation to cover what a production app will most likely need. Dynamic Imports, Sharing Files and Libraries, Web Components, Routers, Prefetching, Cache Busting, Dynamic URLS."
 updated: 2023-01-01
-img: '/images/mf1.png'
+img: './covers/mf1.png'
 ---
 
 There are plenty of articles about setting up Webpack's Module Federation.

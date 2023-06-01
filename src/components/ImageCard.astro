@@ -1,12 +1,13 @@
 ---
 const {url, img, title, desc, style} = Astro.props;
+import { Image } from 'astro:assets';
 
 const styleClass = style === 'v' ? 'image-card-v' : 'image-card-h';
 ---
 
 <a href={url} class="nav">
     <div class:list={["card image-card", styleClass]}>
-        <img src={img}/>
+        <Image src={img} alt="Article Cover Image"/>
         <div class="card-row-text">
             <div class="card-row-title">{title}</div>
             <div class="card-row-desc">{desc}</div>

@@ -2,6 +2,9 @@
 import Card from "../components/Card.astro";
 import Tag from "../components/Tag.astro";
 import QuickLink from "../components/QuickLink.astro";
+import { Image } from 'astro:assets';
+import notebook from "../assets/notebook2.jpg";
+import CoverImage from "../components/CoverImage.astro";
 
 const {
     meta: {title, summary, tags, desc, updated, img},
@@ -42,7 +45,8 @@ const quickLinks = [
     </div>
 
     {img &&
-            <img src={img}/>}
+            <Image src={img} alt="Article Cover Image"/>
+    }
 
 </div>
 
@@ -63,5 +67,6 @@ const quickLinks = [
         border-left: var(--border-width) solid var(--border-color);
         object-fit: cover;
         max-width: 300px;
+        height: auto;
     }
 </style>

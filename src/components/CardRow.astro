@@ -1,8 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import notebook from "../assets/notebook2.jpg";
+import CoverImage from "./CoverImage.astro";
+
 const {img, title, desc, url} = Astro.props;
 ---
 <a href={url} class="nav card-row">
-    <img width="100" height="100" src={img}/>
+    <Image src={img} alt="Related Article Cover"/>
     <div>
         <div class="card-row-title">{title}</div>
         <div class="card-row-desc">{desc}</div>

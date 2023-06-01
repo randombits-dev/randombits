@@ -1,4 +1,6 @@
 ---
+import { getEntry } from 'astro:content';
+
 import GuideList from "../components/ArticleList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleDesc from '../snippits/articles-desc.md';
@@ -6,6 +8,12 @@ import ToolDesc from '../snippits/tools-desc.md';
 import WelcomeDesc from '../snippits/welcome.md';
 import ToolList from "../components/ToolList.astro";
 import Random from "../components/Random.astro";
+import CoverImage from "../components/CoverImage.astro";
+
+import { Image } from "astro:assets";
+import {CoverImages} from "../utils/coverImages";
+
+const { data } = await getEntry('standard-notes', 'creating-extensions');
 ---
 <BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more" bodyClass="homepage">
 
@@ -20,7 +28,7 @@ import Random from "../components/Random.astro";
 
     <div class="hero-container featured-article">
         <div class="hero flex">
-            <img src="/images/notebook2.jpg"/>
+            <Image src={data.img} alt="Featured Article Picture - Notebook"/>
             <div class="hero-info">
                 <div class="tag">--Featured Article--</div>
                 <div class="hero-title">Creating Standard Notes Extensions</div>

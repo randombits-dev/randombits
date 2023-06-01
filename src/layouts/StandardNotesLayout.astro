@@ -29,7 +29,7 @@ const path = Astro.url.pathname.replace(/\/+$/, '');
     </div>
 </BlogSidebar>-->
 
-<HtmlLayout title={frontmatter.title} description={frontmatter.desc} img={frontmatter.img}>
+<HtmlLayout title={frontmatter.title} description={frontmatter.desc} img={import('../images/covers/' + frontmatter.img)}>
     <div class="article">
 
         <BlogHeader meta={frontmatter}/>
@@ -49,7 +49,7 @@ const path = Astro.url.pathname.replace(/\/+$/, '');
                         return <CardRow title={article.frontmatter.title}
                                          desc={article.frontmatter.desc}
                                          url={article.url}
-                                         img={article.frontmatter.img}/>;
+                                         img={import('../images/covers/' + article.frontmatter.img)}/>;
                     }
                 })
             }

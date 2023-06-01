@@ -3,7 +3,6 @@ import mdx from '@astrojs/mdx';
 import solid from '@astrojs/solid-js';
 import remarkCodeTitles from 'remark-code-titles';
 
-
 export default defineConfig({
     base: '/',
     site: 'https://randombits.dev/',
@@ -14,5 +13,8 @@ export default defineConfig({
     integrations: [mdx(), solid()],
     build: {
         assets: '_astro'
+    },
+    experimental: {
+        assets: true
     }
 });

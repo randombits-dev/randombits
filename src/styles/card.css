@@ -68,9 +68,11 @@
 .card-row img {
     border: var(--border-width) solid var(--border-color);
     border-radius: 5px;
+    width: 100px;
+    height: 100px;
 }
 
-.card-row:hover > img {
+.card-row:hover img {
     box-shadow: 1px 1px var(--shadow-color);
     translate: -1px -1px;
 }

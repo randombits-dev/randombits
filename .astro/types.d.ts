@@ -326,6 +326,36 @@ declare module 'astro:content' {
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
 };
+"standard-notes": {
+"cosmos.md": {
+	id: "cosmos.md";
+  slug: "cosmos";
+  body: string;
+  collection: "standard-notes";
+  data: InferEntrySchema<"standard-notes">
+} & { render(): Render[".md"] };
+"creating-extensions.md": {
+	id: "creating-extensions.md";
+  slug: "creating-extensions";
+  body: string;
+  collection: "standard-notes";
+  data: InferEntrySchema<"standard-notes">
+} & { render(): Render[".md"] };
+"installing-extensions.md": {
+	id: "installing-extensions.md";
+  slug: "installing-extensions";
+  body: string;
+  collection: "standard-notes";
+  data: InferEntrySchema<"standard-notes">
+} & { render(): Render[".md"] };
+"template.md": {
+	id: "template.md";
+  slug: "template";
+  body: string;
+  collection: "standard-notes";
+  data: InferEntrySchema<"standard-notes">
+} & { render(): Render[".md"] };
+};
 
 	};
 

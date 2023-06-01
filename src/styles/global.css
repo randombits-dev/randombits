@@ -106,3 +106,7 @@ hr {
     border: none;
     border-bottom: var(--border-width) solid var(--border-color);
 }
+
+img {
+    display: block;
+}

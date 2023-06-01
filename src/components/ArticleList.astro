@@ -3,9 +3,10 @@ import {getCollection} from "astro:content";
 
 
 import ImageCard from "./ImageCard.astro";
+import {CoverImages} from "../utils/coverImages";
 
 const numberLocalization = {
-    img: '/images/chalkboard.jpg',
+    img: CoverImages.chalkboard,
     title: 'Number Localization - The Ultimate Guide',
     desc: 'All of the different ways a number can be formatted. Decimal symbols, grouping symbols, and numbering systems. How to format and parse a number in any locale with javascript.',
     links: [
@@ -16,7 +17,7 @@ const numberLocalization = {
 };
 
 const standardNotes = {
-    img: '/images/notebook2.jpg',
+    img: CoverImages.creatingExtensions,
     title: 'Standard Notes Extension Guide',
     desc: 'One of the best parts of Standard Notes is the ability to use extensions. This is a comprehensive guide for how to install and write editor extensions.',
     links: [

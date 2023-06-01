@@ -1,8 +1,7 @@
 ---
 title: "Standard Notes Editor Extension Template"
 desc: "A better starter template for creating standard notes extensions"
-layout: ../../layouts/StandardNotesLayout.astro
-img: /images/covers/planetnote.jpg
+img: ./template.jpg
 ---
 
 ## Getting Started

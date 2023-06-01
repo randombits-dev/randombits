@@ -1,50 +1,9 @@
 ---
 import HtmlLayout from '../../layouts/HtmlLayout.astro';
-import MarkdownContent from '../../snippits/tools.mdx';
-import Card from "../../components/Card.astro";
-import CardRow from "../../components/CardRow.astro";
-import CardV from "../../components/CardV.astro";
-import FeaturedTools from "../../components/FeaturedTools.astro";
 import ToolList from "../../components/ToolList.astro";
 
-const TOOLS = [
-    {
-        title: 'Snowrunner Save Editor',
-        desc: 'Edit task and mission progress · Reveal or obtain upgrades',
-        img: '/images/snowrunner.jpg',
-        link: '/tools/snowrunner'
-    },
-    {
-        title: 'Printable Daily Schedule',
-        desc: 'Generates a daily planner for appointments · One page a day · Printable',
-        img: '/images/book.jpg',
-        link: '/tools/print-schedule'
-    }
-]
 ---
 <HtmlLayout title="Developer Tools" description="List of all tools • For software developers and more">
-    <!--<Card>
-        <h1>All tools</h1>
-        <MarkdownContent/>
-    </Card>
-
-    {
-        TOOLS.map(tool =>
-                <Card>
-                    <CardRow title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
-                </Card>
-        )
-    }
-
-    <Card title="All Tools">
-        <MarkdownContent/>
-        {
-            TOOLS.map(tool =>
-                    <CardRow title={tool.title} desc={tool.desc} img={tool.img} url={tool.link}/>
-            )
-        }
-    </Card>-->
-
     <h1 class="center">Awesome Tools</h1>
     <ToolList/>
 </HtmlLayout>
