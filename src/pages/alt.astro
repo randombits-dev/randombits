@@ -1,0 +1,54 @@
+---
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import BaseHead from '../components/layout/BaseHead.astro';
+import {Image} from 'astro:assets';
+import chalkboard from "../assets/covers/chalkboard.jpg";
+import HomeLink from "../components/home/HomeLink.astro";
+import ThemeChanger from "../components/ThemeChanger";
+import '../styles/header.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title="Random Bits" description=""/>
+</head>
+<body>
+<ThemeChanger client:load/>
+<div class="color-1 overflow-x-hidden">
+    <div class="container mx-auto ">
+        <div class="pt-12 bg-[url('/images/bg/rain.svg')]">
+            <div class="p-10 flex">
+                <div>
+                    <div class="text-8xl font-bold pb-10">random bits</div>
+                    <!--<div class="text-6xl font-semibold">Cloud computing<br/> utilizing Fantom <br/>and AWS</div>-->
+                    <HomeLink url="/articles">Articles</HomeLink>
+                    <HomeLink url="/articles">Tools</HomeLink>
+                    <HomeLink url="/articles">About</HomeLink>
+                </div>
+                <div class="ml-20 invisible md:visible absolute overflow-hidden rounded-l-xl" style="left: 60%">
+                    <Image src={chalkboard} alt="Hero Image" width="1000" height="400"
+                           style={{height: '500px', 'object-fit': 'cover', 'object-position': '0 0'}}/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="color-2">
+    Hello
+</div>
+</body>
+</html>
+
+<style>
+    .color-1 {
+        background-color: var(--back-header);
+        color: var(--color-header);
+    }
+
+    .color-2 {
+        background-color: var(--back-0);
+        height: 500px;
+    }
+</style>
