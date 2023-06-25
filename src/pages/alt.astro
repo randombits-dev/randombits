@@ -5,8 +5,23 @@ import BaseHead from '../components/layout/BaseHead.astro';
 import {Image} from 'astro:assets';
 import chalkboard from "../assets/covers/chalkboard.jpg";
 import HomeLink from "../components/home/HomeLink.astro";
-import ThemeChanger from "../components/ThemeChanger";
+import ThemeChanger from "../components/ThemeChanger.astro";
 import '../styles/header.css';
+import '@fontsource/righteous';
+import '@fontsource/bungee';
+import HomeLinks from "../components/home/HomeLinks.astro";
+import HomeFooter from "../components/home/HomeFooter.astro";
+
+for (let i = 0; i < 10; i++) {
+    for (var j = 0; j < 100; j++) {
+
+    }
+}
+const digits = [...Array.from({length: 40})].map(() => {
+    return [...Array.from({length: 200})].map(() => {
+        return Math.random() < .5 ? 0 : 1;
+    }).join(' ');
+});
 ---
 
 <!DOCTYPE html>
@@ -15,29 +30,36 @@ import '../styles/header.css';
     <BaseHead title="Random Bits" description=""/>
 </head>
 <body>
-<ThemeChanger client:load/>
-<div class="color-1 overflow-x-hidden">
-    <div class="container mx-auto ">
-        <div class="pt-12 bg-[url('/images/bg/rain.svg')]">
-            <div class="p-10 flex">
-                <div>
-                    <div class="text-8xl font-bold pb-10">random bits</div>
-                    <!--<div class="text-6xl font-semibold">Cloud computing<br/> utilizing Fantom <br/>and AWS</div>-->
-                    <HomeLink url="/articles">Articles</HomeLink>
-                    <HomeLink url="/articles">Tools</HomeLink>
-                    <HomeLink url="/articles">About</HomeLink>
-                </div>
-                <div class="ml-20 invisible md:visible absolute overflow-hidden rounded-l-xl" style="left: 60%">
-                    <Image src={chalkboard} alt="Hero Image" width="1000" height="400"
-                           style={{height: '500px', 'object-fit': 'cover', 'object-position': '0 0'}}/>
-                </div>
-            </div>
+<!--<ThemeChanger client:load/>-->
+<div class="color-1 min-h-screen relative text-center">
+
+    <p style="font-family: Cherry Bomb One; color: #222;" class="leading-tight tracking-tighter text-justify max-h-screen overflow-hidden z-0">{digits.join(' ')}</p>
+    <div class="fixed top-0 bottom-0 w-full flex items-center">
+        <div class="flex-1">
+            <HomeLinks/>
+
+            <div class="text-[200px] font-bold leading-[0.8]" style="font-family: Righteous;">random<br/>bits<br/>.dev</div>
+    <div class="text-8xl px-6 font-bold leading-tight" style="font-family: Righteous;">software engineering</div>
+
+
+        <HomeFooter/>
+
+
+        <!--            <HomeLink url="/articles">articles</HomeLink>-->
+        <!--            <div class="ml-20"><HomeLink url="/articles">tools</HomeLink></div>-->
+        <!--<div class="ml-40"><HomeLink url="/articles">about</HomeLink></div>
+
+        -->
+                <!--<div class="ml-20 invisible md:visible absolute overflow-hidden rounded-l-xl" style="left: 60%">-->
+                <!--    <Image src={chalkboard} alt="Hero Image" width="1000" height="400"-->
+                <!--           style={{height: '500px', 'object-fit': 'cover', 'object-position': '0 0'}}/>-->
+                <!--</div>-->
         </div>
     </div>
-</div>
-<div class="color-2">
-    Hello
-</div>
+            </div>
+
+<ThemeChanger/>
+
 </body>
 </html>
 

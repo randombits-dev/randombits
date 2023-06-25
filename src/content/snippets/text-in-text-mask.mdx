@@ -1,0 +1,52 @@
+# Text in Text Mask
+
+```
+<svg width="1400" height="800">
+        <style>
+            .mask-text {
+                font-family: 'bungee', cursive;
+                stroke: #000;
+                text-transform: uppercase;
+                font-size: 200px;
+            }
+
+            .mask-outline {
+                font-family: 'bungee', cursive;
+                font-size: 200px;
+                paint-order: stroke;
+                stroke: #333;
+                fill: none;
+                stroke-width: 2px;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-opacity:1;
+            }
+
+            .random {
+                font-family: 'righteous', cursive;
+                font-size: 13px;
+                font-weight: bold;
+                letter-spacing: 0px;
+                line-height: 0;
+                fill: #444;
+            }
+
+            .random-row {
+                line-height: 0;
+            }
+
+        </style>
+        <!--<text class="mask-outline" x="0" y="200" fill="#000">Random Bits</text>-->
+        <mask id="mymask" x="0" y="0" width="1400" height="800">
+            <text class="mask-text" x="0" y="200" fill="#fff">Random</text>
+            <text class="mask-text" x="0" y="400" fill="#fff">Bits</text>
+        </mask>
+        <text class="random" x="0" y="0" dy="0" mask="url(#mymask)">
+            {
+                digits.map(row => {
+                  return   <tspan class="random-row" x="0" dy="0.9em">{row}</tspan>
+                })
+            }
+            </text>
+    </svg>
+```

@@ -1,0 +1,65 @@
+---
+const today = new Date();
+
+const githubSVG = await fetch('https://storage.googleapis.com/randombits/images/github.svg');
+const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
+const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/twitter.svg');
+---
+
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="https://github.com/nienow" target="_blank">
+                <div class="svg" set:html={githubSVG}/>
+            </a>
+            <a href="https://discordapp.com/users/806661811143049216" target="_blank">
+                <div set:html={discordSVG}/>
+            </a>
+            <a href="https://twitter.com/RandomBitsDev" target="_blank">
+                <div set:html={twitterSVG}/>
+            </a>
+        </div>
+    </div>
+    <!--<div class="copyright">-->
+    <!--    &copy; {today.getFullYear()} Matthew Nienow-->
+    <!--</div>-->
+</footer>
+
+<style is:inline>
+    footer {
+        margin-top: 80px;
+        color: var(--color-header);
+    }
+
+    .footer-content {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-around;
+    }
+
+    .social-links {
+        display: flex;
+        padding: 10px;
+    }
+
+    .social-links a {
+        text-decoration: none;
+        padding: 0 30px;
+        fill: var(--color-content);
+    }
+
+    .social-links a:hover {
+        translate: -1px -1px;
+    }
+
+    .social-links svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+</style>

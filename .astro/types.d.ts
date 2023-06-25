@@ -326,6 +326,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
 };
+"snippets": {
+"text-in-text-mask.mdx": {
+	id: "text-in-text-mask.mdx";
+  slug: "text-in-text-mask";
+  body: string;
+  collection: "snippets";
+  data: any
+} & { render(): Render[".mdx"] };
+};
 "standard-notes": {
 "cosmos.md": {
 	id: "cosmos.md";

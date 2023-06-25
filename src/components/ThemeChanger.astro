@@ -1,0 +1,66 @@
+---
+const THEME_LIST = [
+    {id: "base", name: "Fruity"},
+    // {id: "clay", name: "Clay"},
+    // {id: "camo", name: "Camo"},
+    // {id: "strawberry", name: "Berry"},
+    {id: "gray", name: "Overcast"},
+    {id: "daring", name: "Dare"},
+    {id: "bee", name: "Buzz"},
+    {id: "dark-metal", name: "Metal"},
+    {id: "dark-fear", name: "Fear"},
+    {id: "bold", name: "Bold"},
+];
+---
+
+<div class="fixed w-full bottom-[-20px] text-center">
+
+<div  style="font-family: Righteous;" class="text-neutral-100 inline-block border-4 rounded-t-xl overflow-hidden">
+    {
+        THEME_LIST.map(theme => {
+           return  <button class="inline-block bg-neutral-900 px-5 py-3 pb-4 justify-center" data-theme-control={theme.id}>{theme.name}</button>
+        })
+    }
+</div>
+</div>
+
+
+<script>
+    let currentTheme = localStorage.getItem("theme") || 'base';
+
+    function changeTheme(newThemeId)  {
+        const htmlClass = document.documentElement.classList;
+        htmlClass.remove(`theme-${currentTheme}`, 'theme-dark');
+
+        currentTheme = newThemeId;
+        if (newThemeId.startsWith('dark-')) {
+            document.documentElement.classList.add(`theme-${newThemeId}`, `theme-dark`);
+        } else {
+            document.documentElement.classList.add(`theme-${newThemeId}`);
+        }
+        localStorage.setItem("theme", newThemeId);
+    }
+
+    document.querySelectorAll('[data-theme-control]').forEach(btn => {
+       btn.addEventListener('click', () => {
+           changeTheme(btn.getAttribute('data-theme-control'));
+       });
+    });
+
+</script>
+
+<style>
+    button {
+        border-right: 1px solid #ccc;
+        border-radius: 0;
+    }
+
+    button:first-child {
+        border-radius: 5px 0 0 5px;
+    }
+
+    button:last-child {
+        border-radius: 0 5px 5px 0;
+    }
+
+</style>
