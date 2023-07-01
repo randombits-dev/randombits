@@ -1,47 +1,63 @@
 ---
-import { getEntry } from 'astro:content';
-
-import GuideList from "../components/ArticleList.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ArticleDesc from '../snippits/articles-desc.md';
-import ToolDesc from '../snippits/tools-desc.md';
-import WelcomeDesc from '../snippits/welcome.md';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import BaseHead from '../components/layout/BaseHead.astro';
+import {Image} from 'astro:assets';
+import chalkboard from "../assets/covers/chalkboard.jpg";
+import HomeLink from "../components/home/HomeLink.astro";
+import ThemeChanger from "../components/ThemeChanger";
+import '../styles/header.css';
+import '@fontsource/righteous';
+// import '@fontsource/bungee';
+import HomeLinks from "../components/home/HomeLinks.astro";
+import HomeLinks2 from "../components/home/HomeLinks2.astro";
+import HomeFooter from "../components/home/HomeSocialLinks.astro";
 import ToolList from "../components/ToolList.astro";
-import Random from "../components/Random.astro";
-import CoverImage from "../components/CoverImage.astro";
+import ToolDesc from "../snippits/tools-desc.md";
+import ArticleDesc from "../snippits/articles-desc.md";
+import ArticleList from "../components/ArticleList.astro";
+import Logo from "../components/Logo.astro";
 
-import { Image } from "astro:assets";
-import {CoverImages} from "../utils/coverImages";
 
-const { data } = await getEntry('standard-notes', 'creating-extensions');
+for (let i = 0; i < 10; i++) {
+    for (var j = 0; j < 100; j++) {
+
+    }
+}
+const digits = [...Array.from({length: 40})].map(() => {
+    return [...Array.from({length: 200})].map(() => {
+        return Math.random() < .5 ? 0 : 1;
+    }).join(' ');
+});
 ---
-<BaseLayout title="Developer articles and tools" description="Developer articles, tools, and more" bodyClass="homepage">
 
-    <div class="hero-container welcome">
-        <div class="hero">
-            <div class="hero-title">Welcome to Random Bits</div>
-            <div class="hero-desc">
-                <WelcomeDesc/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title="Random Bits" description=""/>
+</head>
+<body>
+<ThemeChanger client:only="solid-js"/>
+<div class="bg-base min-h-screen relative text-center">
+
+    <div class="rb-background-bits absolute h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">{digits.join(' ')}</div>
+
+    <div class="relative min-h-screen z-10 flex flex-col items-center">
+        <HomeLinks2/>
+
+        <div class="flex-1 text-primary flex items-center">
+            <div>
+
+            <div class="rb-hero-text text-[200px] font-bold" style="font-family: Righteous;">random bits</div>
+            <div class="text-8xl px-6 font-bold leading-tight" style="font-family: Righteous; text-shadow: -3px -3px 0 var(--hero-shadow)">software engineering</div>
+            <HomeFooter/>
             </div>
         </div>
     </div>
-
-    <div class="hero-container featured-article">
-        <div class="hero flex">
-            <Image src={data.img} alt="Featured Article Picture - Notebook"/>
-            <div class="hero-info">
-                <div class="tag">--Featured Article--</div>
-                <div class="hero-title">Creating Standard Notes Extensions</div>
-                <div class="hero-desc">One of the best parts of Standard Notes is the ability to write extensions. This
-                    is a
-                    comprehensive guide for how to write editor extensions.
-                </div>
-                <a class="button" href="/standard-notes/creating-extensions">Read Full Article</a>
-            </div>
-        </div>
-    </div>
-    <div class="list-container">
-        <h1 style="text-align: center; margin-top: 50px">Featured Tools</h1>
+</div>
+<div class="container mx-auto text-center">
+    <div class="pt-40 list-container">
+        <h1 class="text-2xl">Featured Tools</h1>
         <div class="desc">
             <ToolDesc/>
         </div>
@@ -50,79 +66,27 @@ const { data } = await getEntry('standard-notes', 'creating-extensions');
     </div>
 
     <div class="list-container">
-        <h1 style="text-align: center">Latest Articles</h1>
+        <h1 class="text-2xl">Latest Articles</h1>
         <div class="desc">
             <ArticleDesc/>
         </div>
-        <GuideList/>
+        <ArticleList/>
         <a class="button" href="/articles">See All Articles</a>
     </div>
+</div>
 
-    <div class="other-area">
-        <div class="random">
-            <Random/>
-        </div>
-    </div>
-</BaseLayout>
+<Footer/>
+
+</body>
+</html>
+
 <style>
 
-    .desc {
-        max-width: 800px;
-        text-align: center;
-        margin: 0 auto 20px;
-    }
-
-    .tag {
-        font-size: 16px;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-    }
-
-    .featured-article {
-        background-color: var(--back-1);
-        color: var(--color-hero);
-    }
-
-    .hero-container {
-        padding: 80px 30px 50px;
-        text-align: center;
-        border-bottom: var(--border-width) solid var(--border-color);
-    }
-
-    .hero-container.welcome {
-        background-color: var(--back-2);
-        color: var(--color-back);
-    }
-
-    .hero-container img {
-        max-width: 300px;
-        height: auto;
-        border: var(--border-width) solid var(--border-color);
-        flex: 0 0 auto;
-        object-fit: cover;
-        border-radius: 20px;
-        margin-right: 50px;
-    }
-
-    .hero-info {
-        flex: 1 1 auto;
-    }
-
-    .hero {
-        margin: 0 auto;
-        max-width: 1000px;
-    }
-
-    .hero-title {
-        font-size: 50px;
-        font-family: var(--font-1);
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .hero-desc {
-        margin-bottom: 20px;
+    .rb-background-bits {
+        /*color: #987240;*/
+        color: var(--landing-bits);
+        font-family: Cherry Bomb One;
+        border-bottom: 1px solid var(--landing-bits);
     }
 
     .list-container {
@@ -151,12 +115,11 @@ const { data } = await getEntry('standard-notes', 'creating-extensions');
         margin: 0 auto;
     }
 
-
-    @media screen and (max-width: 1000px) {
-        .hero-container img {
-            display: none;
-        }
-    }
-
-
+    .rb-hero-text {
+        /*background: url(/images/mask/1.jpg);
+        -webkit-background-clip: text;
+        color: transparent;*/
+        text-shadow: -5px -5px 0 var(--hero-shadow);
+    /*text-shadow: none;*/
+}
 </style>

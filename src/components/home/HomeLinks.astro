@@ -2,8 +2,9 @@
 const {url} = Astro.props;
 ---
 
-<div class="text-3xl mb-20 fixed top-5 text-center w-full" style="font-family: Righteous;">
-    <a href="/" class="px-3 border-4 border-neutral-200 rounded-[50px]">rb</a>
+<div class="container mx-auto">
+<div class="text-3xl mb-20  text-center w-full border-4 rounded-[50px] py-2" style="font-family: Righteous;">
+    <!--<a href="/" class="rb-logo px-3 border-4 border-neutral-200 rounded-[50px]">rb</a>-->
 <a href={url}
    class="px-10 py-3 hover:underline hover:decoration-8 hover:underline-offset-8 cursor-pointer">
     articles
@@ -17,3 +18,14 @@ const {url} = Astro.props;
         about
     </a>
 </div>
+</div>
+
+<style>
+    .rb-logo {
+        background-color: var(--back-header);
+    }
+
+    div > div {
+        background-color: var(--back-header);
+    }
+</style>

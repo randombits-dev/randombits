@@ -1,0 +1,30 @@
+---
+const {includeDigits, width, height} = Astro.props;
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" width={width || 75} height={height || 75}
+     viewBox="0 -20 150 140" version="1.1">
+    <g>
+        <path id="text" fill="none" d="M25 55 A1 1, 0 0 1 125 55 A1 1, 0 0 1 25 55" />
+        <path id="line" fill="none" stroke-width="5" d="M35 55 A1 1, 0 0 1 115 55 A1 1, 0 0 1 35 55" />
+        {includeDigits && <text font-size="30">
+            <textPath href="#text">
+                10010001010101010101010001001001110100101
+            </textPath>
+        </text>}
+        <text x="50" y="72" font-size="50">rb</text>
+    </g>
+</svg>
+
+<style>
+    svg {
+        font-family: Righteous;
+        display: inline-block;
+        fill: var(--color-header);
+    }
+
+    svg #line {
+        stroke: var(--color-header);
+    }
+
+</style>

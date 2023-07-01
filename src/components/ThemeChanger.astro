@@ -15,10 +15,10 @@ const THEME_LIST = [
 
 <div class="fixed w-full bottom-[-20px] text-center">
 
-<div  style="font-family: Righteous;" class="text-neutral-100 inline-block border-4 rounded-t-xl overflow-hidden">
+<div class="text-neutral-100 inline-block rounded-t-xl overflow-hidden">
     {
         THEME_LIST.map(theme => {
-           return  <button class="inline-block bg-neutral-900 px-5 py-3 pb-4 justify-center" data-theme-control={theme.id}>{theme.name}</button>
+           return  <button class="inline-block px-5 py-3 pb-6 justify-center" data-theme-control={theme.id}>{theme.name}</button>
         })
     }
 </div>
@@ -42,8 +42,10 @@ const THEME_LIST = [
     }
 
     document.querySelectorAll('[data-theme-control]').forEach(btn => {
-       btn.addEventListener('click', () => {
+       btn.addEventListener('click', (e) => {
            changeTheme(btn.getAttribute('data-theme-control'));
+           document.querySelector('butt')
+           e.target.classList.add('selected');
        });
     });
 
@@ -51,8 +53,16 @@ const THEME_LIST = [
 
 <style>
     button {
-        border-right: 1px solid #ccc;
         border-radius: 0;
+        background-color: var(--color-content) !important;
+    }
+
+    button:hover {
+        translate: -0px -3px;
+    }
+
+    button.selected {
+        background-color: #ff0000 !important;
     }
 
     button:first-child {

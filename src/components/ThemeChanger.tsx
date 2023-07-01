@@ -1,4 +1,5 @@
 import {createSignal, onMount} from "solid-js";
+import '../styles/theme-changer.css';
 
 const THEME_LIST = [
     {id: "base", name: "Fruity"},
@@ -35,23 +36,26 @@ const ThemeChanger = () => {
     });
 
     return (
-        <div class="theme-changer">
+        <div class="fixed w-full bottom-[-20px] text-center z-20">
+        <div class="rb-theme-changer inline-block rounded-t-xl overflow-hidden bg-primary text-primary-text">
             {THEME_LIST.map((theme) => {
+                const btnClasses = "rounded-none first:rounded-tl-md inline-block px-5 py-3 mb-4 justify-center font-bold";
                 if (currentTheme() === theme.id) {
                     return (
-                        <div class="theme-active">
+                        <button class={btnClasses + ' rb-theme-active'}>
                             {theme.name}
-                        </div>
+                        </button>
                     );
                 } else {
                     return (
-                        <div onClick={() => changeTheme(theme)}>
+                        <button class={btnClasses} onClick={() => changeTheme(theme)}>
                             {theme.name}
-                        </div>
+                        </button>
                     );
                 }
 
             })}
+        </div>
         </div>
     );
 };

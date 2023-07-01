@@ -2,6 +2,10 @@
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import BaseHead from '../components/layout/BaseHead.astro';
+import HomeLinks2 from "../components/home/HomeLinks2.astro";
+import ThemeChanger from "../components/ThemeChanger";
+import '@fontsource/righteous';
+
 
 const {title, description, img, bodyClass} = Astro.props;
 ---
@@ -12,8 +16,9 @@ const {title, description, img, bodyClass} = Astro.props;
     <BaseHead title={title} description={description} img={img}/>
 </head>
 <body class={bodyClass}>
-<Header/>
+<HomeLinks2/>
 <slot/>
 <Footer/>
+<ThemeChanger client:load/>
 </body>
 </html>

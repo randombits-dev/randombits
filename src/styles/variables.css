@@ -19,6 +19,9 @@
  */
 
 :root {
+    --landing-bits: #333;
+    --hero-shadow: var(--color-back);
+    --primary-contrast: #987240;
     --back-0: #ffe9c2;
     --back-1: var(--back-0);
     --back-2: var(--back-0);
@@ -37,7 +40,7 @@
     --border-width-light: 1px;
     --border-color: #444;
     --border-color-light: var(--border-color);
-    --font-1: 'Capriola', sans-serif;
+    --font-1: 'Righteous', cursive;
     --font-2: 'Montserrat', sans-serif;
     --font-size-text: 18px;
     --font-size-1: 28px;
@@ -68,6 +71,8 @@
 }
 
 .theme-bold {
+    --landing-bits: #e0cba8;
+    --primary-contrast: #1f70b6;
     --back-1: #eee;
     --back-0: #f6e4c5;
     --back-contrast: #eee;
@@ -84,6 +89,8 @@
 }
 
 .theme-gray {
+    --landing-bits: #c1c4c7;
+    --primary-contrast: #464b52;
     --back-0: #e7ebef;
     --back-1: #c1c7ce;
     --back-2: #e7ebef;
@@ -131,6 +138,9 @@
 
 
 .theme-daring {
+    --landing-bits: #5b5757;
+    --hero-shadow: #333;
+    --primary-contrast: #9d453e;
     --back-0: #696464;
     --back-1: #414040;
     --back-contrast: #dadada;
@@ -151,12 +161,15 @@
 
 
 .theme-bee {
+    --landing-bits: #414141;
+    --hero-shadow: none;
     --back-0: #333;
     --back-1: #252525;
     --back-2: #333;
     --back-content: #e7e7e7;
     --back-contrast: #eee;
     --back-header: #e9c46a;
+    --primary-contrast: #d9b054;
     --color-back: #eee;
     --color-content: #333;
     --color-header: #333;
@@ -182,13 +195,17 @@
 /* DARK DARK DARK */
 
 .theme-dark-fear {
+
+    --primary-contrast: #1c1c1c;
+    --landing-bits: #222;
+    --hero-shadow: #aaa;
     --back-0: #111;
     --back-1: #050505;
     --back-contrast: #222;
-    --back-header: #050505;
+    --back-header: #000;
     --back-content: #111;
     --back-code: #050505;
-    --color-0: #eee;
+    --color-0: #ddd;
     --color-content: #ddd;
     --border-width: 0;
     --border-width-light: 0;
@@ -198,6 +215,8 @@
 }
 
 .theme-dark-metal {
+    --landing-bits: #444343;
+    --primary-contrast: #232323;
     --back-0: #555;
     --back-1: #333;
     --back-2: #555;
