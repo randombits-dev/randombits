@@ -1,31 +1,29 @@
 ---
-const {url} = Astro.props;
+import Logo from "../Logo.astro";
 ---
 
-<div class="container mx-auto">
-<div class="text-3xl mb-20  text-center w-full border-4 rounded-[50px] py-2" style="font-family: Righteous;">
+<div class="mt-[-20px] text-center relative z-10">
+
+    <div  style="font-family: Righteous;" class="bg-primary text-primary-text text-3xl pt-5 rounded-b-xl overflow-hidden shadow-2xl inline-flex items-center">
     <!--<a href="/" class="rb-logo px-3 border-4 border-neutral-200 rounded-[50px]">rb</a>-->
-<a href={url}
+        <a class="px-6" href="/"><Logo includeDigits={true} width={55} height={55}/></a>
+<a href="/articles"
    class="px-10 py-3 hover:underline hover:decoration-8 hover:underline-offset-8 cursor-pointer">
     articles
 </a> /
-    <a href={url}
+    <a href="/tools"
        class="px-10 py-3 hover:underline hover:decoration-8 hover:underline-offset-8 cursor-pointer">
         tools
-    </a> /
-    <a href={url}
-       class="px-10 py-3 hover:underline hover:decoration-8 hover:underline-offset-8 cursor-pointer">
-        about
     </a>
+    <!--<a href="/about"-->
+    <!--   class="px-10 py-3 hover:underline hover:decoration-8 hover:underline-offset-8 cursor-pointer">-->
+    <!--    about-->
+    <!--</a>-->
 </div>
 </div>
 
 <style>
-    .rb-logo {
-        background-color: var(--back-header);
-    }
-
-    div > div {
-        background-color: var(--back-header);
+    a {
+        text-decoration: none;
     }
 </style>

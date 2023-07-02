@@ -2,7 +2,6 @@ footer {
     /*margin-top: 80px;*/
     background-color: var(--back-header);
     border-top: var(--border-width) solid var(--border-color);
-    border-bottom: var(--border-width) solid var(--border-color);
     padding: 40px 0 80px;
     color: var(--color-header);
 }

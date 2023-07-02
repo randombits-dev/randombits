@@ -1,14 +1,11 @@
 ---
-import Logo from "../Logo.astro";
-const today = new Date();
-
 const githubSVG = await fetch('https://storage.googleapis.com/randombits/images/github.svg');
 const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/twitter.svg');
 ---
 
     <div class="homepage-social-links">
-        <div class="homepage-social-links-content">
+        <div class="homepage-social-links-content flex flex-wrap gap-4 lg:gap-16">
             <a href="https://github.com/nienow" target="_blank">
                 <div class="svg" set:html={githubSVG}/>
             </a>
@@ -26,23 +23,13 @@ const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images
         margin-top: 80px;
         color: var(--color-header);
         display: flex;
-        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
         justify-content: space-around;
     }
 
-    .footer-content {
-
-    }
-
-    .homepage-social-links-content {
-        display: flex;
-    }
-
     .homepage-social-links-content a {
         text-decoration: none;
-        padding: 0 30px;
         fill: var(--color-content);
     }
 
@@ -51,10 +38,10 @@ const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images
     }
 
     .homepage-social-links-content svg {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
         background-color: var(--back-header);
-        padding: 10px;
+        padding: 30px;
         border-radius: 60px;
         overflow: hidden;
         box-shadow: rgba(0,0,0,0.8) 0 0 10px;

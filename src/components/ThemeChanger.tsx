@@ -2,16 +2,13 @@ import {createSignal, onMount} from "solid-js";
 import '../styles/theme-changer.css';
 
 const THEME_LIST = [
-    {id: "base", name: "Fruity"},
-    // {id: "clay", name: "Clay"},
-    // {id: "camo", name: "Camo"},
-    // {id: "strawberry", name: "Berry"},
-    {id: "gray", name: "Overcast"},
-    {id: "daring", name: "Dare"},
-    {id: "bee", name: "Buzz"},
-    {id: "dark-metal", name: "Metal"},
-    {id: "dark-fear", name: "Fear"},
+    {id: "base", name: "Bumble"},
+    {id: "daring", name: "Iron"},
+    {id: "camo", name: "Camo"},
     {id: "bold", name: "Bold"},
+    {id: "gray", name: "Overcast"},
+    {id: "dark-metal", name: "Dusk"},
+    {id: "dark-fear", name: "Midnight"},
 ];
 const initialTheme = localStorage.getItem("theme") || 'base';
 
@@ -36,10 +33,10 @@ const ThemeChanger = () => {
     });
 
     return (
-        <div class="fixed w-full bottom-[-20px] text-center z-20">
-        <div class="rb-theme-changer inline-block rounded-t-xl overflow-hidden bg-primary text-primary-text">
+        <div class="static md:fixed w-full bottom-[-21px] text-center z-20">
+        <div class="rb-theme-changer inline-block md:rounded-t-xl overflow-hidden bg-primary text-primary-text">
             {THEME_LIST.map((theme) => {
-                const btnClasses = "rounded-none first:rounded-tl-md inline-block px-5 py-3 mb-4 justify-center font-bold";
+                const btnClasses = "rounded-none inline-block px-5 py-3 mb-4 justify-center font-bold";
                 if (currentTheme() === theme.id) {
                     return (
                         <button class={btnClasses + ' rb-theme-active'}>

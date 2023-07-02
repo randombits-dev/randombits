@@ -15,7 +15,7 @@ const posts = (await getCollection('standard-notes'));
 {
     posts.map(article => {
         return <ImageCard img={article.data.img} title={article.data.title} desc={article.data.desc}
-                          url={'standard-notes/' + article.slug}/>
+                          url={'/standard-notes/' + article.slug}/>
     })
 }
     </div>

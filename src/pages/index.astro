@@ -1,34 +1,20 @@
 ---
-import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import BaseHead from '../components/layout/BaseHead.astro';
-import {Image} from 'astro:assets';
-import chalkboard from "../assets/covers/chalkboard.jpg";
-import HomeLink from "../components/home/HomeLink.astro";
 import ThemeChanger from "../components/ThemeChanger";
 import '../styles/header.css';
 import '@fontsource/righteous';
-// import '@fontsource/bungee';
-import HomeLinks from "../components/home/HomeLinks.astro";
-import HomeLinks2 from "../components/home/HomeLinks2.astro";
+import HomeLinks2 from "../components/home/HomeLinks.astro";
 import HomeFooter from "../components/home/HomeSocialLinks.astro";
 import ToolList from "../components/ToolList.astro";
 import ToolDesc from "../snippits/tools-desc.md";
 import ArticleDesc from "../snippits/articles-desc.md";
 import ArticleList from "../components/ArticleList.astro";
-import Logo from "../components/Logo.astro";
 
 
-for (let i = 0; i < 10; i++) {
-    for (var j = 0; j < 100; j++) {
-
-    }
-}
-const digits = [...Array.from({length: 40})].map(() => {
-    return [...Array.from({length: 200})].map(() => {
-        return Math.random() < .5 ? 0 : 1;
-    }).join(' ');
-});
+const digits = [...Array.from({length: 20000})].map(() => {
+    return Math.random() < .5 ? 0 : 1;
+}).join(' ');
 ---
 
 <!DOCTYPE html>
@@ -37,19 +23,18 @@ const digits = [...Array.from({length: 40})].map(() => {
     <BaseHead title="Random Bits" description=""/>
 </head>
 <body>
-<ThemeChanger client:only="solid-js"/>
 <div class="bg-base min-h-screen relative text-center">
 
-    <div class="rb-background-bits absolute h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">{digits.join(' ')}</div>
+    <div aria-disabled="true" class="rb-background-bits absolute h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">{digits}</div>
 
     <div class="relative min-h-screen z-10 flex flex-col items-center">
         <HomeLinks2/>
 
         <div class="flex-1 text-primary flex items-center">
-            <div>
+            <div class="mb-30">
 
-            <div class="rb-hero-text text-[200px] font-bold" style="font-family: Righteous;">random bits</div>
-            <div class="text-8xl px-6 font-bold leading-tight" style="font-family: Righteous; text-shadow: -3px -3px 0 var(--hero-shadow)">software engineering</div>
+            <div class="rb-hero-text text-[100px] md:text-[150px] lg:text-[200px] font-bold leading-tight" style="font-family: Righteous;">random bits</div>
+            <div class="rb-hero-sub text-4xl md:text-6xl lg:text-8xl px-6 font-bold leading-tight" style="font-family: Righteous;">software engineering</div>
             <HomeFooter/>
             </div>
         </div>
@@ -76,6 +61,7 @@ const digits = [...Array.from({length: 40})].map(() => {
 </div>
 
 <Footer/>
+<ThemeChanger client:only="solid-js"/>
 
 </body>
 </html>
@@ -119,7 +105,11 @@ const digits = [...Array.from({length: 40})].map(() => {
         /*background: url(/images/mask/1.jpg);
         -webkit-background-clip: text;
         color: transparent;*/
-        text-shadow: -5px -5px 0 var(--hero-shadow);
+        text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow);
     /*text-shadow: none;*/
-}
+    }
+    
+    .rb-hero-sub {
+        text-shadow: -3px -3px 0 var(--hero-shadow), -3px 3px 0 var(--hero-shadow), 3px -3px 0 var(--hero-shadow), 3px 3px 0 var(--hero-shadow);
+    }
 </style>

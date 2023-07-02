@@ -3,13 +3,13 @@ const {includeDigits, width, height} = Astro.props;
 ---
 
 <svg xmlns="http://www.w3.org/2000/svg" width={width || 75} height={height || 75}
-     viewBox="0 -20 150 140" version="1.1">
+     viewBox="0 -20 150 144" version="1.1">
     <g>
         <path id="text" fill="none" d="M25 55 A1 1, 0 0 1 125 55 A1 1, 0 0 1 25 55" />
         <path id="line" fill="none" stroke-width="5" d="M35 55 A1 1, 0 0 1 115 55 A1 1, 0 0 1 35 55" />
-        {includeDigits && <text font-size="30">
+        {includeDigits && <text font-size="30" letter-spacing="4.6px">
             <textPath href="#text">
-                10010001010101010101010001001001110100101
+                011100100110001000000
             </textPath>
         </text>}
         <text x="50" y="72" font-size="50">rb</text>

@@ -19,6 +19,7 @@
  */
 
 :root {
+    --hero-mask: url(/images/mask/2.jpg);
     --landing-bits: #333;
     --hero-shadow: var(--color-back);
     --primary-contrast: #987240;
@@ -56,11 +57,31 @@
 }
 
 .theme-base {
-    --back-0: #fdf2dd;
-    --back-1: #e1eefe;
+    --landing-bits: #414141;
+    --hero-shadow: none;
+    --back-0: #333;
+    --back-1: #252525;
+    --back-2: #333;
+    --back-content: #e7e7e7;
+    --back-contrast: #eee;
+    --back-header: #e9c46a;
+    --primary-contrast: #d9b054;
+    --color-back: #eee;
+    --color-content: #333;
+    --color-header: #333;
+    --border-width: 1px;
+    --border-color: #333;
+    --shadow-color: #333;
+}
+
+
+.theme-camo {
+    --landing-bits: #e7e2d8;
+    --back-0: #f6f2e9;
+    --back-1: #ccd5ae;
     --back-content: #fafafa;
-    --back-contrast: #ffebbb;
-    --back-header: #e1eefe;
+    --back-contrast: #f6f2e9;
+    --back-header: #dce3c3;
     --color-content: #444;
     --color-header: #444;
     --border-radius-1: 5px;
@@ -107,36 +128,6 @@
 }
 
 
-.theme-camo {
-    --back-0: #faedcd;
-    --back-1: #f1dcbd;
-    --back-contrast: #f1dcbd;
-    --back-header: #ccd5ae;
-    --color-content: #444;
-    --border-radius-1: 10px;
-    --border-radius-2: 20px;
-    --border-width: 1px;
-    --border-color: #444;
-    --font-1: 'Capriola', sans-serif;
-    --font-2: 'Montserrat', sans-serif;
-    --font-size-text: 18px;
-    --letter-spacing-text: 0px;
-    --font-size-caption: 15px;
-}
-
-.theme-clay {
-    --back-1: #f6e7dd;
-    --back-0: #edede9;
-    --back-contrast: #f1dbcf;
-    --back-header: #d5bdaf;
-    --color-content: #444;
-    --border-radius-1: 10px;
-    --border-width: 1px;
-    --border-color: #444;
-    --border-radius-2: 20px;
-}
-
-
 .theme-daring {
     --landing-bits: #5b5757;
     --hero-shadow: #333;
@@ -160,25 +151,6 @@
 }
 
 
-.theme-bee {
-    --landing-bits: #414141;
-    --hero-shadow: none;
-    --back-0: #333;
-    --back-1: #252525;
-    --back-2: #333;
-    --back-content: #e7e7e7;
-    --back-contrast: #eee;
-    --back-header: #e9c46a;
-    --primary-contrast: #d9b054;
-    --color-back: #eee;
-    --color-content: #333;
-    --color-header: #333;
-    --border-width: 1px;
-    --border-color: #333;
-    --shadow-color: #333;
-}
-
-
 .theme-strawberry {
     --back-0: #f7e8d9;
     --back-1: #ffdada;
@@ -198,7 +170,7 @@
 
     --primary-contrast: #1c1c1c;
     --landing-bits: #222;
-    --hero-shadow: #aaa;
+    --hero-shadow: #777;
     --back-0: #111;
     --back-1: #050505;
     --back-contrast: #222;
@@ -216,6 +188,7 @@
 
 .theme-dark-metal {
     --landing-bits: #444343;
+    --hero-shadow: none;
     --primary-contrast: #232323;
     --back-0: #555;
     --back-1: #333;
