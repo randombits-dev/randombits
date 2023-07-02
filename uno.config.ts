@@ -9,8 +9,9 @@ export default defineConfig({
     theme: {
         colors: {
             base: 'var(--back-0)',
-            primary: 'var(--back-header)',
-            'primary-text': 'var(--color-header)',
+            primary: 'var(--color-primary)',
+            header: 'var(--back-header)',
+            'header-text': 'var(--color-header)',
             'primary-contrast': 'var(--primary-contrast)'
         }
     },

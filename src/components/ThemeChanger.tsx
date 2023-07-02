@@ -34,7 +34,7 @@ const ThemeChanger = () => {
 
     return (
         <div class="static md:fixed w-full bottom-[-21px] text-center z-20">
-        <div class="rb-theme-changer inline-block md:rounded-t-xl overflow-hidden bg-primary text-primary-text">
+        <div class="rb-theme-changer inline-block md:rounded-t-xl overflow-hidden bg-header text-header-text">
             {THEME_LIST.map((theme) => {
                 const btnClasses = "rounded-none inline-block px-5 py-3 mb-4 justify-center font-bold";
                 if (currentTheme() === theme.id) {

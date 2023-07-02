@@ -19,7 +19,7 @@
  */
 
 :root {
-    --hero-mask: url(/images/mask/2.jpg);
+    --color-primary: var(--back-header);
     --landing-bits: #333;
     --hero-shadow: var(--color-back);
     --primary-contrast: #987240;
@@ -58,7 +58,7 @@
 
 .theme-base {
     --landing-bits: #414141;
-    --hero-shadow: none;
+    --hero-shadow: #262011;
     --back-0: #333;
     --back-1: #252525;
     --back-2: #333;
@@ -112,6 +112,7 @@
 .theme-gray {
     --landing-bits: #c1c4c7;
     --primary-contrast: #464b52;
+    --color-primary: #818b96;
     --back-0: #e7ebef;
     --back-1: #c1c7ce;
     --back-2: #e7ebef;
@@ -150,27 +151,14 @@
     --font-size-caption: 15px;
 }
 
-
-.theme-strawberry {
-    --back-0: #f7e8d9;
-    --back-1: #ffdada;
-    --back-2: #f7e8d9;
-    --back-contrast: #f7e8d9;
-    --back-header: #ffdada;
-    --color-content: #444;
-    --border-radius-1: 10px;
-    --border-width: 1px;
-    --border-color: rgba(39, 39, 39, 0.75);
-    --border-radius-2: 20px;
-}
-
 /* DARK DARK DARK */
 
 .theme-dark-fear {
 
     --primary-contrast: #1c1c1c;
     --landing-bits: #222;
-    --hero-shadow: #777;
+    --color-primary: #888;
+    --hero-shadow: #000;
     --back-0: #111;
     --back-1: #050505;
     --back-contrast: #222;
@@ -188,13 +176,14 @@
 
 .theme-dark-metal {
     --landing-bits: #444343;
-    --hero-shadow: none;
+    --color-primary: #aaa;
+    --hero-shadow: #333;
     --primary-contrast: #232323;
     --back-0: #555;
     --back-1: #333;
     --back-2: #555;
     --back-contrast: #333;
-    --back-header: #111;
+    --back-header: #222;
     --back-content: #333;
     --back-code: #111;
     --color-content: #ddd;
