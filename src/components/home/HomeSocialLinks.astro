@@ -6,13 +6,13 @@ const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images
 
     <div class="homepage-social-links">
         <div class="homepage-social-links-content flex flex-wrap gap-4 lg:gap-16">
-            <a href="https://github.com/nienow" target="_blank">
+            <a href="https://github.com/nienow" target="_blank" aria-label="github social link">
                 <div class="svg" set:html={githubSVG}/>
             </a>
-            <a href="https://discordapp.com/users/806661811143049216" target="_blank">
+            <a href="https://discordapp.com/users/806661811143049216" target="_blank" aria-label="discord social link">
                 <div set:html={discordSVG}/>
             </a>
-            <a href="https://twitter.com/RandomBitsDev" target="_blank">
+            <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter social link">
                 <div set:html={twitterSVG}/>
             </a>
         </div>

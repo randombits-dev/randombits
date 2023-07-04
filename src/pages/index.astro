@@ -10,6 +10,7 @@ import ToolList from "../components/ToolList.astro";
 import ToolDesc from "../snippits/tools-desc.md";
 import ArticleDesc from "../snippits/articles-desc.md";
 import ArticleList from "../components/ArticleList.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 
 const digits = [...Array.from({length: 20000})].map(() => {
@@ -17,19 +18,12 @@ const digits = [...Array.from({length: 20000})].map(() => {
 }).join(' ');
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <BaseHead title="Random Bits" description=""/>
-</head>
-<body>
-<div class="bg-base min-h-screen relative text-center">
+<BaseLayout title="Random Bits" description="Software Engineering, Articles, Tools">
+<div class="bg-base min-h-screen text-center">
 
-    <div aria-disabled="true" class="rb-background-bits absolute h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">{digits}</div>
+    <div aria-disabled="true" class="rb-background-bits absolute top-0 h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">{digits}</div>
 
     <div class="relative min-h-screen z-10 flex flex-col items-center">
-        <HomeLinks2/>
-
         <div class="flex-1 text-primary flex items-center">
             <div class="mb-30">
 
@@ -59,12 +53,7 @@ const digits = [...Array.from({length: 20000})].map(() => {
         <a class="button" href="/articles">See All Articles</a>
     </div>
 </div>
-
-<Footer/>
-<ThemeChanger client:only="solid-js"/>
-
-</body>
-</html>
+</BaseLayout>
 
 <style>
 
