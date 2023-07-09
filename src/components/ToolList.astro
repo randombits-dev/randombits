@@ -6,8 +6,8 @@ import {TOOLS} from "../data/tools";
 
 <div class="card-list-v">
 {
-    TOOLS.map(({link, title, desc, img}) => (
-    <ImageCard style="v" url={link} title={title} desc={desc} img={img}/>
+    TOOLS.map(({link, title, desc, img, newTab}) => (
+    <ImageCard style="v" url={link} title={title} desc={desc} img={img} newTab={newTab}/>
         ))
     }
 

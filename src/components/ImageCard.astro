@@ -1,11 +1,11 @@
 ---
-const {url, img, title, desc, style} = Astro.props;
+const {url, img, title, desc, style, newTab} = Astro.props;
 import { Image } from 'astro:assets';
 
 const styleClass = style === 'v' ? 'image-card-v' : 'image-card-h';
 ---
 
-<a href={url} class="nav">
+<a href={url} target={newTab ? '_blank' : '_self'} class="nav">
     <div class:list={["card image-card", styleClass]}>
         <Image src={img} alt="Article Cover Image"/>
         <div class="card-row-text">

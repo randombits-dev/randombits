@@ -15,5 +15,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/tools/print-schedule",
+      "destination": "https://daily.randombits.dev"
+    }
   ]
 }
