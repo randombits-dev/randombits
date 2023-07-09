@@ -20,7 +20,7 @@ body {
 }
 
 .main-container {
-    max-width: 1400px;
+    /*max-width: 1400px;*/
     margin-left: auto;
     margin-right: auto;
     padding: 50px 30px;
@@ -36,8 +36,9 @@ sidebar a {
 }
 
 sidebar a:hover {
-    background-color: var(--back-contrast)
+    /*background-color: var(--back-contrast)*/
     /*padding-left: 20px;*/
+    text-decoration: underline;
 }
 
 content {
@@ -58,8 +59,8 @@ h2 {
     font-size: var(--font-size-2);
     margin: 0;
     font-weight: 400;
-    display: flex;
-    align-items: center;
+    /*display: flex;*/
+    /*align-items: center;*/
     color: var(--color-content);
     /*text-transform: uppercase;*/
 }
@@ -75,6 +76,10 @@ a {
 
 a.nav {
     text-decoration: none;
+}
+
+a.nav.nav-tab-1 {
+    padding-left: 30px;
 }
 
 button {

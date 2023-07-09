@@ -26,31 +26,19 @@
 }
 
 .card-title {
+    overflow: hidden;
     font-family: var(--font-1);
     background-color: var(--back-header);
     color: var(--color-header);
     padding: 8px 20px;
-    font-weight: bold;
-    font-size: 18px;
-    position: absolute;
-    top: -25px;
-    left: 25px;
-    border: var(--border-width) solid var(--border-color);
-    border-radius: 20px;
+    border-bottom: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-1) var(--border-radius-1) 0 0;
 }
 
 .card-contents {
     padding: 20px;
 }
 
-.card-title + .card-contents {
-    padding-top: 40px;
-}
-
-.card-title + .card-contents {
-    margin-top: 20px;
-
-}
 
 .card-row {
     display: flex;

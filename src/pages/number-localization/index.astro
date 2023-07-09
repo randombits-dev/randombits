@@ -4,18 +4,19 @@ import {getCollection} from "astro:content";
 import ImageCard from "../../components/ImageCard.astro";
 import HtmlLayout from "../../layouts/HtmlLayout.astro";
 import {getCollectionSortedByOrder} from "../../utils/articleUtils";
-const posts = await getCollectionSortedByOrder('standard-notes');
+const posts = await getCollectionSortedByOrder('number-localization');
+Astro.redirect('/number-localization/intro');
 ---
 
-<HtmlLayout title="Standard Notes Extension Guides" description="List of standard notes extension articles">
+<HtmlLayout title="Number Localization Guide" description="A complete guide to number localization, formating, and parsing.">
 
-<h1 class="center text-bg-text">Standard Notes Extension Guides</h1>
+<h1 class="center text-bg-text">Number Localization Guides</h1>
 
     <div class="card-list">
 {
     posts.map(article => {
         return <ImageCard img={article.data.img} title={article.data.title} desc={article.data.desc}
-                          url={'/standard-notes/' + article.slug}/>
+                          url={'/number-localization/' + article.slug}/>
     })
 }
     </div>

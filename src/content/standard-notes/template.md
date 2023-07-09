@@ -1,7 +1,8 @@
 ---
-title: "Standard Notes Editor Extension Template"
+title: "Editor Extension Template"
 desc: "A better starter template for creating standard notes extensions"
 img: ./template.jpg
+order: 3
 ---
 
 ## Getting Started
@@ -20,13 +21,13 @@ The demo page (demo.html) is automatically opened.
 ## Demo Page
 
 The template includes a separate demo page that allows you to develop and test your extension without it running inside standard notes.
-It works by wrapping your editor with a **mock standard notes**, which sends and receives the same events that the real application would.
+It works by wrapping your editor with a **mock standard notes
+**, which sends and receives the same events that the real application would.
 
 The demo page and related scripts is built as a separate entry, and therefore is not included in your actual editor
 build. It is only included in the demo.html page.
 
 The demo page can also be used to demonstrate your extension on your personal website or blog, like you see below:
-
 
 <iframe src="https://nienow.github.io/sn-extension-template/demo.html" width="100%" height="400"></iframe>
 
@@ -49,7 +50,8 @@ You will want to edit this file at `public/ext.json`, changing the urls, identif
 }
 ```
 
-The version variable (`$VERSION$`) is written during build, and is copied from the version in your **package.json** file.
+The version variable (`$VERSION$`) is written during build, and is copied from the version in your **package.json
+** file.
 
 The build automatically creates a `latest.zip` distribution that is used by the desktop application.
 

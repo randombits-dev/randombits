@@ -3,6 +3,7 @@ import {getCollection} from 'astro:content';
 import Card from "../../components/Card.astro";
 import BlogSidebar from "../../layouts/BlogSidebar.astro";
 import CardRow from "../../components/CardRow.astro";
+import ArticleTOC from "../../components/ArticleTOC";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection('standard-notes');
@@ -12,32 +13,28 @@ export async function getStaticPaths() {
 }
 
 const {entry} = Astro.props;
-const {Content} = await entry.render();
+const {Content, headings} = await entry.render();
 
 const articles = (await getCollection('standard-notes'));
 const path = Astro.url.pathname.replace(/\/+$/, '');
+const h2Headings = headings.filter(h => h.depth === 2);
 
 ---
-<BlogSidebar content={entry.data}>
-    <Card slot="sidebar">
-        <a class="nav" href="installing-extensions">Installing Extensions</a>
-        <a class="nav" href="creating-extensions">Creating Extensions</a>
-        <a class="nav" href="template">Starter Template</a>
-        <a class="nav" href="cosmos">Cosmos</a>
-    </Card>
+<BlogSidebar content={entry.data} group="Standard Notes">
+    <ArticleTOC slot="sidebar" client:load path={path} relatedPages={articles} headings={h2Headings}/>
     <Content slot="content"/>
-        <div slot="after" class="card further-reading">
-            <h2>Further Reading</h2>
-            {
-                articles.map(article => {
-                    const showLink = path !== article.url;
-                    if (showLink) {
-                        return <CardRow title={article.data.title}
-                                        desc={article.data.desc}
-                                        url={article.slug}
-                                        img={article.data.img}/>;
-                    }
-                })
-            }
-        </div>
+    <div slot="after" class="card further-reading">
+        <h2>Further Reading</h2>
+        {
+            articles.map(article => {
+                const showLink = !path.endsWith(article.slug);
+                if (showLink) {
+                    return <CardRow title={article.data.title}
+                                    desc={article.data.desc}
+                                    url={article.slug}
+                                    img={article.data.img}/>;
+                }
+            })
+        }
+    </div>
 </BlogSidebar>

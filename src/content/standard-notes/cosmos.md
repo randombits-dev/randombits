@@ -1,10 +1,9 @@
 ---
-title: "Standard Notes Cosmos Extension"
+title: "Cosmos Extension"
 desc: "Standard Notes extension that allows splitting a note into multiple areas. Each area can use a separate editor type. Contains an extension marketplace."
 img: ./cosmos.jpg
+order: 4
 ---
-
-
 
 ## Features
 
@@ -28,7 +27,8 @@ Extension Descriptor: https://nienow.github.io/cosmos/ext.json
 
 The **columns** and **rows** controls allows you to change the number of areas in the note.
 
-By default, the title of each area only shows up when the toolbar is open. The **Always Show Title** option enables always showing the title.
+By default, the title of each area only shows up when the toolbar is open. The **Always Show Title
+** option enables always showing the title.
 
 The bottom toolbar opens automatically when creating a new note, but will be collapsed when opening that note again. Use the expand/collapse arrow to show/hide the toolbar.
 

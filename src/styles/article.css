@@ -119,7 +119,7 @@ li {
 }
 
 .article-sidebar {
-    max-width: 1200px;
+    max-width: 1600px;
 }
 
 .article-body img {
@@ -145,4 +145,25 @@ li {
 .further-reading {
     margin-top: 50px;
     padding: 20px 40px !important;
+}
+
+.rb-article-nav {
+    padding: 10px 0;
+}
+
+.rb-article-nav a {
+    padding: 5px 20px;
+}
+
+.rb-article-nav a[aria-selected="true"] {
+    background-color: var(--back-header);
+    color: var(--color-header);
+}
+
+.rb-article-nav a.nav-tab-1 {
+    padding: 4px 40px;
+}
+
+.rb-nav-sub {
+    padding: 5px 0;
 }

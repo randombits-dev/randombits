@@ -4,7 +4,7 @@ import BlogSidebar from "../../layouts/BlogSidebar.astro";
 import ArticleTOC from "../../components/ArticleTOC";
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection('articles', ({data}) => !data.draft);
+    const blogEntries = await getCollection('number-localization');
     return blogEntries.map(entry => ({
         params: {slug: entry.slug}, props: {entry},
     }));
@@ -14,8 +14,10 @@ const {entry} = Astro.props;
 const {Content, headings} = await entry.render();
 const h2Headings = headings.filter(h => h.depth === 2);
 
+const articles = (await getCollection('number-localization'));
+const path = Astro.url.pathname.replace(/\/+$/, '');
 ---
-<BlogSidebar content={entry.data}>
-    <ArticleTOC slot="sidebar" client:load headings={h2Headings}/>
+<BlogSidebar content={entry.data} group="Number Localization">
+    <ArticleTOC slot="sidebar" client:load path={path} relatedPages={articles} headings={h2Headings}/>
     <Content slot="content"/>
 </BlogSidebar>

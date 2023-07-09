@@ -1,8 +1,9 @@
 ---
-title: "Installing Standard Notes Extensions"
+title: "Installing Extensions"
 desc: "One of the best parts of Standard Notes is the ability to write extensions. The guide covers how to install extensions."
 img: ./installing-extensions.png
-tags: ['standard-notes']
+tags: [ 'standard-notes' ]
+order: 1
 ---
 
 ## Extension Introduction
@@ -13,7 +14,8 @@ There are a few different types of Standard Notes extensions:
 
 **Theme**. Loads a 3rd party stylesheet to change the *theme* of the entire application.
 
-**Bottom Toolbar**. Loads a 3rd party extension in the *toolbar* area underneath the editor. This type of extension is not very common. It is also referred to as a stack extension.
+**Bottom Toolbar**. Loads a 3rd party extension in the
+*toolbar* area underneath the editor. This type of extension is not very common. It is also referred to as a stack extension.
 
 ## Installing extensions
 
@@ -72,8 +74,6 @@ If you installed a button toolbar extension, you need to enable the extension in
 Then you will see the new toolbar below every note:
 
 <img src="/images/sn/toolbar.png"/>
-
-
 
 ## Extension Descriptor
 

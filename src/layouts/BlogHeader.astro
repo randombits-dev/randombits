@@ -1,72 +1,33 @@
 ---
-import Card from "../components/Card.astro";
 import Tag from "../components/Tag.astro";
-import QuickLink from "../components/QuickLink.astro";
-import { Image } from 'astro:assets';
-import notebook from "../assets/notebook2.jpg";
-import CoverImage from "../components/CoverImage.astro";
 
 const {
     meta: {title, summary, tags, desc, updated, img},
+    group
 } = Astro.props;
-
-const quickLinks = [
-    ['Intro to Extensions', '/standard-notes'],
-    ['Cosmos Extension', '/standard-notes/cosmos'],
-    ['Creating your own extension', '/standard-notes/creating-extensions'],
-    ['Extension Starter Template', '/standard-notes/template']
-]
 ---
-<div class="card flex">
     <div class="card-contents">
-        <div style="flex: 1 1 auto">
+        <div class="text-center">
+
+            {group && <h2>{group}</h2>}
             <h1>{title}</h1>
-            <p class="summary">{desc}</p>
+            <p class="summary italic mx-30">{desc}</p>
+            {updated && <div class="text-2xl italic">{updated.toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            })}</div>}
+                <!--{-->
+                <!--    tags && tags.map(tag =>-->
+                <!--                <Tag>{tag}</Tag>)-->
+                <!--}-->
         </div>
-        <!--<div>
-            <QuickLink links={quickLinks}/>
-        </div>-->
-        {updated &&
-                <div class="meta-container">
-                    <div class="meta date">
-                        <date>{updated.toLocaleDateString('en-US', {
-                            month: 'long',
-                            day: 'numeric',
-                            year: 'numeric'
-                        })}</date>
-                    </div>
-                    <div class="meta tags">
-                        {
-                            tags && tags.map(tag =>
-                                        <Tag>{tag}</Tag>)
-                        }
-                    </div>
-                </div>}
     </div>
 
-    {img &&
-            <Image src={img} alt="Article Cover Image"/>
-    }
-
-</div>
+    <hr/>
 
 <style>
-
-    .card {
-        margin-bottom: 50px;
-        overflow: hidden;
-    }
-
-    .card-contents {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    img {
-        border-left: var(--border-width) solid var(--border-color);
-        object-fit: cover;
-        max-width: 300px;
-        height: auto;
-    }
+    h2 {
+        margin-bottom: 10px !important;
+      }
 </style>

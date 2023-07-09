@@ -262,41 +262,6 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
-"number-localization/formatting.mdx": {
-	id: "number-localization/formatting.mdx";
-  slug: "number-localization/formatting";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
-"number-localization/intro.mdx": {
-	id: "number-localization/intro.mdx";
-  slug: "number-localization/intro";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
-"number-localization/locale-list.mdx": {
-	id: "number-localization/locale-list.mdx";
-  slug: "number-localization/locale-list";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
-"number-localization/numbering-systems.mdx": {
-	id: "number-localization/numbering-systems.mdx";
-  slug: "number-localization/numbering-systems";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
-"number-localization/parsing.mdx": {
-	id: "number-localization/parsing.mdx";
-  slug: "number-localization/parsing";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
 "react-blog.mdx": {
 	id: "react-blog.mdx";
   slug: "react-blog";
@@ -325,6 +290,43 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+};
+"number-localization": {
+"formatting.mdx": {
+	id: "formatting.mdx";
+  slug: "formatting";
+  body: string;
+  collection: "number-localization";
+  data: InferEntrySchema<"number-localization">
+} & { render(): Render[".mdx"] };
+"intro.mdx": {
+	id: "intro.mdx";
+  slug: "intro";
+  body: string;
+  collection: "number-localization";
+  data: InferEntrySchema<"number-localization">
+} & { render(): Render[".mdx"] };
+"locale-list.mdx": {
+	id: "locale-list.mdx";
+  slug: "locale-list";
+  body: string;
+  collection: "number-localization";
+  data: InferEntrySchema<"number-localization">
+} & { render(): Render[".mdx"] };
+"numbering-systems.mdx": {
+	id: "numbering-systems.mdx";
+  slug: "numbering-systems";
+  body: string;
+  collection: "number-localization";
+  data: InferEntrySchema<"number-localization">
+} & { render(): Render[".mdx"] };
+"parsing.mdx": {
+	id: "parsing.mdx";
+  slug: "parsing";
+  body: string;
+  collection: "number-localization";
+  data: InferEntrySchema<"number-localization">
+} & { render(): Render[".mdx"] };
 };
 "snippets": {
 "text-in-text-mask.mdx": {

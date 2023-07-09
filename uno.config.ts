@@ -12,11 +12,9 @@ export default defineConfig({
             primary: 'var(--color-primary)',
             header: 'var(--back-header)',
             'header-text': 'var(--color-header)',
-            'primary-contrast': 'var(--primary-contrast)'
+            'primary-contrast': 'var(--primary-contrast)',
+            'content-text': 'var(--color-content)',
+            'bg-text': 'var(--color-back)'
         }
-    },
-    rules: [
-        ['bg-content', {'background-color': 'var(--back-content)'}],
-        ['', {'background-color': 'var(--back-content)'}],
-    ]
+    }
 })

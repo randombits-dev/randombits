@@ -4,6 +4,7 @@ summary: "There are plenty of articles about setting up Webpack's Module Federat
 desc: "Beyond the basics of module federation to cover what a production app will most likely need. Dynamic Imports, Sharing Files and Libraries, Web Components, Routers, Prefetching, Cache Busting, Dynamic URLS."
 updated: 2023-01-01
 img: './covers/mf1.png'
+tags: [ react ]
 ---
 
 There are plenty of articles about setting up Webpack's Module Federation.
