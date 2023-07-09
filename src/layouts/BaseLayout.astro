@@ -2,7 +2,6 @@
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import BaseHead from '../components/layout/BaseHead.astro';
-import HomeLinks from "../components/home/HomeLinks.astro";
 import ThemeChanger from "../components/ThemeChanger";
 import '@fontsource/righteous';
 
@@ -17,7 +16,7 @@ const {title, description, img, bodyClass} = Astro.props;
 </head>
 <body class="">
 <div class="flex flex-col min-h-screen">
-<HomeLinks/>
+<Header/>
     <div class="flex-1">
 <slot/>
     </div>
