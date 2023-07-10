@@ -11,7 +11,6 @@ export const TOOLS = [
         title: 'Printable Daily Schedule',
         desc: 'Generates a daily planner for appointments · One page a day · Printable',
         img: CoverImages.book,
-        link: 'https://schedule.randombits.dev',
-        newTab: true
+        link: 'https://schedule.randombits.dev'
     }
 ];
