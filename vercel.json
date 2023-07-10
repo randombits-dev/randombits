@@ -16,10 +16,11 @@
       ]
     }
   ],
-  "rewrites": [
+  "redirects": [
     {
       "source": "/tools/print-schedule",
-      "destination": "https://daily.randombits.dev"
+      "destination": "https://schedule.randombits.dev",
+      "permanent": true
     }
   ]
 }

@@ -11,3 +11,4 @@ node_modules/
 # other
 .DS_Store
 .idea/
+.vercel
