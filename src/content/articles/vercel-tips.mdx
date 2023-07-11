@@ -113,6 +113,28 @@ The reason you need both max-age and immutable is that the immutable keyword is 
 The current example is modifying the cache settings for all served files.
 But by changing the source pattern, you can adjust which files you want to target.
 
+## Redirects when you move a page
+
+If you move a page to a different path, and there are already external links to your page, you will want to add a redirect:
+
+```json
+{
+ "redirects": [
+    {
+      "source": "/my-old-path",
+      "destination": "/my-new-path",
+      "permanent": true
+    }
+  ]
+}
+```
+
+The permanent flag tells Vercel which HTTP **status code** should be returned:
+
+`permanent: false` = 307 temporary redirect
+
+`permanent: true` = 308 - permanent redirect
+
 ## Closing Thoughts
 
 While Vercel is a great experience for simple applications that fit the typical nodejs structure,
