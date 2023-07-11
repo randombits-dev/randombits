@@ -4,7 +4,7 @@ import HomeFooter from "../components/home/HomeSocialLinks.astro";
 import ToolList from "../components/ToolList.astro";
 import ToolDesc from "../snippits/tools-desc.md";
 import ArticleDesc from "../snippits/articles-desc.md";
-import ArticleList from "../components/ArticleList.astro";
+import ArticleList from "../components/article/ArticleList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 
@@ -92,7 +92,7 @@ const digits = [...Array.from({length: 20000})].map(() => {
         text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 15px 15px 0 var(--hero-shadow);
     /*text-shadow: none;*/
     }
-    
+
     .rb-hero-sub {
         text-shadow: -3px -3px 0 var(--hero-shadow), -3px 3px 0 var(--hero-shadow), 3px -3px 0 var(--hero-shadow), 3px 3px 0 var(--hero-shadow), 10px 10px 0 var(--hero-shadow);
     }

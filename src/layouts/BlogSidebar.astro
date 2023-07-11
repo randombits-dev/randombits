@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-import '../styles/article.css';
-import '../styles/prism-custom.css';
+import '../styles/article-container.scss';
+import '../styles/article-body.scss';
+import '../styles/prism-custom.scss';
 import BlogHeader from "./BlogHeader.astro";
-import Card from "../components/Card.astro";
 import HtmlLayout from "./HtmlLayout.astro";
+import ArticleBody from "../components/article/ArticleBody.astro";
 
 const {
     content,
@@ -14,8 +14,8 @@ const {
 const fullTitle = group + ' - ' + content.title;
 ---
 
-<HtmlLayout title={fullTitle} description={content.desc} img={content.img}>
-    <div class="article article-sidebar">
+<HtmlLayout title={fullTitle} description={content.desc} img={content.img.src}>
+    <div class="article article--sidebar">
         <div class="two-column">
             <sidebar>
 

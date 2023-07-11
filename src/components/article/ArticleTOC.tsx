@@ -24,34 +24,34 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
     };
 
     if (relatedPages) {
-        return <div class="card rb-article-nav" ref={el}>
+        return <div class="card rb-article__nav" ref={el}>
             {
                 relatedPages.sort((a, b) => a.data.order - b.data.order).map(article => {
                     const showLink = path.endsWith(article.slug);
                     if (showLink) {
-                        return <><a class="nav font-bold"  aria-selected={!selected()} href={article.slug}>{article.data.toc || article.data.title}</a>
-                            <div class="rb-nav-sub">
+                        return <><a class="font-bold"  aria-selected={!selected()} href={article.slug}>{article.data.toc || article.data.title}</a>
+                            <div class="rb-article__sub-nav">
                                 {
                                     headings.map(heading => {
                                         const isSelected = selected() === heading.slug;
-                                        return <a class="nav nav-tab-1 text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
+                                        return <a class="text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
                                     })
                                 }
                             </div>
                         </>;
                     } else {
-                        return <a class="nav font-bold" href={article.slug}>{article.data.toc || article.data.title}</a>;
+                        return <a class="font-bold" href={article.slug}>{article.data.toc || article.data.title}</a>;
                     }
                 })
             }
 
         </div>
     } else {
-        return <div class="card rb-article-nav" ref={el}>
+        return <div class="card rb-article__nav" ref={el}>
             {
                 headings.map(heading => {
                     const isSelected = selected() === heading.slug;
-                    return <a class="nav nav-tab-1 text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
+                    return <a class="text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
                 })
             }
         </div>

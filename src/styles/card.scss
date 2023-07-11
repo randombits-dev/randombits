@@ -15,25 +15,15 @@
   display: block;
 }
 
-.image-card:hover {
-  box-shadow: 2px 2px var(--shadow-color);
-  translate: -2px -2px;
-}
-
-.card-title {
-  overflow: hidden;
-  font-family: var(--font-1);
-  background-color: var(--back-header);
-  color: var(--color-header);
-  padding: 8px 20px;
-  border-bottom: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius-1) var(--border-radius-1) 0 0;
+/* TODO: Better */
+.image-card:hover .card-row-title {
+  //filter: sepia(20%);
+  text-decoration: underline;
 }
 
 .card-contents {
   padding: 20px;
 }
-
 
 .card-row {
   display: flex;
@@ -55,9 +45,8 @@
   height: 100px;
 }
 
-.card-row:hover img {
-  box-shadow: 1px 1px var(--shadow-color);
-  translate: -1px -1px;
+.card-row:hover .card-row-title {
+  text-decoration: underline;
 }
 
 .card-row > div {
@@ -93,10 +82,6 @@
   grid-auto-flow: row;
   gap: 30px;
   align-items: stretch;
-}
-
-.dashboard-alt .card-list {
-  grid-template-columns: 1fr;
 }
 
 .card-list-v {

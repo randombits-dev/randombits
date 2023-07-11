@@ -1,7 +1,7 @@
 ---
 import {getCollection} from 'astro:content';
 import BlogSidebar from "../../layouts/BlogSidebar.astro";
-import ArticleTOC from "../../components/ArticleTOC";
+import ArticleTOC from "../../components/article/ArticleTOC";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection('articles', ({data}) => !data.draft);

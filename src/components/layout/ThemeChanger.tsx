@@ -1,5 +1,5 @@
 import {createSignal, onMount} from "solid-js";
-import '../styles/theme-changer.css';
+import '@/styles/theme-changer.scss';
 
 const THEME_LIST = [
     {id: "base", name: "Bumble"},

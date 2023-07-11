@@ -3,7 +3,7 @@ import {getCollection} from 'astro:content';
 import Card from "../../components/Card.astro";
 import BlogSidebar from "../../layouts/BlogSidebar.astro";
 import CardRow from "../../components/CardRow.astro";
-import ArticleTOC from "../../components/ArticleTOC";
+import ArticleTOC from "../../components/article/ArticleTOC";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection('standard-notes');
@@ -23,7 +23,7 @@ const h2Headings = headings.filter(h => h.depth === 2);
 <BlogSidebar content={entry.data} group="Standard Notes">
     <ArticleTOC slot="sidebar" client:load path={path} relatedPages={articles} headings={h2Headings}/>
     <Content slot="content"/>
-    <div slot="after" class="card further-reading">
+    <div slot="after" class="card article__further-reading">
         <h2>Further Reading</h2>
         {
             articles.map(article => {

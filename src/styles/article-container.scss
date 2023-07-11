@@ -1,0 +1,53 @@
+//
+//.tag {
+//  display: inline-block;
+//  margin-right: 5px;
+//}
+//
+//.tag-title {
+//  margin-right: 15px;
+//}
+//
+//.tag:not(:last-child)::after {
+//  content: '·';
+//}
+
+.article {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.article--sidebar {
+  max-width: 1600px;
+}
+
+.article__further-reading {
+  margin-top: 50px;
+  padding: 20px 40px !important;
+}
+
+.rb-article__nav {
+  padding: 10px 0;
+
+  a {
+    padding: 5px 20px;
+    display: block;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a[aria-selected="true"] {
+    background-color: var(--back-header);
+    color: var(--color-header);
+  }
+}
+
+.rb-article__sub-nav {
+  padding: 5px 0;
+
+  a {
+    padding: 3px 30px;
+  }
+}

@@ -19,11 +19,14 @@ export default defineConfig({
     }
   },
   shortcuts: {
-    card: 'rb-color-content relative border'
+    card: 'rb-color-content relative border',
+    btn: 'text-center px-3 py-5 border tb-color-header cursor-pointer'
   },
   rules: [
     ['border', {border: 'var(--border-width) solid var(--border-color)', 'border-radius': 'var(--border-radius-1)'}],
+    ['border-light', {border: 'var(--border-width-light) solid var(--border-color-light)', 'border-radius': 'var(--border-radius-1)'}],
     ['rb-color-content', {'background-color': 'var(--back-content)', 'color': 'var(--color-content)'}],
     ['rb-color-header', {'background-color': 'var(--back-header)', 'color': 'var(--color-header)'}],
+    ['rb-color-back', {'background-color': 'var(--back-0)', 'color': 'var(--color-back)'}]
   ]
 });
