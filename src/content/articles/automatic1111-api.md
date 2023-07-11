@@ -4,7 +4,7 @@ summary: "A guide to using the Automatic1111 API"
 desc: "A guide to using the Automatic1111 API"
 updated: 2023-05-25
 img: './covers/mtn-clouds.jpg'
-hide: true
+draft: true
 ---
 
 ## Reasons to use the Automatic1111 API?
@@ -23,7 +23,7 @@ stable-diffusion-webui/webui.sh --listen --xformers --api
 
 All endpoints are located at: `/sdapi/v1/*`. For example, `http://localhost:7860/sdapi/v1/txt2img`.
 
-## txt2img 
+## txt2img
 
 Generate an image using a text prompt.
 
@@ -32,13 +32,13 @@ Common Params:
 ```json
 POST /sdapi/v1/txt2img
 {
-    "prompt": "Sunset in the mountains, lake in front",
-    "negative_prompt": "clouds, people",
-    "steps": 20,
-    "cfg_scale": 7,
-    "height": 512,
-    "width": 512,
-    "seed": -1
+  "prompt": "Sunset in the mountains, lake in front",
+  "negative_prompt": "clouds, people",
+  "steps": 20,
+  "cfg_scale": 7,
+  "height": 512,
+  "width": 512,
+  "seed": -1
 }
 ```
 
@@ -46,14 +46,15 @@ To enable Hires, add the following params:
 
 ```json
 {
-    ...
-    "enable_hr": true, // enable Hires
-    "hr_scale": 2, // 2x512 = 1024
-    "denoising_strength": 0.7,
-    "hr_second_pass_steps": 10
+  ...
+  "enable_hr": true,
+  // enable Hires
+  "hr_scale": 2,
+  // 2x512 = 1024
+  "denoising_strength": 0.7,
+  "hr_second_pass_steps": 10
 }
 ```
-
 
 Full list of accepted params:
 

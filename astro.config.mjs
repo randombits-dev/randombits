@@ -3,6 +3,8 @@ import mdx from '@astrojs/mdx';
 import solid from '@astrojs/solid-js';
 import remarkCodeTitles from 'remark-code-titles';
 import UnoCSS from 'unocss/astro'
+import sitemap from '@astrojs/sitemap';
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +14,7 @@ export default defineConfig({
     syntaxHighlight: 'prism',
     remarkPlugins: [remarkCodeTitles]
   },
-  integrations: [mdx(), solid(), UnoCSS(),],
+  integrations: [mdx(), solid(), UnoCSS(), sitemap()],
   build: {
     assets: '_astro'
   },
