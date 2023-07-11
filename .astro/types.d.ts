@@ -262,6 +262,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"npm-yarn-pnpm.md": {
+	id: "npm-yarn-pnpm.md";
+  slug: "npm-yarn-pnpm";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "react-blog.mdx": {
 	id: "react-blog.mdx";
   slug: "react-blog";
@@ -283,13 +290,6 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
-"yarn-2.md": {
-	id: "yarn-2.md";
-  slug: "yarn-2";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
 };
 "number-localization": {
 "formatting.mdx": {
