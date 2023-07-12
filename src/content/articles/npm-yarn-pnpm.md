@@ -9,11 +9,11 @@ img: './covers/vs.png'
 ## NPM
 
 NPM is the original package manager. It downloads your projects dependencies, and the dependencies` dependencies,
-recursively until everything is downloaded. This can result in an extreme amount of libraries, with hundreds of
+and so on until everything is downloaded. This can result in an extreme amount of libraries, with hundreds of
 thousands of files.
 
-The biggest issue I have always had with NPM is how long it takes to delete or move projects. Windows does not handle
-100K files very well. Now that I have a blazing fast WD Black SSD, it isn't as big of a deal, but even so it still takes
+The biggest issue I've had with NPM is how long it takes to delete the node_modules folder. Windows does not handle
+100K files very well. Now that I have a blazing fast WD Black SSD, it isn't that bad, but it still takes
 about a minute to delete large projects.
 
 ## PNPM
@@ -22,9 +22,7 @@ PNPM adds performance enhancements to NPM, the most notable being that libraries
 your hard drive, and are shared between projects. It maintains complete compatibility with NPM by using symbolic links
 to create the same node_modules structure you are used to.
 
-I've noticed a huge different with PNPM, so I use it on all my projects.
-
-Note that it only shares dependencies for projects on the same disk by default.
+I've noticed a big performance difference with PNPM, so I use it on all my projects.
 
 ## YARN
 
@@ -35,21 +33,20 @@ There are two versions of Yarn:
 
 Here I will be referring to Yarn v2 or Yarn Berry, since the classic version should not be used anymore.
 
-Yarn Berry takes a different approach by zipping all dependencies in order to save space and to considerably reducing
+Yarn Berry takes a different approach by zipping all dependencies in order to save space and to reduce
 the number of files. For example, when using Yarn, I only have about 200 files instead of 100K files.
 
 The concept and performance is great, except there are two big issues:
 
-1. It is not completely compatible with the normal node_modules structure. Most libraries have no issues, but it can
+1. It is not completely compatible with the normal node_modules structure. Most libraries have no issues, but it can be
    tough to debug issues when they arise.
-2. The documentation is very lacking
+2. The documentation and community support is very lacking.
 
 For these reasons, I do not recommend Yarn.
 
-## Performance Tests
+## Performance Test Summary
 
-I ran performance tests on all three package managers, on a repo with a large dependency tree. There were around 100K
-total files in the dependency tree.
+Here is a summary of the performance results for all three package managers. I ran the tests on the same repo with about 100K total files in the dependency tree.
 
 | Library | # of Files | Disk Space Used | Install | Install in another location | Delete Project |
 |---------|------------|-----------------|---------|-----------------------------|----------------|

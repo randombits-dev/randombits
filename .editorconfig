@@ -13,9 +13,11 @@ ij_continuation_indent_size = 2
 ij_formatter_off_tag = @formatter:off
 ij_formatter_on_tag = @formatter:on
 
-[*.md]
+[{*.md, *.mdx}]
 max_line_length = off
 trim_trailing_whitespace = false
+ij_markdown_wrap_text_if_long = false
+ij_markdown_wrap_text_inside_blockquotes = false
 
 [*.ts]
 ij_typescript_call_parameters_wrap = normal
