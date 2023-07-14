@@ -22,5 +22,6 @@
       "destination": "https://schedule.randombits.dev",
       "permanent": true
     }
-  ]
+  ],
+  "trailingSlash": false
 }

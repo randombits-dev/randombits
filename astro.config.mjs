@@ -20,5 +20,6 @@ export default defineConfig({
   },
   experimental: {
     assets: true
-  }
+  },
+  trailingSlash: 'never'
 });

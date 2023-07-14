@@ -241,9 +241,23 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"code-formatting-linting.md": {
+	id: "code-formatting-linting.md";
+  slug: "code-formatting-linting";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "i18n.md": {
 	id: "i18n.md";
   slug: "i18n";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"javascript-interviews.md": {
+	id: "javascript-interviews.md";
+  slug: "javascript-interviews";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -269,13 +283,6 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
-"react-blog.mdx": {
-	id: "react-blog.mdx";
-  slug: "react-blog";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".mdx"] };
 "theme-rotations.mdx": {
 	id: "theme-rotations.mdx";
   slug: "theme-rotations";
