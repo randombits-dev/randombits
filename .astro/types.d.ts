@@ -345,6 +345,13 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "standard-notes": {
+"component-relay.md": {
+	id: "component-relay.md";
+  slug: "component-relay";
+  body: string;
+  collection: "standard-notes";
+  data: InferEntrySchema<"standard-notes">
+} & { render(): Render[".md"] };
 "cosmos.md": {
 	id: "cosmos.md";
   slug: "cosmos";

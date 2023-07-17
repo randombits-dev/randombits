@@ -27,8 +27,7 @@ Extension Descriptor: https://nienow.github.io/cosmos/ext.json
 
 The **columns** and **rows** controls allows you to change the number of areas in the note.
 
-By default, the title of each area only shows up when the toolbar is open. The **Always Show Title
-** option enables always showing the title.
+By default, the title of each area only shows up when the toolbar is open. The **Always Show Title** option enables always showing the title.
 
 The bottom toolbar opens automatically when creating a new note, but will be collapsed when opening that note again. Use the expand/collapse arrow to show/hide the toolbar.
 
