@@ -4,7 +4,6 @@ import '../styles/article-body.scss';
 import '../styles/prism-custom.scss';
 import BlogHeader from "./BlogHeader.astro";
 import HtmlLayout from "./HtmlLayout.astro";
-import ArticleBody from "../components/article/ArticleBody.astro";
 
 const {
     content,
@@ -15,11 +14,10 @@ const fullTitle = group ? group + ' - ' + content.title : content.title;
 ---
 
 <HtmlLayout title={fullTitle} description={content.desc} img={content.img.src}>
-    <div class="article article--sidebar">
-        <div class="two-column">
-            <sidebar>
+    <div class="rb-article">
+            <div class="rb-article__sidebar">
 
-            </sidebar>
+            </div>
 
             <content>
 
@@ -33,33 +31,12 @@ const fullTitle = group ? group + ' - ' + content.title : content.title;
                 <slot name="after"/>
             </content>
 
-            <sidebar>
+            <div class="rb-article__sidebar">
                 <slot name="sidebar"/>
-            </sidebar>
-        </div>
+            </div>
     </div>
 </HtmlLayout>
 
 <style>
-    .two-column {
-        margin-top: 20px;
-        display: grid;
-        gap: 40px;
-        grid-template-columns: 300px 900px 300px;
-    }
 
-    @media screen and (max-width: 1600px) {
-        .two-column {
-            grid-template-columns: auto 900px 300px;
-        }
-    }
-
-    @media screen and (max-width: 1300px) {
-        .two-column {
-            grid-template-columns: auto 900px auto;
-        }
-        sidebar:last-child {
-            display: none;
-        }
-    }
 </style>

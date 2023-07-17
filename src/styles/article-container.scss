@@ -1,24 +1,33 @@
-//
-//.tag {
-//  display: inline-block;
-//  margin-right: 5px;
-//}
-//
-//.tag-title {
-//  margin-right: 15px;
-//}
-//
-//.tag:not(:last-child)::after {
-//  content: '·';
-//}
-
-.article {
-  max-width: 1000px;
-  margin: 0 auto;
+.rb-article {
+  max-width: 1600px;
+  margin: 20px auto 0 auto;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 300px 900px 300px;
 }
 
-.article--sidebar {
-  max-width: 1600px;
+@media screen and (max-width: 1600px) {
+  .rb-article {
+    grid-template-columns: auto 900px 300px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .rb-article {
+    grid-template-columns: auto 900px auto;
+  }
+  .rb-article__sidebar:last-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .rb-article {
+    grid-template-columns: 100%;
+  }
+  .rb-article__sidebar {
+    display: none;
+  }
 }
 
 .article__further-reading {
