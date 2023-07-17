@@ -1,6 +1,6 @@
 ---
+import {removeTrailingSlash} from "../../utils/utils";
 import {getCollection} from 'astro:content';
-import Card from "../../components/Card.astro";
 import BlogSidebar from "../../layouts/BlogSidebar.astro";
 import CardRow from "../../components/CardRow.astro";
 import ArticleTOC from "../../components/article/ArticleTOC";
@@ -16,7 +16,7 @@ const {entry} = Astro.props;
 const {Content, headings} = await entry.render();
 
 const articles = (await getCollection('standard-notes'));
-const path = Astro.url.pathname.replace(/\/+$/, '');
+const path = removeTrailingSlash(Astro.url.pathname);
 const h2Headings = headings.filter(h => h.depth === 2);
 
 ---

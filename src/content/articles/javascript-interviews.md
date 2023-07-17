@@ -17,28 +17,50 @@ Don't prioritize finding a candidate that has experience with the framework and 
 
 ## The technical questions
 
-Good interview questions will not quiz the candidate on how much they studied for it.
+Junior developers are more likely to study for interviews than senior developers, and can sometimes do better on "common" technical questions.
 
 ### Bad question examples
 
-Explain variable hoisting in javascript? This is like asking whether someone can do long division when everyone has a calculator. In modern code, developers aren't concerned with this anymore and might not remember it.
+**Explain variable hoisting in javascript.**
+In modern code, developers aren't concerned with this anymore and might not remember it.
+
+## Coding on a whiteboard
+
+This is like asking someone to do long division when they have used a calculator since middle school. All developers use modern IDEs with code completion, stack overflow, and recently AI. When I ask the candidate to code on a whiteboard, I allow sudo-code or am very lenient on syntax errors. It is the concept that matters, not the fine details.
+
+But I prefer to pair with the candidate on a computer, because it is a much more comfortable situation.
 
 ## Some interview topics
 
-Explain some REST authentication concepts? Cookies, Auth token, etc.
-Explain the different between Server side rendering, client side rendering, hybrid rendering, static generation
-Iframes? How do you communicate between frames? window.postMessage.
-What is CORS (Cross origin request). How do you allow cross site requests? (OPTIONS request)
-Difference between session storage, local storage, and indexed DB? What are performance differences?
-What are service workers?
-Explain how websockets work? When are they used?
-How does browser caching work? How do ETags work?
+* Explain some REST authentication concepts? Cookies, Auth token, etc.
+* Explain the difference between server-side rendering, client-side rendering, hybrid rendering, and static generation?
+  Iframes? How do you communicate between frames? window.postMessage.
+* What is CORS? How do you allow cross site requests? (OPTIONS request)
+* Difference between session storage, local storage, and indexed DB? What are performance differences?
+* What are service workers?
+* Explain how websockets work? When are they used?
+* How does browser caching work? How do ETags work?
 
-What are the differences between interface and type in typescript?
-Explain what generics are (in typescript or other language) and why they are useful?
-Difference between const and let
-Can you push to an array declared as const? Why?
+* What are the differences between interface and type in typescript?
+* Explain what generics are (in typescript or other language) and why they are useful?
+* Difference between const and let? Can you push to an array declared as const? Why?
 
-### Beginner
+## Some example problems
 
-1. 
+### Nested loop array matching
+
+In this example, we will need to mass update records in an array. The simplest code to make this work will require a nested loop, and therefore be `O(n^2)`. This is fine if the number of records is expected to be small. So if the candidate uses this method, ask about performance if the record list is extremely large, and how it could it be improved to `O(n)`.
+
+```typescript
+type Item = { id: string; name: string; age: number; }
+
+const allRecords: Item[] = [
+  {id: 'a21-01', name: 'John', age: 24},
+  {id: 'a19-12', name: 'Alice', age: 33},
+  ...
+];
+
+const updateRecords = (updates: Partial<Item>[]) => {
+  // update records in allRecords by matching ID
+};
+```

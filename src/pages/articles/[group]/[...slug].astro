@@ -3,6 +3,7 @@ import {getCollection} from 'astro:content';
 import BlogSidebar from "../../../layouts/BlogSidebar.astro";
 import ArticleTOC from "../../../components/article/ArticleTOC";
 import {ARTICLE_GROUPS} from "../../../data/article-groups";
+import {removeTrailingSlash} from "../../../utils/utils";
 
 export async function getStaticPaths() {
   const entries = [];
@@ -20,7 +21,7 @@ const {Content, headings} = await entry.render();
 const h2Headings = headings.filter(h => h.depth === 2);
 
 const articles = (await getCollection(group));
-const path = Astro.url.pathname.replace(/\/+$/, '');
+const path = removeTrailingSlash(Astro.url.pathname);
 const groupName = ARTICLE_GROUPS.find(g => g[0] === group)[1];
 ---
 <BlogSidebar content={entry.data} group={groupName}>
