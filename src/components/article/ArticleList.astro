@@ -27,12 +27,13 @@ const standardNotes = {
     ]
 };
 
+const {limit} = Astro.props;
+
 const posts = (await getCollection('articles')).filter(item => !item.data.draft && !item.data.hide).sort(
     (a, b) => new Date(b.data.published).valueOf() - new Date(a.data.published).valueOf()
 );
 
-const limit = 5;
-const postsToShow = limit ? posts.slice(0, limit) : posts;
+const postsToShow = limit ? posts.slice(0, limit-2) : posts;
 ---
 
 <div class="card-list">

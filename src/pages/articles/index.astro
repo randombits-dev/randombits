@@ -1,14 +1,11 @@
 ---
 import HtmlLayout from '../../layouts/HtmlLayout.astro';
-
-import ArticleList from '../../components/article/ArticleList.astro';
-import Card from "../../components/Card.astro";
-import GuideList from "../../components/article/ArticleList.astro";
+import ArticleList from "../../components/article/ArticleList.astro";
 ---
 
 <HtmlLayout title="Developer Articles" description="List of all developer articles • For software developers">
     <h1 class="text-center">All Articles</h1>
-    <GuideList/>
+    <ArticleList/>
 </HtmlLayout>
 
 <style>

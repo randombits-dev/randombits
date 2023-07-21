@@ -1,5 +1,5 @@
 ---
-title: "Frontend developer interview guide"
+title: "Frontend engineer interviews"
 summary: "An opinionated guide on creating a good frontend/typescript interview process. This especially applies to companies with highly complex applications and systems."
 desc: "An opinionated guide on creating a good frontend/typescript interview process. This especially applies to companies with highly complex applications and systems."
 updated: 2023-07-11
@@ -12,7 +12,7 @@ draft: true
 **A full-stack developer.**
 Yes, seriously. Full-stack developers tend to have a much better understanding of core programming concepts like data structures, design patterns, database performance, etc. They also have an easier time understanding complex enterprise applications, and can jump into a new system or tech stack a lot faster.
 
-**Someone who has solid understanding of typescript/javascript, the browser, and HTTP concepts.**
+**Someone who has solid understanding of typescript, the browser, and HTTP concepts.**
 Don't prioritize finding a candidate that has experience with the framework and libraries you use (i.e. react, tailwind). Prioritize finding a candidate that knows how the basics work, and has experience with many different technologies. A good developer will be able to pick up new frameworks and libraries relatively quick.
 
 ## Technical "conversations"
