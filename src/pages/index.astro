@@ -6,17 +6,15 @@ import ToolDesc from "../snippits/tools-desc.md";
 import ArticleDesc from "../snippits/articles-desc.md";
 import ArticleList from "../components/article/ArticleList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-
-const digits = [...Array.from({length: 20000})].map(() => {
-    return Math.random() < .5 ? 0 : 1;
-}).join(' ');
+import RandomBits from "../components/home/RandomBits";
 ---
 
 <BaseLayout title="Random Bits" description="Software Engineering, Articles, Tools">
 <div class="bg-base min-h-screen text-center">
 
-    <div aria-disabled="true" class="rb-background-bits absolute top-0 h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">{digits}</div>
+    <div aria-disabled="true" class="rb-background-bits absolute px-1 py-1 top-0 h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">
+      <RandomBits client:only="solid-js"/>
+    </div>
 
     <div class="relative min-h-screen z-10 flex flex-col items-center">
         <div class="flex-1 text-primary flex items-center">
@@ -53,9 +51,10 @@ const digits = [...Array.from({length: 20000})].map(() => {
 <style>
 
     .rb-background-bits {
-        /*color: #987240;*/
         color: var(--landing-bits);
-        font-family: Cherry Bomb One;
+        font-family: "Courier New",serif;
+        font-weight: 900;
+        letter-spacing: -3px;
         border-bottom: 1px solid var(--landing-bits);
     }
 
