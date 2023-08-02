@@ -5,7 +5,7 @@ img: './creating-extensions.jpg'
 order: 2
 ---
 
-If you don't like reading, and want to jump straight into coding, you can checkout my [Starter Template Repo](/standard-notes/template).
+> If you don't like reading, and want to jump straight into coding, you can use my Starter Template Repo: https://github.com/nienow/sn-extension-template.
 
 ## Overview
 
@@ -189,4 +189,4 @@ The most common way to host an extension is through **Github Pages**. Not only i
 
 ## Starter Template Repo
 
-I've created a complete starter template, which includes a demo/testing environment. See my [Starter Template Documentation](/standard-notes/template) or go directly to the github repo: https://github.com/nienow/sn-extension-template
+I've created a complete starter template, which includes a demo/testing environment: https://github.com/nienow/sn-extension-template
