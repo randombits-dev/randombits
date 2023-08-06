@@ -30,10 +30,12 @@ const h2Headings = headings.filter(h => h.depth === 2);
             articles.map(article => {
                 const showLink = !path.endsWith(article.slug);
                 if (showLink) {
-                    return <CardRow title={article.data.title}
-                                    desc={article.data.desc}
-                                    url={article.slug}
-                                    img={article.data.img}/>;
+                    return <a href={article.slug} class="nav card-row">
+                      <div>
+                        <div class="card-row-title">{article.data.title}</div>
+                        <div class="card-row-desc">{article.data.desc}</div>
+                      </div>
+                    </a>
                 }
             })
         }

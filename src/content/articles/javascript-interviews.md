@@ -3,8 +3,6 @@ title: "Frontend engineer interviews"
 summary: "An opinionated guide on creating a good frontend/typescript interview process. This especially applies to companies with highly complex applications and systems."
 desc: "An opinionated guide on creating a good frontend/typescript interview process. This especially applies to companies with highly complex applications and systems."
 updated: 2023-07-11
-img: './covers/vercel.png'
-draft: true
 ---
 
 ## What makes a good frontend developer?

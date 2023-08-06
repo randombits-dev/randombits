@@ -1,6 +1,6 @@
 ---
 title: "My Extension List"
-desc: "A list of some of the most useful Standard Notes extensions"
+desc: "A list of some of the cool Standard Notes extensions I have created."
 img: './creating-extensions.jpg'
 order: 5
 ---

@@ -14,7 +14,7 @@ const posts = await getCollectionSortedByOrder('standard-notes');
     <div class="card-list">
 {
     posts.map(article => {
-        return <ImageCard img={article.data.img} title={article.data.title} desc={article.data.desc}
+        return <ImageCard title={article.data.title} desc={article.data.desc}
                           url={'/standard-notes/' + article.slug}/>
     })
 }

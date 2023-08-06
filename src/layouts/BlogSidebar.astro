@@ -13,7 +13,7 @@ const {
 const fullTitle = group ? group + ' - ' + content.title : content.title;
 ---
 
-<HtmlLayout title={fullTitle} description={content.desc} img={content.img.src}>
+<HtmlLayout title={fullTitle} description={content.desc} img={content.img?.src}>
     <div class="rb-article">
             <div class="rb-article__sidebar">
 

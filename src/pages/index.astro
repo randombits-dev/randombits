@@ -1,10 +1,6 @@
 ---
 import '@fontsource/righteous';
 import HomeFooter from "../components/home/HomeSocialLinks.astro";
-import ToolList from "../components/ToolList.astro";
-import ToolDesc from "../snippits/tools-desc.md";
-import ArticleDesc from "../snippits/articles-desc.md";
-import ArticleList from "../components/article/ArticleList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RandomBits from "../components/home/RandomBits";
 ---
@@ -25,25 +21,6 @@ import RandomBits from "../components/home/RandomBits";
             <HomeFooter/>
             </div>
         </div>
-    </div>
-</div>
-<div class="container mx-auto text-center">
-    <div class="pt-40 list-container">
-        <h1>Featured Tools</h1>
-        <div class="desc">
-            <ToolDesc/>
-        </div>
-        <ToolList/>
-        <a class="button" href="/tools">See All Tools</a>
-    </div>
-
-    <div class="list-container">
-        <h1>Latest Articles</h1>
-        <div class="desc">
-            <ArticleDesc/>
-        </div>
-        <ArticleList limit={6}/>
-        <a class="button" href="/articles">See All Articles</a>
     </div>
 </div>
 </BaseLayout>

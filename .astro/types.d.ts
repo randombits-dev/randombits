@@ -366,16 +366,16 @@ declare module 'astro:content' {
   collection: "standard-notes";
   data: InferEntrySchema<"standard-notes">
 } & { render(): Render[".md"] };
-"installing-extensions.md": {
-	id: "installing-extensions.md";
-  slug: "installing-extensions";
+"extensions-list.md": {
+	id: "extensions-list.md";
+  slug: "extensions-list";
   body: string;
   collection: "standard-notes";
   data: InferEntrySchema<"standard-notes">
 } & { render(): Render[".md"] };
-"template.md": {
-	id: "template.md";
-  slug: "template";
+"installing-extensions.md": {
+	id: "installing-extensions.md";
+  slug: "installing-extensions";
   body: string;
   collection: "standard-notes";
   data: InferEntrySchema<"standard-notes">

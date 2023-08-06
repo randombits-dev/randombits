@@ -45,6 +45,7 @@ If you have apis deployed on the same host, you can change the rewrite to the fo
 This will match everything except the /api path.
 
 ## Deploying Serverless Functions
+
 If you have an `api` directory in your project, Vercel will automatically deploy the contents as serverless functions.
 The path of the API endpoint will be the same as the path of the file system. For example:
 * /api/index.js => /api
@@ -54,10 +55,32 @@ The path of the API endpoint will be the same as the path of the file system. Fo
 
 Serverless Function example:
 
-```javascript
-export default function handler(request, response) {
+```typescript
+import type {VercelRequest, VercelResponse} from '@vercel/node';
+
+export default function (request: VercelRequest, response: VercelResponse) {
   response.status(200).json({
-    text: 'Hello World'
+    text: `Hello from ${request.url}`
+  });
+}
+```
+
+## Deploying Edge Functions
+
+Edge functions are deployed to all regions and are faster than serverless functions, but have a limited API, and must have a small build. They are defined using the same file path scheme as serverless functions, but the function is very different:
+
+```typescript
+export const config = {
+  runtime: 'edge',
+};
+
+export default function MyEdgeFunction(
+  request: Request
+) {
+  return new Response(`Hello, from ${request.url} I'm an Edge Function!`, {
+    headers: {
+      'my-header': '123'
+    }
   });
 }
 ```
