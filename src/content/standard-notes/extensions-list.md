@@ -39,15 +39,6 @@ https://github.com/nienow/sn-mermaid
 
 <iframe src="https://nienow.github.io/sn-mermaid/demo.html" height="650"></iframe>
 
-## Code playground Editor
-
-An HTML, JS, and CSS code playground, with live preview.
-
-https://github.com/nienow/sn-playground
-
-<iframe src="https://nienow.github.io/sn-playground/demo.html" height="500"></iframe>
-
-
 
 
 
