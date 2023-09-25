@@ -10,7 +10,6 @@ const THEME_LIST = [
     {id: "dark-metal", name: "Dusk"},
     {id: "dark-fear", name: "Midnight"},
 ];
-const initialTheme = localStorage.getItem("theme") || 'base';
 
 const ThemeChanger = () => {
     const [currentTheme, setCurrentTheme] = createSignal('');
@@ -29,7 +28,8 @@ const ThemeChanger = () => {
     };
 
     onMount(() => {
-        setCurrentTheme(initialTheme);
+      const initialTheme = localStorage.getItem("theme") || 'base';
+      setCurrentTheme(initialTheme);
     });
 
     return (

@@ -1,11 +1,14 @@
 ---
 import ImageCard from "./ImageCard.astro";
 import {TOOLS} from "../data/tools";
+
+const {limit} = Astro.props;
+const toolsToShow = limit ? TOOLS.slice(0, limit) : TOOLS;
 ---
 
 <div class="card-list-v">
 {
-    TOOLS.map(({link, title, desc, img, newTab}) => (
+  toolsToShow.map(({link, title, desc, img, newTab}) => (
     <ImageCard style="v" url={link} title={title} desc={desc} img={img} newTab={newTab}/>
         ))
     }

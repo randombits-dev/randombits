@@ -2,7 +2,7 @@ import {defineConfig} from 'astro/config';
 import mdx from '@astrojs/mdx';
 import solid from '@astrojs/solid-js';
 import remarkCodeTitles from 'remark-code-titles';
-import UnoCSS from 'unocss/astro'
+import UnoCSS from 'unocss/astro';
 import sitemap from '@astrojs/sitemap';
 
 
@@ -17,9 +17,6 @@ export default defineConfig({
   integrations: [mdx(), solid(), UnoCSS(), sitemap()],
   build: {
     assets: '_astro'
-  },
-  experimental: {
-    assets: true
   },
   trailingSlash: 'never'
 });
