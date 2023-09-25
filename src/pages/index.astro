@@ -8,19 +8,19 @@ import ToolList from "../components/ToolList.astro";
 ---
 
 <BaseLayout title="Random Bits" description="Software Engineering, Articles, Tools">
-<div class="bg-base min-h-screen text-center">
+<div class="bg-base h-[800px] text-center">
 
-    <div aria-disabled="true" class="rb-background-bits absolute px-1 py-1 top-0 h-screen leading-tight tracking-tighter text-justify overflow-hidden z-0">
+    <div aria-disabled="true" class="rb-background-bits absolute px-1 py-1 top-0 h-[800px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
       <RandomBits client:only="solid-js"/>
     </div>
 
-    <div class="relative min-h-screen z-10 flex flex-col items-center">
+    <div class="relative h-[800px] z-10 flex flex-col items-center">
         <div class="flex-1 text-primary flex items-center">
             <div class="mb-30">
 
-            <div class="rb-hero-text text-[100px] md:text-[150px] lg:text-[200px] font-bold leading-tight" style="font-family: Righteous;">random bits</div>
-            <div class="rb-hero-sub text-4xl md:text-6xl lg:text-8xl px-6 font-bold leading-tight" style="font-family: Righteous;">software engineering</div>
-            <HomeFooter/>
+            <div class="rb-hero-text text-[75px] md:text-[100px] lg:text-[150px] font-bold leading-tight" style="font-family: Righteous;">random bits</div>
+            <div class="rb-hero-sub text-4xl md:text-6xl lg:text-[80px] px-6 font-bold leading-tight" style="font-family: Righteous;">software engineering</div>
+              <HomeFooter/>
             </div>
         </div>
     </div>

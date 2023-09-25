@@ -21,6 +21,7 @@
     "astro": "^3.1.3",
     "remark-code-titles": "^0.1.2",
     "sass": "^1.66.1",
+    "sharp": "^0.32.6",
     "solid-js": "^1.7.12",
     "unocss": "^0.53.6"
   },
