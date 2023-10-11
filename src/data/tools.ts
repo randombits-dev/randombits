@@ -8,6 +8,12 @@ export const TOOLS = [
     link: 'https://heroicus.xyz'
   },
   {
+    title: 'Standard Notes Extensions',
+    desc: 'A collection of extensions and themes for Standard Notes',
+    img: CoverImages.chalkboard,
+    link: '/standard-notes/extensions-list'
+  },
+  {
     title: 'Snowrunner Save Editor',
     desc: 'Edit task and mission progress · Reveal or obtain upgrades',
     img: CoverImages.snowrunner,

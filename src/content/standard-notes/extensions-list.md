@@ -9,7 +9,6 @@ order: 5
 
 * An editor extension marketplace for installing new editors more easily
 * Split a note into multiple "areas" - each area can use a different editor 
-* This extension has all the rest of the editors built-in. 
 
 https://github.com/nienow/cosmos
 
@@ -39,6 +38,11 @@ https://github.com/nienow/sn-mermaid
 
 <iframe src="https://nienow.github.io/sn-mermaid/demo.html" height="650"></iframe>
 
+## Overcast Theme
 
+A grayscale, depressing theme for Standard Notes.
 
+https://github.com/nienow/sn-theme-overcast
+
+<img width="100%" src="https://nienow.github.io/sn-theme-overcast/screenshot.png" alt="screenshot">
 

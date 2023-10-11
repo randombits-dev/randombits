@@ -2,7 +2,6 @@
 
 https://randombits.dev
 
-Developer articles, guides, and tools.
+My personal blog, CV, and references to projects.
 
-This is the container app for the micro frontend.
-It contains the base layouts, styles, and the articles. The tools are created as separate apps and pulled in.
+Build using Astro + SolidJS.

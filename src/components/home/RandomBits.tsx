@@ -1,7 +1,7 @@
 interface Props {
 }
 
-const digits = [...Array.from({length: 20000})].map(() => {
+const digits = [...Array.from({length: 10000})].map(() => {
   return Math.random() < .5 ? 0 : 1;
 }).join(' ');
 

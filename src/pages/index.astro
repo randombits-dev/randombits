@@ -10,9 +10,7 @@ import ToolList from "../components/ToolList.astro";
 <BaseLayout title="Random Bits" description="Software Engineering, Articles, Tools">
 <div class="bg-base h-[800px] text-center">
 
-    <div aria-disabled="true" class="rb-background-bits absolute px-1 py-1 top-0 h-[800px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
-      <RandomBits client:only="solid-js"/>
-    </div>
+
 
     <div class="relative h-[800px] z-10 flex flex-col items-center">
         <div class="flex-1 text-primary flex items-center">
@@ -34,7 +32,9 @@ import ToolList from "../components/ToolList.astro";
   <ArticleList/>
   </div>
 
-
+  <div aria-disabled="true" class="rb-background-bits absolute px-1 py-1 top-0 h-[800px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
+    <RandomBits client:only="solid-js"/>
+  </div>
 
 </BaseLayout>
 
