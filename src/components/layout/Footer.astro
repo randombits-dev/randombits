@@ -7,6 +7,7 @@ const githubSVG = await fetch('https://storage.googleapis.com/randombits/images/
 const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/twitter.svg');
 const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
+const linktree = await fetch('https://storage.googleapis.com/randombits/images/linktree.svg');
 ---
 
 <footer>
@@ -20,6 +21,9 @@ const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/image
             </a>
             <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter social link">
                 <div set:html={twitterSVG}/>
+            </a>
+            <a href="https://linktr.ee/randombits" target="_blank" aria-label="linktree social link">
+              <div set:html={linktree}/>
             </a>
             <button id="footer__envelope">
               <span set:html={envelopeSVG}/>
