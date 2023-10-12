@@ -6,6 +6,7 @@ const today = new Date();
 const githubSVG = await fetch('https://storage.googleapis.com/randombits/images/github.svg');
 const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/twitter.svg');
+const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
 ---
 
 <footer>
@@ -20,9 +21,25 @@ const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images
             <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter social link">
                 <div set:html={twitterSVG}/>
             </a>
+            <button id="footer__envelope">
+              <span set:html={envelopeSVG}/>
+              <span id="footer__quick-msg" class="quick-msg">Email copied</span>
+            </button>
+
         </div>
     </div>
     <div class="copyright">
         &copy; {today.getFullYear()} Matthew Nienow
     </div>
 </footer>
+
+<script>
+  document.getElementById('footer__envelope').addEventListener('click', (e) => {
+    const output = ['matt', 'randombits', 'dev'];
+    navigator.clipboard.writeText(`${output[0]}@${output[1]}.${output[2]}`);
+    document.getElementById('footer__quick-msg').style.display = 'inline';
+    setTimeout(() => {
+      document.getElementById('footer__quick-msg').style.display = 'none';
+    }, 1500);
+  });
+</script>

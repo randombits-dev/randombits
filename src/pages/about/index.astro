@@ -1,0 +1,24 @@
+---
+import HtmlLayout from '../../layouts/HtmlLayout.astro';
+import AboutMe from '../../snippits/about-me.md'
+import QA from '../../snippits/qa.md'
+import '../../styles/md.scss';
+---
+<HtmlLayout title="About Me" description="My CV and experience.">
+  <h1 class="text-center">About Me</h1>
+  <div class="max-w-[1000px] mx-auto">
+  <div class="card card-contents">
+    <AboutMe/>
+  </div>
+    <h1 class="text-center">Q&A</h1>
+    <div class="card card-contents mt-10">
+      <QA/>
+    </div>
+  </div>
+</HtmlLayout>
+
+<style>
+  h1 {
+    color: var(--color-back);
+  }
+</style>

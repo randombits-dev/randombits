@@ -15,10 +15,11 @@ footer {
 
 .social-links {
   display: flex;
+  align-items: center;
   padding: 10px;
 }
 
-.social-links a {
+.social-links a, .social-links button {
   text-decoration: none;
   padding: 0 10px;
   fill: var(--color-content);
@@ -35,4 +36,11 @@ footer {
 
 .copyright {
   text-align: center;
+}
+
+footer .quick-msg {
+  position: absolute;
+  display: none;
+  margin-left: 20px;
+  margin-top: 5px;
 }
