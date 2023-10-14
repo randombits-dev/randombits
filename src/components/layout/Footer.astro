@@ -8,6 +8,7 @@ const discordSVG = await fetch('https://storage.googleapis.com/randombits/images
 const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/x.svg');
 const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
 const linktree = await fetch('https://storage.googleapis.com/randombits/images/linktree.svg');
+const keybase = await fetch('https://storage.googleapis.com/randombits/images/keybase.svg');
 ---
 
 <footer>
@@ -25,6 +26,10 @@ const linktree = await fetch('https://storage.googleapis.com/randombits/images/l
             <a href="https://linktr.ee/randombits" target="_blank" aria-label="linktree social link">
               <div set:html={linktree}/>
             </a>
+          <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="keybase social link">
+            <div set:html={keybase}/>
+          </a>
+
             <button id="footer__envelope">
               <span set:html={envelopeSVG}/>
               <span id="footer__quick-msg" class="quick-msg">Email copied</span>
