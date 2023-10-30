@@ -120,13 +120,13 @@
 }
 
 .tag {
-  border: 1px solid var(--border-color-light);
+  //border: 1px solid var(--border-color-light);
   border-radius: 5px;
-  padding: 3px 5px;
+  padding: 5px 8px;
   display: inline-block;
   margin: 0 5px;
   font-size: var(--font-size-caption);
   font-weight: bold;
-  background-color: var(--back-2);
+  background-color: var(--color-content);
   color: var(--back-content);
 }
