@@ -1,16 +1,115 @@
 ---
 import ImageCard from "./ImageCard.astro";
 import {TOOLS} from "../data/tools";
+import {Image} from "astro:assets";
+import {CoverImages} from "../utils/coverImages";
 
 const {limit} = Astro.props;
 const toolsToShow = limit ? TOOLS.slice(0, limit) : TOOLS;
+
+const makeArray = (item) => {
+  return Array.isArray(item) ? item : [item];
+}
 ---
 
-<div class="card-list-v">
-{
-  toolsToShow.map(({link, title, desc, img, newTab}) => (
-    <ImageCard style="v" url={link} title={title} desc={desc} img={img} newTab={newTab}/>
-        ))
-    }
+<!--<div class="card-list-v">-->
+<!--{-->
+<!--  toolsToShow.map(({link, title, desc, img, newTab}) => (-->
+<!--    <ImageCard style="v" url={link} title={title} desc={desc} img={img} newTab={newTab}/>-->
+<!--        ))-->
+<!--    }-->
 
+<!--    </div>-->
+
+<!--<div class="my-24">-->
+<!--  <div class="mr-20 invisible md:visible absolute overflow-hidden rounded-r-xl right-[60%]">-->
+<!--    <Image src={CoverImages.fontable} alt="Fontable Cover Image"  height="400"/>-->
+<!--  </div>-->
+<!--  <div class="md:ml-[30%] p-20">-->
+<!--    {/*<div className="text-lg">use case 1:</div>*/}-->
+<!--    <div class="text-5xl font-bold">Fontable</div>-->
+<!--    <div class="text-3xl mt-5">Find the perfect Google font by embedding a font picker on your website</div>-->
+<!--    <a href="github.com/nienow" class="btn">App</a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="max-w-[1200px] mx-auto">
+{
+  toolsToShow.map(({links, title, desc, img, newTab}) => {
+    return <div class="flex gap-x-10 justify-center justify-items-center flex-wrap mt-10">
+      <a class="flex-0" href={links[0][1]}>
+        <Image src={img} alt="Fontable Cover Image" width="500" height="281.25" style="object-fit: cover" class="rounded-xl" />
+      </a>
+      <div class="max-w-[500px]">
+        {/*<div className="text-lg">use case 1:</div>*/}
+        <div class="text-3xl mt-10 font-bold">{title}</div>
+        {
+          makeArray(desc).map(d => {
+            return <div class="text-xl mt-5">{d}</div>
+          })
+        }
+
+        <!--<ol>-->
+        <!--  <li>Embed a temporary font picker on your site. It shows up in the lower right corner of the page.</li>-->
+        <!--  <li>Choose from over 1000 open source fonts, loaded from Google fonts.</li>-->
+        <!--  <li>When you find a font you like, copy the CSS to install it permanently on your site, and remove the font picker.</li>-->
+        <!--</ol>-->
+        <div class="mt-5 flex gap-5">
+          {
+            links.map(link => {
+              return <a class="button" href={link[1]}>{link[0]}</a>
+            })
+          }
+
+        </div>
+      </div>
     </div>
+    })
+  }
+</div>
+
+
+<!--<div class="flex mt-20">-->
+<!--  <div class="flex-0">-->
+<!--    <Image src={CoverImages.heroicus} alt="Fontable Cover Image" width="600" height="337.5"  class="rounded-xl" />-->
+<!--  </div>-->
+<!--  <div class="flex-1 ml-10">-->
+<!--    {/*<div className="text-lg">use case 1:</div>*/}-->
+<!--    <div class="text-3xl mt-10 font-bold">Heroicus</div>-->
+<!--    <div class="text-xl mt-5">Winner of the Fantom Hackathon (2023 Q2)</div>-->
+<!--    <div class="text-xl mt-5">Cloud computing using NFT Rentals · Powered by the Fantom Network and AWS</div>-->
+
+<!--    <div class="mt-5 flex gap-5">-->
+<!--      <a class="button" href="https://heroicus.xyz/">app</a>-->
+<!--      <a class="button" href="https://docs.heroicus.xyz/">docs</a>-->
+<!--      <a class="button" href="https://github.com/nienow/heroicus">github</a>-->
+<!--      <a class="button" href="https://devpost.com/software/heroicus">devpost</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--  <div class="flex">-->
+<!--    <div>-->
+<!--    <Image src={CoverImages.fontable} alt="Fontable Cover Image" width="600" height="350" style="object-fit: cover"  class="rounded-xl" />-->
+<!--    {/*<div className="text-lg">use case 1:</div>*/}-->
+<!--    <div class="text-3xl mt-10 font-bold">Fontable</div>-->
+<!--    <div class="text-xl mt-5">Find the perfect Google font by embedding a font picker on your website</div>-->
+<!--    &lt;!&ndash;<a href="github.com/nienow" class="button">App</a>&ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--      <Image src={CoverImages.heroicus} alt="Fontable Cover Image" width="600" height="350" style="object-fit: cover"  class="object-cover rounded-xl" />-->
+<!--      <div class="flex-1 ml-10">-->
+<!--        {/*<div className="text-lg">use case 1:</div>*/}-->
+<!--        <div class="text-3xl mt-10 font-bold">Heroicus</div>-->
+<!--        <div class="text-xl mt-5">Find the perfect Google font by embedding a font picker on your website</div>-->
+<!--        &lt;!&ndash;<a href="github.com/nienow" class="button">App</a>&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<style>
+  a {
+    width: fit-content;
+  }
+</style>

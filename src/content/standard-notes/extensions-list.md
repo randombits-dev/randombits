@@ -1,6 +1,6 @@
 ---
-title: "My Extension List"
-desc: "A list of some of the cool Standard Notes extensions I have created."
+title: "Extensions created by Random Bits"
+desc: "A list of Standard Notes extensions that were created by Random Bits"
 img: './creating-extensions.jpg'
 order: 5
 ---

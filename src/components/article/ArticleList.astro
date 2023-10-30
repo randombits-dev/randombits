@@ -14,10 +14,11 @@ const localizationArticles = await getCollectionSortedByOrder('number-localizati
 const postsToShow = limit ? posts.slice(0, limit-2) : posts;
 ---
 
-<div class="max-w-[1200px] mx-auto">
-    <div class="mt-10 card overflow-hidden">
-      <div class="text-center px-10 py-5 text-2xl font-bold">Standard Notes</div>
-      <div class="card-contents">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-stretch	">
+    <div class="card overflow-hidden">
+      <div class="text-center px-5 pt-5 text-2xl font-bold">Standard Notes Extensions</div>
+      <div class="text-center text-lg">A guide to creating and using extensions</div>
+      <div class="px-5 py-5">
         {
           standardNotesArticles.map((post) => (
             <div class="card-row">
@@ -32,9 +33,10 @@ const postsToShow = limit ? posts.slice(0, limit-2) : posts;
 
     </div>
 
-    <div class="mt-10 card overflow-hidden">
-      <div class="text-center px-10 py-5 text-2xl font-bold">Number Localization</div>
-      <div class="card-contents">
+    <div class="card overflow-hidden">
+      <div class="text-center px-5 pt-5 text-2xl font-bold">Number Localization</div>
+      <div class="text-center text-lg">A comprehensive reference</div>
+      <div class="px-5 py-5">
         {
           localizationArticles.map((post) => (
             <div class="card-row">
@@ -49,38 +51,55 @@ const postsToShow = limit ? posts.slice(0, limit-2) : posts;
 
     </div>
 
-  <div class="mt-10 card overflow-hidden">
-    <div class="text-center text-2xl px-10 py-5 font-bold">Other Articles</div>
-    <div class="card-contents">
+  <!---->
+  <!--  <div class="text-center text-2xl px-10 py-5 font-bold">Other Articles</div>-->
+  <!--  <div class="card-contents">-->
       {
         postsToShow.map((post) => (
-          <div class="card-row">
-            <a href={'/articles/' + post.slug} class="card-row-text">
-              <div class="card-row-title">{post.data.title}</div>
+          <a href={'/articles/' + post.slug} class="card overflow-hidden ">
+            <div class="text-xl px-5 pt-5 font-bold">{post.data.title}</div>
+            <div class="my-3 mx-5">
               <div class="card-row-desc">{post.data.desc}</div>
-            </a>
-          </div>
+              <div class="mt-5 text-sm font-bold flex items-end">
+                <span class="flex-1">{post.data.updated.toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric'
+                })}</span>
+                <span class="tags">{
+                  post.data.tags?.map((tag) => (
+                    <div class="tag">{tag}</div>
+                  ))
+                }</span>
+              </div>
+
+
+              </div>
+          </a>
+          <!--<div class="card-row">-->
+          <!--  <a href={'/articles/' + post.slug} class="card-row-text">-->
+          <!--    <div class="card-row-title">{post.data.title}</div>-->
+          <!--    -->
+          <!--  </a>-->
+          <!--</div>-->
         ))
       }
-    </div>
+<!--    </div>-->
 
-  </div>
+<!--  </div>-->
 
-</div>
+<!--</div>-->
 <style>
-  .card-contents {
-    display: grid;
-    column-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media screen and (max-width: 800px) {
-    .card-contents {
-      grid-template-columns: 1fr;
-    }
-  }
 
   .card-row-text {
     cursor: pointer;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .card:hover {
+
   }
 </style>

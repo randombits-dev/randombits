@@ -1,6 +1,6 @@
 ---
 title: "Creating Extensions"
-desc: "A guide for creating your own Standard Notes editor extensions."
+desc: "A guide for creating your own Standard Notes editor extensions (plugins)."
 img: './creating-extensions.jpg'
 order: 2
 ---

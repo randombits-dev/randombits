@@ -1,13 +1,17 @@
 import creatingExtensions from '../assets/covers/creating-extensions.jpg';
 import chalkboard from '../assets/covers/chalkboard.jpg';
+import snExtensions from '../assets/covers/sn-extensions.png';
 import snowrunner from '../assets/covers/snowrunner.jpg';
-import book from '../assets/covers/printable-schedule.jpg';
+import schedule from '../assets/covers/schedule.png';
 import heroicus from '../assets/covers/heroicus3.webp';
+import fontable from '../assets/covers/fontable.png';
 
 export const CoverImages = {
   creatingExtensions,
   chalkboard,
   snowrunner,
-  book,
-  heroicus
+  schedule,
+  heroicus,
+  fontable,
+  snExtensions
 };

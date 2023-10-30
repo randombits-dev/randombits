@@ -22,7 +22,7 @@ footer {
 .social-links a, .social-links button {
   text-decoration: none;
   padding: 0 10px;
-  fill: var(--color-content);
+  fill: var(--color-header);
 }
 
 .social-links svg:hover {

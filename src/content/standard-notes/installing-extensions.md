@@ -1,6 +1,6 @@
 ---
 title: "Installing Extensions"
-desc: "One of the best parts of Standard Notes is the ability to write extensions. The guide covers how to install extensions."
+desc: "One of the best parts of Standard Notes is the ability to use extensions (also called plugins). This guide covers how to install extensions."
 img: ./installing-extensions.png
 tags: [ 'standard-notes' ]
 order: 1
@@ -21,29 +21,29 @@ There are a few different types of Standard Notes extensions:
 
 Extensions are listed under **Account Settings** (or Preferences) -> **General** -> **Advanced Options**:
 
-<img src="/images/sn/pref.png"/>
+<img src="/images/sn/pref.webp"/>
 
 At the bottom of this list is where you can install new extensions:
 
-<img src="/images/sn/install.png"/>
+<img src="/images/sn/install.webp"/>
 
 Paste the url for the **descriptor file** (usually named `ext.json`), and click **Install**.
 
 You will get a warning like:
 
-<img src="/images/sn/warning1.png"/>
+<img src="/images/sn/warning1.webp"/>
 
 This is letting you know that an extension could be malicious. See more about security risks below.
 
 Next Standard Notes will read the metadata from the descriptor file, and show it to you, to make sure you are installing the extension you intend to:
 
-<img src="/images/sn/confirm-install.png"/>
+<img src="/images/sn/confirm-install.webp"/>
 
 Make sure you click **Install** again. It's easy to miss this step and think the extension is already installed.
 
 Now you should see the new extension in the list:
 
-<img src="/images/sn/install-entry.png"/>
+<img src="/images/sn/install-entry.webp"/>
 
 ## Using your extension
 
@@ -51,11 +51,11 @@ Now you should see the new extension in the list:
 
 If you installed an editor extension, you will see the extension show up at the bottom of the **Change Note Type** menu:
 
-<img src="/images/sn/choose-editor.png"/>
+<img src="/images/sn/choose-editor.webp"/>
 
 The first time you choose this extension for the note type, you will see a confirmation dialog to give the extension permission to access your notes:
 
-<img src="/images/sn/interact.png"/>
+<img src="/images/sn/interact.webp"/>
 
 You will need to click **Continue** to use the extension. See more details about security risks below.
 
@@ -63,17 +63,17 @@ You will need to click **Continue** to use the extension. See more details about
 
 If you installed a theme extension, you can select the theme in the quick settings menu:
 
-<img src="/images/sn/appearance.png"/>
+<img src="/images/sn/appearance.webp"/>
 
 ### Bottom Toolbar Extension
 
 If you installed a button toolbar extension, you need to enable the extension in the tools section of the quick settings menu.
 
-<img src="/images/sn/tools.png"/>
+<img src="/images/sn/tools.webp"/>
 
 Then you will see the new toolbar below every note:
 
-<img src="/images/sn/toolbar.png"/>
+<img src="/images/sn/toolbar.webp"/>
 
 ## Extension Descriptor
 

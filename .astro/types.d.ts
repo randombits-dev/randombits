@@ -338,13 +338,6 @@ declare module 'astro:content' {
   collection: "standard-notes";
   data: InferEntrySchema<"standard-notes">
 } & { render(): Render[".md"] };
-"cosmos.md": {
-	id: "cosmos.md";
-  slug: "cosmos";
-  body: string;
-  collection: "standard-notes";
-  data: InferEntrySchema<"standard-notes">
-} & { render(): Render[".md"] };
 "creating-extensions.md": {
 	id: "creating-extensions.md";
   slug: "creating-extensions";

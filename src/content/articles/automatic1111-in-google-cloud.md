@@ -4,6 +4,7 @@ summary: "A full guide to running your own stable diffusion server using Google 
 desc: "A full guide to running your own stable diffusion server using Google Cloud Compute Engine"
 updated: 2023-05-15
 img: './covers/mtn-clouds.jpg'
+tags: [ai, cloud]
 ---
 
 ## Why run stable diffusion in Google Cloud?
@@ -16,13 +17,13 @@ img: './covers/mtn-clouds.jpg'
 
 $0.14 / hour for the cheapest configuration, which is the configuration I've been using. It is fast enough, and can generate a 512x512 image in less than 3 seconds.
 
-<img src="/images/gcp/gcp-price.png"/>
+<img src="/images/gcp/gcp-price.webp"/>
 
 The only price you need to look at is the hourly price, assuming you plan to shut down your server everytime. 
 
 Here is what the most expensive option will run you, with a massive **A100 80GB GPU**:
 
-<img src="/images/gcp/gcp-price-2.png"/>
+<img src="/images/gcp/gcp-price-2.webp"/>
 
 Still very reasonable.
 
@@ -40,7 +41,7 @@ First, you need to increase your quota for GPUs, since the default is 0.
 
 Go to the **All Quotas** page, and use the filter to find the `GPUs (all regions)` quota:
 
-<img src="/images/gcp/gcp-quotas.png"/>
+<img src="/images/gcp/gcp-quotas.webp"/>
 
 Edit this quota so the limit is at least 1. The request will need to be approved, so don't try anything too high.
 
@@ -50,7 +51,7 @@ Go to the **Firewall (VPC Network)** page.
 
 Edit the `default-allow-http` rule, and add the `7860` port to the TCP protocol:
 
-<img src="/images/gcp/gcp-firewall.png"/>
+<img src="/images/gcp/gcp-firewall.webp"/>
 
 Alternatively, you could create a new firewall rule instead of using the default rule.
 
@@ -60,7 +61,7 @@ Go to the **VM Instances (Compute Engine)** page, and click **Create instance**.
 
 Change the Machine Configuration to **GPUs**, and select your video card and CPU configuration. `NVIDIA T4` is the cheapest GPU and `n1-highmem-2` is the cheapest CPU you should choose:
 
-<img src="/images/gcp/gcp-machine-config.png"/>
+<img src="/images/gcp/gcp-machine-config.webp"/>
 
 
 Under **Boot Disk**, hit the Change button. 
@@ -75,17 +76,17 @@ Choose the **size of the disk**. You can get by with 30GB if you only want to us
 
 At the end, hit the **Select** button to close the dialog.
 
-<img src="/images/gcp/gcp-boot-disk.png"/>
+<img src="/images/gcp/gcp-boot-disk.webp"/>
 
 
 Under **Firewall**, choose `Allow HTTP traffic`
 
-<img src="/images/gcp/gcp-allow-http.png"/>
+<img src="/images/gcp/gcp-allow-http.webp"/>
 
 
 Under **Advanced -> Management -> VM Provisioning Model**, choose either Spot or Standard provisioning. (Spot is cheaper).
 
-<img src="/images/gcp/gcp-spot.png"/>
+<img src="/images/gcp/gcp-spot.webp"/>
 
 Finally, hit the **Create** button to create the VM
 

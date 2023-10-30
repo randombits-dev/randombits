@@ -22,7 +22,7 @@
   --border-color: #444;
   --border-color-light: var(--border-color);
   --font-1: 'Righteous', cursive;
-  --font-2: 'Montserrat', sans-serif;
+  --font-2: 'Alef', sans-serif;
   --font-size-text: 18px;
   --font-size-1: 48px;
   --font-size-2: 32px;
@@ -37,19 +37,19 @@
 }
 
 .theme-base {
-  --landing-bits: #414141;
+  --landing-bits: #d1d1d1;
   --hero-shadow: #262011;
-  --back-0: #333;
+  --back-0: #e7e7e7;
   --back-1: #252525;
   --back-2: #333;
   --back-content: #e7e7e7;
   --back-contrast: #eee;
   --back-header: #e9c46a;
   --primary-contrast: #d9b054;
-  --color-back: #eee;
+  --color-back: #333;
   --color-content: #333;
   --color-header: #333;
-  --border-width: 0px;
+  --border-width: 1px;
   --border-color: #333;
   --shadow-color: #333;
 }

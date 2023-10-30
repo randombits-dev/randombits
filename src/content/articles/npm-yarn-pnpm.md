@@ -4,6 +4,7 @@ summary: "A very brief comparison of NPM, Yarn, and Pnpm package managers, from 
 desc: "A very brief comparison of NPM, Yarn, and Pnpm package managers, from a performance perspective"
 updated: 2023-07-11
 img: './covers/vs.png'
+tags: [build]
 ---
 
 ## NPM
