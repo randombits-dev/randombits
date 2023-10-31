@@ -16,7 +16,7 @@
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource/bungee": "^5.0.11",
     "@fontsource/righteous": "^5.0.11",
-    "@fontsource/alef": "^5.0.11",
+    "@fontsource/alef": "^5.0.8",
     "@unocss/preset-mini": "^0.53.6",
     "@unocss/preset-wind": "^0.53.6",
     "astro": "^3.1.3",
