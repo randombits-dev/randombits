@@ -19,10 +19,10 @@ return <div class="card image-card image-card-v flex flex-col">
     <Image src={img} alt="Article Cover Image"/>
   </a>
   <div class="card-row-text">
-    <div class="text-2xl font-bold mb-5">{title}</div>
+    <div class="text-2xl font-bold">{title}</div>
     {
       makeArray(desc).map(d => {
-        return <div class="text-lg mt-5">{d}</div>
+        return <div class="card-row-desc mt-3!">{d}</div>
       })
     }
 
@@ -33,12 +33,7 @@ return <div class="card image-card image-card-v flex flex-col">
   <div class="mx-5 mb-5 flex gap-5 items-center">
     {
       links.map((link, i) => {
-        if (i) {
           return <a class="secondary" href={link[1]}>{link[0]}</a>
-        } else {
-          return <a class="button" href={link[1]}>{link[0]}</a>
-
-        }
       })
     }
 
@@ -83,5 +78,7 @@ return <div class="card image-card image-card-v flex flex-col">
 
   a.secondary {
     text-decoration: underline;
+    font-weight: bold;
+    font-size: var(--font-size-caption);
   }
 </style>

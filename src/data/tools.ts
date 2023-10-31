@@ -12,7 +12,7 @@ export const TOOLS = [
   },
   {
     title: 'hērōicus',
-    desc: ['Winner of the Fantom Hackathon 2023 Q2', 'Cloud computing using NFT Rentals · Powered by the Fantom Network and AWS'],
+    desc: ['Winner of the Fantom Hackathon 2023 Q2', 'Cloud computing using NFT Rentals. Powered by the Fantom Network and AWS.'],
     img: CoverImages.heroicus,
     links: [
       ['app', 'https://heroicus.xyz/'],
@@ -31,7 +31,7 @@ export const TOOLS = [
   },
   {
     title: 'Snowrunner Save Editor',
-    desc: ['Save editor for the Saverunner game. Edit task and mission progress. Reveal or obtain upgrades'],
+    desc: ['Save editor for the Saverunner game. Edit task and mission progress. Reveal or obtain upgrades.'],
     img: CoverImages.snowrunner,
     links: [
       ['app', '/tools/snowrunner'],
@@ -40,7 +40,7 @@ export const TOOLS = [
   },
   {
     title: 'Printable Daily Schedule',
-    desc: 'Some people still like a paper schedule. This app generates a daily planner for appointments. One page a day and easily printable',
+    desc: 'Some people still like a paper schedule. This app generates a daily planner for appointments. One page a day and easily printable.',
     img: CoverImages.schedule,
     links: [['app', 'https://schedule.randombits.dev']]
   }

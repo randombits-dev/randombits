@@ -3,7 +3,7 @@ import chalkboard from '../assets/covers/chalkboard.jpg';
 import snExtensions from '../assets/covers/sn-extensions.png';
 import snowrunner from '../assets/covers/snowrunner.jpg';
 import schedule from '../assets/covers/schedule.png';
-import heroicus from '../assets/covers/heroicus3.webp';
+import heroicus from '../assets/covers/heroicus.png';
 import fontable from '../assets/covers/fontable.png';
 
 export const CoverImages = {

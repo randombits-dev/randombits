@@ -2,8 +2,8 @@ import {createSignal, onMount} from "solid-js";
 import '@/styles/theme-changer.scss';
 
 const THEME_LIST = [
-    {id: "base", name: "Yellow"},
-    {id: "daring", name: "Blue"},
+    {id: "base", name: "Bumble"},
+    {id: "daring", name: "Bold"},
     {id: "gray", name: "Overcast"},
     {id: "dark-fear", name: "Midnight"},
 ];
