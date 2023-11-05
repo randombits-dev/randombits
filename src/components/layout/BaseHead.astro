@@ -5,29 +5,31 @@ import '../../styles/global.css';
 import {removeTrailingSlash} from "../../utils/utils";
 
 interface Props {
-    title: string;
-    description: string;
-    image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const {title, description, img} = Astro.props;
 ---
 
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale = 1.0,
+maximum-scale=1.0, user-scalable=no"/>
 <link rel="icon" type="image/svg" href="/favicon.svg"/>
 <title>{title} · Random Bits</title>
 <meta property="og:description" name="description" content={description}/>
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@RandomBitsDev"/>
 <meta property="og:title" content={title}/>
-{img && <meta property="og:image" content={'https://randombits.dev' + img}/>}
+{img &&
+<meta property="og:image" content={'https://randombits.dev' + img}/>}
 <meta property="og:url" content={removeTrailingSlash(Astro.url)}/>
 <script is:inline>
-    const initialTheme = localStorage.getItem("theme") || 'base';
-    if (initialTheme.startsWith('dark-')) {
-        document.documentElement.classList.add(`theme-${initialTheme}`, `theme-dark`);
-    } else {
-        document.documentElement.classList.add(`theme-${initialTheme}`);
-    }
+  const initialTheme = localStorage.getItem("theme") || 'base';
+  if (initialTheme.startsWith('dark-')) {
+    document.documentElement.classList.add(`theme-${initialTheme}`, `theme-dark`);
+  } else {
+    document.documentElement.classList.add(`theme-${initialTheme}`);
+  }
 </script>

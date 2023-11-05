@@ -12,17 +12,17 @@ const {title, description, img, bodyClass} = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <BaseHead title={title} description={description} img={img}/>
+  <BaseHead title={title} description={description} img={img}/>
   <!--<script src="https://cdn.jsdelivr.net/npm/fontable@latest/dist/auto.js"></script>-->
 
 </head>
 <body class="">
 <div class="flex flex-col min-h-screen">
-<Header/>
-    <div class="flex-1">
-<slot/>
-    </div>
-<Footer/>
+  <Header/>
+  <div class="flex-1">
+    <slot/>
+  </div>
+  <Footer/>
 </div>
 <ThemeChanger client:load/>
 </body>

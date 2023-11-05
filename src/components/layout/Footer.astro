@@ -12,34 +12,34 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 ---
 
 <footer>
-    <div class="footer-content">
-        <div class="social-links">
-            <a href="https://github.com/nienow" target="_blank" aria-label="github social link">
-                <div set:html={githubSVG}/>
-            </a>
-            <a href="https://discordapp.com/users/806661811143049216" target="_blank" aria-label="discord social link">
-                <div set:html={discordSVG}/>
-            </a>
-            <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter social link">
-                <div set:html={twitterSVG}/>
-            </a>
-            <a href="https://linktr.ee/randombits" target="_blank" aria-label="linktree social link">
-              <div set:html={linktree}/>
-            </a>
-          <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="keybase social link">
-            <div set:html={keybase}/>
-          </a>
+  <div class="footer-content">
+    <div class="social-links">
+      <a href="https://github.com/nienow" target="_blank" aria-label="github social link">
+        <div set:html={githubSVG}/>
+      </a>
+      <a href="https://discordapp.com/users/806661811143049216" target="_blank" aria-label="discord social link">
+        <div set:html={discordSVG}/>
+      </a>
+      <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter social link">
+        <div set:html={twitterSVG}/>
+      </a>
+      <a href="https://linktr.ee/randombits" target="_blank" aria-label="linktree social link">
+        <div set:html={linktree}/>
+      </a>
+      <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="keybase social link">
+        <div set:html={keybase}/>
+      </a>
 
-            <button id="footer__envelope">
-              <span set:html={envelopeSVG}/>
-              <span id="footer__quick-msg" class="quick-msg">Email copied</span>
-            </button>
+      <button id="footer__envelope">
+        <span set:html={envelopeSVG}/>
+        <span id="footer__quick-msg" class="quick-msg">Email copied</span>
+      </button>
 
-        </div>
     </div>
-    <div class="copyright">
-        &copy; {today.getFullYear()} Random Bits
-    </div>
+  </div>
+  <div class="copyright">
+    &copy; {today.getFullYear()} Random Bits
+  </div>
 </footer>
 
 <script>

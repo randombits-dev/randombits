@@ -8,31 +8,33 @@ import ToolList from "../components/ToolList.astro";
 ---
 
 <BaseLayout title="Random Bits" description="Software Engineering, Articles, Tools">
-<div class="bg-base h-[800px] text-center">
+  <div class="bg-base h-[500px] sm:h-[800px] text-center">
+    <div class="relative h-[500px] sm:h-[800px] z-10 flex flex-col items-center">
+      <div class="flex-1 text-primary flex items-center">
+        <div class="">
+          <div class="rb-hero-text text-[40px] sm:text-[75px] md:text-[100px] lg:text-[150px] font-bold leading-tight"
+               style="font-family: Righteous;">random bits
+          </div>
+          <div class="rb-hero-sub text-4xl md:text-6xl lg:text-[80px] px-6 font-bold leading-tight" style="font-family: Righteous;">software
+            engineering
+          </div>
+          <a class="button mt-30! text-xl!" href="/about">About Random Bits</a>
 
-
-
-    <div class="relative h-[800px] z-10 flex flex-col items-center">
-        <div class="flex-1 text-primary flex items-center">
-            <div class="">
-              <div class="rb-hero-text text-[75px] md:text-[100px] lg:text-[150px] font-bold leading-tight" style="font-family: Righteous;">random bits</div>
-              <div class="rb-hero-sub text-4xl md:text-6xl lg:text-[80px] px-6 font-bold leading-tight" style="font-family: Righteous;">software engineering</div>
-              <a class="button mt-30! text-xl!" href="/about">About Random Bits</a>
-
-            </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
   <div class="mx-5 md:mx-10 mb-20">
     <h1 class="text-center">Recent Projects</h1>
     <ToolList limit={2}/>
     <a class="button" href="/tools">See All Projects</a>
 
     <h1 class="mt-30 text-center">Articles</h1>
-  <ArticleList/>
+    <ArticleList/>
   </div>
 
-  <div aria-disabled="true" class="rb-background-bits absolute px-1 py-1 top-0 h-[800px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
+  <div aria-disabled="true"
+       class="rb-background-bits absolute px-1 py-1 top-0 h-[500px] sm:h-[800px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
     <RandomBits client:only="solid-js"/>
   </div>
 
@@ -40,45 +42,49 @@ import ToolList from "../components/ToolList.astro";
 
 <style>
 
-    .rb-background-bits {
-        color: var(--landing-bits);
-        font-family: "Courier New",serif;
-        font-weight: 900;
-        letter-spacing: -3px;
-        border-bottom: 1px solid var(--landing-bits);
-    }
+  .rb-background-bits {
+    color: var(--landing-bits);
+    font-family: "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: -3px;
+    border-bottom: 1px solid var(--landing-bits);
+  }
 
-    .list-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 30px;
-        background-color: var(--back-2);
-        color: var(--color-back);
-    }
+  .list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--back-2);
+    color: var(--color-back);
+  }
 
-    a.button {
-        max-width: 500px;
-        margin: 30px auto;
-    }
+  a.button {
+    max-width: 500px;
+    margin: 30px auto;
+  }
 
-    .other-area {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 30px;
-        text-align: center;
-        background-color: var(--back-2);
-    }
+  .other-area {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background-color: var(--back-2);
+  }
 
-    .other-area a.button {
-        max-width: 500px;
-        margin: 0 auto;
-    }
+  .other-area a.button {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 
+  @media screen and (min-width: 768px) {
     .rb-hero-text {
-        text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 15px 15px 0 var(--hero-shadow);
+      text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 15px 15px 0 var(--hero-shadow);
     }
 
     .rb-hero-sub {
-        text-shadow: -3px -3px 0 var(--hero-shadow), -3px 3px 0 var(--hero-shadow), 3px -3px 0 var(--hero-shadow), 3px 3px 0 var(--hero-shadow), 10px 10px 0 var(--hero-shadow);
+      text-shadow: -3px -3px 0 var(--hero-shadow), -3px 3px 0 var(--hero-shadow), 3px -3px 0 var(--hero-shadow), 3px 3px 0 var(--hero-shadow), 10px 10px 0 var(--hero-shadow);
     }
+
+  }
+
 </style>
