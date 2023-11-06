@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/randombitsdev
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://randombits.dev
+  * I am randombitsdev (https://keybase.io/randombitsdev) on keybase.
+  * I have a public key with fingerprint E698 8A5D 5FE9 9AFC 9283  9644 773F EE42 B67B F950
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101ad1ef396cdf6d657d8f1d84160b941d5b7b325d047a482a24fa1a54dd8ab1a7f0a",
+      "fingerprint": "e6988a5d5fe99afc92839644773fee42b67bf950",
+      "host": "keybase.io",
+      "key_id": "773fee42b67bf950",
+      "kid": "0101ad1ef396cdf6d657d8f1d84160b941d5b7b325d047a482a24fa1a54dd8ab1a7f0a",
+      "uid": "6c5053226c70e25634913a7483411019",
+      "username": "randombitsdev"
+    },
+    "service": {
+      "hostname": "randombits.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1695127748,
+  "expire_in": 157680000,
+  "prev": "be74b30a859656d7b54a5099ac57d748e847d6b378aab1066d6df039a58e31b1",
+  "seqno": 2,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMIlAnicrVJfSBRBHL5T69QoQjSi0mi0wLhi/83O7j0kYj0UJAlZlwrnzM2sLubt
+tbteioqGFVmRDwallT6o9FI9JKkEpYVYkD0oBfaHqIcgsqIkqDCrWamnemxehpnf
+932/7/fNjC9P9qX7D7QFzRNw7Kv/wZ2eOh9LOz/eCIhFG0CoEdSwxY0dpMxxIzUm
+BSEgiIKIqcgMWVej1FCpChHVDJFqiqgKRFdECgkisgSpoCCsaBKWFAOLGCqUapiI
+GBkCBkFgmLEqZsdtM+ZyWabqmoYhhQbTdWxEdUnjDRQFIdlgTJGIioihQ4ETqy3H
+Y3BzBDtsq2nxO36ILNr7B/4/+65blFOjUICyJKlRJDAJqrKiizJGiiYrIu+ke0CH
+2TFcyzjaxjFq1RLTdShLgOYg4KWEGWVeut44f8G2erggiNuWa0Wtg7xW7bpxJ+Rx
+3Ya4Bz7MSOS3TISYMcrj5IwEsx3TioGQyJFR1/R0RVWHooS4uSBg9XHTZhHTQ0Ck
+agJfXh/eLgQIQwqRBaxBXYUqRQQqGAr8PaI8K05nmoKoSmSkYR6IoPIQqSHIOoYa
+k0UiAm+wQzELhCRuE1dxScesimG3zmag+e5YRYrPn+5buiTJ+2a+9LSVfz7fTGrg
+mz/4uWUDzfx66bm/tLizpbXpUxgUp2xLvbCrsq+qvaTiSl7qzZy8hYWZ/pYvg73t
+6wV9Xd/U445XkcKhyeD9pE4yEhhuPfZs5NjnZUWb8ZrS+envbQ0dWg7IfKssnN/b
+un1iNLFl6k3/xuO5WW8D5z4cz+7MyJ+GL8tr9gd3nJ3ujSQVZu9rEmcvF8S77hWb
+iU4t+XrD690rmiuRvWn+/Yusnu7A6PC12Yzw8rUzJRWrj74oqf/RFS6YPXNybmDE
+bM1/+HFg6upQ/reJ7oUnKTeK1MlbR3Ymnxq5ODW5Z1VZ+FyhNVoWuD0nOHlpj971
+1H74Wf5+HH0a7ChrO/3gaW4Z/gVnFEK7
+=b4E6
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/randombitsdev
+
+==================================================================
