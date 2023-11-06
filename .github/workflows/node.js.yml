@@ -21,6 +21,8 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm run build
+        env:
+          RANDOMBITS_REMOTE_SNOWRUNNER: ${{ vars.RANDOMBITS_REMOTE_SNOWRUNNER }}
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
