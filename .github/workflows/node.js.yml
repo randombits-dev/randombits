@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  RANDOMBITS_REMOTE_SNOWRUNNER: ${{ vars.RANDOMBITS_REMOTE_SNOWRUNNER }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
