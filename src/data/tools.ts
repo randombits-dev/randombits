@@ -17,7 +17,7 @@ export const TOOLS = [
     links: [
       ['app', 'https://heroicus.xyz/'],
       ['docs', 'https://docs.heroicus.xyz/'],
-      ['github', 'https://github.com/nienow/heroicus'],
+      ['github', 'https://github.com/randombits-dev/heroicus'],
       ['devpost', 'https://devpost.com/software/heroicus'],
     ]
   },
@@ -35,13 +35,14 @@ export const TOOLS = [
     img: CoverImages.snowrunner,
     links: [
       ['app', '/tools/snowrunner'],
-      ['github', 'https://github.com/nienow/snowrunner-save-editor'],
+      ['github', 'https://github.com/randombits-dev/snowrunner-save-editor'],
     ]
   },
   {
     title: 'Printable Daily Schedule',
     desc: 'Some people still like a paper schedule. This app generates a daily planner for appointments. One page a day and easily printable.',
     img: CoverImages.schedule,
-    links: [['app', 'https://schedule.randombits.dev']]
+    links: [['app', 'https://schedule.randombits.dev'],
+      ['github', 'https://github.com/nienow/daily-schedule']]
   }
 ];
