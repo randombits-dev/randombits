@@ -10,21 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.4",
+    "@astrojs/mdx": "^1.1.5",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/solid-js": "^3.0.2",
     "@astrojs/tailwind": "^5.0.2",
     "@fontsource/bungee": "^5.0.17",
     "@fontsource/righteous": "^5.0.17",
     "@fontsource/alef": "^5.0.8",
-    "@unocss/preset-mini": "^0.57.3",
-    "@unocss/preset-wind": "^0.57.3",
-    "astro": "^3.5.3",
+    "@unocss/preset-mini": "^0.57.6",
+    "@unocss/preset-wind": "^0.57.6",
+    "astro": "^3.5.5",
     "remark-code-titles": "^0.1.2",
     "sass": "^1.69.5",
     "sharp": "^0.32.6",
     "solid-js": "^1.8.5",
-    "unocss": "^0.57.3"
+    "unocss": "^0.57.6"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
