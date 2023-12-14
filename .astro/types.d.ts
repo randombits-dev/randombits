@@ -220,6 +220,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"chainlink-functions.md": {
+	id: "chainlink-functions.md";
+  slug: "chainlink-functions";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "click-blocker.md": {
 	id: "click-blocker.md";
   slug: "click-blocker";
