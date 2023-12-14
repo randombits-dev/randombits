@@ -5,6 +5,8 @@ import snowrunner from '../assets/covers/snowrunner.jpg';
 import schedule from '../assets/covers/schedule.jpg';
 import heroicus from '../assets/covers/heroicus.png';
 import fontable from '../assets/covers/fontable.png';
+import microStorage from '../assets/covers/micro-storage.png';
+import offeringInspiration from '../assets/covers/offering-inspiration.png';
 
 export const CoverImages = {
   creatingExtensions,
@@ -13,5 +15,7 @@ export const CoverImages = {
   schedule,
   heroicus,
   fontable,
-  snExtensions
+  snExtensions,
+  microStorage,
+  offeringInspiration
 };

@@ -2,6 +2,27 @@ import {CoverImages} from '../utils/coverImages';
 
 export const TOOLS = [
   {
+    title: 'Offering Inspiration',
+    desc: ['Built using Astro and web components.'],
+    img: CoverImages.offeringInspiration,
+    links: [
+      ['app', 'https://offeringinspiration.com'],
+      ['github', 'https://github.com/randombits-dev/offering-inspiration']
+    ]
+  },
+  {
+    title: 'Micro Storage',
+    desc: ['Entered into the Chainlink Constellation hackathon. A cloud storage platform that is powered by NFT subscriptions.',
+      'Built using Astro, React, Chainlink, and Cloudflare Workers.'],
+    img: CoverImages.microStorage,
+    links: [
+      ['app', 'https://micro-storage.xyz'],
+      ['docs', 'https://micro-storage.xyz/docs'],
+      ['github', 'https://github.com/randombits-dev/micro-storage'],
+      ['devpost', 'https://devpost.com/software/micro-storage']
+    ]
+  },
+  {
     title: 'fontable',
     desc: 'Find the perfect Google font by embedding a font picker on your website',
     img: CoverImages.fontable,
