@@ -94,8 +94,7 @@
 
 .card-list-v {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 500px));
-  /*grid-template-columns: auto;*/
+  grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
   gap: 30px;
   justify-items: center;
   justify-content: center;
