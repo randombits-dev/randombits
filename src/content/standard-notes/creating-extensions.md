@@ -1,6 +1,6 @@
 ---
-title: "Creating Extensions"
-desc: "A guide for creating your own Standard Notes editor extensions (plugins)."
+title: "Creating Plugins"
+desc: "A guide for creating your own Standard Notes editor plugins (also called extensions)."
 img: './creating-extensions.jpg'
 order: 2
 ---
@@ -14,12 +14,12 @@ This guide will go over the following:
 1. The structure of a note
 2. The API for communicating with Standard Notes
 3. API Implementation Example
-4. Styling your extension with the chosen theme
+4. Styling your plugin with the chosen theme
 5. JSON descriptor file
 
 ## Technology
 
-Because editor extensions load in an iframe inside Standard Notes, you are free to choose any javascript framework / technology to write an extension.
+Because editor plugins load in an iframe inside Standard Notes, you are free to choose any javascript framework / technology to write a plugin.
 
 ## The structure of a note
 
@@ -62,20 +62,20 @@ The remaining properties are either edited outside of our editor (like the title
 
 ## Standard Notes API
 
-An extension communicates back and forth with Standard Notes to load and save the note. I highly recommend using the API that I wrote: https://github.com/nienow/sn-extension-api, which greatly simplifies the process of creating extensions. 
+An plugin communicates back and forth with Standard Notes to load and save the note. I highly recommend using the API that I wrote: https://github.com/nienow/sn-plugin-api, which greatly simplifies the process of creating plugins. 
 
 If you want to use one of the official APIs instead, see the article on the [ComponentRelay API](/standard-notes/component-relay)
 
 Install the API:
 
 ```
-npm install sn-extension-api
+npm install sn-plugin-api
 ```
 
 Basic usage with a text area:
 
 ```typescript
-import snApi from "sn-extension-api";
+import snApi from "sn-plugin-api";
 
 // only call this once - it will establish communication with standard notes
 snApi.initialize();
@@ -92,15 +92,15 @@ document.getElementById('my-text-area').addEventListener('input', (e) => {
 });
 ```
 
-See the [full API documentation](https://github.com/nienow/sn-extension-api)
+See the [full API documentation](https://github.com/nienow/sn-plugin-api)
 
 ## Styling using Themes
 
 Since Standard Notes has several different built-in themes, and the option to install custom themes,
-we need our extension to use these themes. We first need to import the base theme variables into our root CSS file:
+we need our plugin to use these themes. We first need to import the base theme variables into our root CSS file:
 
 ```css
-@import 'sn-extension-api/dist/sn.min.css';
+@import 'sn-plugin-api/dist/sn.min.css';
 ```
 
 This will include all the default CSS theme variables. Here is a condensed list of the variables you might use:
@@ -142,7 +142,7 @@ When you use these variables, and the user switches themes, your editor will aut
 
 ## JSON Descriptor File
 
-You will need to create a descriptor file, which is how people will install your extension.
+You will need to create a descriptor file, which is how people will install your plugin.
 
 The file is normally hosted at the same url of your application at `/ext.json`, but it doesn't have to be.
 Here is an example file:
@@ -165,27 +165,27 @@ Here is an example file:
 
 **name** - The name that shows up under the editor picker
 
-**description** - This shows up under the list of installed extensions
+**description** - This shows up under the list of installed plugins
 
 **content_type** - "SN|Component" for everything but a theme
 
 **area** - "editor-editor" is the main editor area
 
-**version** - The version of your extension.
+**version** - The version of your plugin.
 
-**url** - The url of your extension HTML page
+**url** - The url of your plugin HTML page
 
-**download_url** (optional) - The url for Standard Notes to download the full extension distribution (HTML page, scripts, stylesheets, etc).
+**download_url** (optional) - The url for Standard Notes to download the full plugin distribution (HTML page, scripts, stylesheets, etc).
 Only the desktop version of the app uses this. It downloads the whole distribution so that you can use the app offline.
 However, this value is optional, because the desktop version will simply fallback to the using the regular "url" value if it is not specified.
 
-**latest_url** (optional) - The url for the desktop app to check whether it needs to download a new version of the extension.
+**latest_url** (optional) - The url for the desktop app to check whether it needs to download a new version of the plugin.
 It is only required if "download_url" is specified. The file it points at should be a json file containing a "version" property.
 The package.json or the ext.json file could be used for this, since they both contain the version.
 
 ## Deploy / Hosting
 
-The most common way to host an extension is through **Github Pages**. Not only is it the easiest way, but also users will trust your extension if it is hosted next to your source code.
+The most common way to host a plugin is through **Github Pages**. Not only is it the easiest way, but also users will trust your plugin if it is hosted next to your source code.
 
 ## Starter Template Repo
 
