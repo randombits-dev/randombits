@@ -36,8 +36,6 @@ export const TOOLS = [
     desc: ['Winner of the Fantom Hackathon 2023 Q2', 'Cloud computing using NFT Rentals. Powered by the Fantom Network and AWS.'],
     img: CoverImages.heroicus,
     links: [
-      ['app', 'https://heroicus.xyz/'],
-      ['docs', 'https://docs.heroicus.xyz/'],
       ['github', 'https://github.com/randombits-dev/heroicus'],
       ['devpost', 'https://devpost.com/software/heroicus'],
     ]
