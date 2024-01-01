@@ -14,23 +14,23 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 <footer>
   <div class="footer-content">
     <div class="social-links">
-      <a href="https://github.com/randombits-dev" target="_blank" aria-label="github social link">
+      <a href="https://github.com/randombits-dev" target="_blank" title="github link">
         <div set:html={githubSVG}/>
       </a>
-      <a href="https://discord.gg/VdAySp2Y" target="_blank" aria-label="discord social link">
+      <a href="https://discord.gg/VdAySp2Y" target="_blank" aria-label="discord link">
         <div set:html={discordSVG}/>
       </a>
-      <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter social link">
+      <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="twitter link">
         <div set:html={twitterSVG}/>
       </a>
-      <a href="https://linktr.ee/randombits" target="_blank" aria-label="linktree social link">
+      <a href="https://linktr.ee/randombits" target="_blank" aria-label="linktree link">
         <div set:html={linktree}/>
       </a>
-      <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="keybase social link">
+      <a href="https://keybase.io/randombitsdev" target="_blank" title="keybase link">
         <div set:html={keybase}/>
       </a>
 
-      <button id="footer__envelope">
+      <button id="footer__envelope" title="Copy Email">
         <span set:html={envelopeSVG}/>
         <span id="footer__quick-msg" class="quick-msg">Email copied</span>
       </button>

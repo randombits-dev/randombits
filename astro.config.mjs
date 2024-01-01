@@ -16,7 +16,8 @@ export default defineConfig({
   },
   integrations: [mdx(), solid(), UnoCSS(), sitemap()],
   build: {
-    assets: '_astro'
+    assets: '_astro',
+    format: 'file'
   },
-  trailingSlash: 'never'
+  trailingSlash: 'never',
 });
