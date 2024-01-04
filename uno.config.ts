@@ -20,7 +20,8 @@ export default defineConfig({
   },
   shortcuts: {
     card: 'rb-color-content relative border',
-    btn: 'text-center px-3 py-5 border tb-color-header cursor-pointer'
+    btn: 'text-center px-3 py-5 border tb-color-header cursor-pointer',
+    'header-link': 'px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer'
   },
   rules: [
     ['border', {border: 'var(--border-width) solid var(--border-color)', 'border-radius': 'var(--border-radius-1)'}],

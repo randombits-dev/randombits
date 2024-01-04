@@ -2,24 +2,15 @@
 import Logo from "../Logo.astro";
 ---
 
-<div class="mt-[-20px] text-center relative z-10">
+<header class="mt-[-20px] text-center relative z-10">
 
-  <div style="font-family: Righteous;"
+  <nav aria-label="Main" style="font-family: Righteous;"
        class="rb-color-header text-xl sm:text-2xl pt-5 rounded-b-xl overflow-hidden shadow-2xl sm:inline-flex items-center">
-    <a class="px-6 block sm:inline" href="/" aria-label="home page">
+    <a class="px-6 block sm:inline" href="/" aria-label="Home Page">
       <Logo includeDigits={true} width={45} height={45}/>
     </a>
-    <a href="/articles"
-       class="px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer">
-      articles
-    </a> /
-    <a href="/tools"
-       class="px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer">
-      projects
-    </a> /
-    <a href="/about"
-       class="px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-4 hover:underline-offset-4 cursor-pointer">
-      about
-    </a>
-  </div>
-</div>
+    <a href="/articles" class="header-link">articles</a> /
+    <a href="/tools" class="header-link">projects</a> /
+    <a href="/about" class="header-link">about</a>
+  </nav>
+</header>

@@ -24,20 +24,20 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
     };
 
     if (relatedPages) {
-        return <div class="card rb-article__nav" ref={el}>
+        return <nav aria-label="Articles" class="card rb-article__nav" ref={el}>
             {
                 relatedPages.sort((a, b) => a.data.order - b.data.order).map(article => {
                     const showLink = path.endsWith(article.slug);
                     if (showLink) {
                         return <><a class="font-bold"  aria-selected={!selected()} href={article.slug}>{article.data.toc || article.data.title}</a>
-                            <div class="rb-article__sub-nav">
+                            <nav aria-label="Article Sections" class="rb-article__sub-nav">
                                 {
                                     headings.map(heading => {
                                         const isSelected = selected() === heading.slug;
                                         return <a class="text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
                                     })
                                 }
-                            </div>
+                            </nav>
                         </>;
                     } else {
                         return <a class="font-bold" href={article.slug}>{article.data.toc || article.data.title}</a>;
@@ -45,16 +45,16 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
                 })
             }
 
-        </div>
+        </nav>
     } else {
-        return <div class="card rb-article__nav" ref={el}>
+        return <nav aria-label="Article Sections" class="card rb-article__nav" ref={el}>
             {
                 headings.map(heading => {
                     const isSelected = selected() === heading.slug;
                     return <a class="text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
                 })
             }
-        </div>
+        </nav>
     }
 
 

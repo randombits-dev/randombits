@@ -17,15 +17,6 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.4
     version: 5.0.4(astro@4.0.7)(tailwindcss@3.3.6)(ts-node@10.9.2)
-  '@fontsource/alef':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/bungee':
-    specifier: ^5.0.18
-    version: 5.0.18
-  '@fontsource/righteous':
-    specifier: ^5.0.18
-    version: 5.0.18
   '@unocss/preset-mini':
     specifier: ^0.58.0
     version: 0.58.0
@@ -35,6 +26,12 @@ dependencies:
   astro:
     specifier: ^4.0.7
     version: 4.0.7(@types/node@20.10.5)(sass@1.69.5)(typescript@5.3.3)
+  astro-font-picker:
+    specifier: ^0.2.1
+    version: 0.2.1(astro@4.0.7)
+  astro-google-fonts-optimizer:
+    specifier: ^0.2.2
+    version: 0.2.2
   canvas:
     specifier: ^2.11.2
     version: 2.11.2
@@ -1184,18 +1181,6 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/alef@5.0.8:
-    resolution: {integrity: sha512-+PmxfIajzuvFtjv8Dof/9ClnomeIOIWToDx3KF0sNifTJUDNlsn+/aRfYaUmV6btZ919k+zh+6g+A9SoZTJ9dQ==}
-    dev: false
-
-  /@fontsource/bungee@5.0.18:
-    resolution: {integrity: sha512-E0uHG3r1kk4rDqkEG18eNyp9kDY05l6tCCSfWmELdgktHXUDk8HuhkSweEBuDS5j2Hy5iuHrMptcZGD0efi3ng==}
-    dev: false
-
-  /@fontsource/righteous@5.0.18:
-    resolution: {integrity: sha512-aBbSA87KGUdStVqTM/C1J0cChEQuQjMpsmZJb/50NTVVPPAUJfrAcIHVBQTPiHTTNp+Nfow4BmH18QuYnMDw6A==}
-    dev: false
-
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
@@ -2081,6 +2066,19 @@ packages:
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
+    dev: false
+
+  /astro-font-picker@0.2.1(astro@4.0.7):
+    resolution: {integrity: sha512-jUOViCcrK9PoK2dgz32H0BZhu8xeDWFWPyV+hRUoIjE/TnDlxpxiBfEjPUQWLQ3LhlNRNzlIBklPol2SRwKnsg==}
+    peerDependencies:
+      astro: ^4.0.0
+    dependencies:
+      astro: 4.0.7(@types/node@20.10.5)(sass@1.69.5)(typescript@5.3.3)
+      webfontloader: 1.6.28
+    dev: false
+
+  /astro-google-fonts-optimizer@0.2.2:
+    resolution: {integrity: sha512-YQxp/ExF3NzUomAGuu1VKecO7/ETRnhnE50gqwAqfpbGPZFj4MYa4XxK1ukBg3R63QmKuE5uurOiKmXiLzttuw==}
     dev: false
 
   /astro@4.0.7(@types/node@20.10.5)(sass@1.69.5)(typescript@5.3.3):
@@ -5928,6 +5926,10 @@ packages:
 
   /web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
+    dev: false
+
+  /webfontloader@1.6.28:
+    resolution: {integrity: sha512-Egb0oFEga6f+nSgasH3E0M405Pzn6y3/9tOVanv/DLfa1YBIgcv90L18YyWnvXkRbIM17v5Kv6IT2N6g1x5tvQ==}
     dev: false
 
   /webidl-conversions@3.0.1:

@@ -15,25 +15,25 @@ const fullTitle = group ? group + ' - ' + content.title : content.title;
 
 <HtmlLayout title={fullTitle} description={content.desc} img={content.img?.src}>
     <div class="rb-article">
-            <div class="rb-article__sidebar">
+            <aside class="rb-article__sidebar">
 
-            </div>
+            </aside>
 
-            <content>
+            <section>
 
                 <div class="card overflow-hidden">
 
                     <BlogHeader meta={content} group={group}/>
-                    <div class="article-body">
+                    <article class="article-body">
                     <slot name="content"/>
-                    </div>
+                    </article>
                 </div>
                 <slot name="after"/>
-            </content>
+            </section>
 
-            <div class="rb-article__sidebar">
+            <aside class="rb-article__sidebar">
                 <slot name="sidebar"/>
-            </div>
+            </aside>
     </div>
 </HtmlLayout>
 

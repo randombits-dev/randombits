@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../../styles/global.css';
 import {removeTrailingSlash} from "../../utils/utils";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
 interface Props {
   title: string;
@@ -15,8 +16,10 @@ const {title, description, img} = Astro.props;
 
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale = 1.0"/>
-<link rel="icon" type="image/svg" href="/favicon.svg"/>
 <title>{title}</title>
+<link rel="icon" type="image/svg" href="/favicon.svg"/>
+<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Righteous&display=swap">
+</GoogleFontsOptimizer>
 <meta property="og:description" name="description" content={description}/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@RandomBitsDev"/>
