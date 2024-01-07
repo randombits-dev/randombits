@@ -3,7 +3,7 @@ title: "Automatic1111 API quick start guide"
 summary: "A guide to using the Automatic1111 API"
 desc: "A guide to using the Automatic1111 API"
 updated: 2023-05-25
-img: './covers/mtn-clouds.jpg'
+img: './covers/4planets.jpg'
 draft: true
 ---
 

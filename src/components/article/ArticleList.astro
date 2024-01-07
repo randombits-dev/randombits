@@ -10,14 +10,15 @@ const posts = (await getCollection('articles')).filter(item => !item.data.draft 
 
 const standardNotesArticles = await getCollectionSortedByOrder('standard-notes');
 const localizationArticles = await getCollectionSortedByOrder('number-localization');
+const diffusionArticles = await getCollectionSortedByOrder('stable-diffusion');
 
 const postsToShow = limit ? posts.slice(0, limit-2) : posts;
 ---
 
 <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-stretch	">
     <div class="card overflow-hidden">
-      <div class="text-center px-5 pt-5 text-2xl font-bold">Standard Notes Extensions</div>
-      <div class="text-center text-lg">A guide to creating and using extensions</div>
+      <div class="text-center px-5 pt-5 text-2xl font-bold">Standard Notes Plugins</div>
+      <div class="text-center text-lg">A guide to creating and using plugins</div>
       <div class="px-5 py-5">
         {
           standardNotesArticles.map((post) => (
@@ -50,6 +51,24 @@ const postsToShow = limit ? posts.slice(0, limit-2) : posts;
       </div>
 
     </div>
+
+  <div class="card overflow-hidden col-span-2">
+    <div class="text-center px-5 pt-5 text-2xl font-bold">Stable Diffusion</div>
+    <div class="text-center px-5 text-lg">A guide to running automatic1111 stable diffusion servers in the cloud</div>
+    <div class="px-5 py-5">
+      {
+        diffusionArticles.map((post) => (
+          <div class="card-row">
+            <a href={'/articles/stable-diffusion/' + post.slug} class="card-row-text">
+              <div class="card-row-title">{post.data.title}</div>
+              <div class="card-row-desc">{post.data.desc}</div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
 
   <!---->
   <!--  <div class="text-center text-2xl px-10 py-5 font-bold">Other Articles</div>-->

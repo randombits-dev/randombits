@@ -13,20 +13,20 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 
 <footer>
   <div class="footer-content">
-    <div class="social-links">
-      <a href="https://github.com/randombits-dev" target="_blank" title="github link">
+    <nav aria-label="Social Links" class="social-links">
+      <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
         <div set:html={githubSVG}/>
       </a>
-      <a href="https://discord.gg/VdAySp2Y" target="_blank" title="discord link">
+      <a href="https://discord.gg/VdAySp2Y" target="_blank" aria-label="Discord">
         <div set:html={discordSVG}/>
       </a>
-      <a href="https://twitter.com/RandomBitsDev" target="_blank" title="twitter link">
+      <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="Twitter">
         <div set:html={twitterSVG}/>
       </a>
-      <a href="https://linktr.ee/randombits" target="_blank" title="linktree link">
+      <a href="https://linktr.ee/randombits" target="_blank" aria-label="Linktree">
         <div set:html={linktree}/>
       </a>
-      <a href="https://keybase.io/randombitsdev" target="_blank" title="keybase link">
+      <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
         <div set:html={keybase}/>
       </a>
 
@@ -35,7 +35,7 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
         <span id="footer__quick-msg" class="quick-msg">Email copied</span>
       </button>
 
-    </div>
+    </nav>
   </div>
   <div class="copyright">
     &copy; {today.getFullYear()} Random Bits

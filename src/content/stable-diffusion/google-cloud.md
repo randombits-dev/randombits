@@ -3,8 +3,9 @@ title: "Running Automatic1111 in Google Cloud"
 summary: "A full guide to running your own stable diffusion server using Google Cloud Compute Engine"
 desc: "A full guide to running your own stable diffusion server using Google Cloud Compute Engine"
 updated: 2023-05-15
-img: './covers/mtn-clouds.jpg'
+img: './mtn-clouds.jpg'
 tags: [ai, cloud]
+order: 1
 ---
 
 ## Why run stable diffusion in Google Cloud?

@@ -3,7 +3,7 @@ title: "Automatic1111 Automation"
 summary: ""
 desc: ""
 updated: 2023-05-25
-img: './covers/mtn-clouds.jpg'
+img: './covers/4planets.jpg'
 draft: true
 ---
 

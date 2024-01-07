@@ -5,6 +5,7 @@ import remarkCodeTitles from 'remark-code-titles';
 import UnoCSS from 'unocss/astro';
 import sitemap from '@astrojs/sitemap';
 
+import robots from "astro-robots";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,10 +15,10 @@ export default defineConfig({
     syntaxHighlight: 'prism',
     remarkPlugins: [remarkCodeTitles]
   },
-  integrations: [mdx(), solid(), UnoCSS(), sitemap()],
+  integrations: [mdx(), solid(), UnoCSS(), sitemap(), robots({})],
   build: {
     assets: '_astro',
     format: 'file'
   },
-  trailingSlash: 'never',
+  trailingSlash: 'never'
 });

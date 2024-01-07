@@ -206,13 +206,6 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
-"automatic1111-in-google-cloud.md": {
-	id: "automatic1111-in-google-cloud.md";
-  slug: "automatic1111-in-google-cloud";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
 "browser-storage.md": {
 	id: "browser-storage.md";
   slug: "browser-storage";
@@ -336,6 +329,22 @@ declare module 'astro:content' {
   collection: "snippets";
   data: any
 } & { render(): Render[".mdx"] };
+};
+"stable-diffusion": {
+"aws.md": {
+	id: "aws.md";
+  slug: "aws";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".md"] };
+"google-cloud.md": {
+	id: "google-cloud.md";
+  slug: "google-cloud";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".md"] };
 };
 "standard-notes": {
 "component-relay.md": {
