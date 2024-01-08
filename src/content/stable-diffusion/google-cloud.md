@@ -5,7 +5,7 @@ desc: "A full guide to running your own stable diffusion server using Google Clo
 updated: 2023-05-15
 img: './mtn-clouds.jpg'
 tags: [ai, cloud]
-order: 1
+order: 2
 ---
 
 ## Why run stable diffusion in Google Cloud?

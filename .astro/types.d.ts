@@ -345,6 +345,13 @@ declare module 'astro:content' {
   collection: "stable-diffusion";
   data: InferEntrySchema<"stable-diffusion">
 } & { render(): Render[".md"] };
+"intro.md": {
+	id: "intro.md";
+  slug: "intro";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".md"] };
 };
 "standard-notes": {
 "component-relay.md": {

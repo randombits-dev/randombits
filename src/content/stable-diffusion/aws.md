@@ -5,7 +5,7 @@ desc: "A full guide to running your own stable diffusion server on an EC2 instan
 updated: 2024-01-07
 img: './mtn-clouds.jpg'
 tags: [ai, cloud]
-order: 2
+order: 3
 ---
 
 ## Create VM Instance
