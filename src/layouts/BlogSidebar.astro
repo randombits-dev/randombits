@@ -4,6 +4,7 @@ import '../styles/article-body.scss';
 import '../styles/prism-custom.scss';
 import BlogHeader from "./BlogHeader.astro";
 import HtmlLayout from "./HtmlLayout.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 const {
     content,
@@ -13,7 +14,12 @@ const {
 const fullTitle = group ? group + ' - ' + content.title : content.title;
 ---
 
-<HtmlLayout title={fullTitle} description={content.desc} img={content.img?.src}>
+<BaseLayout title={fullTitle} description={content.desc} img={content.img?.src}>
+  <Fragment slot="head">
+    <meta property="og:type" content="https://ogp.me/ns/article#" />
+    {content.updated && <meta property="article:modified_time" content={content.updated} /> }
+  </Fragment>
+  <div class="my-20 mx-5 md:mx-10">
     <div class="rb-article">
             <aside class="rb-article__sidebar">
 
@@ -35,7 +41,8 @@ const fullTitle = group ? group + ' - ' + content.title : content.title;
                 <slot name="sidebar"/>
             </aside>
     </div>
-</HtmlLayout>
+  </div>
+</BaseLayout>
 
 <style>
 

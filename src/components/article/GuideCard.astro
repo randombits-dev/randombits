@@ -1,0 +1,25 @@
+---
+import {getCollectionSortedByOrder} from "../../utils/articleUtils";
+
+const {collection, title, desc, url} = Astro.props;
+
+const articles = await getCollectionSortedByOrder(collection);
+---
+
+<div class="card overflow-hidden">
+  <div class="text-center px-5 pt-5 text-2xl font-bold">{title}</div>
+  <div class="text-center px-10 text-lg">{desc}</div>
+  <div class="px-5 py-5">
+    {
+      articles.map((post) => (
+        <div class="card-row">
+          <a href={(url || `/articles/${collection}/`)  + post.slug} class="card-row-text">
+            <div class="card-row-title">{post.data.title}</div>
+            <div class="card-row-desc">{post.data.desc}</div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+
+</div>

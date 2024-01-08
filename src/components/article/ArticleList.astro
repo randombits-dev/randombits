@@ -1,6 +1,6 @@
 ---
 import {getCollection} from "astro:content";
-import {getCollectionSortedByOrder} from "../../utils/articleUtils";
+import GuideCard from "./GuideCard.astro";
 
 const {limit} = Astro.props;
 
@@ -8,108 +8,45 @@ const posts = (await getCollection('articles')).filter(item => !item.data.draft 
     (a, b) => new Date(b.data.published).valueOf() - new Date(a.data.published).valueOf()
 );
 
-const standardNotesArticles = await getCollectionSortedByOrder('standard-notes');
-const localizationArticles = await getCollectionSortedByOrder('number-localization');
-const diffusionArticles = await getCollectionSortedByOrder('stable-diffusion');
-
 const postsToShow = limit ? posts.slice(0, limit-2) : posts;
 ---
 
 <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-stretch	">
-    <div class="card overflow-hidden">
-      <div class="text-center px-5 pt-5 text-2xl font-bold">Standard Notes Plugins</div>
-      <div class="text-center text-lg">A guide to creating and using plugins</div>
-      <div class="px-5 py-5">
-        {
-          standardNotesArticles.map((post) => (
-            <div class="card-row">
-              <a href={'/standard-notes/' + post.slug} class="card-row-text">
-                <div class="card-row-title">{post.data.title}</div>
-                <div class="card-row-desc">{post.data.desc}</div>
-              </a>
-            </div>
-          ))
-        }
-      </div>
+  <GuideCard title="Standard Notes Plugins"
+             desc="A guide to creating and using plugins"
+             collection="standard-notes" url="/standard-notes/" />
+  <GuideCard title="Number Localization"
+             desc="A comprehensive reference"
+             collection="number-localization" />
+  <GuideCard title="Stable Diffusion in the Cloud"
+             desc="A guide to running automatic1111 stable diffusion servers in the cloud"
+             collection="stable-diffusion"/>
 
-    </div>
-
-    <div class="card overflow-hidden">
-      <div class="text-center px-5 pt-5 text-2xl font-bold">Number Localization</div>
-      <div class="text-center text-lg">A comprehensive reference</div>
-      <div class="px-5 py-5">
-        {
-          localizationArticles.map((post) => (
-            <div class="card-row">
-              <a href={'/articles/number-localization/' + post.slug} class="card-row-text">
-                <div class="card-row-title">{post.data.title}</div>
-                <div class="card-row-desc">{post.data.desc}</div>
-              </a>
-            </div>
-          ))
-        }
-      </div>
-
-    </div>
-
-  <div class="card overflow-hidden col-span-2">
-    <div class="text-center px-5 pt-5 text-2xl font-bold">Stable Diffusion in the Cloud</div>
-    <div class="text-center px-5 text-lg">A guide to running automatic1111 stable diffusion servers in the cloud</div>
-    <div class="px-5 py-5">
-      {
-        diffusionArticles.map((post) => (
-          <div class="card-row">
-            <a href={'/articles/stable-diffusion/' + post.slug} class="card-row-text">
-              <div class="card-row-title">{post.data.title}</div>
-              <div class="card-row-desc">{post.data.desc}</div>
-            </a>
+  {
+    postsToShow.map((post) => (
+      <a href={'/articles/' + post.slug} class="card overflow-hidden ">
+        <div class="text-xl px-5 pt-5 font-bold">{post.data.title}</div>
+        <div class="my-3 mx-5">
+          <div class="card-row-desc">{post.data.desc}</div>
+          <div class="mt-5 text-sm font-bold flex items-end">
+            <span class="flex-1">{post.data.updated.toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })}</span>
+            <span class="tags">{
+              post.data.tags?.map((tag) => (
+                <div class="tag">{tag}</div>
+              ))
+            }</span>
           </div>
-        ))
-      }
-    </div>
-
-  </div>
-
-  <!---->
-  <!--  <div class="text-center text-2xl px-10 py-5 font-bold">Other Articles</div>-->
-  <!--  <div class="card-contents">-->
-      {
-        postsToShow.map((post) => (
-          <a href={'/articles/' + post.slug} class="card overflow-hidden ">
-            <div class="text-xl px-5 pt-5 font-bold">{post.data.title}</div>
-            <div class="my-3 mx-5">
-              <div class="card-row-desc">{post.data.desc}</div>
-              <div class="mt-5 text-sm font-bold flex items-end">
-                <span class="flex-1">{post.data.updated.toLocaleDateString('en-US', {
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric'
-                })}</span>
-                <span class="tags">{
-                  post.data.tags?.map((tag) => (
-                    <div class="tag">{tag}</div>
-                  ))
-                }</span>
-              </div>
 
 
-              </div>
-          </a>
-          <!--<div class="card-row">-->
-          <!--  <a href={'/articles/' + post.slug} class="card-row-text">-->
-          <!--    <div class="card-row-title">{post.data.title}</div>-->
-          <!--    -->
-          <!--  </a>-->
-          <!--</div>-->
-        ))
-      }
-<!--    </div>-->
-
-<!--  </div>-->
-
-<!--</div>-->
+          </div>
+      </a>
+    ))
+  }
 <style>
-
   .card-row-text {
     cursor: pointer;
   }
@@ -118,7 +55,4 @@ const postsToShow = limit ? posts.slice(0, limit-2) : posts;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
 
-  .card:hover {
-
-  }
 </style>
