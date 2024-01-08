@@ -19,7 +19,6 @@ export async function getStaticPaths() {
 const {entry, group} = Astro.props;
 const {Content, headings} = await entry.render();
 const h2Headings = headings.filter(h => h.depth === 2);
-
 const articles = (await getCollection(group));
 const path = removeTrailingSlash(Astro.url.pathname);
 const groupName = ARTICLE_GROUPS.find(g => g[0] === group)[1];

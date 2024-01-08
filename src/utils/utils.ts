@@ -4,5 +4,5 @@ export const isSSR = () => {
 };
 
 export const removeTrailingSlash = (url: string | URL) => {
-  return url.toString().replace(/\/+$/, '');
+  return url.toString().replace(/\/+$/, '').replace(/(\.html)$/, '');
 };
