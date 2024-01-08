@@ -1,6 +1,6 @@
 import {CoverImages} from '../utils/coverImages';
 
-export const TOOLS = [
+export const PROJECTS = [
   {
     title: 'Offering Inspiration',
     desc: ['Built using Astro and web components.'],

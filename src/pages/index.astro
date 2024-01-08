@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RandomBits from "../components/home/RandomBits";
 import ArticleList from "../components/article/ArticleList.astro";
-import ToolList from "../components/ToolList.astro";
+import ToolList from "../components/ProjectList.astro";
 import Hero from "../components/home/Hero.astro";
 ---
 
@@ -11,7 +11,7 @@ import Hero from "../components/home/Hero.astro";
   <div class="mx-5 md:mx-10 mb-20">
     <h1 class="text-center">Recent Projects</h1>
     <ToolList limit={2}/>
-    <a class="button" href="/tools">See All Projects</a>
+    <a class="button" href="/projects">See All Projects</a>
 
     <h1 class="mt-30 text-center">Articles</h1>
     <ArticleList/>
