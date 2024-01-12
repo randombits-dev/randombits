@@ -1,8 +1,7 @@
 ---
-import {removeTrailingSlash} from "../../utils/utils";
+import {getPathEnd} from "../../utils/utils";
 import {getCollection} from 'astro:content';
 import BlogSidebar from "../../layouts/BlogSidebar.astro";
-import CardRow from "../../components/CardRow.astro";
 import ArticleTOC from "../../components/article/ArticleTOC";
 import {getCollectionSortedByOrder} from "../../utils/articleUtils";
 
@@ -17,7 +16,7 @@ const {entry} = Astro.props;
 const {Content, headings} = await entry.render();
 
 const articles = await getCollectionSortedByOrder('standard-notes');
-const path = removeTrailingSlash(Astro.url.pathname);
+const path = getPathEnd(Astro.url.pathname);
 const h2Headings = headings.filter(h => h.depth === 2);
 
 ---
@@ -28,7 +27,7 @@ const h2Headings = headings.filter(h => h.depth === 2);
         <h2>Further Reading</h2>
         {
             articles.map(article => {
-                const showLink = !path.endsWith(article.slug);
+                const showLink = path !== article.slug;
                 if (showLink) {
                     return <a href={article.slug} class="nav card-row">
                       <div>

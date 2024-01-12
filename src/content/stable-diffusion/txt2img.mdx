@@ -1,12 +1,14 @@
 ---
-title: "txt2img"
-metaTitle: "txt2img api guide for automatic1111"
+title: "Text-to-Image API"
+metaTitle: "Text to Image"
 desc: "A guide to using the automatic1111 txt2img endpoint"
 updated: 2024-01-09
 img: './4planets.jpg'
 order: 5
 hide: true
 ---
+
+
 
 
 import ParamTable from "@/components/automatic1111/ParamTable";
@@ -46,30 +48,97 @@ To increase the resolution of the generated image, add the following params:
 
 The `hr-scale` param multiplies the specified width and height (if the base resolution is 512x512, and the hr_scale is 2, then the output will be 1024x1024)
 
-## Control Net
+## Response
 
-If you have the Control Net extension installed, you can pass input images/poses using the following params:
+Your response will contain an array of output images, and the values of all the parameters it used to generate the images:
 
 ```json
 {
-  "alwayson_scripts": {
-    "controlnet": {
-      "args": [
-        {
-          "input_image": myBase64EncodedImage,
-          "model": "depth",
-          "module": "depth",
-          "resize_mode": "Envelope (Outer Fit)", // Scale to Fit (Inner Fit) | Just Resize
-          "control_mode": "ControlNet is more important" // Balanced | My prompt is more important
-        }
-      ]
-    }
+  "images": ["iVBORw0KGgoAAAANSUhEUgAAA..."],
+  "parameters": {
+    "enable_hr": false,
+    "denoising_strength": 0,
+    "firstphase_width": 0,
+    "firstphase_height": 0,
+    "hr_scale": 2.0,
+    "hr_upscaler": null,
+    "hr_second_pass_steps": 0,
+    "hr_resize_x": 0,
+    "hr_resize_y": 0,
+    "prompt": "Astronaut planting a flag on the moon",
+    "styles": null,
+    "seed": -1,
+    "subseed": -1,
+    "subseed_strength": 0,
+    "seed_resize_from_h": -1,
+    "seed_resize_from_w": -1,
+    "sampler_name": null,
+    "batch_size": 1,
+    "n_iter": 1,
+    "steps": 20,
+    "cfg_scale": 7.0,
+    "width": 512,
+    "height": 512,
+    "restore_faces": false,
+    "tiling": false,
+    "do_not_save_samples": false,
+    "do_not_save_grid": false,
+    "negative_prompt": "",
+    "eta": null,
+    "s_min_uncond": 0.0,
+    "s_churn": 0.0,
+    "s_tmax": null,
+    "s_tmin": 0.0,
+    "s_noise": 1.0,
+    "override_settings": null,
+    "override_settings_restore_afterwards": true,
+    "script_args": [],
+    "sampler_index": "Euler",
+    "script_name": null,
+    "send_images": true,
+    "save_images": false,
+    "alwayson_scripts": {}
   }
 }
 ```
 
+The number of images depends on what you specified for a batch size. The images are in base64 format, and therefore need to be decoded and saved to the file system as normal images:
 
-The model and module can be any of the models installed in the Control Net extension. The input_image should be a base64 encoded image.
+```js
+result.images.forEach((img, i) => {
+  const buf = Buffer.from(img, 'base64');
+  fs.writeFileSync(`image-${i}.png`, buf);
+});
+
+```
+
+## Full Example
+
+Here is a full javascript (nodejs) example:
+
+```js
+const result = await fetch('[server]:7860/sdapi/v1/txt2img', {
+  method: 'POST',
+  body: JSON.stringify({
+    prompt: "Sunset in the mountains, lake in front",
+    negative_prompt: "clouds, people",
+    sampler_name: "Euler",
+    steps: 20,
+    cfg_scale: 7,
+    height: 512,
+    width: 512
+  })
+}).then(res => res.json());
+result.images.forEach((img, i) => {
+  const buf = Buffer.from(img, 'base64');
+  fs.writeFileSync(`image-${i}.png`, buf);
+});
+```
+
+
+## Control Net
+
+See the [ControlNet API](controlnet-api) guide for sending in a control input image
 
 ## Full List of params
 

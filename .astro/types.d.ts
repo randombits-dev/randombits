@@ -324,13 +324,6 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "stable-diffusion": {
-"all-params.mdx": {
-	id: "all-params.mdx";
-  slug: "all-params";
-  body: string;
-  collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
-} & { render(): Render[".mdx"] };
 "api.mdx": {
 	id: "api.mdx";
   slug: "api";

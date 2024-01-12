@@ -19,15 +19,14 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
 
     const handleClickHeading = (heading) => {
         setSelected(heading.slug);
-        // document.querySelector()
-        // document.querySelector(`a[href="#${heading.slug}"]`).classList.add('bg-header');
     };
 
     if (relatedPages) {
         return <nav aria-label="Table of Contents" class="card rb-article__nav" ref={el}>
             {
                 relatedPages.sort((a, b) => a.data.order - b.data.order).map(article => {
-                    const showLink = path.endsWith(article.slug);
+
+                    const showLink = path === article.slug;
                     if (showLink) {
                         return <><a class="font-bold"  aria-selected={!selected()} href={article.slug}>{article.data.toc || article.data.title}</a>
                             <div class="rb-article__sub-nav">
