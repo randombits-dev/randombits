@@ -1,4 +1,4 @@
-import { SYMBOLS } from "./data/locale-symbols";
+import {SYMBOLS} from "./data/locale-symbols";
 import LOCALE_LIST from "./data/list.json";
 
 function LocaleList() {
@@ -16,7 +16,6 @@ function LocaleList() {
   }
 
   return (
-    <div class="card-table">
       <table class="table-narrow">
         <thead>
           <tr>
@@ -30,7 +29,6 @@ function LocaleList() {
         </thead>
         <tbody>{LOCALE_LIST.map((locale) => renderRow(locale))}</tbody>
       </table>
-    </div>
   );
 }
 

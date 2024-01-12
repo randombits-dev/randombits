@@ -1,0 +1,135 @@
+---
+title: "API"
+metaTitle: "Using the Automatic1111 API | Stable Diffusion in the Cloud"
+desc: "A guide to using the Automatic1111 API to run stable diffusion from an app or a batch process"
+updated: 2024-01-09
+img: './4planets.jpg'
+order: 4
+---
+
+
+
+
+
+
+
+
+
+import ParamTable from "../../components/automatic1111/ParamTable";
+
+
+## Reasons to use the Automatic1111 API
+
+**1. Automated Processes**. You can create a script that generates images while you do other things. The script can randomize parameters to achieve different results. Or the script could go through a list of prompts and generates images for each prompt.
+
+**2. Building a client app**. Build and monetize an app that will generate images for other users.
+
+## Getting Started
+
+When you start Automatic1111, make sure to include the `--api` option. For example:
+
+```
+stable-diffusion-webui/webui.sh --listen --xformers --api
+```
+
+All endpoints are located at: `/sdapi/v1/*`. For example, `http://localhost:7860/sdapi/v1/txt2img`.
+
+The official api spec can be seen by going to `/docs` on your server, but there doesn't seem to
+
+[//]: # (## Endpoints)
+
+[//]: # ()
+[//]: # ([txt2img]&#40;txt2img&#41;)
+
+## txt2img
+
+Generate an image using a text prompt.
+
+> POST /sdapi/v1/txt2img
+
+### Basic Params
+
+Include these params in the body of your post request.
+
+```json
+{
+  "prompt": "Sunset in the mountains, lake in front",
+  "negative_prompt": "clouds, people",
+  "sampler_name": "Euler",
+  "steps": 20,
+  "cfg_scale": 7,
+  "height": 512,
+  "width": 512
+}
+```
+
+### Higher Resolution
+To increase the resolution of the generated image, add the following params:
+
+```json
+{
+  "enable_hr": true,
+  "hr_scale": 2,
+  "denoising_strength": 0.7,
+  "hr_second_pass_steps": 10,
+  "hr_upscaler": "R-ESRGAN"
+}
+```
+
+The `hr-scale` param multiplies the specified width and height (if the base resolution is 512x512, and the hr_scale is 2, then the output will be 1024x1024)
+
+[//]: # ()
+[//]: # (### Full list of params)
+
+[//]: # ()
+[//]: # (See the [full list of params]&#40;all-params#txt2img&#41;)
+
+### Output
+
+Your response will be simpler to the following:
+
+```json
+
+```
+
+The result will contain a list of output images. The number of images depends on what you specified for a batch size. The images are in base64 format, and therefore need to be decoded and saved to the file system as normal images:
+
+```js
+result.images.forEach((img, i) => {
+  const buf = Buffer.from(img, 'base64');
+  fs.writeFileSync(`image-${i}.png`, buf);
+});
+
+```
+
+### Full Javascript Example
+
+```js
+const result = await fetch('[server]:7860/sdapi/v1/txt2img', {
+  method: 'POST',
+  body: JSON.stringify({
+    prompt: "Sunset in the mountains, lake in front",
+    negative_prompt: "clouds, people",
+    sampler_name: "Euler",
+    steps: 20,
+    cfg_scale: 7,
+    height: 512,
+    width: 512
+  })
+}).then(res => res.json());
+result.images.forEach((img, i) => {
+  const buf = Buffer.from(img, 'base64');
+  fs.writeFileSync(`image-${i}.png`, buf);
+});
+```
+
+### Full List of Params
+
+<ParamTable type="txt2img"/>
+
+
+
+
+
+Description of each parameter:
+

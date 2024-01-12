@@ -1,9 +1,9 @@
 ---
-import {getCollectionSortedByOrder} from "../../utils/articleUtils";
+import {getCollectionSortedByOrder, getNonHiddenSortedByOrder} from "../../utils/articleUtils";
 
 const {collection, title, desc, url} = Astro.props;
 
-const articles = await getCollectionSortedByOrder(collection);
+const articles = await getNonHiddenSortedByOrder(collection);
 ---
 
 <div class="card overflow-hidden">

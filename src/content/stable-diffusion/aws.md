@@ -1,6 +1,6 @@
 ---
-title: "Running Automatic1111 in AWS"
-summary: "A full guide to running your own stable diffusion server on an EC2 instance in AWS"
+title: "Running in AWS"
+metaTitle: "Running Automatic1111 in AWS | Stable diffusion in the Cloud"
 desc: "A full guide to running your own stable diffusion server on an EC2 instance in AWS"
 updated: 2024-01-07
 img: './mtn-clouds.jpg'
@@ -33,14 +33,14 @@ If you use **SSH client**, you can follow the provided directions, using the Key
 
 Using the command line, we need to install GPU drivers and python libraries before we can run Automatic1111. It is recommended to run all these commands from your home directory.
 
-**Install GPU Driver**
+### Install GPU Driver
 ```
 wget https://raw.githubusercontent.com/GoogleCloudPlatform/compute-gpu-installation/main/linux/install_gpu_driver.py
 
 sudo python3 install_gpu_driver.py
 ```
 
-**Install Cuda (Nvidia GPU Software)**
+### Install Cuda (Nvidia GPU Software)
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
 
@@ -51,7 +51,9 @@ sudo apt-get update
 sudo apt-get -y install cuda
 ```
 
-Install python libraries:
+There is no need to restart services, you can cancel any prompts that appear.
+
+### Install python libraries
 
 ```
 sudo apt-get update
@@ -63,7 +65,10 @@ sudo apt-get install -y python3-opencv
 sudo apt install --no-install-recommends -y google-perftools
 ```
 
-Download the Automatic1111 repo:
+There is no need to restart services, you can cancel any prompts that appear.
+
+### Download the Automatic1111 repo
+
 ```
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 ```

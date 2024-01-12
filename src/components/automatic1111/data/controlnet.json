@@ -1,0 +1,82 @@
+{
+  "model": {
+    "title": "Name of the installed model",
+    "type": "string",
+    "default": "none"
+  },
+  "module": {
+    "title": "Name of the control type to use. One of",
+    "type": "string",
+    "default": "none"
+  },
+  "input_image": {
+    "title": "Base64 encoded input image",
+    "type": "string",
+    "default": "none"
+  },
+  "resize_mode": {
+    "title": "If the input image does not match the resolution of the output image, how should it handle it.",
+    "type": "string",
+    "values": [
+      "Envelope (Outer Fit)",
+      "Scale to Fit (Inner Fit)",
+      "Just Resize"
+    ],
+    "default": "Just Resize"
+  },
+  "weight": {
+    "title": "The weight of the control image",
+    "type": "number",
+    "default": 1.0
+  },
+  "control_mode": {
+    "title": "How much impact the control image should have on the generated image",
+    "type": "string",
+    "values": [
+      "Balanced",
+      "My prompt is more important",
+      "ControlNet is more important"
+    ],
+    "default": "Balanced"
+  },
+  "pixel_perfect": {
+    "title": "Enables the Pixel Perfect preprocessor",
+    "type": "boolean",
+    "default": false
+  },
+  "mask": {
+    "title": "Base64 encoded mask image",
+    "type": "string",
+    "default": "none"
+  },
+  "lowvram": {
+    "title": "Whether to compensate for low VRAM",
+    "type": "boolean",
+    "default": false
+  },
+  "processor_res": {
+    "title": "The resolution to use for the preprocessor",
+    "type": "number",
+    "default": 64
+  },
+  "threshold_a": {
+    "title": "The first preprocessor parameter, if applicable",
+    "type": "number",
+    "default": 64
+  },
+  "threshold_b": {
+    "title": "The second preprocessor parameter, if applicable",
+    "type": "number",
+    "default": 64
+  },
+  "guidance_start": {
+    "title": "Ratio of generation where ControlNet starts to have an effect",
+    "type": "number",
+    "default": 0.0
+  },
+  "guidance_end": {
+    "title": "Ratio of generation where ControlNet stops having an effect",
+    "type": "number",
+    "default": 1.0
+  }
+}

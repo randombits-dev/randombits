@@ -1,4 +1,4 @@
-import { SYMBOLS } from "./data/locale-symbols";
+import {SYMBOLS} from "./data/locale-symbols";
 import UNIQUE_DATA from "./data/unique.json";
 
 const patterns = Object.keys(UNIQUE_DATA.pattern)
@@ -19,7 +19,6 @@ const showExample = (values) => {
 
 function UniquePatterns() {
   return (
-    <div class="card-table">
       <table>
         <thead>
           <tr>
@@ -44,7 +43,6 @@ function UniquePatterns() {
           })}
         </tbody>
       </table>
-    </div>
   );
 }
 

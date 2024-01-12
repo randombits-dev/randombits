@@ -1,6 +1,6 @@
 ---
-title: "Running Automatic1111 in Google Cloud"
-summary: "A full guide to running your own stable diffusion server using Google Cloud Compute Engine"
+title: "Running in Google Cloud"
+metaTitle: "Running Automatic1111 in Google Cloud | Stable Diffusion in the Cloud"
 desc: "A full guide to running your own stable diffusion server using Google Cloud Compute Engine"
 updated: 2023-05-15
 img: './mtn-clouds.jpg'

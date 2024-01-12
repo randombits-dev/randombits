@@ -26,16 +26,13 @@
     margin: 0;
   }
 
-  .card-table {
-    margin-left: -60px;
-    margin-right: -60px;
-  }
-
   table {
     /*table-layout: fixed;*/
-    width: 100%;
+    width: calc(100% + 120px);
     border-collapse: collapse;
     border-spacing: 0;
+    margin-left: -60px;
+    margin-right: -60px;
   }
 
   table td:first-child,
@@ -64,6 +61,10 @@
     /*width: 100%;*/
   }
 
+  .break-word td {
+    word-wrap: break-word;
+  }
+
 
   iframe {
     width: calc(100% + 80px);
@@ -75,6 +76,10 @@
 
   li {
     padding: 8px 0;
+  }
+
+  ul.tight li {
+    padding: 0;
   }
 
   img {

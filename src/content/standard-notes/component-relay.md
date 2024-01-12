@@ -3,6 +3,7 @@ title: "ComponentRelay API"
 desc: "The old guide for creating your own Standard Notes editor extensions, using the ComponentRelay API"
 img: './creating-extensions.jpg'
 order: 10
+hide: true
 ---
 
 > Note: I highly recommend following the [new guide](/standard-notes/creating-extensions) for the best experience creating extensions, which uses the API I created. But if you want to use one of the official APIs, read on.

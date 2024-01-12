@@ -1,0 +1,78 @@
+---
+title: "txt2img"
+metaTitle: "txt2img api guide for automatic1111"
+desc: "A guide to using the automatic1111 txt2img endpoint"
+updated: 2024-01-09
+img: './4planets.jpg'
+order: 5
+hide: true
+---
+
+
+import ParamTable from "@/components/automatic1111/ParamTable";
+
+The txt2img endpoint will generate an image based on a text prompt. This is the most commonly used endpoint.
+
+
+## Basic Example
+
+> POST /sdapi/v1/txt2img
+
+```json
+{
+  "prompt": "Sunset in the mountains, lake in front",
+  "negative_prompt": "clouds, people",
+  "sampler_name": "Euler",
+  "steps": 20,
+  "cfg_scale": 7,
+  "height": 512,
+  "width": 512,
+  "seed": -1
+}
+```
+
+## High Resolution
+To increase the resolution of the generated image, add the following params:
+
+```json
+{
+  "enable_hr": true,
+  "hr_scale": 2,
+  "denoising_strength": 0.7,
+  "hr_second_pass_steps": 10,
+  "hr_upscaler": "R-ESRGAN"
+}
+```
+
+The `hr-scale` param multiplies the specified width and height (if the base resolution is 512x512, and the hr_scale is 2, then the output will be 1024x1024)
+
+## Control Net
+
+If you have the Control Net extension installed, you can pass input images/poses using the following params:
+
+```json
+{
+  "alwayson_scripts": {
+    "controlnet": {
+      "args": [
+        {
+          "input_image": myBase64EncodedImage,
+          "model": "depth",
+          "module": "depth",
+          "resize_mode": "Envelope (Outer Fit)", // Scale to Fit (Inner Fit) | Just Resize
+          "control_mode": "ControlNet is more important" // Balanced | My prompt is more important
+        }
+      ]
+    }
+  }
+}
+```
+
+
+The model and module can be any of the models installed in the Control Net extension. The input_image should be a base64 encoded image.
+
+## Full List of params
+
+This is the full list of params that can be used for the `txt2img` endpoint:
+
+<ParamTable type="txt2img"/>

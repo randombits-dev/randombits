@@ -1,10 +1,9 @@
-import { getNumerals } from "./data/numbering-systems";
+import {getNumerals} from "./data/numbering-systems";
 
 function NumeralSystems({ list }) {
   const digits = getNumerals(list);
 
   return (
-    <div class="card-table">
       <table class="table-narrow">
         <thead>
           <tr>
@@ -41,7 +40,6 @@ function NumeralSystems({ list }) {
           })}
         </tbody>
       </table>
-    </div>
   );
 }
 

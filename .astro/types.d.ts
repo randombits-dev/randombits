@@ -165,11 +165,11 @@ declare module 'astro:content' {
 			? {
 					collection: C;
 					slug: ValidContentEntrySlug<C>;
-			  }
+				}
 			: {
 					collection: C;
 					id: keyof DataEntryMap[C];
-			  }
+				}
 	>;
 	// Allow generic `string` to avoid excessive type errors in the config
 	// if `dev` is not running to update as you edit.
@@ -188,13 +188,6 @@ declare module 'astro:content' {
 "astro_remote_apps.md": {
 	id: "astro_remote_apps.md";
   slug: "astro_remote_apps";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
-"automatic1111-api.md": {
-	id: "automatic1111-api.md";
-  slug: "automatic1111-api";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -331,6 +324,20 @@ declare module 'astro:content' {
 } & { render(): Render[".mdx"] };
 };
 "stable-diffusion": {
+"all-params.mdx": {
+	id: "all-params.mdx";
+  slug: "all-params";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".mdx"] };
+"api.mdx": {
+	id: "api.mdx";
+  slug: "api";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".mdx"] };
 "aws.md": {
 	id: "aws.md";
   slug: "aws";
@@ -338,6 +345,13 @@ declare module 'astro:content' {
   collection: "stable-diffusion";
   data: InferEntrySchema<"stable-diffusion">
 } & { render(): Render[".md"] };
+"controlnet-api.mdx": {
+	id: "controlnet-api.mdx";
+  slug: "controlnet-api";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".mdx"] };
 "google-cloud.md": {
 	id: "google-cloud.md";
   slug: "google-cloud";
@@ -352,6 +366,13 @@ declare module 'astro:content' {
   collection: "stable-diffusion";
   data: InferEntrySchema<"stable-diffusion">
 } & { render(): Render[".md"] };
+"txt2img.mdx": {
+	id: "txt2img.mdx";
+  slug: "txt2img";
+  body: string;
+  collection: "stable-diffusion";
+  data: InferEntrySchema<"stable-diffusion">
+} & { render(): Render[".mdx"] };
 };
 "standard-notes": {
 "component-relay.md": {

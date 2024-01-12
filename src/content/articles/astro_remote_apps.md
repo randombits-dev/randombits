@@ -1,6 +1,6 @@
 ---
 title: "Micro frontends in astro with remote loading"
-summary: ""
+desc: ""
 updated: 2023-01-01
 draft: true
 ---
