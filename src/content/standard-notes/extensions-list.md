@@ -1,13 +1,13 @@
 ---
-title: "Extensions created by Random Bits"
-desc: "A list of Standard Notes extensions that were created by Random Bits"
+title: "Standard Notes Plugin Demos"
+desc: "A collection of plugins and themes for Standard Notes"
 img: './creating-extensions.jpg'
 order: 5
 ---
 
 ## Cosmos
 
-* An editor extension marketplace for installing new editors more easily
+* An editor plugin marketplace for installing new editors more easily
 * Split a note into multiple "areas" - each area can use a different editor 
 
 https://github.com/nienow/cosmos

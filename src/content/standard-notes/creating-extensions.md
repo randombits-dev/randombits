@@ -62,20 +62,20 @@ The remaining properties are either edited outside of our editor (like the title
 
 ## Standard Notes API
 
-An plugin communicates back and forth with Standard Notes to load and save the note. I highly recommend using the API that I wrote: https://github.com/nienow/sn-plugin-api, which greatly simplifies the process of creating plugins. 
+An plugin communicates back and forth with Standard Notes to load and save the note. I highly recommend using the API that I wrote: https://github.com/nienow/sn-extension-api, which greatly simplifies the process of creating plugins. 
 
 If you want to use one of the official APIs instead, see the article on the [ComponentRelay API](/standard-notes/component-relay)
 
 Install the API:
 
 ```
-npm install sn-plugin-api
+npm install sn-extension-api
 ```
 
 Basic usage with a text area:
 
 ```typescript
-import snApi from "sn-plugin-api";
+import snApi from "sn-extension-api";
 
 // only call this once - it will establish communication with standard notes
 snApi.initialize();
@@ -92,7 +92,7 @@ document.getElementById('my-text-area').addEventListener('input', (e) => {
 });
 ```
 
-See the [full API documentation](https://github.com/nienow/sn-plugin-api)
+See the [full API documentation](https://github.com/nienow/sn-extension-api)
 
 ## Styling using Themes
 
@@ -100,7 +100,7 @@ Since Standard Notes has several different built-in themes, and the option to in
 we need our plugin to use these themes. We first need to import the base theme variables into our root CSS file:
 
 ```css
-@import 'sn-plugin-api/dist/sn.min.css';
+@import 'sn-extension-api/dist/sn.min.css';
 ```
 
 This will include all the default CSS theme variables. Here is a condensed list of the variables you might use:

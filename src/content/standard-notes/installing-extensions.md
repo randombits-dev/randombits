@@ -71,7 +71,7 @@ The plugin descriptor is a JSON file that is used to install a plugin. It tells 
 ```
 {
   "identifier": "dev.randombits.template",
-  "name": "plugin Template",
+  "name": "Extension Template",
   "content_type": "SN|Component",
   "area": "editor-editor",
   "version": "1.0.0",

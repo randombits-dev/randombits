@@ -39,8 +39,8 @@ export const PROJECTS = [
     ]
   },
   {
-    title: 'Standard Notes Extensions',
-    desc: 'A collection of extensions and themes for Standard Notes',
+    title: 'Standard Notes Plugins',
+    desc: 'A collection of plugins and themes for Standard Notes',
     img: CoverImages.snExtensions,
     links: [
       ['view list', '/standard-notes/extensions-list']
