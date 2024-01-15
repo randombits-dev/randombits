@@ -2,6 +2,14 @@ import {CoverImages} from '../utils/coverImages';
 
 export const PROJECTS = [
   {
+    title: 'Interval Timer',
+    desc: ['A simple interval timer app for HIIT workouts. Deployed to the Google Play Store and F-Droid.'],
+    img: CoverImages.intervalTimer,
+    links: [
+      ['github', 'https://github.com/randombits-dev/interval-timer']
+    ]
+  },
+  {
     title: 'Offering Inspiration',
     desc: ['Built using Astro and web components.'],
     img: CoverImages.offeringInspiration,
@@ -54,12 +62,5 @@ export const PROJECTS = [
       ['app', '/tools/snowrunner'],
       ['github', 'https://github.com/randombits-dev/snowrunner-save-editor'],
     ]
-  },
-  {
-    title: 'Printable Daily Schedule',
-    desc: 'Some people still like a paper schedule. This app generates a daily planner for appointments. One page a day and easily printable.',
-    img: CoverImages.schedule,
-    links: [['app', 'https://schedule.randombits.dev'],
-      ['github', 'https://github.com/nienow/daily-schedule']]
   }
 ];

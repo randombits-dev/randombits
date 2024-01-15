@@ -7,6 +7,7 @@ import heroicus from '../assets/covers/heroicus.png';
 import fontable from '../assets/covers/fontable.png';
 import microStorage from '../assets/covers/micro-storage.png';
 import offeringInspiration from '../assets/covers/offering-inspiration.png';
+import intervalTimer from '../assets/covers/interval-timer.png';
 
 export const CoverImages = {
   creatingExtensions,
@@ -17,5 +18,6 @@ export const CoverImages = {
   fontable,
   snExtensions,
   microStorage,
-  offeringInspiration
+  offeringInspiration,
+  intervalTimer
 };
