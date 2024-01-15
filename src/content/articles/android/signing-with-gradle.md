@@ -3,6 +3,7 @@ title: "Signing an Android apk release with Gradle"
 desc: "A quick guide to signing an apk release with Gradle"
 updated: 2024-01-15
 tags: ["android"]
+hide: true
 ---
 
 ## Generating a keystore

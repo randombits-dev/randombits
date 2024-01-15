@@ -3,6 +3,7 @@ title: "Signing an Android apk with the command line"
 desc: "A quick guide to signing an apk release with the command line"
 updated: 2024-01-15
 tags: ["android"]
+hide: true
 ---
 
 ## Generating a keystore
