@@ -185,6 +185,27 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"articles": {
+"android/fdroid.md": {
+	id: "android/fdroid.md";
+  slug: "android/fdroid";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"android/signing-with-cmd.md": {
+	id: "android/signing-with-cmd.md";
+  slug: "android/signing-with-cmd";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"android/signing-with-gradle.md": {
+	id: "android/signing-with-gradle.md";
+  slug: "android/signing-with-gradle";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "astro_remote_apps.md": {
 	id: "astro_remote_apps.md";
   slug: "astro_remote_apps";
