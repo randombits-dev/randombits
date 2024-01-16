@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^2.0.4",
     "@astrojs/sitemap": "^3.0.4",
-    "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/solid-js": "^4.0.1",
     "@astrojs/tailwind": "^5.1.0",
     "@unocss/preset-mini": "^0.58.3",
     "@unocss/preset-wind": "^0.58.3",
