@@ -15,6 +15,9 @@ export default defineConfig({
     syntaxHighlight: 'prism',
     remarkPlugins: [remarkCodeTitles]
   },
+  devToolbar: {
+    enabled: false
+  },
   integrations: [mdx(), solid(), UnoCSS(), sitemap(), robots({})],
   build: {
     assets: '_astro',

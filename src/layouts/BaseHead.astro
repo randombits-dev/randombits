@@ -28,11 +28,3 @@ const {title, description, img} = Astro.props;
 <meta name="twitter:image" property="og:image" content={'https://randombits.dev' + img}/>}
 <meta property="og:url" content={removeTrailingSlash(Astro.url)}/>
 <link rel="canonical" href={removeTrailingSlash(Astro.url)} />
-<script is:inline>
-  const initialTheme = localStorage.getItem("theme") || 'base';
-  if (initialTheme.startsWith('dark-')) {
-    document.documentElement.classList.add(`theme-${initialTheme}`, `theme-dark`);
-  } else {
-    document.documentElement.classList.add(`theme-${initialTheme}`);
-  }
-</script>

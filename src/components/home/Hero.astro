@@ -1,18 +1,15 @@
 ---
 
 ---
-<div class="bg-base h-[500px] sm:h-[800px] text-center">
-  <div class="relative h-[500px] sm:h-[800px] z-10 flex flex-col items-center">
-    <div class="flex-1 text-primary flex items-center">
-      <div class="">
-        <div class="rb-hero-text text-[40px] sm:text-[75px] md:text-[100px] lg:text-[150px] font-bold leading-tight"
-             style="font-family: Righteous;">random bits
-        </div>
-        <div class="rb-hero-sub text-4xl md:text-6xl lg:text-[80px] px-6 font-bold leading-tight" style="font-family: Righteous;">software
-          engineering
-        </div>
-
-        <a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>
+<div class="hero h-[500px] sm:h-[600px] text-center">
+  <div class="relative h-[500px] sm:h-[500px] z-10 flex flex-col items-center">
+    <div class="flex-1 flex items-center">
+      <div class="leading-[0.8]" style="font-family: Righteous;">
+        <div class="text-[50px]" >random</div>
+        <div class="text-[100px]">bits</div>
+        <div class="text-[40px] px-6 leading-[0.8]">software</div>
+        <div class="text-[32px] px-6 leading-[0.8]">engineering</div>
+        <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
 
       </div>
     </div>
@@ -21,8 +18,14 @@
 
 <style>
   @media screen and (min-width: 768px) {
+    .hero {
+    }
     .rb-hero-text {
-      text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 15px 15px 0 var(--hero-shadow);
+      color: #d5cdcd;
+      //background: linear-gradient(90deg, #e9c46a, #f4a261);
+      //-webkit-background-clip: text;
+      //-webkit-text-fill-color: transparent;
+      text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 12px 12px 0 var(--hero-shadow);
     }
 
     .rb-hero-sub {

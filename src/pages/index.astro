@@ -18,7 +18,7 @@ import Hero from "../components/home/Hero.astro";
   </div>
 
   <div aria-disabled="true"
-       class="rb-background-bits absolute px-1 py-1 top-0 h-[500px] sm:h-[800px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
+       class="rb-background-bits absolute px-1 py-1 top-0 h-[500px] sm:h-[500px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
     <RandomBits client:only="solid-js"/>
   </div>
 
@@ -27,11 +27,16 @@ import Hero from "../components/home/Hero.astro";
 <style>
 
   .rb-background-bits {
-    color: var(--landing-bits);
+    margin-top: 55px;
+    //background: linear-gradient(var(--landing-bits) 25% 75%, var(--back-0));
+    background: radial-gradient(var(--back-0) 20%, var(--landing-bits)), linear-gradient(var(--landing-bits) 50%, var(--back-0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Courier New", serif;
     font-weight: 900;
     letter-spacing: -3px;
     border-bottom: 1px solid var(--landing-bits);
+
   }
 
   .list-container {

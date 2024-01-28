@@ -1,28 +1,20 @@
 :root {
-  --color-primary: var(--back-header);
-  --landing-bits: #333;
   --hero-shadow: var(--color-back);
-  --primary-contrast: #987240;
-  --back-0: #ffe9c2;
-  --back-1: var(--back-0);
-  --back-2: var(--back-0);
-  --back-3: var(--back-0);
-  --back-header: #fafafa;
-  --back-content: #f5f5f5;
-  --back-contrast: #e1eefe;
   --back-code: #fafafa;
-  --back-btn: var(--back-header);
-  --color-content: #444;
   --color-back: var(--color-content);
   --color-hero: var(--color-back);
-  --color-header: var(--color-0);
-  --color-btn: var(--color-header);
-  --border-radius-1: 10px;
-  --border-radius-2: 20px;
+  --back-contrast: #ced4da;
+  --back-content: #e7ebef;
+  --back-header: #014876;
+  --back-btn: var(--back-content);
+  --color-content: #444;
+  --color-header: #eee;
+  --color-btn: var(--color-content);
+  --border-radius-1: 5px;
+  --border-radius-2: 10px;
   --border-width: 1px;
-  --border-width-light: 1px;
   --border-color: #444;
-  --border-color-light: var(--border-color);
+  --border-color-light: #aaa;
   --font-1: 'Righteous', cursive;
   --font-2: 'Plus Jakarta Sans', sans-serif;
   --font-size-text: 16px;
@@ -31,6 +23,12 @@
   --letter-spacing-text: 0px;
   --font-size-caption: 15px;
   --shadow-color: var(--border-color);
+  --landing-bits: #c4c7ca;
+  --primary-contrast: #464b52;
+  --color-primary: #2e6dfb;
+  --back-0: #e7ebef;
+  --back-1: #c1c7ce;
+  --back-2: #e7ebef;
 }
 
 .theme-dark {
@@ -64,7 +62,7 @@
   --back-2: #333;
   --back-content: #eee;
   --back-contrast: #aaa;
-  --back-header: #2483d5;
+  --back-header: linear-gradient(90deg, #e9c46a, #f4a261);
   --primary-contrast: #d9b054;
   --color-back: #333;
   --color-content: #444;
