@@ -1,25 +1,32 @@
 ---
 
+import Logo from "../Logo.astro";
+import Logo2 from "../Logo2.astro";
+
 ---
-<div class="hero h-[500px] sm:h-[600px] text-center">
-  <div class="relative h-[500px] sm:h-[500px] z-10 flex flex-col items-center">
-    <div class="flex-1 flex items-center">
-      <div class="leading-[0.8]" style="font-family: Righteous;">
-        <div class="text-[50px]" >random</div>
-        <div class="text-[100px]">bits</div>
-        <div class="text-[40px] px-6 leading-[0.8]">software</div>
-        <div class="text-[32px] px-6 leading-[0.8]">engineering</div>
+<div class="hero h-[500px] sm:h-[600px] text-center bg-header">
+  <div class="relative h-[500px] sm:h-[500px] z-1 items-center pt-[150px]">
+    <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 rounded-5 border-solid" style="font-family: Righteous;">
+        <div class="text-[75px]" >random</div>
+        <div class="text-[150px]">bits</div>
+        <div class="text-[60px] px-6 leading-[0.8]">software</div>
+        <div class="text-[48px] px-6 leading-[0.8]">engineering</div>
         <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
 
-      </div>
+    </div>
+    <div>
+      <!--<Logo width="200" height="200"/>-->
     </div>
   </div>
 </div>
 
 <style>
+  .hero {
+    //background-image: url('/textures/green-dust-and-scratches.png');
+    color: white;
+  }
+
   @media screen and (min-width: 768px) {
-    .hero {
-    }
     .rb-hero-text {
       color: #d5cdcd;
       //background: linear-gradient(90deg, #e9c46a, #f4a261);

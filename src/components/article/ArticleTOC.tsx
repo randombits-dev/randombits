@@ -18,42 +18,44 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
     });
 
     const handleClickHeading = (heading) => {
-        setSelected(heading.slug);
+        // setSelected(heading.slug);
     };
 
     if (relatedPages) {
-        return <nav aria-label="Table of Contents" class="card rb-article__nav" ref={el}>
+        return <nav aria-label="Table of Contents" class="rb-article__nav" ref={el}>
             {
                 relatedPages.sort((a, b) => a.data.order - b.data.order).map(article => {
 
                     const showLink = path === article.slug;
                     if (showLink) {
-                        return <><a class="font-bold"  aria-selected={!selected()} href={article.slug}>{article.data.toc || article.data.title}</a>
+                      return <div><div class="font-bold" aria-selected={!selected()}>{article.data.toc || article.data.title}</div>
                             <div class="rb-article__sub-nav">
                                 {
-                                    headings.map(heading => {
+                                    headings.map((heading, i) => {
                                         const isSelected = selected() === heading.slug;
-                                        return <a class="text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
+                                      return <div><a class="" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{i+1}. {heading.text}</a></div>
                                     })
                                 }
                             </div>
-                        </>;
+                        </div>;
                     } else {
-                        return <a class="font-bold" href={article.slug}>{article.data.toc || article.data.title}</a>;
+                      return <div><a class="font-bold" href={article.slug}>{article.data.toc || article.data.title}</a></div>;
                     }
                 })
             }
 
         </nav>
     } else {
-        return <nav aria-label="Article Sections" class="card rb-article__nav" ref={el}>
+        return <div class="rb-article__nav" ref={el}>
+          {/*<div class="font-bold">Publishing an article on Fdroid</div>*/}
+          <nav aria-label="Article Sections" >
             {
                 headings.map(heading => {
                     const isSelected = selected() === heading.slug;
-                    return <a class="text-[16px]" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a>
+                  return <div><a href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a></div>
                 })
             }
-        </nav>
+        </nav></div>
     }
 
 

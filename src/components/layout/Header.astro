@@ -2,15 +2,14 @@
 import Logo from "../Logo.astro";
 ---
 
-<header class="mt-[-20px] text-center relative z-10 border-b border-b-solid bg-base">
+<header class="mt-[-20px] relative z-10 border-b bg-header color-header-text">
 
   <nav aria-label="Main" style="font-family: Righteous;"
-       class="text-xl sm:text-2xl pt-5 rounded-b-xl overflow-hidden sm:inline-flex items-center">
-    <a class="px-6 block sm:inline" href="/" aria-label="Home Page">
-      <Logo includeDigits={true} width={45} height={45}/>
-    </a>
+       class="block max-w-[1000px] mx-auto flex text-xl sm:text-xl pt-5 rounded-b-xl overflow-hidden items-center">
+    <a class="flex-1 px-6 block sm:inline " href="/" aria-label="Home Page">randombits.dev</a>
     <a href="/articles" class="header-link">articles</a> /
     <a href="/projects" class="header-link">projects</a> /
     <a href="/about" class="header-link">about</a>
   </nav>
 </header>
+

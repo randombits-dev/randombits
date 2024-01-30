@@ -4,21 +4,19 @@ const {
     group
 } = Astro.props;
 ---
-    <div class="card-contents">
-        <div class="text-center">
+    <div class="">
+        <div class="">
 
-            {group && <h2>{group}</h2>}
-            <h1>{title}</h1>
-            <p class="italic mx-10 md:mx-30">{desc}</p>
-            {updated && <div class="text-2xl italic">{updated.toLocaleDateString('en-US', {
+            {group && <h2 class="my-0">{group}</h2>}
+            <h1 class="my-0">{title}</h1>
+            <p>{desc}</p>
+            {updated && <div class="italic">Last updated on {updated.toLocaleDateString('en-US', {
                 month: 'long',
                 day: 'numeric',
                 year: 'numeric'
             })}</div>}
         </div>
     </div>
-
-    <hr/>
 
 <style>
     h2 {

@@ -28,25 +28,6 @@ export const PROJECTS = [
     ]
   },
   {
-    title: 'Micro Storage',
-    desc: ['Entered into the Chainlink Constellation hackathon. A cloud storage platform that is powered by NFT subscriptions.',
-      'Built using Astro, React, Chainlink, and Cloudflare Workers.'],
-    img: CoverImages.microStorage,
-    links: [
-      ['github', 'https://github.com/randombits-dev/micro-storage'],
-      ['devpost', 'https://devpost.com/software/micro-storage']
-    ]
-  },
-  {
-    title: 'hērōicus',
-    desc: ['Winner of the Fantom Hackathon 2023 Q2', 'Cloud computing using NFT Rentals. Powered by the Fantom Network and AWS.'],
-    img: CoverImages.heroicus,
-    links: [
-      ['github', 'https://github.com/randombits-dev/heroicus'],
-      ['devpost', 'https://devpost.com/software/heroicus'],
-    ]
-  },
-  {
     title: 'Standard Notes Plugins',
     desc: 'A collection of plugins and themes for Standard Notes',
     img: CoverImages.snExtensions,

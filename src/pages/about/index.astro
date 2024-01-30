@@ -1,16 +1,38 @@
 ---
-import HtmlLayout from '../../layouts/HtmlLayout.astro';
-import AboutMe from '../../snippits/about-me.md'
-import QA from '../../snippits/qa.md'
+import * as AboutMe from '../../snippits/about-me.md'
 import '../../styles/md.scss';
+import BlogSidebar from "../../layouts/BlogSidebar.astro";
+import { getEntry } from 'astro:content';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogHeader from "../../layouts/BlogHeader.astro";
+import ArticleTOC from "../../components/article/ArticleTOC";
+
+import '../../styles/article-container.scss';
+import '../../styles/article-body.scss';
+import '../../styles/prism-custom.scss';
+
+// const aboutMe = await getEntry('snippets', 'grace-hopper');
+
+console.log(AboutMe);
+
 ---
-<HtmlLayout title="About Me" description="My CV and experience.">
+<BaseLayout title="About Me" description="My CV and experience.">
   <h1 class="text-center">About Me</h1>
-  <div class="max-w-[1000px] mx-auto">
-  <div class="card card-contents">
-    <AboutMe/>
+  <div class="rb-article">
+    <aside class="rb-article__sidebar">
+      <ArticleTOC slot="sidebar" client:load path={'/'} headings={AboutMe.getHeadings()}/>
+
+    </aside>
+
+    <section>
+      <AboutMe.Content></AboutMe.Content>
+    </section>
+
+    <aside class="rb-article__sidebar">
+
+    </aside>
   </div>
-</HtmlLayout>
+</BaseLayout>
 
 <style>
   h1 {
