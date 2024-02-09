@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home/Hero.astro";
+import WebAppDesign from "../snippits/web-app-design.md";
+import WebAppArch from "../snippits/web-app-arch.md";
 ---
 
 <BaseLayout title="Web Application Development" description="">
@@ -8,7 +10,11 @@ import Hero from "../components/home/Hero.astro";
     <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
       <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 rounded-5 border-solid" style="font-family: Righteous;">
         <div class="color-header-text text-[150px]"></div>
-        <div class="color-header-text text-6xl">Services</div>
+        <div class="color-header-text text-2xl">Services</div>
+        <!--<div class="color-header-text text-xl mt-5">Turn your idea into reality.</div>-->
+        <div class="color-header-text text-[50px]">Turn your</div>
+        <div class="color-header-text text-[45px]">ideas into</div>
+        <div class="color-header-text text-[75px]">reality</div>
 
       </div>
       <div>
@@ -21,23 +27,22 @@ import Hero from "../components/home/Hero.astro";
   <div class="container items-center flex">
     <h1 class="text-[150px]"><b>01</b></h1>
     <h1 class="text-6xl ml-5">Web app <br/>development</h1>
+
+    <p></p>
   </div>
 
-  <div class="max-w-[1000px] mx-auto grid grid-cols-2 gap-10">
-    <div>
-      <h3>Native Mobile Apps</h3>
-      <p class="text-lg">Our portfolio features a myriad of different web apps. Modern web development projects require more interactivity and responsiveness than ever before. When looking for developers, don’t settle for a web development company that can’t provide a large range of services. Unfortunately, most web development companies don’t offer comprehensive web development services. When you work with the development team at Koombea, you get every development service you will ever need in one place.</p>
+  <div class="container grid grid-cols-2 gap-10">
+    <div class="border-t-5 border-t-solid">
+      <WebAppDesign/>
     </div>
-    <div>
-      <h3>Hybrid Mobile Apps</h3>
-      <p class="text-lg">Our comprehensive approach to software development allows you to merge development and design into a single process to create a seamless product that will help your organization stand out from your competition. Save time, increase your ROI, and get to market sooner when you choose an app development company that can do it all.</p>
-
+    <div class="border-t-5 border-t-solid">
+      <WebAppArch/>
     </div>
-    <div>
+    <div class="border-t-5 border-t-solid">
       <h3>Cordova Mobile Apps</h3>
       <p class="text-lg">The design of your web application plays an important role in its overall success. Instead of hiring a web app design company to utilize trendy designs, take advantage of our technical expertise and industry experience and build a web application that provides a seamless User Experience (UX) and a world-class design.</p>
     </div>
-    <div>
+    <div class="border-t-5 border-t-solid">
       <h3>PWA (Progress Web Apps)</h3>
       <p class="text-lg">Sadly, too many web designers fail to account for the wide variety of devices used to access the Internet. Many designers make User Experience sacrifices in favor of trendy layouts and animations. The User Experience is the centerpiece of our web application design services because we understand that the User Experience is vital to the overall success of your app.</p>
     </div>
@@ -46,6 +51,8 @@ import Hero from "../components/home/Hero.astro";
   <div class="container items-center flex">
     <h1 class="text-[150px]"><b>02</b></h1>
     <h1 class="text-6xl ml-5">Mobile app <br/>development</h1>
+    <img src="phone.svg" width="500" height="500"/>
+
   </div>
 
   <div class="max-w-[1000px] mx-auto grid grid-cols-2 gap-10">
@@ -68,40 +75,17 @@ import Hero from "../components/home/Hero.astro";
     </div>
   </div>
 
-  <div class="text-center max-w-[1000px] mx-auto">
-    <h1 class="text-[110px] mb-0"><b>Web</b> <span class="text-[50px]">application development</span></h1>
-    <h2 class="text-[38px] mt-0"></h2>
+  <div class="container items-center flex">
+    <h1 class="text-[150px]"><b>03</b></h1>
+    <h1 class="text-[70px] text-center ml-5"><div>Technology consulting</div><div class="text-xl mt-1">to determine the right software, process, or technology for your business</div></h1>
   </div>
 
-  <div class="text-center max-w-[1000px] mx-auto">
-    <h1 class="text-[110px] mb-0"><b>PWA</b> <span class="text-[50px]">(progressive web apps)</span></h1>
-    <h2 class="text-[38px] mt-0"></h2>
+  <!--<div class="container items-center flex">-->
+  <!--  <h1 class="text-[150px]"><b>03</b></h1>-->
+  <!--  <h1 class="text-6xl ml-5">Technology <br/>consulting</h1>-->
+  <!--</div>-->
+  <!--<div class="text-xl">to determine the right software, process, or technology for your business</div>-->
 
-    <p class="text-lg">Progressive Web Apps allow the creation of mobile apps by simply using using resposive web design. In other words, a user is able to install a website to their phone, but it acts seemlessly like an app. It even works offline. The user installs the app directly from the business website, instead of the apple or google play stores. It is also usually cheaper to implement. I highly recommend PWAs over native mobile apps.</p>
-
-    <ul>
-      <li>Offline capable</li>
-      <li>Download directly from your website</li>
-      <li>Faster and easier to develop</li>
-    </ul>
-
-    <div class="flex mt-10 border-2 border-solid outlined rounded-10">
-      <div class="p-10">
-        <img src="/website.png" height="500"/>
-      </div>
-      <div class="ml-20 text-left text-lg border-l-dashed border-l-2 p-10">
-        <p class="text-lg ">Unlock your business potential with a modern and user friendly application:</p>
-
-        <!--<p>Examples of capabilities:</p>-->
-        <ul>
-          <li>Business websites</li>
-          <li>Web applications</li>
-          <li>Mobile apps</li>
-        </ul>
-        <button class="button outlined">More Details</button>
-      </div>
-    </div>
-  </div>
 
   <div class="hero h-[500px] sm:h-[600px] text-center bg-header">
     <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
