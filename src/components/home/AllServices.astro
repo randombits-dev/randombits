@@ -1,0 +1,15 @@
+---
+const {services} = Astro.props;
+---
+
+<div class="container text-lg flex flex-wrap">
+{
+  services.map(service => <div>{service}<span>/</span></div>)
+  }
+</div>
+
+<style>
+  span {
+    margin: 0 20px;
+  }
+</style>

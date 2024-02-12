@@ -3,169 +3,132 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home/Hero.astro";
 import WebAppDesign from "../snippits/web-app-design.md";
 import WebAppArch from "../snippits/web-app-arch.md";
+import ServicesGrid from "../components/home/ServicesGrid.astro";
+import ServicesGridItem from "../components/home/ServicesGridItem.astro";
+import ServicesSection from "../components/home/ServicesSection.astro";
+import AllServices from "../components/home/AllServices.astro";
 ---
 
 <BaseLayout title="Web Application Development" description="">
-  <div class="hero h-[500px] sm:h-[600px] text-center bg-header">
-    <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
-      <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 rounded-5 border-solid" style="font-family: Righteous;">
-        <div class="color-header-text text-[150px]"></div>
-        <div class="color-header-text text-2xl">Services</div>
-        <!--<div class="color-header-text text-xl mt-5">Turn your idea into reality.</div>-->
-        <div class="color-header-text text-[50px]">Turn your</div>
-        <div class="color-header-text text-[45px]">ideas into</div>
-        <div class="color-header-text text-[75px]">reality</div>
+  <Hero>
+    <div class="color-header-text text-[150px]"></div>
+    <div class="color-header-text text-2xl">Services</div>
+    <!--<div class="color-header-text text-xl mt-5">Turn your idea into reality.</div>-->
+    <div class="color-header-text text-[50px]">Turn your</div>
+    <div class="color-header-text text-[45px]">ideas into</div>
+    <div class="color-header-text text-[75px]">reality</div>
+  </Hero>
 
-      </div>
-      <div>
-        <img src="i1.svg" width="500" height="500"/>
-        <!--<Logo width="200" height="200"/>-->
-      </div>
-    </div>
-  </div>
+  <ServicesSection number="01">
+    Web Application Development
+  </ServicesSection>
 
-  <div class="container items-center flex">
-    <h1 class="text-[150px]"><b>01</b></h1>
-    <h1 class="text-6xl ml-5">Web app <br/>development</h1>
+  <ServicesGrid>
+    <ServicesGridItem title="Application Design">From simple </ServicesGridItem>
+    <ServicesGridItem title="Cloud and Serverless Applications">Gone are the days of deploying to servers. Most modern applications can be built serverless and deployed to the cloud. Cloud platforms allow the use of databases, object store, API functions, load balancing, containers, and more, without any need to touch a server.</ServicesGridItem>
+    <ServicesGridItem title="Application Modernization">Bring your legacy application up-to-date with a modern tech stack, responsive design, improved styling, and modern architecture. It is not always necessary to do a complete rewrite. New functionality and updated styles can often be stitched into an old application using a micro-frontend pattern.</ServicesGridItem>
+    <ServicesGridItem title="No Code Solutions">Sometimes simpler applications can be implemented without writing any code. There are numerous no-code solutions that allow connecting to databases, building forms, and integrating with other systems.</ServicesGridItem>
+  </ServicesGrid>
 
-    <p></p>
-  </div>
+  <ServicesSection number="02" img="phone.svg">
+    Mobile Development
+  </ServicesSection>
 
-  <div class="container grid grid-cols-2 gap-10">
-    <div class="border-t-5 border-t-solid">
-      <WebAppDesign/>
-    </div>
-    <div class="border-t-5 border-t-solid">
-      <WebAppArch/>
-    </div>
-    <div class="border-t-5 border-t-solid">
-      <h3>Cordova Mobile Apps</h3>
-      <p class="text-lg">The design of your web application plays an important role in its overall success. Instead of hiring a web app design company to utilize trendy designs, take advantage of our technical expertise and industry experience and build a web application that provides a seamless User Experience (UX) and a world-class design.</p>
-    </div>
-    <div class="border-t-5 border-t-solid">
-      <h3>PWA (Progress Web Apps)</h3>
-      <p class="text-lg">Sadly, too many web designers fail to account for the wide variety of devices used to access the Internet. Many designers make User Experience sacrifices in favor of trendy layouts and animations. The User Experience is the centerpiece of our web application design services because we understand that the User Experience is vital to the overall success of your app.</p>
-    </div>
-  </div>
+  <ServicesGrid>
+    <!--<ServicesGridItem title="Responsive Design"></ServicesGridItem>-->
+    <ServicesGridItem title="PWAs">Progressive Web Apps allow the creation of mobile apps by simply using responsive design, and they are downloaded directly from a website, instead of the app stores. They are the future of mobile apps because they are easier to implement and have very low maintenance.</ServicesGridItem>
+    <ServicesGridItem title="Native Android & IOS Apps">Implement the same experience across all devices. Utilize Flutter to enable a shared codebase with easier implementations and easier maintenance.</ServicesGridItem>
+    <!--<ServicesGridItem title="Native Mobile Apps">Fully-managed cloud hosting so you don't have to worry about a thing.</ServicesGridItem>-->
+  </ServicesGrid>
 
-  <div class="container items-center flex">
-    <h1 class="text-[150px]"><b>02</b></h1>
-    <h1 class="text-6xl ml-5">Mobile app <br/>development</h1>
-    <img src="phone.svg" width="500" height="500"/>
-
-  </div>
-
-  <div class="max-w-[1000px] mx-auto grid grid-cols-2 gap-10">
-    <div>
-      <div class="text-2xl">Native Mobile Apps</div>
-      <p class="text-lg">Our portfolio features a myriad of different web apps. Modern web development projects require more interactivity and responsiveness than ever before. When looking for developers, don’t settle for a web development company that can’t provide a large range of services. Unfortunately, most web development companies don’t offer comprehensive web development services. When you work with the development team at Koombea, you get every development service you will ever need in one place.</p>
-    </div>
-    <div>
-      <div class="text-2xl">Hybrid Mobile Apps</div>
-      <p class="text-lg">Our comprehensive approach to software development allows you to merge development and design into a single process to create a seamless product that will help your organization stand out from your competition. Save time, increase your ROI, and get to market sooner when you choose an app development company that can do it all.</p>
-
-    </div>
-    <div>
-      <div class="text-2xl">Cordova Mobile Apps</div>
-      <p class="text-lg">The design of your web application plays an important role in its overall success. Instead of hiring a web app design company to utilize trendy designs, take advantage of our technical expertise and industry experience and build a web application that provides a seamless User Experience (UX) and a world-class design.</p>
-    </div>
-    <div>
-      <div class="text-2xl">PWA (Progress Web Apps)</div>
-      <p class="text-lg">Sadly, too many web designers fail to account for the wide variety of devices used to access the Internet. Many designers make User Experience sacrifices in favor of trendy layouts and animations. The User Experience is the centerpiece of our web application design services because we understand that the User Experience is vital to the overall success of your app.</p>
-    </div>
-  </div>
-
-  <div class="container items-center flex">
-    <h1 class="text-[150px]"><b>03</b></h1>
-    <h1 class="text-[70px] text-center ml-5"><div>Technology consulting</div><div class="text-xl mt-1">to determine the right software, process, or technology for your business</div></h1>
-  </div>
 
   <!--<div class="container items-center flex">-->
   <!--  <h1 class="text-[150px]"><b>03</b></h1>-->
-  <!--  <h1 class="text-6xl ml-5">Technology <br/>consulting</h1>-->
-  <!--</div>-->
-  <!--<div class="text-xl">to determine the right software, process, or technology for your business</div>-->
-
-
-  <div class="hero h-[500px] sm:h-[600px] text-center bg-header">
-    <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
-      <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 rounded-5 border-solid" style="font-family: Righteous;">
-        <div class="color-header-text text-[150px]">2</div>
-        <div class="color-header-text text-6xl">Mobile application development</div>
-
-      </div>
-      <div>
-        <img src="phone.svg" width="500" height="500"/>
-        <!--<Logo width="200" height="200"/>-->
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center">
-    <h2>Native Mobile Apps</h2>
-  </div>
-
-  <div class="max-w-[1000px] mx-auto grid grid-cols-2 gap-10">
-    <div>
-      <h3>Native Mobile Apps</h3>
-      <p class="text-lg">Our portfolio features a myriad of different web apps. Modern web development projects require more interactivity and responsiveness than ever before. When looking for developers, don’t settle for a web development company that can’t provide a large range of services. Unfortunately, most web development companies don’t offer comprehensive web development services. When you work with the development team at Koombea, you get every development service you will ever need in one place.</p>
-    </div>
-    <div>
-      <h3>Hybrid Mobile Apps</h3>
-      <p class="text-lg">Our comprehensive approach to software development allows you to merge development and design into a single process to create a seamless product that will help your organization stand out from your competition. Save time, increase your ROI, and get to market sooner when you choose an app development company that can do it all.</p>
-
-    </div>
-    <div>
-      <h3>Cordova Mobile Apps</h3>
-      <p class="text-lg">The design of your web application plays an important role in its overall success. Instead of hiring a web app design company to utilize trendy designs, take advantage of our technical expertise and industry experience and build a web application that provides a seamless User Experience (UX) and a world-class design.</p>
-    </div>
-    <div>
-      <h3>PWA (Progress Web Apps)</h3>
-      <p class="text-lg">Sadly, too many web designers fail to account for the wide variety of devices used to access the Internet. Many designers make User Experience sacrifices in favor of trendy layouts and animations. The User Experience is the centerpiece of our web application design services because we understand that the User Experience is vital to the overall success of your app.</p>
-    </div>
-  </div>
-
-  <div class="text-center">
-    <h1 class="text-[120px] mb-0">Smart Hosting</h1>
-    <h2 class="text-[38px] mt-0">and a modern tech stack</h2>
-    <p>Endless possibilities for hosting, catered to your performance and maintainability needs.</p>
-  </div>
-
-  <div class="hero h-[500px] sm:h-[600px] text-center bg-header">
-    <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
-      <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 rounded-5 border-solid" style="font-family: Righteous;">
-        <div class="color-header-text text-[150px]">03</div>
-        <div class="color-header-text text-6xl mt-10">Technology Consulting</div>
-        <div class="color-header-text text-xl mt-10">to determine the right software, process, or technology for your business</div>
-      </div>
-      <div>
-        <img src="i1.svg" width="500" height="500"/>
-        <!--<Logo width="200" height="200"/>-->
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center">
-    <h1 class="text-[80px] mb-0">Technology Consulting</h1>
-    <h2 class="text-[24px] mt-0">to determine the right software, process, or technology for your business</h2>
-    <p>Technology is moving fast. </p>
-  </div>
-
-
-  <!--<div class="mx-5 md:mx-10 mb-20">-->
-  <!--  <h1 class="text-center">Recent Projects</h1>-->
-  <!--  <ToolList limit={2}/>-->
-  <!--  <a class="button" href="/projects">See All Projects</a>-->
-
-  <!--  <h1 class="mt-30 text-center">Articles</h1>-->
-  <!--  <ArticleList/>-->
+  <!--  <h1 class="text-[70px] text-center ml-5"><div>Technology consulting</div><div class="text-xl mt-1">to determine the right software, process, or technology for your business</div></h1>-->
   <!--</div>-->
 
+  <ServicesSection number="03">
+    Technology Consulting
+    <div slot="description">Determine the right software, process, or technology for your business.</div>
+  </ServicesSection>
 
-  <div aria-disabled="true"
-       class="rb-background-bits absolute px-1 py-1 top-0 h-[500px] sm:h-[600px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
-    <!--<RandomBits client:only="solid-js"/>-->
+  <!--<div class="container text-4xl pb-16">-->
+  <!--  Determine the right software, process, or technology for your business.-->
+  <!--</div>-->
+
+  <ServicesGrid>
+    <ServicesGridItem title="Do you have an idea?">But don't know where to start or even if its possible? See all your options, from utilizing existing solutions to custom implementations. Get honest advice on the best technology to use for your business.</ServicesGridItem>
+    <ServicesGridItem title="Emerging Technologies">Transform your business with the latest technologies like AI and Machine Learning. </ServicesGridItem>
+  </ServicesGrid>
+
+  <div class="container text-2xl">
+    Determine the right software, process, or technology for your business.
+  <div class="text-3xl">
+    Have an idea, but don't know where to start?
   </div>
+  <div>
+    Get honest advice on the best technology to use for your business.
+  </div>
+  <div class="mt-10 text-3xl">
+    Need to modernize your application, but don't know what technology to use?
+  </div>
+  <div>
+    We can help you determine the right software, process, or technology for your business.
+  </div>
+  </div>
+    <ServicesSection number="04">
+      Anything else you can think of...
+      <!--<div slot="description">Some examples:</div>-->
+    </ServicesSection>
+
+    <AllServices services={[
+      "Cloud Migrations",
+      "Serverless Applications",
+      "Application Modernization",
+      "Website Design",
+      "Salesforce Integrations",
+      "Zapier Integrations",
+      "Custom Application Integrations",
+      "Security Consulting",
+      "Privacy Consulting",
+      "Custom CRM Applications",
+      "Custom CPQ Applications",
+
+    ]}></AllServices>
+
+    <div class="mt-10"></div>
+    <div class="container grid grid-cols-4 text-lg">
+      <!--<div>-->
+      <!--  <div class="text-2xl font-bold pb-2">Cloud Services</div>-->
+      <!--  <div>Cloud Migrations</div>-->
+      <!--  <div>Serverless Applications</div>-->
+      <!--  <div>AWS, Google Cloud, etc</div>-->
+      <!--</div>-->
+      <!--<div>-->
+      <!--  <div class="text-2xl font-bold pb-2">Application Integrations</div>-->
+      <!--  <div>Salesforce Integrations</div>-->
+      <!--  <div>Zapier Integrations</div>-->
+      <!--  <div>Workflow Implementations</div>-->
+      <!--  <div>Custom Integrations</div>-->
+      <!--</div>-->
+      <div>Cloud Migrations</div>
+      <div>Serverless Applications</div>
+      <div>Application Modernization</div>
+      <div>Website Design</div>
+      <div>Salesforce Integrations</div>
+      <div>Zapier Integrations</div>
+      <div>Custom CRM Applications</div>
+      <div>Custom CPQ Applications</div>
+      <!--<div></div>-->
+    </div>
+
+  <!--<ServicesGrid>-->
+  <!--  <ServicesGridItem title="Responsive Design"></ServicesGridItem>-->
+  <!--  <ServicesGridItem title="Progressive Web Apps">Gone are the days of deploying to servers. Most modern applications can be built serverless and deployed to the cloud. Cloud platforms allow the use of databases, object store, API functions, load balancing, containers, and more, without any need to touch a server.</ServicesGridItem>-->
+  <!--  <ServicesGridItem title="Hybrid Mobile Apps">Bring your legacy application up-to-date with a modern tech stack, responsive design, improved styling, and modern architecture. It is not always necessary to do a complete rewrite. New functionality and updated styles can often be stitched into an old application using a micro-frontend pattern.</ServicesGridItem>-->
+  <!--  <ServicesGridItem title="Native Mobile Apps">Fully-managed cloud hosting so you don't have to worry about a thing.</ServicesGridItem>-->
+  <!--</ServicesGrid>-->
+
 </BaseLayout>
 
 <style>
@@ -174,11 +137,7 @@ import WebAppArch from "../snippits/web-app-arch.md";
     //background: linear-gradient(90deg, #f6da26 0%, #e19e75 100%);
   }
 
-  h1 b {
-    background: linear-gradient(90deg, #0531a2 0%, #031768 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+
 
   .rb-background-bits {
 
@@ -239,19 +198,8 @@ import WebAppArch from "../snippits/web-app-arch.md";
     top: 6px;
   }
 
+  .services-grid p {
+    font-size: 16px;
+  }
+
 </style>
-
-<script>
-  const html = [...Array.from({length: 10000})].map(() => {
-    return `<span>${Math.random() < .5 ? 0 : 1} </span>`;
-  }).join(' ');
-  document.querySelector('.rb-background-bits').innerHTML = html;
-
-  // document.querySelector('.rb-background-bits').addEventListener('mousemove', (e) => {
-  //   console.count('mousemove')
-  //   if (e.target.tagName === 'SPAN') {
-  //     e.target.style.fontWeight = 'bold';
-  //
-  //   }
-  // });
-</script>
