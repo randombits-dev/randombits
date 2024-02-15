@@ -7,7 +7,8 @@
   --back-content: #e7ebef;
   --back-header: #014876;
   --back-btn: var(--back-header);
-  --color-content: #444;
+  --color-content: #333;
+  --color-light: #666;
   --color-header: #eee;
   --color-btn: var(--color-header);
   --border-radius-1: 5px;
@@ -18,7 +19,7 @@
   --border-color-light: #aaa;
   --font-1: 'Righteous', cursive;
   --font-2: 'Plus Jakarta Sans', sans-serif;
-  --font-size-text: 15px;
+  --font-size-text: 16px;
   --font-size-1: 48px;
   --font-size-2: 32px;
   --letter-spacing-text: 0px;

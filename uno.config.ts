@@ -15,9 +15,22 @@ export default defineConfig({
       'primary-contrast': 'var(--primary-contrast)',
       'content': 'var(--back-content)',
       'content-text': 'var(--color-content)',
+      'light': 'var(--color-light)',
       'bg-text': 'var(--color-back)'
+    },
+    fontSize: {
+      'sm': '0.875rem',
+      'base': '1rem',
+      'lg': '1.125rem',
+      'xl': '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '4rem',
     }
   },
+
   shortcuts: {
     card: 'rb-color-content relative border',
     btn: 'text-center px-3 py-5 border tb-color-header cursor-pointer',
@@ -28,6 +41,7 @@ export default defineConfig({
     ['border-light', {border: 'var(--border-width-light) solid var(--border-color-light)', 'border-radius': 'var(--border-radius-1)'}],
     ['rb-color-content', {'background-color': 'var(--back-content)', 'color': 'var(--color-content)'}],
     ['rb-color-header', {'background-color': 'var(--back-header)', 'color': 'var(--color-header)'}],
-    ['rb-color-back', {'background-color': 'var(--back-0)', 'color': 'var(--color-back)'}]
+    ['rb-color-back', {'background-color': 'var(--back-0)', 'color': 'var(--color-back)'}],
+    ['outlined', {'box-shadow': 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;'}],
   ]
 });

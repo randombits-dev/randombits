@@ -3,24 +3,25 @@ const {number, img} = Astro.props;
 ---
 
 <div class="container items-center flex pt-24">
-  <div class="category mb-2 flex items-end">
-    <div class="text-4xl"><b>{number}</b></div>
+  <div class="category mb-2 flex items-end Inter">
+    <div class="text-6xl"><b>{number}</b></div>
+    <div class="pl-5 container text-3xl">
+      <slot/>
+    </div>
     <!--<div class="text-2xl pl-5"><slot/></div>-->
   </div>
   <!--{img && <img class="hidden lg:block" src={img} width="500" height="250"/>}-->
 </div>
-<div class="container text-6xl pb-8">
-  <slot/>
-</div>
-<div class="container text-2xl pb-16">
+
+<div class="container text-2xl pb-8">
   <slot name="description"/>
 </div>
 
 <style>
   .category {
-    font-weight: bold;
-    background: linear-gradient(90deg, #0531a2 0%, #031768 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    //background: linear-gradient(90deg, #0531a2 0%, #031768 100%);
+    //-webkit-background-clip: text;
+    //-webkit-text-fill-color: transparent;
   }
 </style>

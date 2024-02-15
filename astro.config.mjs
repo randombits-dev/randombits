@@ -6,6 +6,7 @@ import UnoCSS from 'unocss/astro';
 import sitemap from '@astrojs/sitemap';
 
 import robots from "astro-robots";
+import createAstroFontPickerIntegration from "astro-font-picker";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,9 +17,9 @@ export default defineConfig({
     remarkPlugins: [remarkCodeTitles]
   },
   devToolbar: {
-    enabled: false
+    enabled: true
   },
-  integrations: [mdx(), solid(), UnoCSS(), sitemap(), robots({})],
+  integrations: [mdx(), solid(), UnoCSS(), sitemap(), robots({}), createAstroFontPickerIntegration()],
   build: {
     assets: '_astro',
     format: 'file'

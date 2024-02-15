@@ -22,10 +22,14 @@ import AllServices from "../components/home/AllServices.astro";
   <ServicesSection number="01">
     Web Application Development
   </ServicesSection>
+  <div class="container color-light text-lg leading-normal pb-8">
+    <!-- Write about web app development services -->
+    Whether you need a simple website, a complex web application, or a modernization of an existing application, we can help. We have experience with a wide range of technologies and can help you determine the best solution for your business. We can help you with the entire process, from design to deployment, and everything in between.
+  </div>
 
   <ServicesGrid>
     <ServicesGridItem title="Application Design">From simple </ServicesGridItem>
-    <ServicesGridItem title="Cloud and Serverless Applications">Gone are the days of deploying to servers. Most modern applications can be built serverless and deployed to the cloud. Cloud platforms allow the use of databases, object store, API functions, load balancing, containers, and more, without any need to touch a server.</ServicesGridItem>
+    <ServicesGridItem title="Cloud and Serverless Applications">Gone are the days of deploying to servers. Most modern applications can be built serverless and deployed to the cloud. Cloud platforms are low maintenance and use a pay-as-you-go pricing model.</ServicesGridItem>
     <ServicesGridItem title="Application Modernization">Bring your legacy application up-to-date with a modern tech stack, responsive design, improved styling, and modern architecture. It is not always necessary to do a complete rewrite. New functionality and updated styles can often be stitched into an old application using a micro-frontend pattern.</ServicesGridItem>
     <ServicesGridItem title="No Code Solutions">Sometimes simpler applications can be implemented without writing any code. There are numerous no-code solutions that allow connecting to databases, building forms, and integrating with other systems.</ServicesGridItem>
   </ServicesGrid>
@@ -34,10 +38,15 @@ import AllServices from "../components/home/AllServices.astro";
     Mobile Development
   </ServicesSection>
 
+  <div class="container color-light text-lg leading-normal pb-8">
+    <!-- Write about web app development services -->
+    Create a mobile application for your existing web application, with a seamless user experience. Or create a standalone mobile experience from scratch. There are many framework choices for mobile app development, but I recommend using PWAs or React Native for the best experience and lowest maintenance.
+  </div>
+
   <ServicesGrid>
     <!--<ServicesGridItem title="Responsive Design"></ServicesGridItem>-->
-    <ServicesGridItem title="PWAs">Progressive Web Apps allow the creation of mobile apps by simply using responsive design, and they are downloaded directly from a website, instead of the app stores. They are the future of mobile apps because they are easier to implement and have very low maintenance.</ServicesGridItem>
-    <ServicesGridItem title="Native Android & IOS Apps">Implement the same experience across all devices. Utilize Flutter to enable a shared codebase with easier implementations and easier maintenance.</ServicesGridItem>
+    <ServicesGridItem title="PWAs" img="/images/phone.svg">Progressive Web Apps allow the creation of mobile apps by simply using responsive design, and they are downloaded directly from a website, instead of the app stores.</ServicesGridItem>
+    <ServicesGridItem title="Native Android & IOS Apps" img="/images/phone2.svg">Implement the same experience across all devices. Utilize React Native to enable a shared codebase with easier implementations and easier maintenance.</ServicesGridItem>
     <!--<ServicesGridItem title="Native Mobile Apps">Fully-managed cloud hosting so you don't have to worry about a thing.</ServicesGridItem>-->
   </ServicesGrid>
 
@@ -49,78 +58,129 @@ import AllServices from "../components/home/AllServices.astro";
 
   <ServicesSection number="03">
     Technology Consulting
-    <div slot="description">Determine the right software, process, or technology for your business.</div>
+    <!--<div slot="description">Determine the right software, process, or technology for your business.</div>-->
   </ServicesSection>
+
+  <div class="container color-light text-lg leading-normal">
+    <!-- Write about web app development services -->
+    Do you have an idea, but don't know where to start? I can help walk you through different technology solutions, from utilizing existing solutions, to custom implementations.
+  </div>
+
+  <div class="container flex items-center">
+    <!--<div class="mr-10">-->
+    <!--  <ServicesGrid>-->
+    <!--    <ServicesGridItem title="Have an idea?">But don't know where to start or even if its possible? See all your options, from utilizing existing solutions to custom implementations. Get honest advice on the best technology to use for your business.</ServicesGridItem>-->
+    <!--  </ServicesGrid>-->
+    <!--</div>-->
+    <div class="mr-10">
+    <div class="container text-4xl">
+      Determine the right software, process, or technology for your business.
+    </div>
+      <!--<div class="text-2xl mt-10">-->
+      <!--  Have an idea, but don't know where to start?-->
+      <!--</div>-->
+      <ol class="pt-5 text-lg">
+        <li>Emerging Technologies</li>
+        <li>Application Modernization</li>
+        <li>Choosing a Cloud Provider</li>
+        <li>Choosing a SaaS service or software package</li>
+      </ol>
+    </div>
+    <img src="/i1.svg" height="400"/>
+  </div>
 
   <!--<div class="container text-4xl pb-16">-->
   <!--  Determine the right software, process, or technology for your business.-->
   <!--</div>-->
 
-  <ServicesGrid>
-    <ServicesGridItem title="Do you have an idea?">But don't know where to start or even if its possible? See all your options, from utilizing existing solutions to custom implementations. Get honest advice on the best technology to use for your business.</ServicesGridItem>
-    <ServicesGridItem title="Emerging Technologies">Transform your business with the latest technologies like AI and Machine Learning. </ServicesGridItem>
-  </ServicesGrid>
+  <!--<ServicesGrid>-->
+  <!--  <ServicesGridItem title="Do you have an idea?">But don't know where to start or even if its possible? See all your options, from utilizing existing solutions to custom implementations. Get honest advice on the best technology to use for your business.</ServicesGridItem>-->
+  <!--  <ServicesGridItem title="Emerging Technologies">Transform your business with the latest technologies like AI and Machine Learning. </ServicesGridItem>-->
+  <!--</ServicesGrid>-->
 
-  <div class="container text-2xl">
-    Determine the right software, process, or technology for your business.
-  <div class="text-3xl">
-    Have an idea, but don't know where to start?
-  </div>
-  <div>
-    Get honest advice on the best technology to use for your business.
-  </div>
-  <div class="mt-10 text-3xl">
-    Need to modernize your application, but don't know what technology to use?
-  </div>
-  <div>
-    We can help you determine the right software, process, or technology for your business.
-  </div>
-  </div>
+  <!--<div class="container text-2xl">-->
+  <!--  Determine the right software, process, or technology for your business.-->
+  <!--<div class="text-3xl">-->
+  <!--  Have an idea, but don't know where to start?-->
+  <!--</div>-->
+  <!--<div>-->
+  <!--  Get honest advice on the best technology to use for your business.-->
+  <!--</div>-->
+  <!--<div class="mt-10 text-3xl">-->
+  <!--  Need to modernize your application, but don't know what technology to use?-->
+  <!--</div>-->
+  <!--<div>-->
+  <!--  We can help you determine the right software, process, or technology for your business.-->
+  <!--</div>-->
+
+
+  <!--<ServicesSection number="04">-->
+  <!--  Cloud Serverless Migration-->
+  <!--  &lt;!&ndash;<div slot="description">Determine the right software, process, or technology for your business.</div>&ndash;&gt;-->
+  <!--</ServicesSection>-->
+
+  <!--<div class="container color-light text-lg leading-normal">-->
+  <!--  &lt;!&ndash; Write about web app development services &ndash;&gt;-->
+  <!--  Move on-premise applications to the cloud, or move from one cloud provider to another. While-->
+  <!--</div>-->
+
     <ServicesSection number="04">
-      Anything else you can think of...
+      Other Services
       <!--<div slot="description">Some examples:</div>-->
     </ServicesSection>
 
-    <AllServices services={[
-      "Cloud Migrations",
-      "Serverless Applications",
-      "Application Modernization",
-      "Website Design",
-      "Salesforce Integrations",
-      "Zapier Integrations",
-      "Custom Application Integrations",
-      "Security Consulting",
-      "Privacy Consulting",
-      "Custom CRM Applications",
-      "Custom CPQ Applications",
+  <div class="container color-light text-lg leading-normal pb-8">
+    <!-- Write about web app development services -->
+    Whether you need a simple website, a complex web application, or a modernization of an existing application, we can help. We have experience with a wide range of technologies and can help you determine the best solution for your business. We can help you with the entire process, from design to deployment, and everything in between.
+  </div>
 
-    ]}></AllServices>
+  <ServicesGrid>
+    <ServicesGridItem title="Integrations"></ServicesGridItem>
+    <ServicesGridItem title="Security & Privacy">Implementation of custom encryption solutions or E2EE applications.</ServicesGridItem>
+    <ServicesGridItem title="Cloud Migration">Guidance for moving on-premise applications to the cloud, or converting legacy backends to serverless solutions.</ServicesGridItem>
+    <ServicesGridItem title="Hosting Solutions">Implement the same experience across all devices. Utilize React Native to enable a shared codebase with easier implementations and easier maintenance.</ServicesGridItem>
+  </ServicesGrid>
 
-    <div class="mt-10"></div>
-    <div class="container grid grid-cols-4 text-lg">
-      <!--<div>-->
-      <!--  <div class="text-2xl font-bold pb-2">Cloud Services</div>-->
-      <!--  <div>Cloud Migrations</div>-->
-      <!--  <div>Serverless Applications</div>-->
-      <!--  <div>AWS, Google Cloud, etc</div>-->
-      <!--</div>-->
-      <!--<div>-->
-      <!--  <div class="text-2xl font-bold pb-2">Application Integrations</div>-->
-      <!--  <div>Salesforce Integrations</div>-->
-      <!--  <div>Zapier Integrations</div>-->
-      <!--  <div>Workflow Implementations</div>-->
-      <!--  <div>Custom Integrations</div>-->
-      <!--</div>-->
-      <div>Cloud Migrations</div>
-      <div>Serverless Applications</div>
-      <div>Application Modernization</div>
-      <div>Website Design</div>
-      <div>Salesforce Integrations</div>
-      <div>Zapier Integrations</div>
-      <div>Custom CRM Applications</div>
-      <div>Custom CPQ Applications</div>
-      <!--<div></div>-->
-    </div>
+    <!--<AllServices services={[-->
+    <!--  "Cloud Migrations",-->
+    <!--  "Serverless Applications",-->
+    <!--  "Application Modernization",-->
+    <!--  "Website Design",-->
+    <!--  "Salesforce Integrations",-->
+    <!--  "Zapier Integrations",-->
+    <!--  "Custom Application Integrations",-->
+    <!--  "Security Consulting",-->
+    <!--  "Privacy Consulting",-->
+    <!--  "Custom CRM Applications",-->
+    <!--  "Custom CPQ Applications",-->
+
+    <!--]}></AllServices>-->
+
+    <!--<div class="mt-10"></div>-->
+    <!--<div class="container grid grid-cols-4 text-lg">-->
+    <!--  &lt;!&ndash;<div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div class="text-2xl font-bold pb-2">Cloud Services</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>Cloud Migrations</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>Serverless Applications</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>AWS, Google Cloud, etc</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;<div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div class="text-2xl font-bold pb-2">Application Integrations</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>Salesforce Integrations</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>Zapier Integrations</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>Workflow Implementations</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;  <div>Custom Integrations</div>&ndash;&gt;-->
+    <!--  &lt;!&ndash;</div>&ndash;&gt;-->
+    <!--  <div>Cloud Migrations</div>-->
+    <!--  <div>Serverless Applications</div>-->
+    <!--  <div>Application Modernization</div>-->
+    <!--  <div>Website Design</div>-->
+    <!--  <div>Salesforce Integrations</div>-->
+    <!--  <div>Zapier Integrations</div>-->
+    <!--  <div>Custom CRM Applications</div>-->
+    <!--  <div>Custom CPQ Applications</div>-->
+    <!--  &lt;!&ndash;<div></div>&ndash;&gt;-->
+    <!--</div>-->
 
   <!--<ServicesGrid>-->
   <!--  <ServicesGridItem title="Responsive Design"></ServicesGridItem>-->
@@ -128,7 +188,7 @@ import AllServices from "../components/home/AllServices.astro";
   <!--  <ServicesGridItem title="Hybrid Mobile Apps">Bring your legacy application up-to-date with a modern tech stack, responsive design, improved styling, and modern architecture. It is not always necessary to do a complete rewrite. New functionality and updated styles can often be stitched into an old application using a micro-frontend pattern.</ServicesGridItem>-->
   <!--  <ServicesGridItem title="Native Mobile Apps">Fully-managed cloud hosting so you don't have to worry about a thing.</ServicesGridItem>-->
   <!--</ServicesGrid>-->
-
+  <div class="mb-48"></div>
 </BaseLayout>
 
 <style>
@@ -189,13 +249,17 @@ import AllServices from "../components/home/AllServices.astro";
 
   ul li::before {
     content: url('/icon_right.svg');
-    color: red;  /* Color of the bullet point */
+    color: green;  /* Color of the bullet point */
     font-weight: bold;  /* Make the bullet point bold */
     display: inline-block;  /* Needed to add space between the bullet point and the list item */
     position: relative;
     width: 2em;  /* Also needed for space (adjust as needed) */
     margin-left: -1em;  /* Also needed for space (adjust as needed) */
     top: 6px;
+  }
+
+  ol li {
+    padding: 5px;
   }
 
   .services-grid p {
