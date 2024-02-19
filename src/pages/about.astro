@@ -1,0 +1,49 @@
+---
+import * as AboutMe from '../snippits/about-me.md'
+import '../styles/md.scss';
+import BlogSidebar from "../layouts/BlogSidebar.astro";
+import {getEntry} from 'astro:content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogHeader from "../layouts/BlogHeader.astro";
+import ArticleTOC from "../components/article/ArticleTOC";
+
+import '../styles/article-container.scss';
+import '../styles/article-body.scss';
+import '../styles/prism-custom.scss';
+import Hero from "../components/home/Hero.astro";
+import ServicesSection from "../components/home/ServicesSection.astro";
+
+// const aboutMe = await getEntry('snippets', 'grace-hopper');
+
+console.log(AboutMe);
+---
+<BaseLayout title="About Me" description="My CV and experience.">
+  <Hero>
+    <div class="color-header-text text-6xl">About Me</div>
+  </Hero>
+
+  <ServicesSection number="01">
+    Experience
+  </ServicesSection>
+
+  <div class="rb-article">
+    <aside class="rb-article__sidebar">
+      <ArticleTOC slot="sidebar" client:load path={'/'} headings={AboutMe.getHeadings()}/>
+
+    </aside>
+
+    <section>
+      <AboutMe.Content></AboutMe.Content>
+    </section>
+
+    <aside class="rb-article__sidebar">
+
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    color: var(--color-back);
+  }
+</style>

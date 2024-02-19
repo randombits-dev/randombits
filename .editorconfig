@@ -19,6 +19,9 @@ trim_trailing_whitespace = false
 ij_markdown_wrap_text_if_long = false
 ij_markdown_wrap_text_inside_blockquotes = false
 
+[*.astro]
+max_line_length = off
+
 [*.ts]
 ij_typescript_call_parameters_wrap = normal
 ij_typescript_extends_list_wrap = normal

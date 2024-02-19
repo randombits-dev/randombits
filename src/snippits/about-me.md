@@ -6,6 +6,8 @@ Hi, I'm **Matthew Nienow**, a software engineer from Duluth, Minnesota, USA.
 
 **Random Bits** is my business name.
 
+<div class="num">01</div><div class="title">Experience</div>
+
 ## Experience
 I've been a full-stack engineer for about 14 years, although I've recently been more front-end focused. Most of my experience has been in the enterprise space, working on large and complex CRM applications. 
 
