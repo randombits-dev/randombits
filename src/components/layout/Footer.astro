@@ -43,9 +43,10 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 </footer>
 
 <script>
+  import {copyEmail} from "../../utils/utils";
+
   document.getElementById('footer__envelope').addEventListener('click', (e) => {
-    const output = ['matt', 'randombits', 'dev'];
-    navigator.clipboard.writeText(`${output[0]}@${output[1]}.${output[2]}`);
+    const email = copyEmail();
     document.getElementById('footer__quick-msg').style.display = 'inline';
     setTimeout(() => {
       document.getElementById('footer__quick-msg').style.display = 'none';

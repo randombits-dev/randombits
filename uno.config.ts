@@ -43,5 +43,6 @@ export default defineConfig({
     ['rb-color-header', {'background-color': 'var(--back-header)', 'color': 'var(--color-header)'}],
     ['rb-color-back', {'background-color': 'var(--back-0)', 'color': 'var(--color-back)'}],
     ['outlined', {'box-shadow': 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;'}],
+    ['outlined:hover', {'box-shadow': 'rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 2px 4px 0px 0px, #171717 0px 4px 0px 0px;'}],
   ]
 });

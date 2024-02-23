@@ -13,37 +13,102 @@ import '../styles/prism-custom.scss';
 import Hero from "../components/home/Hero.astro";
 import ServicesSection from "../components/home/ServicesSection.astro";
 
-// const aboutMe = await getEntry('snippets', 'grace-hopper');
+const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
+const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 
-console.log(AboutMe);
 ---
 <BaseLayout title="About Me" description="My CV and experience.">
   <Hero>
     <div class="color-header-text text-6xl">About Me</div>
   </Hero>
 
-  <ServicesSection number="01">
-    Experience
-  </ServicesSection>
+  <div class="mt-24"></div>
 
-  <div class="rb-article">
-    <aside class="rb-article__sidebar">
-      <ArticleTOC slot="sidebar" client:load path={'/'} headings={AboutMe.getHeadings()}/>
+  <!--<ServicesSection number="01">-->
+  <!--  Experience-->
+  <!--</ServicesSection>-->
 
-    </aside>
 
-    <section>
-      <AboutMe.Content></AboutMe.Content>
-    </section>
 
-    <aside class="rb-article__sidebar">
 
-    </aside>
+  <div class="container text-xl pb-48">
+
+    <h2>Contact Me</h2>
+
+    <div>Free initial consultation to discuss your current ideas or challenges.</div>
+
+    <div>Send me an email or connect with me on discord. I provide free initial consultations to determine if </div>
+
+    <div class="flex">
+    <div>
+    <button class="mt-5 px-5 py-3 border outlined rounded-4 inline-flex items-center" id="email-reveal">
+      <div set:html={envelopeSVG}/>
+      <div class="text-xl font-bold flex items-center">
+        <div>matt</div>
+        <div class="fixed left-[-9999px]">a</div>
+        <div>@</div>
+        <div>randombits.dev</div>
+      </div>
+    </button>
+    <!--<div id="email-reveal-output" class="ml-5"></div>-->
+    </div>
+
+    <div class="ml-5 mt-5">
+      <a href="https://discord.com/users/806661811143049216" target="_blank" class="px-5 py-3 border outlined rounded-4 inline-flex items-center">
+        <div set:html={discordSVG}/>
+        <div class="text-xl font-bold">randombits.dev</div>
+      </a>
+    </div>
+    </div>
+
+    <div>Free estimates and initial consultations.</div>
+
+    <h2>My Process</h2>
+
+    <div>In the initial meeting, we will discuss your current ideas and/or challenges.  </div>
+
+    <AboutMe.Content></AboutMe.Content>
   </div>
 </BaseLayout>
 
-<style>
-  h1 {
-    color: var(--color-back);
+<style is:global>
+  h2 {
+    font-size: 2em;
+    margin-top: 6rem;
   }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    //text-decoration: underline;
+  }
+
+  main svg {
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+    fill: var(--color-content);
+  }
+
+  #email-reveal {
+    cursor: pointer;
+  }
+
 </style>
+
+<script>
+  import {copyEmail} from "../utils/utils";
+
+  const emailReveal = document.getElementById('email-reveal');
+  const emailRevealText = emailReveal.querySelector('div:last-child') as HTMLDivElement;
+  const lastContent = emailRevealText.innerHTML;
+  emailReveal.addEventListener('click', () => {
+    copyEmail();
+   emailRevealText.innerText = 'Email copied!';
+    setTimeout(() => {
+      emailRevealText.innerHTML = lastContent;
+    }, 1500);
+  });
+</script>
