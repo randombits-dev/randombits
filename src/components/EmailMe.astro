@@ -1,0 +1,37 @@
+---
+const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
+---
+
+<button class="mt-5 px-5 py-3 border outlined rounded-4 inline-flex items-center w-[300px]" id="email-reveal">
+  <div class="envelopeSVG" set:html={envelopeSVG}/>
+  <div class="text-xl font-bold flex items-center">
+    <div>matt</div>
+    <div class="fixed left-[-9999px]">a</div>
+    <div>@</div>
+    <div>randombits.dev</div>
+  </div>
+</button>
+
+<style is:global>
+  .envelopeSVG svg {
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+    fill: var(--color-content);
+  }
+</style>
+
+<script>
+  import {copyEmail} from "../utils/utils";
+
+  const emailReveal = document.getElementById('email-reveal');
+  const emailRevealText = emailReveal.querySelector('div:last-child') as HTMLDivElement;
+  const lastContent = emailRevealText.innerHTML;
+  emailReveal.addEventListener('click', () => {
+    copyEmail();
+    emailRevealText.innerText = 'Email copied!';
+    setTimeout(() => {
+      emailRevealText.innerHTML = lastContent;
+    }, 1500);
+  });
+</script>

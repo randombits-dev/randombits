@@ -1,5 +1,6 @@
 ---
 import '../../styles/footer.css';
+import EmailMe from "../EmailMe.astro";
 
 const today = new Date();
 
@@ -30,12 +31,13 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
         <div set:html={keybase}/>
       </a>
 
-      <button id="footer__envelope" title="Copy Email">
-        <span set:html={envelopeSVG}/>
-        <span id="footer__quick-msg" class="quick-msg">Email copied</span>
-      </button>
+
 
     </nav>
+
+  </div>
+  <div>
+    <EmailMe/>
   </div>
   <div class="copyright">
     &copy; {today.getFullYear()} Random Bits

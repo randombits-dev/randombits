@@ -12,8 +12,8 @@ import '../styles/article-body.scss';
 import '../styles/prism-custom.scss';
 import Hero from "../components/home/Hero.astro";
 import ServicesSection from "../components/home/ServicesSection.astro";
+import EmailMe from "../components/EmailMe.astro";
 
-const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
 const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 
 ---
@@ -33,23 +33,15 @@ const discordSVG = await fetch('https://storage.googleapis.com/randombits/images
 
   <div class="container text-xl pb-48">
 
+    <div>Hi, I'm <b>Matthew</b>, a software engineer from Duluth, Minnesota, USA. I recently founded <i>Random Bits Software Engineering</i>, after working for 14 years designing and building enterprise web applications in the corporate world. I'm passionate about building high-quality, performant, and user-friendly web applications.</div>
+
     <h2>Contact Me</h2>
 
-    <div>Free initial consultation to discuss your current ideas or challenges.</div>
-
-    <div>Send me an email or connect with me on discord. I provide free initial consultations to determine if </div>
+    <div>Send me an email or connect with me on discord.</div>
 
     <div class="flex">
     <div>
-    <button class="mt-5 px-5 py-3 border outlined rounded-4 inline-flex items-center" id="email-reveal">
-      <div set:html={envelopeSVG}/>
-      <div class="text-xl font-bold flex items-center">
-        <div>matt</div>
-        <div class="fixed left-[-9999px]">a</div>
-        <div>@</div>
-        <div>randombits.dev</div>
-      </div>
-    </button>
+    <EmailMe/>
     <!--<div id="email-reveal-output" class="ml-5"></div>-->
     </div>
 
@@ -61,11 +53,7 @@ const discordSVG = await fetch('https://storage.googleapis.com/randombits/images
     </div>
     </div>
 
-    <div>Free estimates and initial consultations.</div>
-
-    <h2>My Process</h2>
-
-    <div>In the initial meeting, we will discuss your current ideas and/or challenges.  </div>
+    <div class="mt-10">Free initial consultation to discuss your current ideas or challenges.</div>
 
     <AboutMe.Content></AboutMe.Content>
   </div>
@@ -97,18 +85,3 @@ const discordSVG = await fetch('https://storage.googleapis.com/randombits/images
   }
 
 </style>
-
-<script>
-  import {copyEmail} from "../utils/utils";
-
-  const emailReveal = document.getElementById('email-reveal');
-  const emailRevealText = emailReveal.querySelector('div:last-child') as HTMLDivElement;
-  const lastContent = emailRevealText.innerHTML;
-  emailReveal.addEventListener('click', () => {
-    copyEmail();
-   emailRevealText.innerText = 'Email copied!';
-    setTimeout(() => {
-      emailRevealText.innerHTML = lastContent;
-    }, 1500);
-  });
-</script>
