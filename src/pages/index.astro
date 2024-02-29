@@ -20,60 +20,20 @@ import EmailMe from "../components/EmailMe.astro";
 
   <!--</div>-->
 
-  <div class="container">
+  <div class="container pt-24">
   <h1>Design. Build. Ship.</h1>
-  <p class="text-xl">Hi, I'm Matthew. Whether your building something custom, enhancing an existing app, or just need advice, I can help. </p>
-  <div class="flex">
-    <button class="button outlined ">See Services</button>
-    <button class="button outlined ml-10">About Me</button>
-    <EmailMe/>
+    <div class="text-2xl font-bold">Web apps, mobile apps, technology consulting, and more.</div>
+  <p class="text-xl">Whether your building something custom, enhancing an existing app, or just need advice, I can help. </p>
+  <div class="pt-10 flex">
+    <a href="/services" class="btn-primary">View Services</a>
+    <a href="/about" class="btn-secondary ml-10">About Me</a>
+    <!--<EmailMe/>-->
   </div>
   </div>
 
-  <div class="container">
-    <h2>Featured Articles</h2>
+  <div class="container pt-24 pb-48">
+    <h1>Featured Articles</h1>
     <ArticleList limit={6}/>
-  </div>
-
-  <div class="text-center max-w-[1000px] mx-auto">
-    <h1 class="text-[110px] mb-0"><span class="text-6xl">hi, I'm</span>  <b>Matthew</b></h1>
-    <h2 class="text-[32px] mt-0">a software engineer based in Duluth, MN</h2>
-<p class="text-xl">I have 14 years of experience creating web applications</p>
-  </div>
-
-
-  <div class="text-center max-w-[1000px] mx-auto">
-    <h1 class="text-[110px] mb-0">create <b>anything</b></h1>
-    <h2 class="text-[38px] mt-0"><span class="text-[24px]">from a </span><>simple website</> <span class="text-[24px]">to a</span> <>custom enterprise app</></h2>
-
-    <div class="flex mt-10 border-2 border-solid outlined rounded-10">
-      <div class="p-10">
-        <img src="/website.png" height="500"/>
-      </div>
-      <div class="ml-20 text-left text-lg border-l-dashed border-l-2 p-10">
-        <p class="text-lg ">Unlock your business potential with a modern and user friendly application:</p>
-
-        <!--<p>Examples of capabilities:</p>-->
-        <ul>
-          <li>Business websites</li>
-          <li>Web applications</li>
-          <li>Mobile apps</li>
-        </ul>
-        <button class="button outlined">More Details</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center">
-    <h1 class="text-[120px] mb-0">Smart Hosting</h1>
-    <h2 class="text-[38px] mt-0">and a modern tech stack</h2>
-    <p>Endless possibilities for hosting, catered to your performance and maintainability needs.</p>
-  </div>
-
-  <div class="text-center">
-    <h1 class="text-[80px] mb-0">Technology Consulting</h1>
-    <h2 class="text-[24px] mt-0">to determine the right software, process, or technology for your business</h2>
-    <p>Technology is moving fast. </p>
   </div>
 
 
@@ -127,10 +87,10 @@ import EmailMe from "../components/EmailMe.astro";
     color: var(--color-back);
   }
 
-  a.button {
-    max-width: 500px;
-    margin: 30px auto;
-  }
+  //a.button {
+  //  max-width: 500px;
+  //  margin: 30px auto;
+  //}
 
   .other-area {
     max-width: 1200px;

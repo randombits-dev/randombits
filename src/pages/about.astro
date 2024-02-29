@@ -15,6 +15,7 @@ import ServicesSection from "../components/home/ServicesSection.astro";
 import EmailMe from "../components/EmailMe.astro";
 
 const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
+const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
 
 ---
 <BaseLayout title="About Me" description="My CV and experience.">
@@ -39,16 +40,18 @@ const discordSVG = await fetch('https://storage.googleapis.com/randombits/images
 
     <div>Send me an email or connect with me on discord.</div>
 
-    <div class="flex">
+    <div class="flex mt-5">
     <div>
-    <EmailMe/>
+      <a href="mailto:matt@randombits.dev" class="btn-secondary inline-flex items-center">
+        <div set:html={envelopeSVG}/><div class="text-xl  lowercase">matt@randombits.dev</div>
+      </a>
     <!--<div id="email-reveal-output" class="ml-5"></div>-->
     </div>
 
-    <div class="ml-5 mt-5">
-      <a href="https://discord.com/users/806661811143049216" target="_blank" class="px-5 py-3 border outlined rounded-4 inline-flex items-center">
+    <div class="ml-5">
+      <a href="https://discord.com/users/806661811143049216" target="_blank" class="btn-secondary inline-flex items-center">
         <div set:html={discordSVG}/>
-        <div class="text-xl font-bold">randombits.dev</div>
+        <div class="text-xl">randombits.dev</div>
       </a>
     </div>
     </div>
@@ -78,10 +81,6 @@ const discordSVG = await fetch('https://storage.googleapis.com/randombits/images
     height: 25px;
     margin-right: 1rem;
     fill: var(--color-content);
-  }
-
-  #email-reveal {
-    cursor: pointer;
   }
 
 </style>

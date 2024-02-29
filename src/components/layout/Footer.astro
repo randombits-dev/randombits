@@ -13,8 +13,12 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 ---
 
 <footer>
+
   <div class="footer-content">
     <nav aria-label="Social Links" class="social-links">
+      <a href="mailto:matt@randombits.dev" class="btn-email btn-secondary inline-flex items-center mr-10">
+        <div set:html={envelopeSVG}/><div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
+      </a>
       <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
         <div set:html={githubSVG}/>
       </a>
@@ -30,28 +34,23 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
       <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
         <div set:html={keybase}/>
       </a>
-
-
-
     </nav>
 
   </div>
-  <div>
-    <EmailMe/>
-  </div>
+
   <div class="copyright">
     &copy; {today.getFullYear()} Random Bits
   </div>
 </footer>
 
-<script>
-  import {copyEmail} from "../../utils/utils";
+<style>
+  .btn-email {
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+</style>
 
-  document.getElementById('footer__envelope').addEventListener('click', (e) => {
-    const email = copyEmail();
-    document.getElementById('footer__quick-msg').style.display = 'inline';
-    setTimeout(() => {
-      document.getElementById('footer__quick-msg').style.display = 'none';
-    }, 1500);
-  });
+<script>
+
 </script>
