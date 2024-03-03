@@ -38,32 +38,32 @@ button {
 
 .btn-primary {
   text-align: center;
-  padding: 20px 40px;
+  padding: 16px 32px;
   font-family: inherit;
-  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-2);
-  font-size: var(--font-size-caption);
-  font-weight: bold;
   background-color: var(--back-btn);
   color: var(--color-btn);
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: bold;
   font-family: var(--font-1);
-  text-transform: uppercase;
 }
 
 .btn-secondary {
   text-align: center;
-  padding: 16px 32px;
+  padding: 13px 32px;
   font-family: inherit;
   border: 3px solid var(--border-color);
   border-radius: var(--border-radius-2);
-  font-size: var(--font-size-caption);
-  /*font-weight: bold;*/
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: bold;
   font-family: var(--font-1);
-  /*text-transform: uppercase;*/
+}
+
+.uppercase {
+  text-transform: uppercase;
+
 }
 
 /*div.outlined {*/

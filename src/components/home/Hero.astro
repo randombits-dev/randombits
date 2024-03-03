@@ -1,38 +1,34 @@
 ---
 const {img} = Astro.props;
+import RandomBits from './RandomBits.tsx';
 ---
-<div class="hero h-[500px] sm:h-[600px] text-center bg-header">
+<div class="hero h-[500px] sm:h-[600px] text-center">
   <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
-    <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 rounded-5 border-solid" style="font-family: Righteous;">
+    <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 font-header font-bold">
         <slot/>
 
         <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
 
     </div>
     {img && <div class="hidden lg:block">
-      <img src={img} width="500" height="500"/>
+      <img src={img} width="400" height="400"/>
     </div>}
+  </div>
+
+  <div aria-disabled="true"
+       class="rb-background-bits absolute px-1 py-1 top-0 h-[500px] sm:h-[600px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
+    <RandomBits client:only="solid-js"/>
   </div>
 </div>
 
 <style>
-  .hero {
-    //background-image: url('/textures/green-dust-and-scratches.png');
-    color: white;
-  }
+  .rb-background-bits {
 
-  @media screen and (min-width: 768px) {
-    .rb-hero-text {
-      color: #d5cdcd;
-      //background: linear-gradient(90deg, #e9c46a, #f4a261);
-      //-webkit-background-clip: text;
-      //-webkit-text-fill-color: transparent;
-      text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 12px 12px 0 var(--hero-shadow);
-    }
-
-    .rb-hero-sub {
-      text-shadow: -3px -3px 0 var(--hero-shadow), -3px 3px 0 var(--hero-shadow), 3px -3px 0 var(--hero-shadow), 3px 3px 0 var(--hero-shadow), 10px 10px 0 var(--hero-shadow);
-    }
-
+    color: #d3d3d3;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.5;
   }
 </style>
