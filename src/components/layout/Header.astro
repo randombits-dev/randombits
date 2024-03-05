@@ -1,12 +1,15 @@
 ---
 import Logo from "../Logo.astro";
+import Logo2 from "../Logo2.astro";
 ---
 
-<header class="mt-[-20px] relative z-10 border-b bg-header color-header-text">
+<header class=" relative z-10 border-b">
 
   <nav aria-label="Main"
-       class="font-header block max-w-[1000px] mx-auto flex text-lg sm:text-2xl pt-5 rounded-b-xl overflow-hidden items-center">
-    <a class="flex-1 px-6 block sm:inline " href="/" aria-label="Home Page">randombits.dev</a>
+       class="font-header block max-w-[1000px] mx-auto flex text-lg sm:text-xl pt-5 rounded-b-xl overflow-hidden items-center">
+    <Logo width="75" includeDigits={false}/>
+    <a class="flex-1 px-6 block sm:inline " href="/" aria-label="Home Page"><div class="text-2xl font-bold">Random Bits</div>
+      <div class="text-sm">Software Engineering</div></a>
     <a href="/services" class="header-link">services</a> /
     <a href="/articles" class="header-link">articles</a> /
     <!--<a href="/projects" class="header-link">projects</a> /-->

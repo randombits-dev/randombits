@@ -40,20 +40,21 @@ button {
   text-align: center;
   padding: 16px 32px;
   font-family: inherit;
-  border-radius: var(--border-radius-2);
   background-color: var(--back-btn);
   color: var(--color-btn);
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   font-family: var(--font-1);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-2);
 }
 
 .btn-secondary {
   text-align: center;
-  padding: 13px 32px;
+  padding: 16px 32px;
   font-family: inherit;
-  border: 3px solid var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: var(--border-radius-2);
   cursor: pointer;
   font-size: 20px;

@@ -1,10 +1,9 @@
 ---
 const {img} = Astro.props;
-import RandomBits from './RandomBits.tsx';
 ---
 <div class="hero h-[500px] sm:h-[600px] text-center">
   <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
-    <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 font-header font-bold">
+    <div class="logo inline-block z-1 flex-1 items-center leading-[0.8] border-0 px-1 py-3 font-header">
         <slot/>
 
         <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
@@ -15,10 +14,6 @@ import RandomBits from './RandomBits.tsx';
     </div>}
   </div>
 
-  <div aria-disabled="true"
-       class="rb-background-bits absolute px-1 py-1 top-0 h-[500px] sm:h-[600px] leading-tight tracking-tighter text-justify overflow-hidden z-0">
-    <RandomBits client:only="solid-js"/>
-  </div>
 </div>
 
 <style>

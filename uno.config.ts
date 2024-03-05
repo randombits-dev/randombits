@@ -32,7 +32,7 @@ export default defineConfig({
   },
 
   shortcuts: {
-    card: 'rb-color-content relative border',
+    card: 'bg-white shadow-md rounded-md border-2 border-solid',
     btn: 'text-center px-3 py-5 border tb-color-header cursor-pointer',
     'header-link': 'px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-2 hover:underline-offset-4 cursor-pointer'
   },
