@@ -22,7 +22,8 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
     };
 
     if (relatedPages) {
-        return <nav aria-label="Table of Contents" class="rb-article__nav" ref={el}>
+        return <div class="rb-article__nav" ref={el}>              <b class="block text-xl pb-3">Table of Contents</b>
+        <nav aria-label="Table of Contents" >
             {
                 relatedPages.sort((a, b) => a.data.order - b.data.order).map(article => {
 
@@ -33,7 +34,7 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
                                 {
                                     headings.map((heading, i) => {
                                         const isSelected = selected() === heading.slug;
-                                      return <div><a class="" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{i+1}. {heading.text}</a></div>
+                                      return <div><a class="" href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a></div>
                                     })
                                 }
                             </div>
@@ -45,8 +46,11 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
             }
 
         </nav>
+        </div>;
     } else {
         return <div class="rb-article__nav" ref={el}>
+          <b class="block text-xl pb-3">Table of Contents</b>
+
           {/*<div class="font-bold">Publishing an article on Fdroid</div>*/}
           <nav aria-label="Article Sections" >
             {

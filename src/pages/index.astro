@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home/Hero.astro";
 import ArticleList from "../components/article/ArticleList.astro";
-import EmailMe from "../components/EmailMe.astro";
 import Waves from "../components/home/Waves.astro";
 ---
 
@@ -22,7 +21,7 @@ import Waves from "../components/home/Waves.astro";
   <div class="container py-24">
     <div class="grid grid-cols-2 gap-10">
       <div class="text-4xl">With the right software, great things can happen</div>
-      <div class="text-xl">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</div>
+      <div class="text-xl">Whether you’re starting from scratch, or enhancing an existing product, receive a personalized development experience that fits your business.</div>
     </div>
   </div>
   </div>
@@ -96,11 +95,6 @@ import Waves from "../components/home/Waves.astro";
     color: var(--color-back);
   }
 
-  //a.button {
-  //  max-width: 500px;
-  //  margin: 30px auto;
-  //}
-
   .other-area {
     max-width: 1200px;
     margin: 0 auto;
@@ -115,18 +109,3 @@ import Waves from "../components/home/Waves.astro";
   }
 
 </style>
-
-<script>
-  const html = [...Array.from({length: 10000})].map(() => {
-    return `<span>${Math.random() < .5 ? 0 : 1} </span>`;
-  }).join(' ');
-  document.querySelector('.rb-background-bits').innerHTML = html;
-
-  // document.querySelector('.rb-background-bits').addEventListener('mousemove', (e) => {
-  //   console.count('mousemove')
-  //   if (e.target.tagName === 'SPAN') {
-  //     e.target.style.fontWeight = 'bold';
-  //
-  //   }
-  // });
-</script>

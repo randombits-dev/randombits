@@ -48,7 +48,7 @@
   }
 
   [aria-selected="true"] {
-    background-color: var(--back-contrast);
+    text-decoration: 3px var(--back-header) underline;
     border-radius: var(--border-radius-1);
     //color: var(--color-header);
     display: inline-block;

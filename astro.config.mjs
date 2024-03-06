@@ -2,11 +2,11 @@ import {defineConfig} from 'astro/config';
 import mdx from '@astrojs/mdx';
 import solid from '@astrojs/solid-js';
 import remarkCodeTitles from 'remark-code-titles';
-import UnoCSS from 'unocss/astro';
 import sitemap from '@astrojs/sitemap';
-
 import robots from "astro-robots";
 import createAstroFontPickerIntegration from "astro-font-picker";
+
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +19,9 @@ export default defineConfig({
   devToolbar: {
     enabled: true
   },
-  integrations: [mdx(), solid(), UnoCSS(), sitemap(), robots({}), createAstroFontPickerIntegration()],
+  integrations: [mdx(), solid(), sitemap(), robots({}), createAstroFontPickerIntegration(), tailwind({
+    applyBaseStyles: false
+  })],
   build: {
     assets: '_astro',
     format: 'file'
