@@ -68,6 +68,11 @@ button {
 
 }
 
+.btn-small {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
 /*div.outlined {*/
 /*  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;*/
 /*}*/
