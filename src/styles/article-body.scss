@@ -1,7 +1,6 @@
 
 .article-body {
   overflow: hidden;
-  padding: 20px 40px !important;
   background-color: var(--back-content) !important;
 
   a {
@@ -9,16 +8,18 @@
   }
 
   h2 {
-    margin-top: 80px !important;
-    margin-bottom: 30px !important;
+    margin-top: 100px !important;
+    margin-bottom: 32px !important;
+    font-size: 48px;
   }
 
   h2:first-child {
-    margin-top: 20px !important;
+    //margin-top: 40px !important;
   }
 
   h3 {
     margin-top: 50px !important;
+    font-size: 32px;
   }
 
 
@@ -28,21 +29,9 @@
 
   table {
     /*table-layout: fixed;*/
-    width: calc(100% + 120px);
     border-collapse: collapse;
-    border-spacing: 0;
-    margin-left: -60px;
-    margin-right: -60px;
-  }
-
-  table td:first-child,
-  table th:first-child {
-    padding-left: 60px;
-  }
-
-  table td:last-child,
-  table th:last-child {
-    padding-right: 60px;
+    border: var(--border-width-light) solid var(--border-color-light);
+    border-radius: var(--border-radius-2);
   }
 
   th {
@@ -50,15 +39,10 @@
   }
 
   td, th {
-    border-bottom: 1px solid var(--color-content);
+    border-bottom: var(--border-width-light) solid var(--border-color-light);
     padding: 5px 15px;
     /*white-space: nowrap;*/
     font-size: var(--font-size-caption)
-  }
-
-  th:last-child,
-  td:last-child {
-    /*width: 100%;*/
   }
 
   .break-word td {
@@ -67,11 +51,9 @@
 
 
   iframe {
-    width: calc(100% + 80px);
+    width: 100%;
     border-width: var(--border-width-light) 0;
     border-color: var(--border-color-light);
-    margin-left: -40px;
-    margin-right: -40px;
   }
 
   li {
@@ -90,9 +72,7 @@
   img.full-img {
     border-width: var(--border-width-light) 0;
     border-color: var(--border-color-light);
-    width: calc(100% + 80px);
-    margin-left: -40px;
-    margin-right: -40px;
+    width: calc(100%);
   }
 
 }

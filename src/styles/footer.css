@@ -15,8 +15,11 @@ footer {
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 10px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .social-links a, .social-links button {
@@ -35,6 +38,7 @@ footer {
 }
 
 .copyright {
+  margin-top: 20px;
   text-align: center;
 }
 

@@ -1,12 +1,15 @@
 ---
-import HtmlLayout from '../../layouts/HtmlLayout.astro';
 import ArticleList from "../../components/article/ArticleList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<HtmlLayout title="Articles by Random Bits" description="A list of all software engineering guides and articles by Random Bits">
-    <h1 class="text-center">All Articles</h1>
+<BaseLayout title="Articles by Random Bits" description="A list of all software engineering guides and articles by Random Bits">
+  <div class="container">
+    <h1 class="text-center mt-24 pb-24">Articles</h1>
+
     <ArticleList/>
-</HtmlLayout>
+  </div>
+</BaseLayout>
 
 <style>
   h1 {

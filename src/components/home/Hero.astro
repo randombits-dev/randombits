@@ -1,33 +1,29 @@
 ---
-
+const {img} = Astro.props;
 ---
-<div class="bg-base h-[500px] sm:h-[800px] text-center">
-  <div class="relative h-[500px] sm:h-[800px] z-10 flex flex-col items-center">
-    <div class="flex-1 text-primary flex items-center">
-      <div class="">
-        <div class="rb-hero-text text-[40px] sm:text-[75px] md:text-[100px] lg:text-[150px] font-bold leading-tight"
-             style="font-family: Righteous;">random bits
-        </div>
-        <div class="rb-hero-sub text-4xl md:text-6xl lg:text-[80px] px-6 font-bold leading-tight" style="font-family: Righteous;">software
-          engineering
-        </div>
+<div class="hero h-[500px] sm:h-[600px] text-center">
+  <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
+    <div class="logo inline-block z-1 flex-1 items-center border-0 p-4 font-header">
+        <slot/>
 
-        <a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>
+        <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
 
-      </div>
     </div>
+    {img && <div class="hidden lg:block">
+      <img src={img} width="400" height="400"/>
+    </div>}
   </div>
+
 </div>
 
 <style>
-  @media screen and (min-width: 768px) {
-    .rb-hero-text {
-      text-shadow: -5px -5px 0 var(--hero-shadow), -5px 5px 0 var(--hero-shadow), 5px -5px 0 var(--hero-shadow), 5px 5px 0 var(--hero-shadow), 15px 15px 0 var(--hero-shadow);
-    }
+  .rb-background-bits {
 
-    .rb-hero-sub {
-      text-shadow: -3px -3px 0 var(--hero-shadow), -3px 3px 0 var(--hero-shadow), 3px -3px 0 var(--hero-shadow), 3px 3px 0 var(--hero-shadow), 10px 10px 0 var(--hero-shadow);
-    }
-
+    color: #d3d3d3;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.5;
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import '../../styles/footer.css';
+import EmailMe from "../EmailMe.astro";
 
 const today = new Date();
 
@@ -12,8 +13,13 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 ---
 
 <footer>
+
   <div class="footer-content">
     <nav aria-label="Social Links" class="social-links">
+      <a href="mailto:matt@randombits.dev" class="btn-email btn-secondary inline-flex items-center ">
+        <div set:html={envelopeSVG}/><div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
+      </a>
+      <div class="flex">
       <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
         <div set:html={githubSVG}/>
       </a>
@@ -29,26 +35,24 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
       <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
         <div set:html={keybase}/>
       </a>
-
-      <button id="footer__envelope" title="Copy Email">
-        <span set:html={envelopeSVG}/>
-        <span id="footer__quick-msg" class="quick-msg">Email copied</span>
-      </button>
-
+      </div>
     </nav>
+
   </div>
+
   <div class="copyright">
     &copy; {today.getFullYear()} Random Bits
   </div>
 </footer>
 
+<style>
+  .btn-email {
+    border: 3px solid #111;
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+</style>
+
 <script>
-  document.getElementById('footer__envelope').addEventListener('click', (e) => {
-    const output = ['matt', 'randombits', 'dev'];
-    navigator.clipboard.writeText(`${output[0]}@${output[1]}.${output[2]}`);
-    document.getElementById('footer__quick-msg').style.display = 'inline';
-    setTimeout(() => {
-      document.getElementById('footer__quick-msg').style.display = 'none';
-    }, 1500);
-  });
+
 </script>

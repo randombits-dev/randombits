@@ -18,7 +18,7 @@ const {title, description, img} = Astro.props;
 <meta name="viewport" content="width=device-width, initial-scale = 1.0"/>
 <title>{title}</title>
 <link rel="icon" type="image/svg" href="/favicon.svg"/>
-<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Righteous&display=swap">
+<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Inter&display=swap">
 </GoogleFontsOptimizer>
 <meta property="og:description" name="description" content={description}/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -28,11 +28,3 @@ const {title, description, img} = Astro.props;
 <meta name="twitter:image" property="og:image" content={'https://randombits.dev' + img}/>}
 <meta property="og:url" content={removeTrailingSlash(Astro.url)}/>
 <link rel="canonical" href={removeTrailingSlash(Astro.url)} />
-<script is:inline>
-  const initialTheme = localStorage.getItem("theme") || 'base';
-  if (initialTheme.startsWith('dark-')) {
-    document.documentElement.classList.add(`theme-${initialTheme}`, `theme-dark`);
-  } else {
-    document.documentElement.classList.add(`theme-${initialTheme}`);
-  }
-</script>

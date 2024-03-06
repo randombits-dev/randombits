@@ -6,7 +6,7 @@ const {collection, title, desc, url} = Astro.props;
 const articles = await getNonHiddenSortedByOrder(collection);
 ---
 
-<div class="card overflow-hidden">
+<div class="card">
   <div class="text-center px-5 pt-5 text-2xl font-bold">{title}</div>
   <div class="text-center px-10 text-lg">{desc}</div>
   <div class="px-5 py-5">

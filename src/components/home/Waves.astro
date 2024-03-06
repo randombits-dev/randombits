@@ -1,0 +1,17 @@
+---
+
+const pointness = 75;
+const position = 5;
+
+const path = `M0,50 C200,100 300,0 500,50 L500,100 L0,100 Z`;
+---
+<svg viewBox={`0 0 500 100`} xmlns="http://www.w3.org/2000/svg">
+  <path fill="rgb(255, 191, 35)" d={path}/>
+</svg>
+
+<style>
+  svg {
+    margin-top: 50px;
+    display: block;
+  }
+</style>

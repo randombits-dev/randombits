@@ -1,5 +1,10 @@
 @import './variables.css';
 @import 'card.scss';
+@import './tailwind.css';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: var(--font-2);
@@ -36,22 +41,59 @@ button {
   cursor: pointer;
 }
 
-.button {
+.btn-primary {
   text-align: center;
-  padding: 10px 20px;
+  padding: 16px 32px;
   font-family: inherit;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius-2);
-  font-size: var(--font-size-caption);
-  font-weight: bold;
   background-color: var(--back-btn);
   color: var(--color-btn);
   cursor: pointer;
-  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--font-1);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-2);
+}
+
+.btn-secondary {
+  text-align: center;
+  padding: 16px 32px;
+  font-family: inherit;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-2);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--font-1);
+}
+
+.uppercase {
+  text-transform: uppercase;
+
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+/*div.outlined {*/
+/*  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;*/
+/*}*/
+
+.button.outlined {
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.button.outlined:hover {
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 2px 4px 0px 0px, #171717 0px 4px 0px 0px;
 }
 
 a.button:hover, button.button:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 hr {
@@ -62,4 +104,9 @@ hr {
 
 img {
   display: block;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
 }

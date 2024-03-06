@@ -1,0 +1,48 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .rb-color-content {
+    background-color: var(--back-content);
+    color: var(--color-content);
+  }
+
+  .rb-color-header {
+    background-color: var(--back-content);
+    color: var(--color-content);
+  }
+
+  .outlined {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;
+  }
+
+  .outlined:hover {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 2px 4px 0px 0px, #171717 0px 4px 0px 0px;
+  }
+
+  .card {
+    @apply rounded-md bg-gray-100 px-5 py-3 shadow-md border-light;
+  }
+
+  .btn {
+    @apply text-center px-3 py-5 border rb-color-header cursor-pointer;
+  }
+
+  .header-link {
+    @apply px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-2 hover:underline-offset-4 cursor-pointer;
+  }
+
+  .border-light {
+    border: var(--border-width-light) solid var(--border-color-light);
+    border-radius: var(--border-radius-1);
+  }
+
+  .font-header {
+    font-family: var(--font-1);
+    line-height: 1.2;
+  }
+
+  .container {
+    @apply px-4;
+  }
+}
