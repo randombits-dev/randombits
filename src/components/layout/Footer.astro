@@ -16,9 +16,10 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
 
   <div class="footer-content">
     <nav aria-label="Social Links" class="social-links">
-      <a href="mailto:matt@randombits.dev" class="btn-email btn-secondary inline-flex items-center mr-10">
+      <a href="mailto:matt@randombits.dev" class="btn-email btn-secondary inline-flex items-center ">
         <div set:html={envelopeSVG}/><div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
       </a>
+      <div class="flex">
       <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
         <div set:html={githubSVG}/>
       </a>
@@ -34,6 +35,7 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
       <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
         <div set:html={keybase}/>
       </a>
+      </div>
     </nav>
 
   </div>

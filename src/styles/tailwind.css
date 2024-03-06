@@ -39,5 +39,10 @@
 
   .font-header {
     font-family: var(--font-1);
+    line-height: 1.2;
+  }
+
+  .container {
+    @apply px-4;
   }
 }

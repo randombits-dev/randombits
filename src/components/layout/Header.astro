@@ -6,7 +6,7 @@ import Logo2 from "../Logo2.astro";
 <header class=" relative z-10 border-b">
 
   <nav aria-label="Main"
-       class="font-header block max-w-[1000px] mx-auto flex text-lg sm:text-xl pt-5 rounded-b-xl overflow-hidden items-center">
+       class="font-header block max-w-[1000px] mx-auto sm:flex text-lg sm:text-xl pt-5 rounded-b-xl overflow-hidden items-center">
 
     <a class="flex-1 px-6 block items-center flex" href="/" aria-label="Home Page">
       <Logo width="75" includeDigits={false}/>
@@ -15,10 +15,17 @@ import Logo2 from "../Logo2.astro";
       <div class="text-sm">Software Engineering</div>
       </div>
     </a>
+    <div class="flex justify-center items-center">
     <a href="/services" class="header-link">services</a> /
     <a href="/articles" class="header-link">articles</a> /
-    <!--<a href="/projects" class="header-link">projects</a> /-->
+    <!--<a href="/projects" class="header-link">pr
+    ojects</a> /-->
     <a href="/about" class="header-link">about</a>
+    </div>
   </nav>
 </header>
+
+<style>
+
+</style>
 

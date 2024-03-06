@@ -2,6 +2,10 @@
 @import 'card.scss';
 @import './tailwind.css';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-2);
   margin: 0;
