@@ -1,6 +1,5 @@
 ---
 import '../../styles/footer.css';
-import EmailMe from "../EmailMe.astro";
 
 const today = new Date();
 
@@ -17,24 +16,25 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
   <div class="footer-content">
     <nav aria-label="Social Links" class="social-links">
       <a href="mailto:matt@randombits.dev" class="btn-email btn-secondary inline-flex items-center ">
-        <div set:html={envelopeSVG}/><div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
+        <div set:html={envelopeSVG}/>
+        <div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
       </a>
       <div class="flex">
-      <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
-        <div set:html={githubSVG}/>
-      </a>
-      <a href="https://discord.gg/VdAySp2Y" target="_blank" aria-label="Discord">
-        <div set:html={discordSVG}/>
-      </a>
-      <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="Twitter">
-        <div set:html={twitterSVG}/>
-      </a>
-      <a href="https://linktr.ee/randombits" target="_blank" aria-label="Linktree">
-        <div set:html={linktree}/>
-      </a>
-      <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
-        <div set:html={keybase}/>
-      </a>
+        <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
+          <div set:html={githubSVG}/>
+        </a>
+        <a href="https://discord.gg/VdAySp2Y" target="_blank" aria-label="Discord">
+          <div set:html={discordSVG}/>
+        </a>
+        <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="Twitter">
+          <div set:html={twitterSVG}/>
+        </a>
+        <a href="https://linktr.ee/randombits" target="_blank" aria-label="Linktree">
+          <div set:html={linktree}/>
+        </a>
+        <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
+          <div set:html={keybase}/>
+        </a>
       </div>
     </nav>
 

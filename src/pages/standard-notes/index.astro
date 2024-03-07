@@ -1,7 +1,4 @@
 ---
-import {getCollection} from "astro:content";
-
-import ImageCard from "../../components/ImageCard.astro";
 import HtmlLayout from "../../layouts/HtmlLayout.astro";
 import {getCollectionSortedByOrder} from "../../utils/articleUtils";
 const posts = await getCollectionSortedByOrder('standard-notes');
@@ -9,14 +6,19 @@ const posts = await getCollectionSortedByOrder('standard-notes');
 
 <HtmlLayout title="Standard Notes Plugin Guides" description="List of standard notes plugin articles">
 
-<h1 class="text-center text-bg-text">Standard Notes Plugin Guides</h1>
+  <h1 class="text-center text-bg-text">Standard Notes Plugin Guides</h1>
 
-    <div class="card-list">
-{
-    posts.map(article => {
-        return <ImageCard title={article.data.title} desc={article.data.desc}
-                          url={'/standard-notes/' + article.slug}/>
-    })
-}
-    </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-stretch">
+
+    {
+      posts.map(article => {
+        return <a href={'/standard-notes/' + article.slug} class="card block">
+          <div class="text-xl px-5 pt-5 font-bold">{article.data.title}</div>
+          <div class="my-3 mx-5">
+            <div class="card-row-desc">{article.data.desc}</div>
+          </div>
+        </a>;
+      })
+    }
+  </div>
 </HtmlLayout>

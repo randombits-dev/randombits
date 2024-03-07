@@ -41,10 +41,3 @@ footer {
   margin-top: 20px;
   text-align: center;
 }
-
-footer .quick-msg {
-  position: absolute;
-  display: none;
-  margin-left: 20px;
-  margin-top: 5px;
-}

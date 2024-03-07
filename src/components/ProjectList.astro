@@ -7,37 +7,39 @@ const projectsToShow = limit ? PROJECTS.slice(0, limit) : PROJECTS;
 
 const makeArray = (item) => {
   return Array.isArray(item) ? item : [item];
-}
+};
 ---
-<div class="card-list-v">
-{
-projectsToShow.map(({links, title, desc, img, newTab}) => {
-return <div class="card image-card image-card-v flex flex-col">
-  <a href={links[0][1]} class="nav">
-    <Image src={img} alt="Article Cover Image"/>
-  </a>
-  <div class="card-row-text">
-    <div class="text-2xl font-bold">{title}</div>
-    {
-      makeArray(desc).map(d => {
-        return <div class="card-row-desc mt-3!">{d}</div>
-      })
-    }
+<div class="grid lg:grid-cols-2 gap-10 px-5">
+  {
+    projectsToShow.map(({links, title, desc, img, newTab}) => {
+      return (
+        <div class="card-base image-card image-card-v flex flex-col">
+          <a href={links[0][1]} class="nav">
+            <Image src={img} alt="Article Cover Image"/>
+          </a>
+          <div class="card-row-text">
+            <div class="text-2xl font-bold">{title}</div>
+            {
+              makeArray(desc).map(d => {
+                return;
+                <div class="card-row-desc mt-3!">{d}</div>;
+              })
+            }
 
 
-  </div>
-  <div class="flex-1"></div>
+          </div>
+          <div class="flex-1"></div>
 
-  <div class="mx-5 mb-5 flex gap-5 items-center">
-    {
-      links.map((link, i) => {
-          return <a class="secondary" href={link[1]}>{link[0]}</a>
-      })
-    }
+          <div class="mx-5 mb-5 flex gap-5 items-center">
+            {
+              links.map((link, i) => {
+                return <a class="secondary" href={link[1]}>{link[0]}</a>;
+              })
+            }
 
-  </div>
-</div>
-  })
+          </div>
+        </div>);
+    })
   }
 </div>
 

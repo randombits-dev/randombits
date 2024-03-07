@@ -20,8 +20,12 @@
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 2px 4px 0px 0px, #171717 0px 4px 0px 0px;
   }
 
+  .card-base {
+    @apply rounded-md bg-gray-100 shadow-md border-light;
+  }
+
   .card {
-    @apply rounded-md bg-gray-100 px-5 py-3 shadow-md border-light;
+    @apply card-base px-5 py-3;
   }
 
   .btn {
@@ -43,6 +47,18 @@
   }
 
   .container {
-    @apply px-4;
+    @apply max-w-[1000px] mx-auto px-4;
+  }
+
+  .container-lg {
+    @apply max-w-[1200px] mx-auto px-4;
+  }
+
+  .container-sm {
+    @apply max-w-[800px] mx-auto px-4;
+  }
+
+  .snippit a {
+    @apply underline;
   }
 }

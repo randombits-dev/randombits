@@ -1,33 +1,16 @@
 ---
-import * as AboutMe from '../snippits/about-me.md'
-import '../styles/md.scss';
-import BlogSidebar from "../layouts/BlogSidebar.astro";
-import {getEntry} from 'astro:content';
-import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogHeader from "../layouts/BlogHeader.astro";
-import ArticleTOC from "../components/article/ArticleTOC";
+import * as AboutMe from '../snippits/about-me.md';
+import '@/styles/md.scss';
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import '../styles/article-container.scss';
-import '../styles/article-body.scss';
-import '../styles/prism-custom.scss';
-import Hero from "../components/home/Hero.astro";
-import ServicesSection from "../components/home/ServicesSection.astro";
-import EmailMe from "../components/EmailMe.astro";
+import '@/styles/article-container.scss';
+import '@/styles/article-body.scss';
 
 const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
-
 ---
-<BaseLayout title="About Me" description="My CV and experience.">
+<BaseLayout title="About Random Bits" description="">
   <h1 class="text-center my-24">About Me</h1>
-
-
-  <!--<ServicesSection number="01">-->
-  <!--  Experience-->
-  <!--</ServicesSection>-->
-
-
-
 
   <div class="container text-lg pb-48 leading-8">
 
@@ -38,25 +21,25 @@ const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/image
     <div>Send me an email or connect with me on discord.</div>
 
     <div class="flex flex-wrap mt-5 gap-5">
-    <div>
-      <a href="mailto:matt@randombits.dev" class="btn-secondary inline-flex items-center">
-        <div set:html={envelopeSVG}/><div class="text-xl  lowercase">matt@randombits.dev</div>
-      </a>
-    <!--<div id="email-reveal-output" class="ml-5"></div>-->
-    </div>
+      <div>
+        <a href="mailto:matt@randombits.dev" class="btn-secondary inline-flex items-center">
+          <div set:html={envelopeSVG}/>
+          <div class="text-xl  lowercase">matt@randombits.dev</div>
+        </a>
+      </div>
 
-    <div class="">
-      <a href="https://discord.com/users/806661811143049216" target="_blank" class="btn-secondary inline-flex items-center">
-        <div set:html={discordSVG}/>
-        <div class="text-xl">randombits.dev</div>
-      </a>
-    </div>
+      <div class="">
+        <a href="https://discord.com/users/806661811143049216" target="_blank" class="btn-secondary inline-flex items-center">
+          <div set:html={discordSVG}/>
+          <div class="text-xl">randombits.dev</div>
+        </a>
+      </div>
     </div>
 
     <div class="mt-10">Free initial consultation to discuss your current ideas or challenges.</div>
 
     <div class="article-body">
-    <AboutMe.Content></AboutMe.Content>
+      <AboutMe.Content></AboutMe.Content>
     </div>
   </div>
 </BaseLayout>
@@ -69,10 +52,6 @@ const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/image
 
   li {
     margin-bottom: 1rem;
-  }
-
-  a {
-    //text-decoration: underline;
   }
 
   main svg {

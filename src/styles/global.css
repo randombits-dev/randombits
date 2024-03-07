@@ -77,25 +77,6 @@ button {
   font-size: 16px;
 }
 
-/*div.outlined {*/
-/*  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;*/
-/*}*/
-
-.button.outlined {
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;
-  text-transform: uppercase;
-  font-size: 18px;
-  padding: 20px 40px;
-}
-
-.button.outlined:hover {
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 2px 4px 0px 0px, #171717 0px 4px 0px 0px;
-}
-
-a.button:hover, button.button:hover {
-  /*text-decoration: underline;*/
-}
-
 hr {
   margin: 0;
   border: none;
@@ -104,9 +85,4 @@ hr {
 
 img {
   display: block;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
 }
