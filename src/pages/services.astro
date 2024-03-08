@@ -9,7 +9,7 @@ import ServicesSection from "../components/home/ServicesSection.astro";
 <BaseLayout title="Web Application Development" description="">
   <!--<div class="mt-24 text-center text-xl"><span class="px-3 py-1 rounded-xl border">Services</span></div>-->
   <div class="container">
-  <h1 class="text-center mt-24 ">Turn your ideas into reality.</h1>
+    <h1 class="text-center mt-24 ">Turn your ideas into reality.</h1>
   </div>
 
   <ServicesSection number="01">
@@ -35,25 +35,17 @@ import ServicesSection from "../components/home/ServicesSection.astro";
   </ServicesSection>
 
   <ServicesGrid>
-    <!--<ServicesGridItem title="Responsive Design"></ServicesGridItem>-->
     <ServicesGridItem title="PWAs" img="/images/phone.svg">Progressive Web Apps allow the creation of mobile apps by simply using responsive
       design, and they are downloaded directly from a website, instead of the app stores.
     </ServicesGridItem>
     <ServicesGridItem title="Native Android & IOS Apps" img="/images/phone2.svg">Implement the same experience across all devices. Utilize
       React Native to enable a shared codebase with easier implementations and easier maintenance.
     </ServicesGridItem>
-    <!--<ServicesGridItem title="Native Mobile Apps">Fully-managed cloud hosting so you don't have to worry about a thing.</ServicesGridItem>-->
   </ServicesGrid>
 
 
-  <!--<div class="container items-center flex">-->
-  <!--  <h1 class="text-[150px]"><b>03</b></h1>-->
-  <!--  <h1 class="text-[70px] text-center ml-5"><div>Technology consulting</div><div class="text-xl mt-1">to determine the right software, process, or technology for your business</div></h1>-->
-  <!--</div>-->
-
   <ServicesSection number="03">
     Technology Consulting
-    <!--<div slot="description">Determine the right software, process, or technology for your business.</div>-->
     <div slot="description">Do you have an idea, but don't know where to start? I can help walk you through different technology solutions, from utilizing existing solutions, to custom implementations.</div>
   </ServicesSection>
 
@@ -62,14 +54,13 @@ import ServicesSection from "../components/home/ServicesSection.astro";
       <div class="container text-4xl">
         Determine the right software, process, or technology for your business.
       </div>
-      <!--<div class="pt-5 text-lg">Just a few examples:</div>-->
       <ul class="text-lg text-light">
         <li>Emerging technologies like AI and Machine Learning</li>
         <li>Choosing between existing software solutions and a custom implementation</li>
         <li>Determine how to make your business processes more efficient</li>
       </ul>
     </div>
-    <img src="/i1.svg" height="400"/>
+    <img src="/i1.svg" height="400" alt="" class="hidden lg:block"/>
   </div>
 
   <ServicesSection number="04">
@@ -82,10 +73,8 @@ import ServicesSection from "../components/home/ServicesSection.astro";
 
   <div class="container services-grid grid grid-cols-1 md:grid-cols-2 gap-5 ">
     <ServicesGridItem title="Integrations & Workflows">Implementation of custom integrations and workflows to connect your applications with each other or to external services.
-      <!--<div class="font-bold mt-2">Salesforce - Zapier - Other</div>-->
     </ServicesGridItem>
     <ServicesGridItem title="Security & Privacy">Implementation of custom security solutions, encryption, or E2EE applications.
-      <!--<div class="font-bold mt-2">E2EE - Trustless Environments</div>-->
     </ServicesGridItem>
     <ServicesGridItem title="Cloud Migration">Guidance for moving on-premise applications to the cloud, converting legacy backends to serverless, or creating hybrid solutions.</ServicesGridItem>
     <ServicesGridItem title="3D Rendering">Create rich experiences on your website or web application like 3D interactive product visualizations</ServicesGridItem>
@@ -97,74 +86,8 @@ import ServicesSection from "../components/home/ServicesSection.astro";
 
 <style>
 
-  .hero2 {
-    //background: linear-gradient(90deg, #f6da26 0%, #e19e75 100%);
-  }
-
-
-  .rb-background-bits {
-
-    //margin-top: 55px;
-    //color: var(--landing-bits);
-    //background: linear-gradient(var(--back-0) 4%, var(--landing-bits) 25% 75%, rgba(255, 255, 255, 0%));
-    opacity: 0;
-    color: #03314d;
-    font-size: 20px;
-    //background: linear-gradient(var(--back-header) 4%, #025388 25% 75%, var(--back-header));
-    //-webkit-background-clip: text;
-    //-webkit-text-fill-color: transparent;
-    font-family: "Courier New", serif;
-    font-weight: 900;
-    letter-spacing: -3px;
-    //border-bottom: 1px solid var(--landing-bits);
-
-  }
-
-  .list-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: var(--back-2);
-    color: var(--color-back);
-  }
-
-  a.button {
-    max-width: 500px;
-    margin: 30px auto;
-  }
-
-  .other-area {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-    background-color: var(--back-2);
-  }
-
-  .other-area a.button {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  ul {
-    //list-style-type: none;
-    //padding: 0em;
-  }
-
-  ul2 li::before {
-    content: url('/icon_right.svg');
-    color: green; /* Color of the bullet point */
-    font-weight: bold; /* Make the bullet point bold */
-    display: inline-block; /* Needed to add space between the bullet point and the list item */
-    position: relative;
-    width: 2em; /* Also needed for space (adjust as needed) */
-    margin-left: -1em; /* Also needed for space (adjust as needed) */
-    top: 6px;
-  }
-
   ul li {
     padding: 5px 0;
-
   }
 
   ol li {

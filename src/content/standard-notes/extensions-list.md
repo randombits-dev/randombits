@@ -1,7 +1,6 @@
 ---
 title: "Standard Notes Plugin Demos"
 desc: "A collection of plugins and themes for Standard Notes"
-img: './creating-extensions.jpg'
 order: 5
 ---
 

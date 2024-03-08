@@ -4,14 +4,15 @@ const {img} = Astro.props;
 <div class="hero h-[500px] sm:h-[600px] text-center">
   <div class="relative h-[500px] sm:h-[500px] max-w-[1000px] mx-auto z-1 items-center pt-[50px] flex">
     <div class="logo inline-block z-1 flex-1 items-center border-0 p-4 font-header">
-        <slot/>
+      <slot/>
 
-        <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
+      <!--<a class="button mt-30! sm:text-xl!" href="/about">About Random Bits</a>-->
 
     </div>
-    {img && <div class="hidden lg:block">
-      <img src={img} width="400" height="400"/>
-    </div>}
+    {img &&
+      <div class="hidden lg:block">
+        <img src={img} width="400" height="400" alt=""/>
+      </div>}
   </div>
 
 </div>
