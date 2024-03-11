@@ -18,4 +18,4 @@ APP.
 
 ## How can I contact you?
 
-You can email at <a href="mailto:matt@randombits.dev">matt@randombits.dev</a>
+You can email me at <a href="mailto:matt@randombits.dev">matt@randombits.dev</a>
