@@ -32,7 +32,7 @@ Since the Cache API uses requests or URLs as keys, we need to create a unique UR
 In this example, I'm caching a user record, and here is the key I'm using:
 
 ```javascript
-new URL(`http://user/${userId}`)
+`http://user/${userId}`
 ```
 
 We first need to open a cache. The `caches` variable is a global variable. The key can be anything.
@@ -46,14 +46,14 @@ To put the data in the cache, we can use the `put` method:
 ```javascript
 const user = await db.prepare('Select * from Users where id = ?').bind(userId).first();
 const userCache = await caches.open('user');
-await userCache.put(new URL(`http://user/${userId}`), new Response(JSON.stringify(user)));
+await userCache.put(`http://user/${userId}`, new Response(JSON.stringify(user)));
 ```
 
 To read from the cache, we can use the `match` method:
 
 ```javascript
 const userCache = await caches.open('user');
-const cacheResponse = await userCache.match(new URL(`http://user/${userId}`));
+const cacheResponse = await userCache.match(`http://user/${userId}`);
 if (cacheResponse) {
   const user = await cacheResponse.json();
 }
@@ -66,7 +66,7 @@ In this example, the user is saving some data, but we need to check that the use
 ```javascript
 const {userId} = await request.json();
 const userCache = await caches.open('user');
-const url = new URL(`http://user/${userId}`);
+const url = `http://user/${userId}`;
 const cacheResponse = await userCache.match(url);
 let user;
 if (cacheResponse) {
@@ -107,7 +107,7 @@ Caching R2 data is similar to caching D1 data. Here is a full example of a worke
 const objectId = params.get('id');
 
 const objectCache = await caches.open('objects');
-const url = new URL(`http://objects/${objectId}`);
+const url = `http://objects/${objectId}`;
 const cacheResponse = await objectCache.match(url);
 if (cacheResponse) {
   return new Response(cacheResponse.body);
@@ -116,5 +116,27 @@ if (cacheResponse) {
   const response = new Response(record.body);
   context.waitUntil(objectCache.put(url, response.clone()));
   return response;
+}
+```
+
+## Using Cache API with Astro
+
+If you are using Cloudflare Workers in an Astro project, the Cache API will be available at `locals.runtime.caches`. Here is an example of using caching in an Astro project:
+
+```javascript
+export async function GET({locals}: APIContext) {
+  const cache = await locals.runtime.caches.open('myCache');
+  const url = `http://user/${userId}`;
+  const cacheResponse = await userCache.match(url);
+  let user;
+  if (cacheResponse) {
+    user = await cacheResponse.json();
+  } else {
+    user = await db.prepare('Select * from Users where id = ?').bind(userId).first();
+    const response = new Response(JSON.stringify(user));
+    locals.runtime.waitUntil(userCache.put(url, response));
+  }
+  
+  // do something with user
 }
 ```
