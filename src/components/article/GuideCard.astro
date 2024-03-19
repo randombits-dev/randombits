@@ -1,19 +1,19 @@
 ---
 import {getCollectionSortedByOrder, getNonHiddenSortedByOrder} from "../../utils/articleUtils";
 
-const {collection, title, desc, url} = Astro.props;
+const {collection, title, desc, url, span} = Astro.props;
 
 const articles = await getNonHiddenSortedByOrder(collection);
 ---
 
-<div class="card">
+<div class={`card ${span ? 'col-span-2' : ''}`}>
   <div class="text-center px-5 pt-5 text-2xl font-bold">{title}</div>
   <div class="text-center px-10 text-lg">{desc}</div>
-  <div class="px-5 py-5">
+  <div class={`p-5 ${span ? 'grid gap-x-10 grid-cols-2' : ''}`}>
     {
       articles.map((post) => (
         <div class="card-row">
-          <a href={(url || `/articles/${collection}/`)  + post.slug} class="card-row-text">
+          <a href={(url || `/articles/${collection}/`) + post.slug} class="card-row-text">
             <div class="card-row-title">{post.data.title}</div>
             <div class="card-row-desc">{post.data.desc}</div>
           </a>

@@ -5,20 +5,20 @@ import GuideCard from "./GuideCard.astro";
 const {limit} = Astro.props;
 
 const posts = (await getCollection('articles')).filter(item => !item.data.draft && !item.data.hide).sort(
-    (a, b) => new Date(b.data.published).valueOf() - new Date(a.data.published).valueOf()
+    (a, b) => new Date(b.data.updated).valueOf() - new Date(a.data.updated).valueOf()
 );
 
-const postsToShow = limit ? posts.slice(0, limit-3) : posts;
+const postsToShow = limit ? posts.slice(0, limit) : posts;
 ---
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-stretch">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-stretch mb-48">
   <GuideCard title="Standard Notes Plugins"
              desc="A guide to creating and using plugins"
              collection="standard-notes" url="/standard-notes/" />
   <GuideCard title="Number Localization"
              desc="A comprehensive reference"
              collection="number-localization" />
-  <GuideCard title="Stable Diffusion in the Cloud"
+  <GuideCard span="true" title="Stable Diffusion in the Cloud"
              desc="A guide to running automatic1111 stable diffusion servers in the cloud"
              collection="stable-diffusion"/>
 

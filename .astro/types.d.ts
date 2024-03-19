@@ -192,6 +192,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"cloudflare-workers-cache.md": {
+	id: "cloudflare-workers-cache.md";
+  slug: "cloudflare-workers-cache";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "code-formatting-linting.md": {
 	id: "code-formatting-linting.md";
   slug: "code-formatting-linting";
