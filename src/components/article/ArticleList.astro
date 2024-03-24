@@ -4,7 +4,9 @@ import GuideCard from "./GuideCard.astro";
 
 const {limit} = Astro.props;
 
-const posts = (await getCollection('articles')).filter(item => !item.data.draft && !item.data.hide).sort(
+const filter = (item) => !item.data.draft && !item.data.hide && (!limit || item.data.feature);
+
+const posts = (await getCollection('articles')).filter(filter).sort(
     (a, b) => new Date(b.data.updated).valueOf() - new Date(a.data.updated).valueOf()
 );
 
@@ -36,7 +38,7 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
             })}</span>
             <span class="tags">{
               post.data.tags?.map((tag) => (
-                <div class="tag">{tag}</div>
+                <div class="article-tag">{tag}</div>
               ))
             }</span>
           </div>

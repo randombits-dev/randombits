@@ -12,7 +12,8 @@ const articles = defineCollection({
     draft: z.boolean().optional(),
     hide: z.boolean().optional(),
     img: image().refine(() => true).optional(),
-    order: z.number().optional()
+    order: z.number().optional(),
+    feature: z.boolean().default(true)
   })
 });
 

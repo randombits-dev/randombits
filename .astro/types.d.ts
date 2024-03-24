@@ -206,6 +206,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"google-font-picker.md": {
+	id: "google-font-picker.md";
+  slug: "google-font-picker";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "i18n.md": {
 	id: "i18n.md";
   slug: "i18n";
@@ -248,6 +255,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"tips/forcing-footer-to-bottom.md": {
+	id: "tips/forcing-footer-to-bottom.md";
+  slug: "tips/forcing-footer-to-bottom";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "vercel-tips.mdx": {
 	id: "vercel-tips.mdx";
   slug: "vercel-tips";
