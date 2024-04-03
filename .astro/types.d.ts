@@ -255,6 +255,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] };
+"tips/cloudflare-pages-caching.md": {
+	id: "tips/cloudflare-pages-caching.md";
+  slug: "tips/cloudflare-pages-caching";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "tips/forcing-footer-to-bottom.md": {
 	id: "tips/forcing-footer-to-bottom.md";
   slug: "tips/forcing-footer-to-bottom";
