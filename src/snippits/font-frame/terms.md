@@ -1,6 +1,6 @@
 ## Introduction
 
-These terms govern the use of the ImageText app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms. 
+These terms govern the use of the FontFrame app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms. 
 
 ## Use of the App
 

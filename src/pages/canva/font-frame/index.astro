@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import fontFrameFeatured from '@/assets/canva/font-frame/1.png';
+import fontFrameSecondary from '@/assets/canva/font-frame/2.png';
+import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
+---
+<BaseLayout title="Font Frame Canva App" description="Font Frame is an app in the Canva marketplace. It allows a user to create vibrant text with image backgrounds.">
+  <div class="container-sm mb-40">
+    <div class="flex items-center mt-20 mb-10">
+      <Image width="100" src={fontFrameLogo} alt="FontFrame Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <div>
+        <h1 class="my-0">FontFrame</h1>
+        <div class="text-lg">Create vibrant text with image backgrounds</div>
+      </div>
+    </div>
+
+    <p class="mb-20">A Canva App. Add an image background to your text, by uploading an image, or selecting an image from your design. Change the font, adjust the image placement, and more.</p>
+
+    <a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAF5vGyV5TY/fontframe" target="_blank" rel="noopener">Try FontFrame</a>
+
+    <div class="mt-20 snippit mb-20">
+      <h2>Support</h2>
+      <p>If you have any questions or need support, please contact me at <a class="underline" href="mailto:matt@randombits.dev">matt@randombits.dev</a></p>
+
+      <a href="/canva/font-frame/privacy">Privacy Policy</a>
+      <br/>
+      <a href="/canva/font-frame/terms">Terms and Conditions</a>
+    </div>
+
+    <Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"
+           width="800" src={fontFrameFeatured} alt="FontFrame Featured Image"/>
+
+    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
+    <!--       width="800" src={fontFrameSecondary} alt="FontFrame Featured Image"/>-->
+
+  </div>
+</BaseLayout>
