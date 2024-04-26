@@ -6,7 +6,7 @@ const {collection, title, desc, url, span} = Astro.props;
 const articles = await getNonHiddenSortedByOrder(collection);
 ---
 
-<div class={`card ${span ? 'col-span-2' : ''}`}>
+<div class={`card ${span ? 'lg:col-span-2' : ''}`}>
   <div class="text-center px-5 pt-5 text-2xl font-bold">{title}</div>
   <div class="text-center px-10 text-lg">{desc}</div>
   <div class={`p-5 ${span ? 'grid gap-x-10 grid-cols-2' : ''}`}>
