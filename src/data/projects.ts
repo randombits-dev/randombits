@@ -2,10 +2,21 @@ import {CoverImages} from '../utils/coverImages';
 
 export const PROJECTS = [
   {
+    title: 'FontFrame',
+    desc: ['A canva app that allows you to create text with any image background.'],
+    img: CoverImages.fontFrame,
+    links: [
+      ['more details', '/canva/font-frame'],
+      ['canva', 'https://www.canva.com/apps/AAF5vGyV5TY/fontframe']
+    ]
+  },
+  {
     title: 'Interval Timer',
-    desc: ['A simple interval timer app for HIIT workouts. Coming soon to the Google Play Store and F-Droid.'],
+    desc: ['A simple interval timer app for HIIT workouts. Deployed to Google Play Store and F-Droid.'],
     img: CoverImages.intervalTimer,
     links: [
+      ['fdroid', 'https://f-droid.org/en/packages/dev.randombits.intervaltimer/'],
+      ['play store', 'https://play.google.com/store/apps/details?id=dev.randombits.intervaltimer'],
       ['github', 'https://github.com/randombits-dev/interval-timer']
     ]
   },

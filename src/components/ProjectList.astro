@@ -21,8 +21,8 @@ const makeArray = (item) => {
             <div class="text-2xl font-bold">{title}</div>
             {
               makeArray(desc).map(d => {
-                return;
-                <div class="card-row-desc mt-3!">{d}</div>;
+                return (
+                  <div class="card-row-desc mt-3!">{d}</div>);
               })
             }
 
