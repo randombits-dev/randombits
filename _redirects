@@ -1,0 +1,2 @@
+/canva/image-text /canva/font-frame 301
+/canva/image-text/* /canva/font-frame/:splat 301
