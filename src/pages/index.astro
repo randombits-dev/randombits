@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home/Hero.astro";
 import ArticleList from "../components/article/ArticleList.astro";
 import Waves from "../components/home/Waves.astro";
+import ProjectList from "../components/ProjectList.astro";
 ---
 
 <BaseLayout title="Random Bits Software Engineering" description="Software engineering guides, articles, and projects.">
@@ -27,8 +28,19 @@ import Waves from "../components/home/Waves.astro";
   </div>
 
   <div class="container pt-48">
+    <div class="text-5xl font-header text-center mb-10">Projects</div>
+    <ProjectList limit={2}/>
+    <div class="text-center pt-20">
+      <a href="/projects" class="btn-primary">View All Projects</a>
+    </div>
+  </div>
+
+  <div class="container pt-48">
     <div class="text-5xl font-header text-center mb-10">Featured Articles</div>
     <ArticleList limit={6}/>
+    <div class="text-center pt-20">
+      <a href="/articles" class="btn-primary">View All Articles</a>
+    </div>
   </div>
 
 </BaseLayout>
