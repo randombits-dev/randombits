@@ -157,13 +157,6 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
-"astro_remote_apps.md": {
-	id: "astro_remote_apps.md";
-  slug: "astro_remote_apps";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
 "automatic1111-automation.md": {
 	id: "automatic1111-automation.md";
   slug: "automatic1111-automation";
@@ -171,23 +164,9 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
-"browser-storage.md": {
-	id: "browser-storage.md";
-  slug: "browser-storage";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
 "chainlink-functions.md": {
 	id: "chainlink-functions.md";
   slug: "chainlink-functions";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
-"click-blocker.md": {
-	id: "click-blocker.md";
-  slug: "click-blocker";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -206,16 +185,16 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
-"google-font-picker.md": {
-	id: "google-font-picker.md";
-  slug: "google-font-picker";
+"fill-text-with-image.mdx": {
+	id: "fill-text-with-image.mdx";
+  slug: "fill-text-with-image";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
-"i18n.md": {
-	id: "i18n.md";
-  slug: "i18n";
+} & { render(): Render[".mdx"] };
+"google-font-picker.md": {
+	id: "google-font-picker.md";
+  slug: "google-font-picker";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">

@@ -1,0 +1,85 @@
+---
+title: "Creating text with an image background"
+summary: "A guide to using canvas to create text with an image background"
+desc: "A guide to using canvas to create text with an image background"
+updated: 2024-05-03
+tags: []
+draft: true
+---
+
+
+
+
+
+
+import MeasureText from "../../components/canvas/MeasureText";
+
+
+## Overview
+
+## Measuring the text
+
+<MeasureText client:load/>
+
+```ts
+const canvasEl = document.createElement('canvas');
+canvasEl.width = 1920;
+canvasEl.height = 1080;
+const ctx = canvasEl.getContext('2d');
+const lines = text.split('\n');
+const margin = 100;
+const maxWidth = width - margin;
+const maxHeight = height - margin;
+
+let size = Math.floor(heightMargin / (1 + ((lines.length - 1) * lineHeight)));
+
+const measureText = () => {
+  let maxWidth = 0;
+  let actualHeight = 0;
+  let upperSpace = 0;
+  let lowerSpace = 0;
+  for (let i = 0; i < lines.length; i++) {
+    const {
+      width: textWidth,
+      actualBoundingBoxAscent,
+      actualBoundingBoxDescent,
+    } = ctx.measureText(lines[i]);
+    if (textWidth > widthMargin) {
+      return false;
+    }
+    if (i === 0) {
+      upperSpace = actualBoundingBoxAscent;
+    } else if (i === lines.length - 1) {
+      lowerSpace = actualBoundingBoxDescent;
+    }
+    maxWidth = Math.max(maxWidth, textWidth);
+    actualHeight = actualHeight + actualBoundingBoxAscent + actualBoundingBoxDescent;
+  }
+  return {actualHeight, maxWidth, upperSpace, lowerSpace};
+};
+
+for (; size > 0; size -= 2) {
+  ctx.font = `${weight} ${size}px "${font}"`;
+  bboxes = measureText();
+  if (bboxes) {
+    break;
+  }
+}
+
+const usedSpace = size * (lines.length - 1) * lineHeight + size;
+const start = (height - usedSpace) / 2 + bboxes.upperSpace;
+const startX = (width - bboxes.maxWidth) / 2;
+return {size, start, usedSpace, margin, startX, ...bboxes};
+```
+
+## Writing the text
+
+```ts
+
+```
+
+## Loading custom fonts
+
+```ts
+
+```
