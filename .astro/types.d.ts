@@ -141,119 +141,126 @@ declare module 'astro:content' {
   slug: "android/fdroid";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "android/signing-with-cmd.md": {
 	id: "android/signing-with-cmd.md";
   slug: "android/signing-with-cmd";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "android/signing-with-gradle.md": {
 	id: "android/signing-with-gradle.md";
   slug: "android/signing-with-gradle";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "automatic1111-automation.md": {
 	id: "automatic1111-automation.md";
   slug: "automatic1111-automation";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
+} & { render(): Render[".md"] };
+"canva-text-frames.md": {
+	id: "canva-text-frames.md";
+  slug: "canva-text-frames";
+  body: string;
+  collection: "articles";
+  data: any
 } & { render(): Render[".md"] };
 "chainlink-functions.md": {
 	id: "chainlink-functions.md";
   slug: "chainlink-functions";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "cloudflare-workers-cache.md": {
 	id: "cloudflare-workers-cache.md";
   slug: "cloudflare-workers-cache";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "code-formatting-linting.md": {
 	id: "code-formatting-linting.md";
   slug: "code-formatting-linting";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "fill-text-with-image.mdx": {
 	id: "fill-text-with-image.mdx";
   slug: "fill-text-with-image";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".mdx"] };
 "google-font-picker.md": {
 	id: "google-font-picker.md";
   slug: "google-font-picker";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "javascript-interviews.md": {
 	id: "javascript-interviews.md";
   slug: "javascript-interviews";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "merge-repos.md": {
 	id: "merge-repos.md";
   slug: "merge-repos";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "module-federation-advanced.md": {
 	id: "module-federation-advanced.md";
   slug: "module-federation-advanced";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "npm-yarn-pnpm.md": {
 	id: "npm-yarn-pnpm.md";
   slug: "npm-yarn-pnpm";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "theme-rotations.mdx": {
 	id: "theme-rotations.mdx";
   slug: "theme-rotations";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".mdx"] };
 "tips/cloudflare-pages-caching.md": {
 	id: "tips/cloudflare-pages-caching.md";
   slug: "tips/cloudflare-pages-caching";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "tips/forcing-footer-to-bottom.md": {
 	id: "tips/forcing-footer-to-bottom.md";
   slug: "tips/forcing-footer-to-bottom";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".md"] };
 "vercel-tips.mdx": {
 	id: "vercel-tips.mdx";
   slug: "vercel-tips";
   body: string;
   collection: "articles";
-  data: InferEntrySchema<"articles">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 "number-localization": {
@@ -262,35 +269,35 @@ declare module 'astro:content' {
   slug: "formatting";
   body: string;
   collection: "number-localization";
-  data: InferEntrySchema<"number-localization">
+  data: any
 } & { render(): Render[".mdx"] };
 "intro.mdx": {
 	id: "intro.mdx";
   slug: "intro";
   body: string;
   collection: "number-localization";
-  data: InferEntrySchema<"number-localization">
+  data: any
 } & { render(): Render[".mdx"] };
 "locale-list.mdx": {
 	id: "locale-list.mdx";
   slug: "locale-list";
   body: string;
   collection: "number-localization";
-  data: InferEntrySchema<"number-localization">
+  data: any
 } & { render(): Render[".mdx"] };
 "numbering-systems.mdx": {
 	id: "numbering-systems.mdx";
   slug: "numbering-systems";
   body: string;
   collection: "number-localization";
-  data: InferEntrySchema<"number-localization">
+  data: any
 } & { render(): Render[".mdx"] };
 "parsing.mdx": {
 	id: "parsing.mdx";
   slug: "parsing";
   body: string;
   collection: "number-localization";
-  data: InferEntrySchema<"number-localization">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 "snippets": {
@@ -308,42 +315,42 @@ declare module 'astro:content' {
   slug: "api";
   body: string;
   collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
+  data: any
 } & { render(): Render[".mdx"] };
 "aws.md": {
 	id: "aws.md";
   slug: "aws";
   body: string;
   collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
+  data: any
 } & { render(): Render[".md"] };
 "controlnet-api.mdx": {
 	id: "controlnet-api.mdx";
   slug: "controlnet-api";
   body: string;
   collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
+  data: any
 } & { render(): Render[".mdx"] };
 "google-cloud.md": {
 	id: "google-cloud.md";
   slug: "google-cloud";
   body: string;
   collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
+  data: any
 } & { render(): Render[".md"] };
 "intro.md": {
 	id: "intro.md";
   slug: "intro";
   body: string;
   collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
+  data: any
 } & { render(): Render[".md"] };
 "txt2img.mdx": {
 	id: "txt2img.mdx";
   slug: "txt2img";
   body: string;
   collection: "stable-diffusion";
-  data: InferEntrySchema<"stable-diffusion">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 "standard-notes": {
@@ -352,28 +359,28 @@ declare module 'astro:content' {
   slug: "component-relay";
   body: string;
   collection: "standard-notes";
-  data: InferEntrySchema<"standard-notes">
+  data: any
 } & { render(): Render[".md"] };
 "creating-extensions.md": {
 	id: "creating-extensions.md";
   slug: "creating-extensions";
   body: string;
   collection: "standard-notes";
-  data: InferEntrySchema<"standard-notes">
+  data: any
 } & { render(): Render[".md"] };
 "extensions-list.md": {
 	id: "extensions-list.md";
   slug: "extensions-list";
   body: string;
   collection: "standard-notes";
-  data: InferEntrySchema<"standard-notes">
+  data: any
 } & { render(): Render[".md"] };
 "installing-extensions.md": {
 	id: "installing-extensions.md";
   slug: "installing-extensions";
   body: string;
   collection: "standard-notes";
-  data: InferEntrySchema<"standard-notes">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -385,5 +392,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../src/content/config.js");
+	export type ContentConfig = never;
 }

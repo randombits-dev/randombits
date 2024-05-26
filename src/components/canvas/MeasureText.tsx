@@ -77,8 +77,8 @@ const MeasureText = ({}: Props) => {
 
   return (
     <div>
-      <canvas ref={canvasEl} width="500" height="300"></canvas>
-      <textarea onChange={updateCanvas} style={{width: '100%'}}>Hello
+      <canvas class="border border-solid" ref={canvasEl} width="500" height="300"></canvas>
+      <textarea onInput={updateCanvas} style={{width: '100%'}}>Hello
         World</textarea>
     </div>
   );
