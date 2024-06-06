@@ -1,5 +1,6 @@
 ---
-title: "Standard Notes Plugin Demos"
+title: "Plugin Demos"
+metaTitle: "Standard Notes Plugin Demos"
 desc: "A collection of plugins and themes for Standard Notes"
 order: 5
 ---

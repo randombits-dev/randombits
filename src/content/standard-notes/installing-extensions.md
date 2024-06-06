@@ -1,5 +1,6 @@
 ---
 title: "Installing Plugins"
+metaTitle: "Guide to Installing Standard Notes Plugins"
 desc: "One of the best parts of Standard Notes is the ability to use plugins (also called extensions). This guide covers how to install plugins."
 img: ./installing-extensions.png
 tags: [ 'standard-notes' ]

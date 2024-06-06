@@ -1,5 +1,6 @@
 ---
 title: "Creating Plugins"
+metaTitle: "Guide to Creating Standard Notes Plugins"
 desc: "A guide for creating your own Standard Notes editor plugins (also called extensions)."
 order: 2
 ---
