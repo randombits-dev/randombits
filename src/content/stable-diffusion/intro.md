@@ -1,5 +1,6 @@
 ---
 title: "An Introduction"
+metaTitle: "An introduction to running Automatic1111 in the cloud"
 desc: "An introduction to running an automatic1111 stable diffusion server in the cloud"
 updated: 2024-01-07
 img: './mtn-clouds.jpg'

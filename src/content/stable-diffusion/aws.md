@@ -1,6 +1,6 @@
 ---
 title: "Running in AWS"
-metaTitle: "Running Automatic1111 in AWS | Stable diffusion in the Cloud"
+metaTitle: "Guide to running Automatic1111 in AWS"
 desc: "A full guide to running your own stable diffusion server on an EC2 instance in AWS"
 updated: 2024-01-07
 img: './mtn-clouds.jpg'
