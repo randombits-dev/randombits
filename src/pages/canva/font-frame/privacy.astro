@@ -1,10 +1,16 @@
 ---
 import * as Privacy from "../../../snippits/font-frame/privacy.md";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
 ---
 <BaseLayout title="FontFrame Privacy Policy">
   <div class="container-sm py-24 snippit">
-    <h1>FontFrame Privacy Policy</h1>
+
+    <div class="flex items-center" href="/canva/font-frame">
+      <Image width="100" src={fontFrameLogo} alt="FontFrame Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <h1>FontFrame Privacy Policy</h1>
+    </div>
     <Privacy.Content></Privacy.Content>
   </div>
 </BaseLayout>
