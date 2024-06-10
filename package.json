@@ -9,7 +9,7 @@
     "deploy": "pnpm run build && wrangler pages deploy ./dist"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/mdx": "^3.1.0",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/solid-js": "^4.2.0",
     "@astrojs/tailwind": "^5.1.0",
