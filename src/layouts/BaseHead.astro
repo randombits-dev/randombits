@@ -3,7 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import {removeTrailingSlash} from "../utils/utils";
-import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import {GoogleFontsOptimizer} from "astro-google-fonts-optimizer";
 
 interface Props {
   title: string;
@@ -27,4 +27,12 @@ const {title, description, img} = Astro.props;
 {img &&
 <meta name="twitter:image" property="og:image" content={'https://randombits.dev' + img}/>}
 <meta property="og:url" content={removeTrailingSlash(Astro.url)}/>
-<link rel="canonical" href={removeTrailingSlash(Astro.url)} />
+<link rel="canonical" href={removeTrailingSlash(Astro.url)}/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Random Bits Software Engineering",
+    "url": "https://randombits.dev/"
+  }
+</script>
