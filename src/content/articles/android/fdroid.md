@@ -22,7 +22,28 @@ Reproducible builds are optional but highly recommended.
 
 Reproducible builds is a way to guarantee that an app was built from the published source code. This is done by building and signing the apk with a key, and publishing the fingerprint of the key. F-Droid will then build the app from the source code, and verify that it built the exact same apk as the one you published.  Luckily, F-Droid and Github together make this process very easy, and this guide will walk you through it.
 
-## 1. Build and Sign your app
+## 1. Create Metadata
+
+Fdroid uses metadata files to find app descriptions and storefront images. Here is a list of files you should create, at the root of your project:
+
+<img src="/images/fdroid/metadata.png"/>
+
+Ignore the changelogs for now, they will be used for noting changes in your app.
+
+* icon = 512x512
+* feature graphic = 1024x500
+* screenshots = any size
+
+all images can be png or jpg
+
+* short description = max 80 characters
+
+The title, short description, and long description are shown on the app page in Fdroid, like so:
+
+<img src="/images/fdroid/listing.png"/>
+
+
+## 2. Build and Sign your app
 
 If you are using **Android Studio**, you can build your app by going to `Build > Generate Signed Bundle / APK`. 
 
@@ -36,11 +57,11 @@ apksigner sign --ks-key-alias YOUR_KEY_ALIAS --ks YOUR_KEYSTORE_PATH app-release
 
 See my guide on [Signing an Android apk with the command line](/articles/android/signing-with-cmd) for more details.
 
-## 2. Create a Github release
+## 3. Create a Github release
 
 F-Droid needs to download your signed APK file from somewhere. The best place to put this file is in a Github release, tagged with the same tag that Fdroid will use pull your source code from. That way it is all connected. If you have never created a release before, you can follow [Github's instructions](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release).
 
-## 3. Clone the Fdroid repository
+## 4. Clone the Fdroid repository
 
 Fdroid uses gitlab to host their repositories. You will need to create an account on [gitlab.com](https://gitlab.com/users/sign_in#register-pane) if you don't already have one.
 
@@ -48,7 +69,7 @@ Clone the [Data Repo](https://gitlab.com/fdroid/fdroiddata). This repo holds the
 
 On your cloned repo, create a new branch for your app. The branch name should be the package name of your app. For example, "com.example.myapp".
 
-## 4. Create your Metadata file
+## 5. Create your Metadata file
 
 Create a new file in the `metadata/` directory. The file name should be the package name of your app, with a .yml extension. For example, `metadata/com.example.myapp.yml`.
 
@@ -220,7 +241,7 @@ The `AutoUpdateMode` property specifies if F-Droid will check for updates to you
 See the [Full Metadata Reference](https://f-droid.org/en/docs/Build_Metadata_Reference/) for more details on all the properties you can include in your metadata file.
 
 
-## 5. Testing your build
+## 6. Testing your build
 
 Push your metadata file to your branch on gitlab, and it will kick off a build. Go to Build -> Pipelines to see the results. If there are any errors, you can keep pushing changes until it runs successfully.
 
@@ -229,13 +250,21 @@ Some potential issues you could run into:
 2. Version mismatch. If the commit tag you specified in your metadata file does not exist, or the version in your gradle file does not match the version in the metadata file, the build will fail. 
 3. APK integrity check failed. If the apk you published does not match the apk that Fdroid built, the build will fail. 
 
-## 6. Creating a merge request
+## 7. Creating a merge request
 
 Once you have a successful build, it's time to create a merge request.
 
 First create a [Request for Packaging issue](https://gitlab.com/fdroid/rfp/-/issues) for your app. This will let the F-Droid team know that you want your app published. Fill in the minimal template to the best of your ability.
 
 Next, create a merge request on your branch. The merge request should be titled `New app: My App Name`. The description should include a link to the Request for Packaging issue you created above. Once you create the merge request, it will kick off another build, and the Fdroid team will review your app.
+
+## Updating your app after its published
+
+To get your app updated on Fdroid, you will need to do a few things:
+1. Update the version name and version code in your gradle build file.
+2. Create a new change log in the metadata directory (/metadata/en-US/changelogs/{version code}.txt), and put a description of changes in the file.
+3. Tag and create a release on Github with the new version. Make sure you include the signed apk file in the release.
+4. Fdroid will automatically see your update, and include it in the next build. This may take a few days or longer to happen.
 
 ## Helpful Links
 
