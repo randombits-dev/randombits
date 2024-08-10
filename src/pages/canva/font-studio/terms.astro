@@ -1,0 +1,15 @@
+---
+import * as Terms from "../../../snippits/font-studio/terms.md";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
+---
+<BaseLayout title="FontFrame Terms and Conditions">
+  <div class="container-sm py-24 snippit">
+    <div class="flex items-center" href="/canva/font-frame">
+      <!--<Image width="100" src={fontFrameLogo} alt="FontFrame Logo" class="border-solid border-2 rounded-lg mr-10"/>-->
+      <h1>FontFrame Terms and Conditions</h1>
+    </div>
+    <Terms.Content></Terms.Content>
+  </div>
+</BaseLayout>
