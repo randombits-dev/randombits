@@ -1,0 +1,15 @@
+---
+import {NEWS} from "../../data/news";
+---
+{
+  NEWS.map(item =>
+  <div class="card flex items-center gap-10">
+    <div>{item.date}</div>
+    <div class="flex-1">
+      <div class="text-xl font-medium">{item.title}</div>
+      <div class="mt-5 text-sm text-gray-800">{item.desc}</div>
+    </div>
+    {item.link && <a href={item.link} target="_blank"><img src="/images/icons/external.svg"/></a>}
+  </div>
+    )}
+
