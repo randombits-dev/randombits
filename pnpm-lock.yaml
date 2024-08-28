@@ -60,6 +60,9 @@ importers:
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.5.1)(typescript@5.5.4)
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
       wrangler:
         specifier: ^3.72.3
         version: 3.72.3
