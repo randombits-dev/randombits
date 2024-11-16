@@ -2,6 +2,15 @@ import {CoverImages} from '../utils/coverImages';
 
 export const PROJECTS = [
   {
+    title: 'FontStudio',
+    desc: ['A canva app that that allows creating advanced text effects.'],
+    img: CoverImages.fontStudio,
+    links: [
+      ['more details', '/canva/font-studio'],
+      ['canva', 'https://www.canva.com/apps/AAGLHfr5ZM0/fontstudio']
+    ]
+  },
+  {
     title: 'FontFrame',
     desc: ['A canva app that allows you to create text with any image background.'],
     img: CoverImages.fontFrame,
