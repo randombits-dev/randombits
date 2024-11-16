@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# crawling rule(s) for above bots
 Sitemap: https://randombits.dev/sitemap-index.xml
