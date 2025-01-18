@@ -9,26 +9,26 @@
     "deploy": "pnpm run build && wrangler pages deploy ./dist"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/mdx": "^4.0.6",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/solid-js": "^4.4.3",
-    "@astrojs/tailwind": "^5.1.2",
-    "astro": "^4.16.13",
+    "@astrojs/solid-js": "^5.0.3",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^5.1.7",
     "astro-font-picker": "^0.2.1",
     "astro-google-fonts-optimizer": "^0.2.2",
-    "astro-robots": "^2.1.1",
+    "astro-robots": "^2.3.1",
     "remark-code-titles": "^0.1.2",
-    "sass": "^1.81.0",
+    "sass": "^1.83.4",
     "sharp": "^0.33.5",
-    "solid-js": "^1.9.3",
-    "tailwindcss": "^3.4.15"
+    "solid-js": "^1.9.4",
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "node-inject-html": "^0.0.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3",
-    "wrangler": "^3.87.0"
+    "typescript": "^5.7.3",
+    "wrangler": "^3.103.2"
   }
 }

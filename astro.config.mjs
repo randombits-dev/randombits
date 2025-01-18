@@ -26,5 +26,8 @@ export default defineConfig({
     assets: '_astro',
     format: 'file'
   },
-  trailingSlash: 'never'
+  trailingSlash: 'never',
+  legacy: {
+    collections: true,
+  }
 });
