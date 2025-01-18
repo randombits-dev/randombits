@@ -15,7 +15,6 @@
     "@astrojs/tailwind": "^5.1.4",
     "astro": "^5.1.7",
     "astro-font-picker": "^0.2.1",
-    "astro-google-fonts-optimizer": "^0.2.2",
     "astro-robots": "^2.3.1",
     "remark-code-titles": "^0.1.2",
     "sass": "^1.83.4",

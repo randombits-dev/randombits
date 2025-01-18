@@ -26,9 +26,6 @@ importers:
       astro-font-picker:
         specifier: ^0.2.1
         version: 0.2.1(astro@5.1.7(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.30.1)(sass@1.83.4)(typescript@5.7.3)(yaml@2.7.0))
-      astro-google-fonts-optimizer:
-        specifier: ^0.2.2
-        version: 0.2.2
       astro-robots:
         specifier: ^2.3.1
         version: 2.3.1(astro@5.1.7(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.30.1)(sass@1.83.4)(typescript@5.7.3)(yaml@2.7.0))
@@ -1040,9 +1037,6 @@ packages:
     resolution: {integrity: sha512-jUOViCcrK9PoK2dgz32H0BZhu8xeDWFWPyV+hRUoIjE/TnDlxpxiBfEjPUQWLQ3LhlNRNzlIBklPol2SRwKnsg==}
     peerDependencies:
       astro: ^4.0.0
-
-  astro-google-fonts-optimizer@0.2.2:
-    resolution: {integrity: sha512-YQxp/ExF3NzUomAGuu1VKecO7/ETRnhnE50gqwAqfpbGPZFj4MYa4XxK1ukBg3R63QmKuE5uurOiKmXiLzttuw==}
 
   astro-robots@2.3.1:
     resolution: {integrity: sha512-ocYIVPBVRBp0zeIVQ9o8PiQThkTmccZWlPKJXtgfC6dsrPwNtKOwbLtH+X4COoJhliwVEO2uzQy6bAFSSSwzcA==}
@@ -3566,8 +3560,6 @@ snapshots:
     dependencies:
       astro: 5.1.7(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.30.1)(sass@1.83.4)(typescript@5.7.3)(yaml@2.7.0)
       webfontloader: 1.6.28
-
-  astro-google-fonts-optimizer@0.2.2: {}
 
   astro-robots@2.3.1(astro@5.1.7(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.30.1)(sass@1.83.4)(typescript@5.7.3)(yaml@2.7.0)):
     dependencies:

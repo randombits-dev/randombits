@@ -13,6 +13,7 @@ body {
   color: var(--color-back);
   font-size: var(--font-size-text);
   letter-spacing: var(--letter-spacing-text);
+  font-display: block;
 }
 
 h1, h2, h3 {

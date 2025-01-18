@@ -8,7 +8,7 @@ import {GoogleFontsOptimizer} from "astro-google-fonts-optimizer";
 interface Props {
   title: string;
   description: string;
-  image?: string;
+  img?: string;
 }
 
 const {title, description, img} = Astro.props;
@@ -18,8 +18,6 @@ const {title, description, img} = Astro.props;
 <meta name="viewport" content="width=device-width, initial-scale = 1.0"/>
 <title>{title}</title>
 <link rel="icon" type="image/svg" href="/favicon.svg"/>
-<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Inter&display=swap">
-</GoogleFontsOptimizer>
 <meta property="og:description" name="description" content={description}/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@RandomBitsDev"/>
@@ -36,3 +34,5 @@ const {title, description, img} = Astro.props;
     "url": "https://randombits.dev/"
   }
 </script>
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400|space-grotesk:400" rel="stylesheet"/>
