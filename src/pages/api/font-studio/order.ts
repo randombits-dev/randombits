@@ -1,7 +1,27 @@
 import type {APIContext} from 'astro';
-// import crypto from 'node:crypto';
 
 export const prerender = false;
+
+export async function GET(api: APIContext) {
+  const userId = api.url.searchParams.get('userId');
+  const teamId = api.url.searchParams.get('teamId');
+
+  if (userId && userId.length > 10) {
+    const value = await kv(api).get(api.params.id);
+    if (value) {
+      return new Response(null, {status: 204});
+    }
+  }
+
+  if (teamId && teamId.length > 10) {
+    const value = await kv(api).get(api.params.id);
+    if (value) {
+      return new Response(null, {status: 204});
+    }
+  }
+
+  return new Response(null, {status: 404});
+}
 
 export async function POST(api: APIContext) {
   try {
@@ -34,43 +54,6 @@ export async function POST(api: APIContext) {
     return new Response(null, {status: 500});
   }
 }
-
-//
-// export async function GET(api: APIContext) {
-//   const userId = api.url.searchParams.get('user_id');
-//   if (userId && userId.length > 10) {
-//     try {
-//       // api-cors-anywhere
-//       const result = await fetch('https://api.lemonsqueezy.com/v1/checkouts', {
-//         method: 'POST',
-//         headers: {
-//           'Accept': 'application/vnd.api+json',
-//           'Content-Type': 'application/vnd.api+json',
-//           'Authorization': `Bearer ${api.locals.runtime.env.LEMON_API}`
-//         },
-//         body: JSON.stringify({
-//           data: {
-//             type: 'checkouts',
-//             attributes: {
-//               user_id: api.params.id,
-//               checkout_data: {
-//                 custom: {
-//                   user_id: api.params.id
-//                 }
-//               }
-//             }
-//           }
-//         })
-//       }).then(res => res.json());
-//
-//       console.log(result);
-//       console.log(result.links.self);
-//     } catch (error) {
-//       console.error('Failed to check order:', error);
-//     }
-//   }
-//   return new Response(null, {status: 500});
-// }
 
 const kv = (api: APIContext) => {
   return api.locals.runtime.env.KV;
