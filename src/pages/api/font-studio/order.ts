@@ -2,7 +2,7 @@ import type {APIContext} from 'astro';
 
 export const prerender = false;
 
-const FONTSTUDIO_VARIENTS = ['49806d97-023a-41d3-9f64-b31ed70cbb89', '33b018f0-b31a-46a2-bac0-b9e448a92cd5'];
+const FONTSTUDIO_VARIENTS = ['702668', '702675'];
 
 export async function GET(api: APIContext) {
   const userId = api.url.searchParams.get('userId');
@@ -11,14 +11,14 @@ export async function GET(api: APIContext) {
   if (userId && userId.length > 10) {
     const value = await kv(api).get(api.params.id);
     if (value) {
-      return new Response(null, {status: 204});
+      return new Response(null, {status: 204, headers: {'Access-Control-Allow-Origin': '*'}}); // CORS
     }
   }
 
   if (teamId && teamId.length > 10) {
     const value = await kv(api).get(api.params.id);
     if (value) {
-      return new Response(null, {status: 204});
+      return new Response(null, {status: 204, headers: {'Access-Control-Allow-Origin': '*'}}); // CORS
     }
   }
 
