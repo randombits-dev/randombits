@@ -39,15 +39,6 @@ export const PROJECTS = [
     ]
   },
   {
-    title: 'Offering Inspiration',
-    desc: ['Built using Astro and web components.'],
-    img: CoverImages.offeringInspiration,
-    links: [
-      ['app', 'https://offeringinspiration.com'],
-      ['github', 'https://github.com/randombits-dev/offering-inspiration']
-    ]
-  },
-  {
     title: 'Standard Notes Plugins',
     desc: 'A collection of plugins and themes for Standard Notes',
     img: CoverImages.snExtensions,
