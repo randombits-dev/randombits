@@ -2,8 +2,7 @@ import type {APIContext} from 'astro';
 
 export const prerender = false;
 
-// const FONTSTUDIO_VARIANTS = [702668, 702675];
-const FONTSTUDIO_VARIANTS = [706723, 706727];
+const FONTSTUDIO_VARIANTS = [702668, 702675];
 
 export async function GET(api: APIContext) {
   const userId = api.url.searchParams.get('userId');
