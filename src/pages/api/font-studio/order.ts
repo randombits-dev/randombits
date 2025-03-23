@@ -2,8 +2,6 @@ import type {APIContext} from 'astro';
 
 export const prerender = false;
 
-const FONTSTUDIO_VARIENTS = ['49806d97-023a-41d3-9f64-b31ed70cbb89', '33b018f0-b31a-46a2-bac0-b9e448a92cd5'];
-
 export async function GET(api: APIContext) {
   const userId = api.url.searchParams.get('userId');
   const teamId = api.url.searchParams.get('teamId');
@@ -37,7 +35,7 @@ export async function POST(api: APIContext) {
     if (!userId) {
       throw new Error('No user ID found in the request.');
     }
-    if (!FONTSTUDIO_VARIENTS.includes(data?.attributes?.first_order_item?.variant_id)) {
+    if (data?.attributes?.first_order_item?.product_name !== 'FontStudio Premium') {
       return new Response('Invalid product', {status: 400});
     }
     const orderId = data.attributes.order_number;
