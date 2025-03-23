@@ -1,3 +1,2 @@
 /canva/image-text /canva/font-frame 301
 /canva/image-text/* /canva/font-frame/:splat 301
-/canva/font-studio/checkout/:userId https://randombits.lemonsqueezy.com/buy/f3eda31b-5918-4d86-8e78-230800a151c0?checkout[custom][user_id]=:userId

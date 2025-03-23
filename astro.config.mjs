@@ -5,19 +5,11 @@ import remarkCodeTitles from 'remark-code-titles';
 import sitemap from '@astrojs/sitemap';
 import robots from "astro-robots";
 import createAstroFontPickerIntegration from "astro-font-picker";
-import cloudflare from '@astrojs/cloudflare';
 
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: cloudflare({
-    routes: {
-      extend: {
-        include: [{pattern: '/api/*'}]
-      }
-    }
-  }),
   base: '/',
   site: 'https://randombits.dev/',
   markdown: {
