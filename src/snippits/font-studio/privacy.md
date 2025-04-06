@@ -1,11 +1,17 @@
 
+## Premium License Payment Provider
+
+If you purchase a Premium license, the payment provider has its own privacy policy that is separate from this app.
+
+[Lemon Squeezy Privacy Policy](https://www.lemonsqueezy.com/privacy)
+
 ## What information do you collect?
 
-No personal information is collected.
+No personal information is collected by the app.
 
 ## What information do you store?
 
-None
+The app stores no data.
 
 ## What information do you share?
 
