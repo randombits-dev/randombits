@@ -4,13 +4,15 @@ import Footer from '../components/layout/Footer.astro';
 import BaseHead from './BaseHead.astro';
 
 
-const {title, description, img, bodyClass} = Astro.props;
+const {title, description, img, noIndex} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <BaseHead title={title} description={description} img={img}/>
+  {noIndex &&
+    <meta name="robots" content="noindex">}
   <slot name="head"/>
 </head>
 <body class="">
