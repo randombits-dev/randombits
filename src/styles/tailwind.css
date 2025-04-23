@@ -75,9 +75,3 @@
 @utility container-sm {
   @apply max-w-[800px] mx-auto px-4;
 }
-
-@utility snippit {
-  & a {
-    @apply underline;
-  }
-}
