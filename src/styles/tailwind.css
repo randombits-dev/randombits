@@ -1,64 +1,83 @@
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
 
-@layer components {
-  .rb-color-content {
-    background-color: var(--back-content);
-    color: var(--color-content);
+@theme {
+  --text-*: initial;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 4rem;
+
+  --color-primary: rgb(255, 191, 35);
+}
+
+@utility rb-color-content {
+  background-color: var(--back-content);
+  color: var(--color-content);
+}
+
+@utility rb-color-header {
+  background-color: var(--back-content);
+  color: var(--color-content);
+}
+
+@utility outlined {
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+  #171717 4px 6px 0px 0px,
+  #171717 0px 6px 0px 0px;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    #171717 2px 4px 0px 0px,
+    #171717 0px 4px 0px 0px;
   }
+}
 
-  .rb-color-header {
-    background-color: var(--back-content);
-    color: var(--color-content);
-  }
+@utility card-base {
+  @apply rounded-md bg-gray-100 shadow-md border-light;
+}
 
-  .outlined {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 4px 6px 0px 0px, #171717 0px 6px 0px 0px;
-  }
+@utility card {
+  @apply card-base px-5 py-3;
+}
 
-  .outlined:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, #171717 2px 4px 0px 0px, #171717 0px 4px 0px 0px;
-  }
+@utility btn {
+  @apply text-center px-3 py-5 border rb-color-header cursor-pointer;
+}
 
-  .card-base {
-    @apply rounded-md bg-gray-100 shadow-md border-light;
-  }
+@utility header-link {
+  @apply px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-2 hover:underline-offset-4 cursor-pointer;
+}
 
-  .card {
-    @apply card-base px-5 py-3;
-  }
+@utility border-light {
+  border: var(--border-width-light) solid var(--border-color-light);
+  border-radius: var(--border-radius-1);
+}
 
-  .btn {
-    @apply text-center px-3 py-5 border rb-color-header cursor-pointer;
-  }
+@utility font-header {
+  font-family: var(--font-1);
+  line-height: 1.2;
+}
 
-  .header-link {
-    @apply px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-2 hover:underline-offset-4 cursor-pointer;
-  }
+@utility container {
+  @apply max-w-[1000px] mx-auto px-4;
+}
 
-  .border-light {
-    border: var(--border-width-light) solid var(--border-color-light);
-    border-radius: var(--border-radius-1);
-  }
+@utility container-lg {
+  @apply max-w-[1200px] mx-auto px-4;
+}
 
-  .font-header {
-    font-family: var(--font-1);
-    line-height: 1.2;
-  }
+@utility container-sm {
+  @apply max-w-[800px] mx-auto px-4;
+}
 
-  .container {
-    @apply max-w-[1000px] mx-auto px-4;
-  }
-
-  .container-lg {
-    @apply max-w-[1200px] mx-auto px-4;
-  }
-
-  .container-sm {
-    @apply max-w-[800px] mx-auto px-4;
-  }
-
-  .snippit a {
+@utility snippit {
+  & a {
     @apply underline;
   }
 }

@@ -1,5 +1,5 @@
 @import './variables.css';
-@import 'card.scss';
+@import './card.scss';
 @import './tailwind.css';
 
 * {

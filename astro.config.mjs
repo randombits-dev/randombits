@@ -5,8 +5,7 @@ import remarkCodeTitles from 'remark-code-titles';
 import sitemap from '@astrojs/sitemap';
 import robots from "astro-robots";
 import createAstroFontPickerIntegration from "astro-font-picker";
-
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,9 +18,7 @@ export default defineConfig({
   devToolbar: {
     enabled: true
   },
-  integrations: [mdx(), solid(), sitemap(), robots({}), createAstroFontPickerIntegration(), tailwind({
-    applyBaseStyles: false
-  })],
+  integrations: [mdx(), solid(), sitemap(), robots({}), createAstroFontPickerIntegration()],
   build: {
     assets: '_astro',
     format: 'file'
@@ -29,5 +26,8 @@ export default defineConfig({
   trailingSlash: 'never',
   legacy: {
     collections: true,
+  },
+  vite: {
+    plugins: [tailwindcss()]
   }
 });

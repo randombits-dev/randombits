@@ -1,6 +1,6 @@
 import {createSignal, onMount} from "solid-js";
 
-const fixedClases = ['!sticky', 'top-5'];
+const fixedClases = ['sticky!', 'top-5'];
 const ArticleTOC = ({path, relatedPages, headings}) => {
     const [selected, setSelected] = createSignal('');
 
