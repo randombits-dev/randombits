@@ -6,7 +6,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import '@/styles/article-container.scss';
 import '@/styles/article-body.scss';
 
-const discordSVG = await fetch('https://storage.googleapis.com/randombits/images/discord.svg');
 const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
 ---
 <BaseLayout title="About Random Bits" description="">
@@ -18,20 +17,11 @@ const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/image
 
     <h2>Contact Me</h2>
 
-    <div>Send me an email or connect with me on discord.</div>
-
     <div class="flex flex-wrap mt-5 gap-5">
       <div>
         <a href="mailto:matt@randombits.dev" class="btn-secondary inline-flex items-center">
           <div set:html={envelopeSVG}/>
           <div class="text-xl  lowercase">matt@randombits.dev</div>
-        </a>
-      </div>
-
-      <div class="">
-        <a href="https://discord.com/users/806661811143049216" target="_blank" class="btn-secondary inline-flex items-center">
-          <div set:html={discordSVG}/>
-          <div class="text-xl">randombits.dev</div>
         </a>
       </div>
     </div>
