@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+// import fontDashFeatured from '@/assets/canva/font-dash/1.png';
+import fontDashLogo from '@/assets/canva/font-dash/logo.png';
+---
+<BaseLayout title="Font Dash Canva App" description="Font Dash is an app in the Canva marketplace. It allows a user to create vibrant text with image backgrounds.">
+  <div class="container-sm mb-40">
+    <div class="flex items-center mt-20 mb-10">
+      <Image width="100" src={fontDashLogo} alt="FontDash Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <div>
+        <h1 class="my-0">FontDash</h1>
+        <div class="text-lg">Create vibrant text with image backgrounds</div>
+      </div>
+    </div>
+
+    <p class="mb-20">A Canva App. Create text designs with a dashed outline.</p>
+
+    <!--<a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAF5vGyV5TY/fontDash" target="_blank" rel="noopener">Try FontDash</a>-->
+
+    <div class="mt-20 snippit mb-20">
+      <h2>Support</h2>
+      <p>If you have any questions or need support, please contact me at <a class="underline" href="mailto:fontdash@randombits.dev">fontdash@randombits.dev</a></p>
+
+      <a href="/canva/font-dash/privacy">Privacy Policy</a>
+      <br/>
+      <a href="/canva/font-dash/terms">Terms and Conditions</a>
+    </div>
+
+    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
+    <!--       width="800" src={fontDashFeatured} alt="FontDash Featured Image"/>-->
+
+  </div>
+</BaseLayout>

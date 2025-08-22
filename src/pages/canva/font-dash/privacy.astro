@@ -1,0 +1,16 @@
+---
+import * as Privacy from "../../../snippits/font-dash/privacy.md";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import fontDashLogo from '@/assets/canva/font-dash/logo.png';
+---
+<BaseLayout title="FontDash Privacy Policy">
+  <div class="container-sm py-24 snippit">
+
+    <div class="flex items-center" href="/canva/font-dash">
+      <Image width="100" src={fontDashLogo} alt="FontDash Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <h1>FontDash Privacy Policy</h1>
+    </div>
+    <Privacy.Content></Privacy.Content>
+  </div>
+</BaseLayout>
