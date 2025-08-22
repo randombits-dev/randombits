@@ -1,10 +1,14 @@
 ## Introduction
 
-These terms govern the use of the FontFrame app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms. 
+These terms govern the use of the FontFrame app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms.
 
 ## Use of the App
 
-This app is completely free to use, with no restrictions. You will maintain the rights to any designs you create with the app, unless the Canva Terms of Use state otherwise.
+This app is free to use (except for the Premium content that requires purchasing a license to access). You will maintain the rights to any designs you create with the app, unless the Canva Terms of Use state otherwise.
+
+## Premium License
+
+The Premium License is a one-time purchase that allows you to access the Premium features of the app. The license is non-transferable and non-refundable. The Premium License is valid for the lifetime of the app, and if the app is discontinued for any reason, the license will be voided without refund.
 
 ## Limited Liability
 
