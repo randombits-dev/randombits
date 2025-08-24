@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import fontFrameFeatured from '@/assets/canva/font-frame/1.png';
 import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
+import * as About from "../../../snippits/font-frame/index.md";
 ---
 <BaseLayout title="Font Frame Canva App" description="Font Frame is an app in the Canva marketplace. It allows a user to create vibrant text with image backgrounds.">
   <div class="container-sm mb-40">
@@ -14,11 +15,14 @@ import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
       </div>
     </div>
 
-    <p class="mb-20">A Canva App. Add an image background to your text, by uploading an image, or selecting an image from your design. Change the font, adjust the image placement, and more.</p>
-
+    <br/>
+    <br/>
     <a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAF5vGyV5TY/fontframe" target="_blank" rel="noopener">Try FontFrame</a>
+    <br/>
+    <br/>
+    <About.Content></About.Content>
 
-    <div class="mt-20 snippit mb-20">
+    <div class="snippit mb-20">
       <h2>Support</h2>
       <p>If you have any questions or need support, please contact me at <a class="underline" href="mailto:fontframe@randombits.dev">fontframe@randombits.dev</a></p>
 
