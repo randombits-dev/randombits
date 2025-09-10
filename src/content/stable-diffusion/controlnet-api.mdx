@@ -2,7 +2,7 @@
 title: "ControlNet API"
 metaTitle: "Guide to ControlNet API | Automatic1111"
 desc: "A guide to using the Automatic1111 API to run stable diffusion from an app or a batch process"
-updated: 2024-01-09
+updated: 2025-09-09
 img: './4planets.jpg'
 order: 6
 hide: true
@@ -45,6 +45,7 @@ To use ControlNet, we use the same `txt2img` endpoint, but we pass in extra para
     "controlnet": {
       "args": [
         {
+          "enabled": true,
           "input_image": myBase64EncodedImage,
           "model": "depth_fp16",
           "module": "depth"

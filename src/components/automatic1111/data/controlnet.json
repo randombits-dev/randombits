@@ -1,4 +1,9 @@
 {
+  "enabled": {
+    "title": "Whether control net is enabled",
+    "type": "boolean",
+    "default": "false"
+  },
   "model": {
     "title": "Name of the installed model",
     "type": "string",
