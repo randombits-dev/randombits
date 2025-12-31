@@ -1,6 +1,6 @@
-@import './variables.css';
-@import './card.scss';
-@import './tailwind.css';
+@import "./variables.css";
+@import "./card.scss";
+@import "./tailwind.css";
 
 * {
   box-sizing: border-box;
@@ -16,9 +16,11 @@ body {
   font-display: block;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-1);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h1 {
@@ -56,6 +58,12 @@ button {
   font-weight: bold;
   font-family: var(--font-1);
   border: 2px solid var(--border-color);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 150ms ease;
+  &:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+  }
   border-radius: var(--border-radius-2);
 }
 
@@ -68,11 +76,16 @@ button {
   font-size: 20px;
   font-weight: bold;
   font-family: var(--font-1);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 150ms ease;
+  &:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .uppercase {
   text-transform: uppercase;
-
 }
 
 .btn-small {

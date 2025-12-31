@@ -2,16 +2,16 @@
 import Logo from "../Logo.astro";
 ---
 
-<header class=" relative z-10">
-
-  <nav aria-label="Main"
-       class="font-header block max-w-[1000px] mx-auto sm:flex text-lg sm:text-xl pt-5 rounded-b-xl overflow-hidden items-center">
-
+<header class="relative z-10">
+  <nav
+    aria-label="Main"
+    class="font-header block max-w-[1000px] mx-auto sm:flex text-lg sm:text-xl border-b-2 pt-5 pb-3 overflow-hidden items-center"
+  >
     <a class="flex-1 px-6 block items-center flex" href="/" aria-label="Home Page">
-      <Logo width="75" includeDigits={false}/>
+      <Logo width="75" includeDigits={false} />
       <div class="ml-5">
-        <div class="text-2xl font-bold">Random Bits</div>
-        <div class="text-sm">Software Engineering</div>
+        <div class="text-3xl font-bold">Random Bits</div>
+        <div class="text-[16px]">Software Engineering</div>
       </div>
     </a>
     <div class="flex justify-center items-center">
@@ -23,7 +23,4 @@ import Logo from "../Logo.astro";
   </nav>
 </header>
 
-<style>
-
-</style>
-
+<style></style>

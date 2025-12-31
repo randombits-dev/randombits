@@ -24,7 +24,6 @@
   margin-bottom: 20px;
 }
 
-
 .card-row img {
   border: var(--border-width) solid var(--border-color);
   border-radius: 5px;
@@ -37,8 +36,8 @@
 }
 
 .card-row-title {
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .image-card .card-row-title {
@@ -108,6 +107,7 @@
   margin: 0 5px;
   font-size: var(--font-size-caption);
   font-weight: bold;
-  background-color: var(--color-content);
-  color: var(--back-content);
+  border: 1px solid var(--border-color);
+  /* background-color: var(--color-content); */
+  /* color: var(--back-content); */
 }

@@ -8,84 +8,114 @@ import ServicesSection from "../components/home/ServicesSection.astro";
 
 <BaseLayout title="Web Application Development" description="">
   <!--<div class="mt-24 text-center text-xl"><span class="px-3 py-1 rounded-xl border">Services</span></div>-->
-  <div class="container">
-    <h1 class="text-center mt-24 ">Turn your ideas into reality.</h1>
+  <div class="container flex items-baseline mt-20">
+    <h1 class="text m-0 pr-4">Services.</h1>
+    <h2 class="text m-0">Turn your ideas into reality.</h2>
   </div>
 
   <ServicesSection number="01">
     Web Application Development
     <div slot="description">
-      Create a web application or SaaS service for your business or startup. Utilize the latest technologies to create a fast, responsive, and easy-to-use experience for your users. Deploy to the cloud for reduced maintenance and lower costs. Enhance an existing application to take advantage of new technologies and modern design.
+      Create a web application or SaaS service for your business or startup. Utilize the latest technologies to create a
+      fast, responsive, and easy-to-use experience for your users. Deploy to the cloud for reduced maintenance and lower
+      costs. Enhance an existing application to take advantage of new technologies and modern design.
     </div>
   </ServicesSection>
 
   <ServicesGrid>
-    <ServicesGridItem title="Application Design">Modern, responsive designs, that work on all device sizes and utilize a modern tech stack. Create a rich and easy-to-use experience, all with blazing fast performance.</ServicesGridItem>
-    <ServicesGridItem title="Cloud and Serverless Applications">Gone are the days of deploying to servers. Most modern applications can be built serverless and deployed to the cloud, for virtually limitless scaling, and reduced maintenance.
+    <ServicesGridItem title="Application Design"
+      >Modern, responsive designs, that work on all device sizes and utilize a modern tech stack. Create a rich and
+      easy-to-use experience, all with blazing fast performance.</ServicesGridItem
+    >
+    <ServicesGridItem title="Cloud and Serverless Applications"
+      >Gone are the days of deploying to servers. Most modern applications can be built serverless and deployed to the
+      cloud, for virtually limitless scaling, and reduced maintenance.
     </ServicesGridItem>
-    <ServicesGridItem title="Application Modernization">Bring your legacy application up-to-date with a modern tech stack, responsive design, improved styling, and modern architecture. By using a micro-frontend pattern, you can modernize your application in stages.
+    <ServicesGridItem title="Application Modernization"
+      >Bring your legacy application up-to-date with a modern tech stack, responsive design, improved styling, and modern
+      architecture. By using a micro-frontend pattern, you can modernize your application in stages.
     </ServicesGridItem>
-    <ServicesGridItem title="SaaS Development">Create APIs for ane existing application, or create services from scratch. Utilize GraphQL for a modern API, and create a rich experience for your users.
+    <ServicesGridItem title="SaaS Development"
+      >Create APIs for ane existing application, or create services from scratch. Utilize GraphQL for a modern API, and
+      create a rich experience for your users.
     </ServicesGridItem>
   </ServicesGrid>
 
   <ServicesSection number="02" img="phone.svg">
     Mobile Development
-    <div slot="description">Create a mobile application for your existing web application, with a seamless user experience. Or create a standalone mobile experience from scratch. There are many framework choices for mobile app development, but I recommend using PWAs or React Native for the best experience and lowest maintenance.</div>
+    <div slot="description">
+      Create a mobile application for your existing web application, with a seamless user experience. Or create a
+      standalone mobile experience from scratch. There are many framework choices for mobile app development, but I
+      recommend using PWAs or React Native for the best experience and lowest maintenance.
+    </div>
   </ServicesSection>
 
   <ServicesGrid>
-    <ServicesGridItem title="PWAs" img="/images/phone.svg">Progressive Web Apps allow the creation of mobile apps by simply using responsive
-      design, and they are downloaded directly from a website, instead of the app stores.
+    <ServicesGridItem title="PWAs" img="/images/phone.svg"
+      >Progressive Web Apps allow the creation of mobile apps by simply using responsive design, and they are downloaded
+      directly from a website, instead of the app stores.
     </ServicesGridItem>
-    <ServicesGridItem title="Native Android & IOS Apps" img="/images/phone2.svg">Implement the same experience across all devices. Utilize
-      React Native to enable a shared codebase with easier implementations and easier maintenance.
+    <ServicesGridItem title="Native Android & IOS Apps" img="/images/phone2.svg"
+      >Implement the same experience across all devices. Utilize React Native to enable a shared codebase with easier
+      implementations and easier maintenance.
     </ServicesGridItem>
   </ServicesGrid>
 
-
   <ServicesSection number="03">
     Technology Consulting
-    <div slot="description">Do you have an idea, but don't know where to start? I can help walk you through different technology solutions, from utilizing existing solutions, to custom implementations.</div>
+    <div slot="description">
+      Do you have an idea, but don't know where to start? I can help walk you through different technology solutions,
+      from utilizing existing solutions, to custom implementations.
+    </div>
   </ServicesSection>
 
   <div class="container flex items-center">
     <div class="mr-10">
-      <div class="container text-4xl">
-        Determine the right software, process, or technology for your business.
-      </div>
+      <div class="container text-4xl">Determine the right software, process, or technology for your business.</div>
       <ul class="text-lg text-light">
         <li>Emerging technologies like AI and Machine Learning</li>
         <li>Choosing between existing software solutions and a custom implementation</li>
         <li>Determine how to make your business processes more efficient</li>
       </ul>
     </div>
-    <img src="/i1.svg" height="400" alt="" class="hidden lg:block"/>
+    <img src="/i1.svg" height="400" alt="" class="hidden lg:block" />
   </div>
 
   <ServicesSection number="04">
     Other Services
 
     <div slot="description">
-      With a wide range of experience, I can help with a variety of services. From custom integrations and workflows, to security and privacy, to cloud migration, and 3D rendering, if you have a unique problem, I can find a solution.
+      With a wide range of experience, I can help with a variety of services. From custom integrations and workflows, to
+      security and privacy, to cloud migration, and 3D rendering, if you have a unique problem, I can find a solution.
     </div>
   </ServicesSection>
 
-  <div class="container services-grid grid grid-cols-1 md:grid-cols-2 gap-5 ">
-    <ServicesGridItem title="Integrations & Workflows">Implementation of custom integrations and workflows to connect your applications with each other or to external services.
+  <div class="container services-grid grid grid-cols-1 md:grid-cols-2 gap-5">
+    <ServicesGridItem title="Integrations & Workflows"
+      >Implementation of custom integrations and workflows to connect your applications with each other or to external
+      services.
     </ServicesGridItem>
-    <ServicesGridItem title="Security & Privacy">Implementation of custom security solutions, encryption, or E2EE applications.
+    <ServicesGridItem title="Security & Privacy"
+      >Implementation of custom security solutions, encryption, or E2EE applications.
     </ServicesGridItem>
-    <ServicesGridItem title="Cloud Migration">Guidance for moving on-premise applications to the cloud, converting legacy backends to serverless, or creating hybrid solutions.</ServicesGridItem>
-    <ServicesGridItem title="3D Rendering">Create rich experiences on your website or web application like 3D interactive product visualizations</ServicesGridItem>
-    <ServicesGridItem title="Performance Optimization">Improve the performance of an existing application or service</ServicesGridItem>
-    <ServicesGridItem title="Web3">Accept crypto as payment, allow anonymous logins with web3 wallets, or integrate blockchain into your business.</ServicesGridItem>
+    <ServicesGridItem title="Cloud Migration"
+      >Guidance for moving on-premise applications to the cloud, converting legacy backends to serverless, or creating
+      hybrid solutions.</ServicesGridItem
+    >
+    <ServicesGridItem title="3D Rendering"
+      >Create rich experiences on your website or web application like 3D interactive product visualizations</ServicesGridItem
+    >
+    <ServicesGridItem title="Performance Optimization"
+      >Improve the performance of an existing application or service</ServicesGridItem
+    >
+    <ServicesGridItem title="Web3"
+      >Accept crypto as payment, allow anonymous logins with web3 wallets, or integrate blockchain into your business.</ServicesGridItem
+    >
   </div>
   <div class="mb-48"></div>
 </BaseLayout>
 
 <style>
-
   ul li {
     padding: 5px 0;
   }
@@ -97,5 +127,4 @@ import ServicesSection from "../components/home/ServicesSection.astro";
   .services-grid p {
     font-size: 16px;
   }
-
 </style>

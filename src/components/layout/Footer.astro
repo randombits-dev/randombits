@@ -1,39 +1,34 @@
 ---
-import '../../styles/footer.css';
+import "../../styles/footer.css";
 
 const today = new Date();
 
-const githubSVG = await fetch('https://storage.googleapis.com/randombits/images/github.svg');
-const twitterSVG = await fetch('https://storage.googleapis.com/randombits/images/x.svg');
-const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
-const linktree = await fetch('https://storage.googleapis.com/randombits/images/linktree.svg');
-const keybase = await fetch('https://storage.googleapis.com/randombits/images/keybase.svg');
+const githubSVG = await fetch("https://storage.googleapis.com/randombits/images/github.svg");
+const twitterSVG = await fetch("https://storage.googleapis.com/randombits/images/x.svg");
+const envelopeSVG = await fetch("https://storage.googleapis.com/randombits/images/envelope.svg");
+const linktree = await fetch("https://storage.googleapis.com/randombits/images/linktree.svg");
+const keybase = await fetch("https://storage.googleapis.com/randombits/images/keybase.svg");
 ---
 
 <footer class="mt-48">
-
   <div class="footer-content">
     <nav aria-label="Social Links" class="social-links">
-      <a href="mailto:matt@randombits.dev" class="btn-email btn-secondary inline-flex items-center ">
-        <div set:html={envelopeSVG}/>
-        <div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
-      </a>
+      <div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
       <div class="flex">
         <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
-          <div set:html={githubSVG}/>
+          <div set:html={githubSVG} />
         </a>
         <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="Twitter">
-          <div set:html={twitterSVG}/>
+          <div set:html={twitterSVG} />
         </a>
         <a href="https://linktr.ee/randombits" target="_blank" aria-label="Linktree">
-          <div set:html={linktree}/>
+          <div set:html={linktree} />
         </a>
         <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
-          <div set:html={keybase}/>
+          <div set:html={keybase} />
         </a>
       </div>
     </nav>
-
   </div>
 
   <div class="copyright">
@@ -49,6 +44,4 @@ const keybase = await fetch('https://storage.googleapis.com/randombits/images/ke
   }
 </style>
 
-<script>
-
-</script>
+<script></script>

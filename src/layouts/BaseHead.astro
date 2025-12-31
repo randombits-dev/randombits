@@ -1,8 +1,8 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import {removeTrailingSlash} from "../utils/utils";
+import "../styles/global.css";
+import { removeTrailingSlash } from "../utils/utils";
 
 interface Props {
   title: string;
@@ -10,21 +10,20 @@ interface Props {
   img?: string;
 }
 
-const {title, description, img} = Astro.props;
+const { title, description, img } = Astro.props;
 ---
 
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale = 1.0"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale = 1.0" />
 <title>{title}</title>
-<link rel="icon" type="image/svg" href="/favicon.svg"/>
-<meta property="og:description" name="description" content={description}/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@RandomBitsDev"/>
-<meta name="twitter:title" property="og:title" content={title}/>
-{img &&
-<meta name="twitter:image" property="og:image" content={'https://randombits.dev' + img}/>}
-<meta property="og:url" content={removeTrailingSlash(Astro.url)}/>
-<link rel="canonical" href={removeTrailingSlash(Astro.url)}/>
+<link rel="icon" type="image/svg" href="/favicon.svg" />
+<meta property="og:description" name="description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@RandomBitsDev" />
+<meta name="twitter:title" property="og:title" content={title} />
+{img && <meta name="twitter:image" property="og:image" content={"https://randombits.dev" + img} />}
+<meta property="og:url" content={removeTrailingSlash(Astro.url)} />
+<link rel="canonical" href={removeTrailingSlash(Astro.url)} />
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,5 +32,5 @@ const {title, description, img} = Astro.props;
     "url": "https://randombits.dev/"
   }
 </script>
-<link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400|space-grotesk:400" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.bunny.net" />
+<link href="https://fonts.bunny.net/css?family=outfit:500,800|space-grotesk:400,600" rel="stylesheet" />

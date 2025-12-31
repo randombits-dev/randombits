@@ -1,12 +1,12 @@
 ---
-const {number, img} = Astro.props;
+const { number, img } = Astro.props;
 ---
 
 <div class="container items-center flex pt-24">
-  <div class="category mb-2 flex items-end ">
+  <div class="category mb-2 flex items-center">
     <div class="text-6xl"><b>{number}</b></div>
     <div class="pl-5 container text-4xl font-header">
-      <slot/>
+      <slot />
     </div>
     <!--<div class="text-2xl pl-5"><slot/></div>-->
   </div>
@@ -14,5 +14,5 @@ const {number, img} = Astro.props;
 </div>
 
 <div class="container text-light text-lg leading-normal py-8">
-  <slot name="description"/>
+  <slot name="description" />
 </div>

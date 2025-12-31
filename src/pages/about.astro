@@ -1,35 +1,44 @@
 ---
-import * as AboutMe from '../snippits/about-me.md';
-import '@/styles/md.scss';
+import * as AboutMe from "../snippits/about-me.md";
+import "@/styles/md.scss";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import '@/styles/article-container.scss';
-import '@/styles/article-body.scss';
+import "@/styles/article-container.scss";
+import "@/styles/article-body.scss";
 
-const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/images/envelope.svg');
+const envelopeSVG = await fetch("https://storage.googleapis.com/randombits/images/envelope.svg");
 ---
+
 <BaseLayout title="About Random Bits" description="">
   <h1 class="text-center my-24">About Me</h1>
 
   <div class="container text-lg pb-48 leading-8">
-
-    <div>Hi, I'm <b>Matthew</b>, a software engineer from Duluth, Minnesota, USA. I founded <i>Random Bits LLC</i> after working for 14 years designing and building enterprise web applications in the corporate world. I'm passionate about building high-quality, performant, and user-friendly web applications.</div>
+    <div>
+      Hi, I'm <b>Matthew</b>, a software engineer from Duluth, Minnesota, USA. I founded <i>Random Bits LLC</i> after working
+      for 14 years designing and building enterprise web applications in the corporate world. I'm passionate about building
+      high-quality, performant, and user-friendly web applications.
+    </div>
 
     <h2>Contact Me</h2>
 
-    <div class="flex flex-wrap mt-5 gap-5">
+    <a href="mailto:matt@randombits.dev" class="inline-flex items-center">
+      <div set:html={envelopeSVG} />
+      <div class="text-xl lowercase underline">matt@randombits.dev</div>
+    </a>
+
+    <!-- <div class="flex flex-wrap mt-5 gap-5">
       <div>
         <a href="mailto:matt@randombits.dev" class="btn-secondary inline-flex items-center">
-          <div set:html={envelopeSVG}/>
-          <div class="text-xl  lowercase">matt@randombits.dev</div>
+          <div set:html={envelopeSVG} />
+          <div class="text-xl lowercase">matt@randombits.dev</div>
         </a>
       </div>
-    </div>
+    </div> -->
 
     <div class="mt-10">Free initial consultation to discuss your current ideas or challenges.</div>
 
     <div class="article-body">
-      <AboutMe.Content></AboutMe.Content>
+      <AboutMe.Content />
     </div>
   </div>
 </BaseLayout>
@@ -50,5 +59,4 @@ const envelopeSVG = await fetch('https://storage.googleapis.com/randombits/image
     margin-right: 1rem;
     fill: var(--color-content);
   }
-
 </style>

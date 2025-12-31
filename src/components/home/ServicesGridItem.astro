@@ -1,16 +1,15 @@
 ---
-const {title, img} = Astro.props;
+const { title, img } = Astro.props;
 ---
 
 <div class="border-light border-solid px-8 card">
   <div class="flex items-center">
-    {img && <img class="mr-10" src={img} height="150px"/>}
+    {img && <img class="mr-10" src={img} height="150px" />}
     <div>
       <div class="mt-5 font-bold text-2xl font-header">{title}</div>
       <p class="text-light">
-        <slot/>
+        <slot />
       </p>
     </div>
   </div>
-
 </div>

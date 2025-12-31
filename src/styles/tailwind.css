@@ -1,5 +1,5 @@
-@import 'tailwindcss/theme' layer(theme);
-@import 'tailwindcss/utilities' layer(utilities);
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
 
 @theme {
   --text-*: initial;
@@ -16,6 +16,10 @@
   --color-primary: rgb(255, 191, 35);
 }
 
+@utility threed-md {
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+}
+
 @utility rb-color-content {
   background-color: var(--back-content);
   color: var(--color-content);
@@ -27,19 +31,21 @@
 }
 
 @utility outlined {
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-  #171717 4px 6px 0px 0px,
-  #171717 0px 6px 0px 0px;
+  box-shadow:
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    #171717 4px 6px 0px 0px,
+    #171717 0px 6px 0px 0px;
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    #171717 2px 4px 0px 0px,
-    #171717 0px 4px 0px 0px;
+    box-shadow:
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      #171717 2px 4px 0px 0px,
+      #171717 0px 4px 0px 0px;
   }
 }
 
 @utility card-base {
-  @apply rounded-md bg-gray-100 shadow-md border-light;
+  @apply rounded-md bg-gray-100 threed-md border-2;
 }
 
 @utility card {
@@ -62,6 +68,8 @@
 @utility font-header {
   font-family: var(--font-1);
   line-height: 1.2;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 @utility container {
