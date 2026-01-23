@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import FontPixelLogo from '@/assets/canva/font-pixel/logo.png';
+import * as About from "../../../snippits/font-pixel/index.md";
+---
+<BaseLayout title="FontPixel Canva App" description="FontPixel is an app in the Canva marketplace. It allows a user to create advanced text effects using layers of outlines, projections, and shadows.">
+  <div class="container-sm">
+    <div class="flex items-center mt-20 mb-10">
+      <Image width="100" src={FontPixelLogo} alt="FontPixel Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <div>
+        <h1 class="my-0">FontPixel</h1>
+
+        <div class="text-lg">A canva app. Create advanced pixel effects for text designs.</div>
+        <!--<button class="btn-small underline">Try FontPixel</button>-->
+      </div>
+    </div>
+
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--<a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAGLHfr5ZM0/fontpixel" target="_blank" rel="noopener">Try FontPixel</a>-->
+    <!--<br/>-->
+    <!--<br/>-->
+
+    <About.Content></About.Content>
+
+    <div class="snippit">
+      <h2>Support</h2>
+      <p>If you have any questions or need support, please contact <a class="underline" href="mailto:fontpixel@randombits.dev">fontpixel@randombits.dev</a></p>
+
+      <a href="/canva/font-pixel/privacy">Privacy Policy</a>
+      <br/>
+      <a href="/canva/font-pixel/terms">Terms and Conditions</a>
+    </div>
+
+
+    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
+    <!--       width="800" src={FontPixelFeatured} alt="FontPixel Featured Image"/>-->
+
+  </div>
+</BaseLayout>

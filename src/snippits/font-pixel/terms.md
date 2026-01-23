@@ -1,6 +1,6 @@
 ## Introduction
 
-These terms govern the use of the FontFX app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms.
+These terms govern the use of the FontPixel app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms. 
 
 ## Use of the App
 
@@ -22,4 +22,4 @@ APP.
 
 ## How can I contact you?
 
-You can email me at <a href="mailto:fontfx@randombits.dev">fontfx@randombits.dev</a>
+You can email me at <a href="mailto:fontpixel@randombits.dev">fontpixel@randombits.dev</a>

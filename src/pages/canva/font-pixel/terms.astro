@@ -1,0 +1,15 @@
+---
+import * as Terms from "../../../snippits/font-pixel/terms.md";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import fontPixelLogo from '@/assets/canva/font-pixel/logo.png';
+---
+<BaseLayout title="FontFrame Terms and Conditions">
+  <div class="container-sm py-24 snippit">
+    <div class="flex items-center">
+      <Image width="100" src={fontPixelLogo} alt="FontPixel Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <h1>FontPixel Terms and Conditions</h1>
+    </div>
+    <Terms.Content></Terms.Content>
+  </div>
+</BaseLayout>
