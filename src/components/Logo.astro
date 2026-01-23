@@ -11,12 +11,8 @@ const { width, height } = Astro.props;
     width: 50px;
     height: 50px;
     background-color: #000;
-    /*color: #fff;*/
-    -webkit-mask: url("logov3.png") no-repeat center / contain;
-    mask: url("logov3.png") no-repeat center / contain;
+    mask: url("/logov3.png") no-repeat center / contain;
     mask-mode: luminance;
-    -webkit-mask-mode: luminance;
-    -webkit-mask-composite: source-in;
     mask-composite: intersect;
   }
 </style>
