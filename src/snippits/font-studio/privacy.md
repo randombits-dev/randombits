@@ -7,11 +7,11 @@ If you purchase a Premium license, the payment provider has its own privacy poli
 
 ## What information do you collect?
 
-No personal information is collected by the app.
+The app collects no personal information.
 
 ## What information do you store?
 
-The app stores no data.
+The app stores the settings you last used so that it can restore settings if you need to refresh the page or open a new tab. It also stores your license if you have purchased Premium. This information is stored only in the browser's storage and not sent over the internet.
 
 ## What information do you share?
 
@@ -23,7 +23,11 @@ NO
 
 ## Do you collect analytics?
 
-NO
+Yes, anonymous usage data is collected to help improve the app. The data is sent and stored on the PostHog analytics platform, which is located in the United States.
+
+The usage data collected includes metadata about your design (font name, layer settings, template name, etc).
+
+Personal or user-identifying information is NEVER collected. This means that user-entered text, uploaded images, and IP addresses are never collected or stored.
 
 ## How can I contact you?
 
