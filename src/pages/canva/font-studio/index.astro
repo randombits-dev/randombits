@@ -3,6 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
 import * as About from "../../../snippits/font-studio/index.md";
+import * as PremiumFAQ from "../../../snippits/canva-premium-faq.md";
+import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
 ---
 <BaseLayout title="FontStudio Canva App" description="FontStudio is an app in the Canva marketplace. It allows a user to create advanced text effects using layers of outlines, projections, and shadows.">
   <div class="container-sm">
@@ -17,8 +19,7 @@ import * as About from "../../../snippits/font-studio/index.md";
         <!--<button class="btn-small underline">Try FontStudio</button>-->
       </div>
     </div>
-    <!--<div class="border-2 rounded-2xl border-solid border-red-700 text-red-700 px-10 py-3">There is a Canva bug affecting many apps right now. If you see a dark background that makes the app unusable, try switching to Dark theme in Canva until the bug is fixed.</div>-->
-
+    <div class="border-2 rounded-2xl border-solid border-red-700 text-red-700 px-10 py-3">There is a known issue affecting users in Turkey, where the fonts are not loading. A fix should be available soon.</div>
 
     <br/>
     <br/>
@@ -27,6 +28,8 @@ import * as About from "../../../snippits/font-studio/index.md";
     <br/>
 
     <About.Content></About.Content>
+    <PremiumFAQ.Content></PremiumFAQ.Content>
+    <AppFAQ.Content></AppFAQ.Content>
 
     <div class="snippit">
       <h2>Support</h2>

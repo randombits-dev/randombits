@@ -1,3 +1,5 @@
+<-- Privacy policy for FontPixel -->
+
 ## What information do you collect?
 
 No personal information is collected by the app.

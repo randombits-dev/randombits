@@ -1,3 +1,6 @@
+<!-- Privacy Policy for FontStudio -->
+
+Last updated on February 10, 2026
 
 ## Premium License Payment Provider
 

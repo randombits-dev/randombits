@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import FontPixelLogo from '@/assets/canva/font-pixel/logo.png';
 import * as About from "../../../snippits/font-pixel/index.md";
+import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
 ---
 <BaseLayout title="FontPixel Canva App" description="FontPixel is an app in the Canva marketplace. It allows a user to create advanced text effects using layers of outlines, projections, and shadows.">
   <div class="container-sm">
@@ -23,6 +24,7 @@ import * as About from "../../../snippits/font-pixel/index.md";
     <!--<br/>-->
 
     <About.Content></About.Content>
+    <AppFAQ.Content></AppFAQ.Content>
 
     <div class="snippit">
       <h2>Support</h2>

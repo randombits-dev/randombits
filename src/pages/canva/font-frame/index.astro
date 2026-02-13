@@ -4,6 +4,8 @@ import {Image} from 'astro:assets';
 import fontFrameFeatured from '@/assets/canva/font-frame/1.png';
 import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
 import * as About from "../../../snippits/font-frame/index.md";
+import * as PremiumFAQ from "../../../snippits/canva-premium-faq.md";
+import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
 ---
 <BaseLayout title="Font Frame Canva App" description="Font Frame is an app in the Canva marketplace. It allows a user to create vibrant text with image backgrounds.">
   <div class="container-sm mb-40">
@@ -22,6 +24,8 @@ import * as About from "../../../snippits/font-frame/index.md";
     <br/>
     <br/>
     <About.Content></About.Content>
+    <PremiumFAQ.Content></PremiumFAQ.Content>
+    <AppFAQ.Content></AppFAQ.Content>
 
     <div class="snippit mb-20">
       <h2>Support</h2>
