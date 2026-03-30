@@ -1,6 +1,6 @@
 ---
 import {getPathEnd} from "../../utils/utils";
-import {getCollection} from 'astro:content';
+import {getCollection, render} from 'astro:content';
 import BlogSidebar from "../../layouts/BlogSidebar.astro";
 import ArticleTOC from "../../components/article/ArticleTOC";
 import {getCollectionSortedByOrder} from "../../utils/articleUtils";
@@ -8,12 +8,12 @@ import {getCollectionSortedByOrder} from "../../utils/articleUtils";
 export async function getStaticPaths() {
     const blogEntries = await getCollection('standard-notes');
     return blogEntries.map(entry => ({
-        params: {slug: entry.slug}, props: {entry},
+        params: {slug: entry.id}, props: {entry},
     }));
 }
 
 const {entry} = Astro.props;
-const {Content, headings} = await entry.render();
+const {Content, headings} = await render(entry);
 
 const articles = await getCollectionSortedByOrder('standard-notes');
 const path = getPathEnd(Astro.url.pathname);
@@ -27,9 +27,9 @@ const h2Headings = headings.filter(h => h.depth === 2);
         <h2>Further Reading</h2>
         {
             articles.map(article => {
-                const showLink = path !== article.slug;
+                const showLink = path !== article.id;
                 if (showLink) {
-                    return <a href={article.slug} class="nav card-row">
+                    return <a href={article.id} class="nav card-row">
                       <div>
                         <div class="card-row-title">{article.data.title}</div>
                         <div class="card-row-desc">{article.data.desc}</div>

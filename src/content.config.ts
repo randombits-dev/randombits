@@ -1,7 +1,10 @@
 // Import utilities from `astro:content`
-import {defineCollection, z} from 'astro:content';
-// Define a schema for each collection you'd like to validate.
-const articles = defineCollection({
+import {defineCollection} from 'astro:content';
+import {z} from 'astro/zod';
+import {glob} from 'astro/loaders';
+
+const articles = (folder: string) => defineCollection({
+  loader: glob({base: `./src/content/${folder}`, pattern: '**/*.{md,mdx}'}),
   schema: ({image}) => z.object({
     title: z.string(),
     metaTitle: z.string().optional(),
@@ -19,8 +22,8 @@ const articles = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-  articles: articles,
-  'standard-notes': articles,
-  'number-localization': articles,
-  'stable-diffusion': articles,
+  articles: articles('articles'),
+  'standard-notes': articles('standard-notes'),
+  'number-localization': articles('number-localization'),
+  'stable-diffusion': articles('stable-diffusion'),
 };

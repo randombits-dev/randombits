@@ -24,9 +24,6 @@ export default defineConfig({
     format: 'file'
   },
   trailingSlash: 'never',
-  legacy: {
-    collections: true,
-  },
   vite: {
     plugins: [tailwindcss()]
   }

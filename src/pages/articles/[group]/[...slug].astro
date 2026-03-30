@@ -1,6 +1,6 @@
 ---
 import {getPathEnd} from "../../../utils/utils";
-import {getCollection} from 'astro:content';
+import {getCollection, render} from 'astro:content';
 import BlogSidebar from "../../../layouts/BlogSidebar.astro";
 import ArticleTOC from "../../../components/article/ArticleTOC";
 import {ARTICLE_GROUPS} from "../../../data/article-groups";
@@ -10,14 +10,14 @@ export async function getStaticPaths() {
   for await (let group of ARTICLE_GROUPS) {
     const blogEntries = await getCollection(group[0] as any);
     blogEntries.forEach(entry => {
-      entries.push({params: {slug: entry.slug, group: group[0]}, props: {entry, group: group[0]}})
+      entries.push({params: {slug: entry.id, group: group[0]}, props: {entry, group: group[0]}})
     });
   }
   return entries;
 }
 
 const {entry, group} = Astro.props;
-const {Content, headings} = await entry.render();
+const {Content, headings} = await render(entry);
 const h2Headings = headings.filter(h => h.depth === 2);
 const articles = (await getCollection(group));
 const path = getPathEnd(Astro.url.pathname);

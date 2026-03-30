@@ -30,7 +30,7 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
 
   {
     postsToShow.map((post) => (
-      <a href={"/articles/" + post.slug} class="card overflow-hidden ">
+      <a href={"/articles/" + post.id} class="card overflow-hidden ">
         <div class="text-xl px-5 pt-5 font-bold">{post.data.title}</div>
         <div class="my-3 mx-5">
           <div class="card-row-desc">{post.data.desc}</div>

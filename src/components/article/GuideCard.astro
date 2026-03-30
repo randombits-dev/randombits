@@ -13,7 +13,7 @@ const articles = await getNonHiddenSortedByOrder(collection);
     {
       articles.map((post) => (
         <div class="card-row">
-          <a href={(url || `/articles/${collection}/`) + post.slug} class="card-row-text">
+          <a href={(url || `/articles/${collection}/`) + post.id} class="card-row-text">
             <div class="card-row-title">{post.data.title}</div>
             <div class="card-row-desc">{post.data.desc}</div>
           </a>

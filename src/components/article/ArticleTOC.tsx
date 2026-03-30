@@ -18,7 +18,7 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
     });
 
     const handleClickHeading = (heading) => {
-        // setSelected(heading.slug);
+        // setSelected(heading.id);
     };
 
     if (relatedPages) {
@@ -27,7 +27,7 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
             {
                 relatedPages.sort((a, b) => a.data.order - b.data.order).map(article => {
 
-                    const showLink = path === article.slug;
+                    const showLink = path === article.id;
                     if (showLink) {
                       return <div><div class="font-bold" aria-selected={!selected()}>{article.data.toc || article.data.title}</div>
                             <div class="rb-article__sub-nav">
@@ -40,7 +40,7 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
                             </div>
                         </div>;
                     } else {
-                      return <div><a class="font-bold" href={article.slug}>{article.data.toc || article.data.title}</a></div>;
+                      return <div><a class="font-bold" href={article.id}>{article.data.toc || article.data.title}</a></div>;
                     }
                 })
             }
@@ -55,8 +55,8 @@ const ArticleTOC = ({path, relatedPages, headings}) => {
           <nav aria-label="Article Sections" >
             {
                 headings.map(heading => {
-                    const isSelected = selected() === heading.slug;
-                  return <div><a href={'#' + heading.slug} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a></div>
+                    const isSelected = selected() === heading.id;
+                  return <div><a href={'#' + heading.id} aria-selected={isSelected} onclick={() => handleClickHeading(heading)}>{heading.text}</a></div>
                 })
             }
         </nav></div>
