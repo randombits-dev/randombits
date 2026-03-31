@@ -5,6 +5,7 @@ import offeringInspiration from '../assets/covers/offering-inspiration.png';
 import intervalTimer from '../assets/covers/interval-timer.png';
 import fontFrame from '../assets/canva/font-frame/1.png';
 import fontStudio from '../assets/canva/font-studio/1.png';
+import fontPixel from '../assets/canva/font-pixel/1.png';
 
 export const CoverImages = {
   snowrunner,
@@ -13,5 +14,6 @@ export const CoverImages = {
   offeringInspiration,
   intervalTimer,
   fontFrame,
-  fontStudio
+  fontStudio,
+  fontPixel,
 };

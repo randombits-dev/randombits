@@ -5,6 +5,7 @@ import ArticleList from "../components/article/ArticleList.astro";
 import Waves from "../components/home/Waves.astro";
 import ProjectList from "../components/ProjectList.astro";
 import NewsList from "../components/news/NewsList.astro";
+import {CANVA_APPS, PROJECTS} from "../data/projects.ts";
 ---
 
 <BaseLayout title="Random Bits Software Engineering" description="Software engineering guides, articles, and projects.">
@@ -46,8 +47,16 @@ import NewsList from "../components/news/NewsList.astro";
   <!--</div>-->
 
   <div class="container pt-48">
-    <div class="text-5xl font-header text-center mb-10">Projects</div>
-    <ProjectList limit={2} />
+    <div class="text-5xl font-header text-center mb-10">Canva apps</div>
+    <ProjectList items={CANVA_APPS} limit={2}/>
+    <div class="flex justify-center pt-20">
+      <a href="/canva" class="btn-primary">View All Canva Apps</a>
+    </div>
+  </div>
+
+  <div class="container pt-48">
+    <div class="text-5xl font-header text-center mb-10">Open Source Projects</div>
+    <ProjectList items={PROJECTS} limit={2}/>
     <div class="flex justify-center pt-20">
       <a href="/projects" class="btn-primary">View All Projects</a>
     </div>
@@ -55,7 +64,7 @@ import NewsList from "../components/news/NewsList.astro";
 
   <div class="container pt-48">
     <div class="text-5xl font-header text-center mb-10">Featured Articles</div>
-    <ArticleList limit={6} />
+    <ArticleList limit={6}/>
     <div class="flex justify-center pt-20">
       <a href="/articles" class="btn-primary">View All Articles</a>
     </div>

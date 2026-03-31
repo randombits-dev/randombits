@@ -1,20 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectList from "../../components/ProjectList.astro";
-
+import {PROJECTS} from "../../data/projects.ts";
 ---
 <BaseLayout title="Projects by Random Bits" description="A list of all open source projects created by Random Bits">
-  <h1 class="text-center my-24">Side Projects</h1>
+  <h1 class="text-center my-24 uppercase">Open Source Projects</h1>
 
   <div class="max-w-[1000px] mx-auto mb-10">
     <!--<h1 class="text-[60px] mb-0">Some of my fun side projects</h1>-->
     <h2 class="text-[38px] mt-0"></h2>
 
-    <ProjectList/>
+    <ProjectList items={PROJECTS}/>
+  </div>
 </BaseLayout>
 
 <style>
-    h1 {
-        color: var(--color-back);
-    }
+  h1 {
+    color: var(--color-back);
+  }
 </style>
