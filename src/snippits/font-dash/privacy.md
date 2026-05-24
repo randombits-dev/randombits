@@ -20,4 +20,4 @@ NO
 
 ## How can I contact you?
 
-You can email me at <a href="mailto:fontpixel@randombits.dev">fontpixel@randombits.dev</a>
+You can email me at <a href="mailto:fontdash@randombits.dev">fontdash@randombits.dev</a>

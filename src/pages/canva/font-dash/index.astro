@@ -1,0 +1,43 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import FontDashLogo from '@/assets/canva/font-dash/logo.png';
+import * as About from "../../../snippits/font-dash/index.md";
+import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
+---
+<BaseLayout title="FontDash Canva App" description="FontDash is an app in the Canva marketplace. It allows a user to create advanced text effects using layers of outlines, projections, and shadows.">
+  <div class="container-sm">
+    <div class="flex items-center mt-20 mb-10">
+      <Image width="100" src={FontDashLogo} alt="FontDash Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <div>
+        <h1 class="my-0">FontDash</h1>
+
+        <div class="text-lg">A canva app. Create advanced pixel effects for text designs.</div>
+        <!--<button class="btn-small underline">Try FontDash</button>-->
+      </div>
+    </div>
+
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--<a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAG8i91OhBw/fontdash" target="_blank" rel="noopener">Try FontDash</a>-->
+    <!--<br/>-->
+    <!--<br/>-->
+
+    <About.Content></About.Content>
+    <AppFAQ.Content></AppFAQ.Content>
+
+    <div class="snippit">
+      <h2>Support</h2>
+      <p>If you have any questions or need support, please contact <a class="underline" href="mailto:fontdash@randombits.dev">fontdash@randombits.dev</a></p>
+
+      <a href="/canva/font-dash/privacy">Privacy Policy</a>
+      <br/>
+      <a href="/canva/font-dash/terms">Terms and Conditions</a>
+    </div>
+
+
+    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
+    <!--       width="800" src={FontDashFeatured} alt="FontDash Featured Image"/>-->
+
+  </div>
+</BaseLayout>

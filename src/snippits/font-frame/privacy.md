@@ -1,5 +1,3 @@
-<!-- Privacy Policy for FontFrame -->
-
 ## Premium License Payment Provider
 
 If you purchase a Premium license, the payment provider has its own privacy policy that is separate from this app.
