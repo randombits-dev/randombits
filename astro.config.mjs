@@ -1,7 +1,6 @@
 import {defineConfig} from 'astro/config';
 import mdx from '@astrojs/mdx';
 import solid from '@astrojs/solid-js';
-import remarkCodeTitles from 'remark-code-titles';
 import sitemap from '@astrojs/sitemap';
 import robots from "astro-robots";
 import createAstroFontPickerIntegration from "astro-font-picker";
@@ -13,7 +12,6 @@ export default defineConfig({
   site: 'https://randombits.dev/',
   markdown: {
     syntaxHighlight: 'prism',
-    remarkPlugins: [remarkCodeTitles]
   },
   devToolbar: {
     enabled: true

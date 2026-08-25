@@ -10,26 +10,25 @@
     "deployPreview": "pnpm run build && wrangler pages deploy --branch dev ./dist"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.3",
-    "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/solid-js": "^6.0.1",
-    "astro": "^6.1.2",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/solid-js": "^7.0.2",
+    "astro": "^7.2.6",
     "astro-font-picker": "^0.2.2",
     "astro-robots": "^2.3.1",
-    "remark-code-titles": "^0.1.2",
-    "sass": "^1.98.0",
+    "sass": "^1.103.1",
     "sharp": "^0.34.5",
-    "solid-js": "^1.9.12",
-    "tailwindcss": "^4.2.2"
+    "solid-js": "^1.9.15",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/fs-extra": "^11.0.4",
-    "fs-extra": "^11.3.4",
+    "fs-extra": "^11.4.0",
     "node-inject-html": "^0.0.5",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.2",
-    "wrangler": "^4.78.0"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.125.0"
   },
   "packageManager": "pnpm@11.3.0+sha512.2c403d6594527287672b1f7056343a1f7c3634036a67ffabfcc2b3d7595d843768f8787148d1b57cf7956c90606bbd192857c363af19e96d2d0ec9ec5741d215"
 }
