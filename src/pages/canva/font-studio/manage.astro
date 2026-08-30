@@ -1,0 +1,237 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
+---
+<BaseLayout title="Manage FontStudio Premium" description="Manage your FontStudio Premium license, upgrade, or request data deletion." noIndex="true">
+  <div class="container-sm py-24">
+    <div class="flex items-center mb-10">
+      <Image width="100" src={FontStudioLogo} alt="FontStudio Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <div>
+        <h1 class="my-0">Manage Premium</h1>
+        <div class="text-lg">View and manage your FontStudio Premium license.</div>
+      </div>
+    </div>
+
+    <div class="snippit manage-section">
+      <h2 class="mt-0">Your license</h2>
+      <p id="license-status" class="text-[var(--color-light)] mb-0">
+        Open this page from the FontStudio app to link it to your Canva account.
+      </p>
+    </div>
+
+    <div class="snippit manage-section">
+      <h2 class="mt-0">Support</h2>
+      <p class="mb-0">
+        Questions or problems with your license?
+        <a class="underline" href="mailto:fontstudio@randombits.dev">Contact support</a>.
+        Include your order number or forward your order confirmation email if you need help restoring access.
+      </p>
+    </div>
+
+    <div class="snippit manage-section">
+      <h2 class="mt-0">Upgrade license</h2>
+      <p class="text-[var(--color-light)]">
+        Switch to a different plan. Any remaining subscription time may be credited toward your upgrade at checkout.
+      </p>
+      <div class="action-list">
+        <div class="action-row">
+          <div>
+            <div class="action-name">Yearly subscription</div>
+            <div class="action-detail">$20 / year</div>
+          </div>
+          <a id="upgrade-yearly" class="btn-primary btn-small decoration-0" href="/canva/font-studio/buy">
+            Upgrade
+          </a>
+        </div>
+        <div class="action-row">
+          <div>
+            <div class="action-name">Lifetime license</div>
+            <div class="action-detail">$30 / one-time payment</div>
+          </div>
+          <a id="upgrade-lifetime" class="btn-secondary btn-small decoration-0" href="/canva/font-studio/buy">
+            Upgrade
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="snippit manage-section">
+      <h2 class="mt-0">Additional licenses</h2>
+      <p class="text-[var(--color-light)]">
+        Need Premium for another Canva account or team? Purchase an additional license.
+      </p>
+      <a id="buy-additional" class="btn-primary decoration-0" href="/canva/font-studio/buy">
+        Purchase additional license
+      </a>
+    </div>
+
+    <div class="snippit manage-section danger-zone">
+      <h2 class="mt-0">Delete your data</h2>
+      <p>
+        Request deletion of your stored license and app settings. This cannot be undone, and you will need to
+        purchase again to restore Premium access.
+      </p>
+      <p class="text-[var(--color-light)]">
+        See our <a class="underline" href="/canva/font-studio/privacy">Privacy Policy</a> for details on what we store.
+      </p>
+
+      <label class="confirm-label">
+        <input type="checkbox" id="delete-confirm"/>
+        I understand this permanently deletes my FontStudio data and cannot be undone.
+      </label>
+
+      <div id="delete-form">
+        <button type="button" id="delete-btn" class="btn-danger btn-small" disabled>
+          Delete my data
+        </button>
+      </div>
+
+      <div id="delete-success" class="hidden delete-success">
+        Your deletion request has been submitted. Your stored license and settings will be removed.
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .manage-section {
+    margin-bottom: 32px;
+  }
+
+  .action-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .action-row:first-child {
+    border-top: 2px solid var(--border-color);
+  }
+
+  .action-name {
+    font-family: var(--font-1);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .action-detail {
+    color: var(--color-light);
+    margin-top: 4px;
+  }
+
+  .danger-zone {
+    border: 2px solid #b91c1c;
+    border-radius: var(--border-radius-2);
+    padding: 24px;
+  }
+
+  .confirm-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 16px 0;
+    cursor: pointer;
+  }
+
+  .confirm-label input {
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .btn-danger {
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--font-1);
+    border: 2px solid #b91c1c;
+    border-radius: var(--border-radius-2);
+    background: transparent;
+    color: #b91c1c;
+    box-shadow: 4px 4px 0 rgba(185, 28, 28, 0.4);
+    transition: box-shadow 150ms ease;
+  }
+
+  .btn-danger:not(:disabled):hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 rgba(185, 28, 28, 0.4);
+  }
+
+  .btn-danger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .delete-success {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    background: var(--back-btn);
+  }
+</style>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const userId = params.get('userId') || '';
+  const teamId = params.get('teamId') || '';
+  const hasIds = Boolean(userId && teamId);
+
+  const statusEl = document.getElementById('license-status');
+  const confirmEl = document.getElementById('delete-confirm');
+  const deleteBtn = document.getElementById('delete-btn');
+  const deleteForm = document.getElementById('delete-form');
+  const deleteSuccess = document.getElementById('delete-success');
+
+  const linkIds = ['upgrade-yearly', 'upgrade-lifetime', 'buy-additional'];
+
+  linkIds.forEach((id) => {
+    const link = document.getElementById(id);
+    if (!link || !(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+    const url = new URL(link.href, window.location.origin);
+    if (userId) {
+      url.searchParams.set('userId', userId);
+    }
+    if (teamId) {
+      url.searchParams.set('teamId', teamId);
+    }
+    link.href = `${url.pathname}${url.search}`;
+  });
+
+  if (hasIds && statusEl) {
+    statusEl.textContent = 'Your FontStudio Premium license is linked to your Canva account.';
+  }
+
+  confirmEl?.addEventListener('change', () => {
+    if (deleteBtn instanceof HTMLButtonElement) {
+      deleteBtn.disabled = !confirmEl.checked;
+    }
+  });
+
+  deleteBtn?.addEventListener('click', () => {
+    if (!confirmEl?.checked) {
+      return;
+    }
+    const confirmed = window.confirm(
+      'Are you sure you want to delete your FontStudio data? This cannot be undone.',
+    );
+    if (!confirmed) {
+      return;
+    }
+    deleteForm?.classList.add('hidden');
+    deleteSuccess?.classList.remove('hidden');
+  });
+</script>
