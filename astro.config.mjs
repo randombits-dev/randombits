@@ -8,6 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 const siteMapExcludes = [
   '/existing-license',
+  '/font-studio/buy',
   '/jrpteachescanva'
 ];
 

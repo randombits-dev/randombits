@@ -2,157 +2,539 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
+import CanvaAppShell from '@/components/canva/CanvaAppShell.astro';
 
 const API_BASE = import.meta.env.DEV
   ? 'https://dev.api.randombits.dev'
   : 'https://api.randombits.dev';
+
+const premiumFeatures = [
+  '15,000+ additional fonts',
+  '100+ premium templates',
+  'Upload custom fonts',
+  'Special effects & extras',
+  'Use custom image effects',
+  'Use fusion colors',
+];
+
+const pricing = {
+  individual: {
+    monthly: 10,
+    yearly: 20,
+    lifetime: 30,
+    lifetimeCompare: 60,
+  },
+  team: {
+    monthly: 50,
+    yearly: 100,
+    lifetime: 150,
+    lifetimeCompare: 300,
+  },
+};
 ---
-<BaseLayout title="FontStudio Premium" description="Purchase FontStudio Premium — yearly subscription or lifetime license." noIndex="true">
-  <div class="container-sm py-24">
-    <div class="flex items-center mb-10">
-      <Image width="100" src={FontStudioLogo} alt="FontStudio Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <div>
-        <h1 class="my-0">FontStudio Premium</h1>
-        <div class="text-lg">Choose a license and plan to continue to checkout.</div>
+<BaseLayout title="FontStudio Premium" description="Purchase FontStudio Premium — monthly, yearly, or lifetime license." noIndex="true">
+  <CanvaAppShell backHref="/canva/font-studio" backLabel="Back to FontStudio">
+    <section class="buy-hero">
+      <div class="buy-hero__bg" aria-hidden="true"></div>
+      <div class="container-sm buy-hero__inner">
+        <div class="buy-hero__brand">
+          <Image width="72" height="72" src={FontStudioLogo} alt="" class="buy-hero__logo"/>
+          <div>
+            <p class="buy-hero__eyebrow">FontStudio Premium</p>
+            <h1 class="buy-hero__title">Choose your plan</h1>
+            <p class="buy-hero__lead">Unlock the full FontStudio toolkit. Pick a plan and continue to secure checkout.</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!--<div id="missing-params" class="hidden border-2 rounded-2xl border-solid border-red-700 text-red-700 px-10 py-3 mb-8">-->
-    <!--  Open this page from the FontStudio Canva app so your account can be linked to the purchase.-->
-    <!--</div>-->
-
-    <div id="buy-form" class="snippit">
-      <h2 class="mt-0">License type</h2>
-      <div class="license-toggle" role="group" aria-label="License type">
-        <button type="button" class="license-option is-active" data-license="individual" aria-pressed="true">
-          Individual
-        </button>
-        <button type="button" class="license-option" data-license="team" aria-pressed="false">
-          Team
-        </button>
+    <div class="container-sm buy-page">
+      <div class="buy-toggle-wrap">
+        <div class="buy-toggle" role="group" aria-label="License type">
+          <button type="button" class="buy-toggle__option is-active" data-license="individual" aria-pressed="true">
+            Individual
+          </button>
+          <button type="button" class="buy-toggle__option" data-license="team" aria-pressed="false">
+            Team
+          </button>
+        </div>
+        <p id="license-note" class="buy-toggle__note">
+          Individual licenses unlock Premium for one Canva account.
+        </p>
       </div>
-      <p id="license-note" class="text-[var(--color-light)] mt-3 mb-8">
-        Individual licenses unlock Premium for one Canva account.
+
+      <div id="buy-form" class="buy-plans">
+        <article class="buy-plan">
+          <div class="buy-plan__head">
+            <h2 class="buy-plan__name">Monthly</h2>
+            <p class="buy-plan__desc">Flexible billing, cancel anytime.</p>
+          </div>
+          <div class="buy-plan__price-wrap">
+            <p class="buy-plan__price">
+              <span class="buy-plan__currency">$</span><span id="price-monthly" class="buy-plan__amount">{pricing.individual.monthly}</span>
+            </p>
+            <p class="buy-plan__period">per month</p>
+          </div>
+          <button type="button" class="btn-secondary buy-plan__cta checkout-btn" data-plan="monthly">
+            Buy
+          </button>
+        </article>
+
+        <article class="buy-plan buy-plan--highlight">
+          <span class="buy-plan__badge">Most popular</span>
+          <div class="buy-plan__head">
+            <h2 class="buy-plan__name">Yearly</h2>
+            <p class="buy-plan__desc">Best value if you subscribe.</p>
+          </div>
+          <div class="buy-plan__price-wrap">
+            <p class="buy-plan__price">
+              <span class="buy-plan__currency">$</span><span id="price-yearly" class="buy-plan__amount">{pricing.individual.yearly}</span>
+            </p>
+            <p class="buy-plan__period">per year</p>
+            <p id="yearly-savings" class="buy-plan__savings">Save 83% vs monthly</p>
+          </div>
+          <button type="button" class="btn-primary buy-plan__cta checkout-btn" data-plan="yearly">
+            Buy
+          </button>
+        </article>
+
+        <article class="buy-plan buy-plan--featured">
+          <span class="buy-plan__badge buy-plan__badge--deal">50% off</span>
+          <div class="buy-plan__head">
+            <h2 class="buy-plan__name">Lifetime</h2>
+            <p class="buy-plan__desc">Pay once, keep Premium forever.</p>
+          </div>
+          <div class="buy-plan__price-wrap">
+            <p class="buy-plan__compare">
+              <span class="buy-plan__compare-label">Was</span>
+              <s id="price-lifetime-compare">${pricing.individual.lifetimeCompare}</s>
+            </p>
+            <p class="buy-plan__price">
+              <span class="buy-plan__currency">$</span><span id="price-lifetime" class="buy-plan__amount">{pricing.individual.lifetime}</span>
+            </p>
+            <p class="buy-plan__period">one-time payment</p>
+          </div>
+          <button type="button" class="btn-primary buy-plan__cta checkout-btn" data-plan="lifetime">
+            Buy
+          </button>
+        </article>
+      </div>
+
+      <section class="buy-features" aria-labelledby="buy-features-title">
+        <div class="buy-features__header">
+          <p class="buy-features__eyebrow">Included with every plan</p>
+          <h2 id="buy-features-title" class="buy-features__title">Premium features</h2>
+        </div>
+        <ul class="buy-features__grid">
+          {premiumFeatures.map((item) => (
+            <li class="buy-features__item">
+              <span class="buy-features__check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <p class="buy-footer">
+        Questions? Email{' '}
+        <a href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
+        Already subscribed?{' '}
+        <a href="/canva/font-studio/manage">Manage your license</a>.
       </p>
-
-      <h2>Plan</h2>
-      <div class="plan-list">
-        <div class="plan-row">
-          <div>
-            <div class="plan-name">Monthly subscription</div>
-            <div class="plan-price" data-price-yearly>$10 / month</div>
-          </div>
-          <button type="button" class="btn-primary btn-small checkout-btn" data-plan="monthly">
-            Continue to checkout
-          </button>
-        </div>
-        <div class="plan-row">
-          <div>
-            <div class="plan-name">Yearly subscription</div>
-            <div class="plan-price" data-price-yearly>$20 / year</div>
-          </div>
-          <button type="button" class="btn-primary btn-small checkout-btn" data-plan="yearly">
-            Continue to checkout
-          </button>
-        </div>
-        <div class="plan-row">
-          <div>
-            <div class="plan-name">Lifetime license</div>
-            <div class="plan-price" data-price-lifetime>$30 / one-time payment</div>
-          </div>
-          <button type="button" class="btn-secondary btn-small checkout-btn" data-plan="lifetime">
-            Continue to checkout
-          </button>
-        </div>
-      </div>
-
-      <p class="mt-8 mb-0 text-[var(--color-light)]">
-        Questions? Contact
-        <a class="underline" href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
-      </p>
     </div>
-  </div>
+  </CanvaAppShell>
 </BaseLayout>
 
 <style>
-  .license-toggle {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  .buy-hero {
+    position: relative;
+    padding: 2rem 0 2.5rem;
+    overflow: hidden;
   }
 
-  .license-option {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.95rem;
+  .buy-hero__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-surface);
+    pointer-events: none;
+  }
+
+  .buy-hero__inner {
+    position: relative;
+  }
+
+  .buy-hero__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+  }
+
+  .buy-hero__logo {
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+  }
+
+  .buy-hero__eyebrow {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .buy-hero__title {
+    margin: 0;
+    font-size: clamp(1.85rem, 4vw, 2.35rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .buy-hero__lead {
+    margin: 0.5rem 0 0;
+    max-width: 34rem;
+    font-size: 1.02rem;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+
+  .buy-page {
+    padding-bottom: 4rem;
+  }
+
+  .buy-features {
+    margin: 2rem 0 0;
+    padding: 1.5rem 1.5rem 1.35rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.06) 50%, rgba(37, 99, 235, 0.04) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.22);
+    border-radius: var(--border-radius-3);
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+  }
+
+  .buy-features__header {
+    margin-bottom: 1.1rem;
+    text-align: center;
+  }
+
+  .buy-features__eyebrow {
+    margin: 0 0 0.3rem;
+    font-family: var(--font-1);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .buy-features__title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-content);
+  }
+
+  .buy-features__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .buy-features__item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-content);
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .buy-features__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--accent-soft);
+    border-radius: 999px;
+    color: var(--accent);
+  }
+
+  .buy-features__check svg {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .buy-toggle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .buy-toggle {
+    display: inline-flex;
+    padding: 0.25rem;
+    background: var(--back-1);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .buy-toggle__option {
+    padding: 0.55rem 1.35rem;
+    font-size: 0.92rem;
     font-weight: 600;
     font-family: var(--font-1);
-    border: 1px solid var(--border-color-strong);
-    border-radius: var(--border-radius-2);
-    background: var(--back-2);
-    box-shadow: var(--shadow-sm);
-    transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+    color: var(--color-light);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
   }
 
-  .license-option.is-active {
-    background: var(--back-btn);
-    border-color: transparent;
+  .buy-toggle__option.is-active {
+    color: var(--color-content);
+    background: var(--back-2);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .buy-toggle__note {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    text-align: center;
+    max-width: 28rem;
+  }
+
+  .buy-plans {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .buy-plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.35rem 1.35rem;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .buy-plan--highlight {
+    border-color: rgba(37, 99, 235, 0.35);
     box-shadow: var(--shadow-md);
   }
 
-  .plan-list {
-    display: flex;
-    flex-direction: column;
+  .buy-plan--featured {
+    border-color: var(--accent);
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.12);
   }
 
-  .plan-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    padding: 1rem 0;
+  .buy-plan__badge {
+    position: absolute;
+    top: -0.65rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .buy-plan__badge--deal {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  }
+
+  .buy-plan__head {
+    margin-bottom: 1rem;
+    padding-top: 0.35rem;
+  }
+
+  .buy-plan__name {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .buy-plan__desc {
+    margin: 0.35rem 0 0;
+    font-size: 0.88rem;
+    color: var(--color-light);
+    line-height: 1.45;
+  }
+
+  .buy-plan__price-wrap {
+    margin-bottom: 1.15rem;
+    padding-bottom: 1.15rem;
     border-bottom: 1px solid var(--border-color);
   }
 
-  .plan-row:first-child {
-    border-top: 1px solid var(--border-color);
+  .buy-plan__compare {
+    margin: 0 0 0.15rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
   }
 
-  .plan-name {
-    font-family: var(--font-1);
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  .plan-price {
+  .buy-plan__compare s {
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--color-light);
-    margin-top: 4px;
+  }
+
+  .buy-plan__compare-label {
+    margin-right: 0.35rem;
+  }
+
+  .buy-plan__price {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .buy-plan__currency {
+    margin-top: 0.35rem;
+    margin-right: 0.1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-content);
+  }
+
+  .buy-plan__amount {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--color-content);
+  }
+
+  .buy-plan__period {
+    margin: 0.35rem 0 0;
+    font-size: 0.88rem;
+    color: var(--color-muted);
+  }
+
+  .buy-plan__savings {
+    margin: 0.5rem 0 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .buy-plan__cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  .buy-footer {
+    margin: 1.25rem 0 0;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    text-align: center;
+    line-height: 1.65;
+  }
+
+  .buy-footer a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .buy-footer a:hover {
+    color: var(--color-content);
+  }
+
+  @media (max-width: 960px) {
+    .buy-features__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .buy-plans {
+      grid-template-columns: 1fr;
+      max-width: 24rem;
+      margin-inline: auto;
+    }
+
+    .buy-plan--featured {
+      order: -1;
+    }
   }
 </style>
 
-<script define:vars={{API_BASE}}>
+<script define:vars={{API_BASE, pricing}}>
   const hashParams = new URLSearchParams(window.location.hash.slice(1));
   const searchParams = new URLSearchParams(window.location.search);
   const userId = hashParams.get('userId') || searchParams.get('userId') || '';
   const teamId = hashParams.get('teamId') || searchParams.get('teamId') || '';
   const hasIds = Boolean(userId && teamId);
 
-  const missingEl = document.getElementById('missing-params');
-  const formEl = document.getElementById('buy-form');
   const noteEl = document.getElementById('license-note');
   const licenseButtons = document.querySelectorAll('[data-license]');
   const checkoutButtons = document.querySelectorAll('.checkout-btn');
+  const priceMonthlyEl = document.getElementById('price-monthly');
+  const priceYearlyEl = document.getElementById('price-yearly');
+  const priceLifetimeEl = document.getElementById('price-lifetime');
+  const priceLifetimeCompareEl = document.getElementById('price-lifetime-compare');
+  const yearlySavingsEl = document.getElementById('yearly-savings');
 
   let license = 'individual';
 
   const notes = {
     individual: 'Individual licenses unlock Premium for one Canva account.',
-    team: 'Team licenses unlock Premium for everyone on your Canva team.',
+    team: 'Team licenses unlock Premium for everyone on your Canva team (5× individual pricing).',
   };
 
-  // if (!hasIds && missingEl) {
-  //   missingEl.classList.remove('hidden');
-  // }
+  function formatSavings(monthly, yearly) {
+    const annualMonthly = monthly * 12;
+    if (annualMonthly <= yearly) return '';
+    const pct = Math.round((1 - yearly / annualMonthly) * 100);
+    return `Save ${pct}% vs monthly`;
+  }
+
+  function updatePricing() {
+    const plan = pricing[license];
+    if (!plan) return;
+
+    if (priceMonthlyEl) priceMonthlyEl.textContent = String(plan.monthly);
+    if (priceYearlyEl) priceYearlyEl.textContent = String(plan.yearly);
+    if (priceLifetimeEl) priceLifetimeEl.textContent = String(plan.lifetime);
+    if (priceLifetimeCompareEl) priceLifetimeCompareEl.textContent = `$${plan.lifetimeCompare}`;
+    if (yearlySavingsEl) {
+      const savings = formatSavings(plan.monthly, plan.yearly);
+      yearlySavingsEl.textContent = savings;
+      yearlySavingsEl.hidden = !savings;
+    }
+  }
 
   licenseButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -165,15 +547,12 @@ const API_BASE = import.meta.env.DEV
       if (noteEl) {
         noteEl.textContent = notes[license] || notes.individual;
       }
+      updatePricing();
     });
   });
 
   checkoutButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      // if (!hasIds) {
-      //   missingEl?.scrollIntoView({behavior: 'smooth', block: 'center'});
-      //   return;
-      // }
       const plan = btn.getAttribute('data-plan');
       const product = `${plan}-${license}`;
       const url = new URL(`${API_BASE}/stripe/font-studio/checkout`);
@@ -183,6 +562,8 @@ const API_BASE = import.meta.env.DEV
       window.location.assign(url.toString());
     });
   });
+
+  updatePricing();
 
   if (!hasIds) {
     checkoutButtons.forEach((btn) => {
