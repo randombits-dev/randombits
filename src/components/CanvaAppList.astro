@@ -1,0 +1,212 @@
+---
+import {type ProjectDefinition} from "../data/projects";
+import {Image} from "astro:assets";
+
+interface Props {
+  items: ProjectDefinition[];
+}
+
+const {items} = Astro.props;
+
+const accents = [
+  'canva-card--indigo',
+  'canva-card--violet',
+  'canva-card--teal',
+];
+---
+
+<div class="canva-apps">
+  {
+    items.map((app, index) => {
+      const detailLink = app.links.find((l) => l[0] === 'more details')?.[1] || app.links[0][1];
+      const canvaLink = app.links.find((l) => l[0] === 'canva')?.[1];
+      const accent = accents[index % accents.length];
+
+      return (
+        <article class:list={["canva-card", accent]}>
+          <a href={detailLink} class="canva-card__media">
+            <Image src={app.img} alt={`${app.title} preview`} class="canva-card__img"/>
+            <span class="canva-card__badge">Canva app</span>
+          </a>
+          <div class="canva-card__body">
+            <div class="canva-card__top">
+              <h2 class="canva-card__title">
+                <a href={detailLink}>{app.title}</a>
+              </h2>
+              <p class="canva-card__desc">{app.desc}</p>
+            </div>
+            <div class="canva-card__actions">
+              <a href={detailLink} class="btn-primary btn-small decoration-0">Learn more</a>
+              {canvaLink && (
+                <a href={canvaLink} class="canva-card__external" target="_blank" rel="noopener">
+                  Open in Canva
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      );
+    })
+  }
+</div>
+
+<style>
+  .canva-apps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .canva-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 0;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-3);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+
+  .canva-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .canva-card--indigo {
+    --card-accent: #6366f1;
+    --card-accent-soft: rgba(99, 102, 241, 0.12);
+  }
+
+  .canva-card--violet {
+    --card-accent: #8b5cf6;
+    --card-accent-soft: rgba(139, 92, 246, 0.12);
+  }
+
+  .canva-card--teal {
+    --card-accent: #14b8a6;
+    --card-accent-soft: rgba(20, 184, 166, 0.12);
+  }
+
+  .canva-card__media {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: var(--card-accent-soft);
+    border-right: 1px solid var(--border-color);
+  }
+
+  .canva-card__img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+
+  .canva-card:hover .canva-card__img {
+    transform: scale(1.04);
+  }
+
+  .canva-card__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.75rem;
+    font-family: var(--font-1);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--card-accent);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .canva-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 2.25rem;
+    gap: 1.5rem;
+  }
+
+  .canva-card__title {
+    margin: 0;
+    font-family: var(--font-1);
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .canva-card__title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  .canva-card__title a:hover {
+    color: var(--card-accent);
+  }
+
+  .canva-card__desc {
+    margin: 0.65rem 0 0;
+    font-size: 1rem;
+    color: var(--color-light);
+    line-height: 1.65;
+    max-width: 36ch;
+  }
+
+  .canva-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .canva-card__external {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--card-accent);
+    text-decoration: none;
+    transition: gap 150ms ease;
+  }
+
+  .canva-card__external svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .canva-card__external:hover {
+    gap: 0.55rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .canva-card {
+      grid-template-columns: 1fr;
+    }
+
+    .canva-card__media {
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .canva-card__img {
+      min-height: 200px;
+    }
+
+    .canva-card__body {
+      padding: 1.5rem;
+    }
+  }
+</style>

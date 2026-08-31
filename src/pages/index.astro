@@ -63,7 +63,9 @@ import {CANVA_APPS, PROJECTS} from "../data/projects.ts";
     position: absolute;
     inset: -40% -20% auto;
     height: 500px;
-    background: radial-gradient(ellipse at center, var(--accent-soft) 0%, transparent 70%);
+    background:
+      radial-gradient(ellipse at center, rgba(99, 102, 241, 0.14) 0%, transparent 70%),
+      radial-gradient(ellipse at 70% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -90,7 +92,10 @@ import {CANVA_APPS, PROJECTS} from "../data/projects.ts";
   }
 
   .home-hero__accent {
-    color: var(--accent);
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .home-hero__subtitle {

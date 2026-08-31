@@ -173,7 +173,7 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
   }
 
   .fs-card--hero {
-    background: linear-gradient(160deg, #fff 55%, rgba(255, 191, 35, 0.18));
+    background: var(--gradient-surface);
   }
 
   .fs-card--wide {
@@ -215,7 +215,8 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
     flex-shrink: 0;
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-2);
-    background: var(--back-btn);
+    background: var(--accent-soft);
+    color: var(--accent);
   }
 
   .fs-icon svg {
@@ -254,8 +255,9 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
   }
 
   .fs-badge--active {
-    background: var(--back-btn);
-    color: var(--color-btn);
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: rgba(99, 102, 241, 0.3);
   }
 
   .fs-badge--inactive {
@@ -294,7 +296,8 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
   }
 
   .fs-plan--featured {
-    background: linear-gradient(160deg, var(--back-0) 40%, rgba(255, 191, 35, 0.35));
+    background: linear-gradient(160deg, var(--back-0) 40%, var(--accent-soft));
+    border-color: rgba(99, 102, 241, 0.25);
   }
 
   .fs-plan__tag {
@@ -304,7 +307,8 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
     padding: 0.2rem 0.55rem;
     border: 2px solid var(--border-color);
     border-radius: 999px;
-    background: var(--back-btn);
+    background: var(--accent-soft);
+    color: var(--accent);
     font-family: var(--font-1);
     font-size: 0.72rem;
     font-weight: 700;
@@ -373,7 +377,8 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
     padding: 0.85rem 1rem;
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-2);
-    background: var(--back-btn);
+    background: var(--accent-soft);
+    color: var(--accent);
     font-size: 0.95rem;
   }
 

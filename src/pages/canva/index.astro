@@ -1,14 +1,70 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectList from "../../components/ProjectList.astro";
+import CanvaAppList from "../../components/CanvaAppList.astro";
 import {CANVA_APPS} from "../../data/projects.ts";
 ---
-<BaseLayout title="Projects by Random Bits" description="A list of all open source projects created by Random Bits">
-  <div class="page-hero">
-    <h1 class="page-hero__title">Canva apps</h1>
-    <p class="page-hero__subtitle">Creative tools for the Canva marketplace, built by Random Bits.</p>
-  </div>
+<BaseLayout title="Canva Apps by Random Bits" description="Creative tools for the Canva marketplace — FontStudio, FontFrame, FontPixel, and more.">
+  <section class="canva-page-hero">
+    <div class="canva-page-hero__mesh" aria-hidden="true"></div>
+    <div class="container canva-page-hero__content">
+      <p class="canva-page-hero__eyebrow">Random Bits · Canva</p>
+      <h1 class="canva-page-hero__title">Apps for standout designs</h1>
+      <p class="canva-page-hero__subtitle">
+        Creative tools built for the Canva marketplace — advanced text effects, image frames, pixel art, and more.
+      </p>
+    </div>
+  </section>
+
   <div class="container pb-24">
-    <ProjectList items={CANVA_APPS}/>
+    <CanvaAppList items={CANVA_APPS}/>
   </div>
 </BaseLayout>
+
+<style>
+  .canva-page-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4.5rem 0 3.5rem;
+    text-align: center;
+  }
+
+  .canva-page-hero__mesh {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 0%, rgba(99, 102, 241, 0.12), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(139, 92, 246, 0.1), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(20, 184, 166, 0.08), transparent 50%);
+    pointer-events: none;
+  }
+
+  .canva-page-hero__content {
+    position: relative;
+  }
+
+  .canva-page-hero__eyebrow {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-1);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .canva-page-hero__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .canva-page-hero__subtitle {
+    margin: 1.25rem auto 0;
+    max-width: 36rem;
+    font-size: 1.1rem;
+    color: var(--color-light);
+    line-height: 1.65;
+  }
+</style>

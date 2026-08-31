@@ -11,7 +11,7 @@ export type ProjectDefinition = {
 export const PROJECT_MAP: { [key: string]: ProjectDefinition } = {
   fontStudio: {
     title: 'FontStudio',
-    desc: 'A canva app that that allows creating advanced text effects.',
+    desc: 'Layer outlines, shadows, and 3D projections to create advanced text effects inside Canva.',
     img: CoverImages.fontStudio,
     links: [
       ['more details', '/canva/font-studio'],
@@ -20,7 +20,7 @@ export const PROJECT_MAP: { [key: string]: ProjectDefinition } = {
   },
   fontFrame: {
     title: 'FontFrame',
-    desc: 'A canva app that allows you to create text with any image background.',
+    desc: 'Fill text with any image — photos, textures, or graphics — for eye-catching typography.',
     img: CoverImages.fontFrame,
     links: [
       ['more details', '/canva/font-frame'],
@@ -29,7 +29,7 @@ export const PROJECT_MAP: { [key: string]: ProjectDefinition } = {
   },
   fontPixel: {
     title: 'FontPixel',
-    desc: 'A canva app that turns any text into pixel art.',
+    desc: 'Turn any text into retro pixel art with customizable colors and resolution.',
     img: CoverImages.fontPixel,
     links: [
       ['more details', '/canva/font-pixel'],

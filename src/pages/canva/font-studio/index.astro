@@ -2,167 +2,602 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
-import * as About from "../../../snippits/font-studio/index.md";
-import * as PremiumFAQ from "../../../snippits/canva-premium-faq.md";
-import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
+
+const CANVA_URL = 'https://www.canva.com/apps/AAGLHfr5ZM0/fontstudio';
+
+const features = [
+  {
+    title: 'Layered text effects',
+    desc: 'Stack outlines, shadows, and 3D projections to build effects that go far beyond basic Canva text.',
+    icon: 'layers',
+  },
+  {
+    title: '100+ templates',
+    desc: 'Start from polished presets and customize every layer — or build your own from scratch.',
+    icon: 'template',
+  },
+  {
+    title: 'Fine-grained control',
+    desc: 'Adjust offset, blur, color, and blend per layer. Tweak until the type feels exactly right.',
+    icon: 'sliders',
+  },
+  {
+    title: 'Export to your design',
+    desc: 'Send finished text straight into your Canva canvas — no screenshots, no workarounds.',
+    icon: 'export',
+  },
+];
+
+const premiumFeatures = [
+  '15,000+ additional fonts',
+  '100+ premium templates',
+  'Upload custom fonts',
+  'Special effects & extras',
+];
+
+const faqs = [
+  {
+    q: 'Are your fonts royalty-free?',
+    a: 'Yes. All fonts can be used for commercial purposes with no restrictions.',
+  },
+  {
+    q: 'Why is the output blurry?',
+    a: 'The app auto-sizes text to fit the page width, which sometimes reduces resolution. Create a larger custom page (e.g. 3000×3000), export there, then copy the result into your real design.',
+  },
+  {
+    q: 'Why is "Use selected image" disabled?',
+    a: 'Only raster images (photos) work — not vector graphics. Workaround: place the image on a blank page, download as PNG or JPG, then select that file in the app.',
+  },
+  {
+    q: 'Why can\'t I access Canva fonts?',
+    a: 'Canva does not allow third-party apps to access their font library. FontStudio includes its own font collection instead.',
+  },
+  {
+    q: 'I have Canva Pro — do I get Premium free?',
+    a: 'No. FontStudio Premium is separate. As an independent developer, I charge a small fee to support ongoing development.',
+  },
+  {
+    q: 'I purchased Premium but it\'s not showing.',
+    a: 'Click "Reload app" in the Premium section. If it still fails, make sure you\'re on the same Canva account used at purchase.',
+  },
+];
+
+const presets = [
+  "color", "happy", "block", "outline", "swirl", "classic", "skinny", "bright", "cool",
+  "pink", "disco", "neon", "good-times", "gameover", "blush", "stencil", "freight", "empty",
+  "color-time", "crono", "great", "fine", "dancing-bears", "spray-paint", "sunrise", "party",
+  "good-vibes", "rainbow", "rainy-day", "freeway", "clear", "icicle", "cosmos", "clash",
+  "angle", "canvas", "turf", "rocks", "scary", "oodles", "scape", "alive", "modern", "green",
+  "abolish", "sunny", "citrus", "wed", "roses", "lime", "two-ten", "open", "hoppin", "snap",
+  "ball", "elastic", "home-club", "box-office", "dear-love", "torn-apart", "stop", "orin",
+  "splash", "volts", "hard-work", "sheet", "cool-days", "freedom", "not-much", "not-yet",
+  "shy", "rusty", "crazy", "galaxy", "polygon", "squiggle", "extra-bold", "gothic",
+  "handwritten", "hardwired", "shade", "iron-age", "relaxed", "chalk", "super-nova", "monster",
+  "soft-touch", "trance", "thrice", "kingdom", "labeled", "park", "split-decision", "supermix",
+  "rapture", "metal-gear", "flexible", "ore", "blood-moon", "explore", "respite", "metallic",
+  "sunblock", "dusk", "ice-box",
+];
 ---
-<BaseLayout title="FontStudio Canva App" description="FontStudio is an app in the Canva marketplace. It allows a user to create advanced text effects using layers of outlines, projections, and shadows.">
-  <div class="container-sm">
-    <div class="flex items-center mt-20 mb-10">
-      <Image width="100" src={FontStudioLogo} alt="FontStudio Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <div>
-        <h1 class="my-0">FontStudio</h1>
-
-
-
-        <div class="text-lg">A canva app. Create advanced text effects for standout designs.</div>
-        <!--<button class="btn-small underline">Try FontStudio</button>-->
+<BaseLayout
+  title="FontStudio — Advanced Text Effects for Canva"
+  description="FontStudio is a Canva app for creating advanced text effects with layered outlines, shadows, and 3D projections."
+>
+  <div class="fs-page">
+    <section class="fs-hero">
+      <div class="fs-hero__bg" aria-hidden="true"></div>
+      <div class="container-sm fs-hero__inner">
+        <div class="fs-hero__brand">
+          <Image width="80" height="80" src={FontStudioLogo} alt="" class="fs-hero__logo"/>
+          <div>
+            <p class="fs-hero__eyebrow">Canva app</p>
+            <h1 class="fs-hero__title">FontStudio</h1>
+            <p class="fs-hero__tagline">Advanced text effects for designs that need to stand out.</p>
+          </div>
+        </div>
+        <div class="fs-hero__actions">
+          <a class="btn-primary decoration-0" href={CANVA_URL} target="_blank" rel="noopener">Try in Canva</a>
+          <a class="btn-secondary decoration-0" href="/canva/font-studio/manage">Manage Premium</a>
+        </div>
       </div>
-    </div>
-    <!--<div class="border-2 rounded-2xl border-solid border-red-700 text-red-700 px-10 py-3">There is a known issue affecting users in Turkey, where the fonts are not loading. A fix should be available soon.</div>-->
+    </section>
 
-    <br/>
-    <br/>
-    <a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAGLHfr5ZM0/fontstudio" target="_blank" rel="noopener">Try FontStudio</a>
-    <br/>
-    <br/>
+    <section class="fs-section">
+      <div class="container-sm">
+        <h2 class="fs-section__title">What you can do</h2>
+        <p class="fs-section__lead">Build professional typography effects with a layering system designed for creative control.</p>
+        <div class="fs-features">
+          {features.map((f) => (
+            <article class="fs-feature">
+              <div class="fs-feature__icon" aria-hidden="true">
+                {f.icon === 'layers' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                )}
+                {f.icon === 'template' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M9 21V9"/>
+                  </svg>
+                )}
+                {f.icon === 'sliders' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/>
+                  </svg>
+                )}
+                {f.icon === 'export' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>
+                  </svg>
+                )}
+              </div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    <About.Content></About.Content>
-    <PremiumFAQ.Content></PremiumFAQ.Content>
-    <AppFAQ.Content></AppFAQ.Content>
+    <section class="fs-section fs-section--premium">
+      <div class="container-sm fs-premium">
+        <div class="fs-premium__copy">
+          <p class="fs-premium__eyebrow">FontStudio Premium</p>
+          <h2>Unlock the full toolkit</h2>
+          <p class="fs-premium__lead">
+            Premium adds thousands of fonts, exclusive templates, custom font uploads, and special effects.
+            Purchase inside the Canva app — Canva Pro does not include FontStudio Premium.
+          </p>
+          <ul class="fs-premium__list">
+            {premiumFeatures.map((item) => (
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a class="btn-primary decoration-0" href="/canva/font-studio/buy">View plans</a>
+        </div>
+        <div class="fs-premium__visual" aria-hidden="true">
+          <div class="fs-premium__card">
+            <span class="fs-premium__card-label">Premium</span>
+            <p class="fs-premium__card-stat">15,000<span>+</span></p>
+            <p class="fs-premium__card-caption">fonts unlocked</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="snippit">
-      <h2>Support</h2>
-      <p>If you have any questions or need support, please contact <a class="underline" href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a></p>
+    <section class="fs-section">
+      <div class="container-sm">
+        <h2 class="fs-section__title">Preset gallery</h2>
+        <p class="fs-section__lead">A sample of the templates you can create — each one fully customizable.</p>
+        <div class="fs-gallery">
+          {presets.map((name) => (
+            <img
+              src={`https://cdn.randombits.dev/font-studio/preset/${name}.png`}
+              alt={`${name} text effect preset`}
+              loading="lazy"
+              width="200"
+              height="200"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
 
-      <a href="/canva/font-studio/privacy">Privacy Policy</a>
-      <br/>
-      <a href="/canva/font-studio/terms">Terms and Conditions</a>
-    </div>
+    <section class="fs-section fs-section--faq">
+      <div class="container-sm">
+        <h2 class="fs-section__title">FAQ</h2>
+        <div class="fs-faq">
+          {faqs.map((item) => (
+            <details class="fs-faq__item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    <div class="snippit">
-      <h2>Examples</h2>
-      <p>Here are some examples of designs you can create with the app:</p>
-    </div>
-
-
-    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
-    <!--       width="800" src={FontStudioFeatured} alt="FontStudio Featured Image"/>-->
-
-  </div>
-
-  <div class="container-lg flex flex-wrap">
-    {
-      ["color",
-        "happy",
-        "block",
-        "outline",
-        "swirl",
-        "classic",
-        "skinny",
-        "bright",
-        "cool",
-        "pink",
-        "disco",
-        "neon",
-        "good-times",
-        "gameover",
-        "blush",
-        "stencil",
-        "freight",
-        "empty",
-        "color-time",
-        "crono",
-        "great",
-        "fine",
-        "dancing-bears",
-        "spray-paint",
-        "sunrise",
-        "party",
-        "good-vibes",
-        "rainbow",
-        "rainy-day",
-        "freeway",
-        "clear",
-        "icicle",
-        "cosmos",
-        "clash",
-        "angle",
-        "canvas",
-        "turf",
-        "rocks",
-        "scary",
-        "oodles",
-        "scape",
-        "alive",
-        "modern",
-        "green",
-        "abolish",
-        "sunny",
-        "citrus",
-        "wed",
-        "roses",
-        "lime",
-        "two-ten",
-        "open",
-        "hoppin",
-        "snap",
-        "ball",
-        "elastic",
-        "home-club",
-        "box-office",
-        "dear-love",
-        "torn-apart",
-        "stop",
-        "orin",
-        "splash",
-        "volts",
-        "hard-work",
-        "sheet",
-        "cool-days",
-        "freedom",
-        "not-much",
-        "not-yet",
-        "shy",
-        "rusty",
-        "crazy",
-        "galaxy",
-        "polygon",
-        "squiggle",
-        "extra-bold",
-        "gothic",
-        "handwritten",
-        "hardwired",
-        "shade",
-        "iron-age",
-        "relaxed",
-        "chalk",
-        "super-nova",
-        "monster",
-        "soft-touch",
-        "trance",
-        "thrice",
-        "kingdom",
-        "labeled",
-        "park",
-        "split-decision",
-        "supermix",
-        "rapture",
-        "metal-gear",
-        "flexible",
-        "ore",
-        "blood-moon",
-        "explore",
-        "respite",
-        "metallic",
-        "sunblock",
-        "dusk",
-        "ice-box"].map((name) => {
-        return (
-          <img src={`https://cdn.randombits.dev/font-studio/preset/${name}.png`} loading="lazy"/>
-        );
-      })
-    }
-
+    <section class="fs-section fs-section--support">
+      <div class="container-sm fs-support">
+        <div>
+          <h2>Need help?</h2>
+          <p>Questions about Premium, licensing, or how the app works — I'm happy to help.</p>
+        </div>
+        <div class="fs-support__links">
+          <a href="mailto:fontstudio@randombits.dev" class="btn-primary btn-small decoration-0">Contact support</a>
+          <a href="/canva/font-studio/privacy" class="fs-support__link">Privacy</a>
+          <a href="/canva/font-studio/terms" class="fs-support__link">Terms</a>
+        </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>
+
+<style>
+  .fs-page {
+    padding-bottom: 4rem;
+  }
+
+  .fs-hero {
+    position: relative;
+    padding: 3.5rem 0 3rem;
+    overflow: hidden;
+  }
+
+  .fs-hero__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-surface);
+    pointer-events: none;
+  }
+
+  .fs-hero__inner {
+    position: relative;
+  }
+
+  .fs-hero__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .fs-hero__logo {
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+  }
+
+  .fs-hero__eyebrow {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .fs-hero__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .fs-hero__tagline {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    color: var(--color-light);
+    line-height: 1.55;
+    max-width: 32rem;
+  }
+
+  .fs-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.75rem;
+  }
+
+  .fs-section {
+    padding: 3.5rem 0;
+  }
+
+  .fs-section__title {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .fs-section__lead {
+    margin: 0.65rem 0 2rem;
+    color: var(--color-light);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  .fs-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .fs-feature {
+    padding: 1.35rem;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .fs-feature__icon {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 0.85rem;
+    border-radius: var(--border-radius-1);
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .fs-feature__icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .fs-feature h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .fs-feature p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    line-height: 1.55;
+  }
+
+  .fs-section--premium {
+    background: var(--back-1);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .fs-premium {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .fs-premium__eyebrow {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .fs-premium h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .fs-premium__lead {
+    margin: 0.75rem 0 1.25rem;
+    color: var(--color-light);
+    line-height: 1.65;
+    max-width: 38rem;
+  }
+
+  .fs-premium__list {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .fs-premium__list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--color-light);
+  }
+
+  .fs-premium__list svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    color: var(--accent-teal);
+  }
+
+  .fs-premium__visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .fs-premium__card {
+    padding: 2rem 2.5rem;
+    text-align: center;
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius-3);
+    color: #fff;
+    box-shadow: var(--shadow-accent);
+    min-width: 200px;
+  }
+
+  .fs-premium__card-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+  }
+
+  .fs-premium__card-stat {
+    margin: 0;
+    font-family: var(--font-1);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .fs-premium__card-stat span {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .fs-premium__card-caption {
+    margin: 0.35rem 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .fs-gallery {
+    columns: 4;
+    column-gap: 0.75rem;
+  }
+
+  .fs-gallery img {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    break-inside: avoid;
+    border-radius: var(--border-radius-1);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .fs-gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+  }
+
+  .fs-section--faq {
+    padding-bottom: 2rem;
+  }
+
+  .fs-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fs-faq__item {
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    overflow: hidden;
+  }
+
+  .fs-faq__item summary {
+    padding: 1rem 1.25rem;
+    font-family: var(--font-1);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .fs-faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .fs-faq__item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-muted);
+    transition: transform 200ms ease;
+  }
+
+  .fs-faq__item[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  .fs-faq__item p {
+    margin: 0;
+    padding: 0 1.25rem 1rem;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    line-height: 1.65;
+  }
+
+  .fs-section--support {
+    padding-top: 2rem;
+  }
+
+  .fs-support {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .fs-support h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.25rem;
+  }
+
+  .fs-support p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-light);
+  }
+
+  .fs-support__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fs-support__link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .fs-support__link:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .fs-features {
+      grid-template-columns: 1fr;
+    }
+
+    .fs-premium {
+      grid-template-columns: 1fr;
+    }
+
+    .fs-premium__visual {
+      order: -1;
+    }
+
+    .fs-gallery {
+      columns: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .fs-hero__brand {
+      flex-direction: column;
+    }
+
+    .fs-gallery {
+      columns: 1;
+    }
+  }
+</style>
