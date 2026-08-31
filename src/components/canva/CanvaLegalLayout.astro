@@ -1,0 +1,237 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import {Image} from 'astro:assets';
+import type {ImageMetadata} from 'astro';
+
+interface Props {
+  appName: string;
+  appSlug: string;
+  logo: ImageMetadata;
+  pageTitle: string;
+  docTitle: string;
+  docType: 'privacy' | 'terms';
+  lastUpdated?: string;
+}
+
+const {appName, appSlug, logo, pageTitle, docTitle, docType, lastUpdated = 'August 31, 2026'} = Astro.props;
+const appPath = `/canva/${appSlug}`;
+const privacyPath = `${appPath}/privacy`;
+const termsPath = `${appPath}/terms`;
+---
+
+<BaseLayout title={pageTitle} description={`${docTitle} for the ${appName} Canva app by Random Bits.`}>
+  <article class="legal-page">
+    <header class="legal-page__header">
+      <div class="legal-page__inner container-sm">
+        <a href={appPath} class="legal-page__back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to {appName}
+        </a>
+
+        <div class="legal-page__hero">
+          <Image width="64" height="64" src={logo} alt="" class="legal-page__logo"/>
+          <div>
+            <p class="legal-page__eyebrow">{appName}</p>
+            <h1 class="legal-page__title">{docTitle}</h1>
+            <p class="legal-page__updated">Last updated {lastUpdated}</p>
+          </div>
+        </div>
+
+        <nav class="legal-page__nav" aria-label="Legal documents">
+          {docType === 'privacy' ? (
+            <span class="legal-page__nav-current">Privacy Policy</span>
+          ) : (
+            <a href={privacyPath} class="legal-page__nav-link">Privacy Policy</a>
+          )}
+          {docType === 'terms' ? (
+            <span class="legal-page__nav-current">Terms & Conditions</span>
+          ) : (
+            <a href={termsPath} class="legal-page__nav-link">Terms & Conditions</a>
+          )}
+        </nav>
+      </div>
+    </header>
+
+    <div class="legal-doc container-sm">
+      <slot/>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding-bottom: 4rem;
+  }
+
+  .legal-page__header {
+    border-bottom: 1px solid var(--border-color);
+    background: var(--gradient-surface);
+    padding: 2rem 0 0;
+  }
+
+  .legal-page__inner {
+    padding-bottom: 0;
+  }
+
+  .legal-page__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-light);
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  .legal-page__back svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .legal-page__back:hover {
+    color: var(--accent);
+  }
+
+  .legal-page__hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .legal-page__logo {
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+  }
+
+  .legal-page__eyebrow {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .legal-page__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .legal-page__updated {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+  }
+
+  .legal-page__nav {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .legal-page__nav-current,
+  .legal-page__nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+
+  .legal-page__nav-current {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .legal-page__nav-link {
+    color: var(--color-light);
+    transition: color 150ms ease;
+  }
+
+  .legal-page__nav-link:hover {
+    color: var(--color-content);
+  }
+
+  .legal-doc {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .legal-doc :global(h2) {
+    margin: 2.5rem 0 0.85rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .legal-doc :global(h2:first-of-type) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .legal-doc :global(p) {
+    margin: 0 0 1rem;
+    color: var(--color-light);
+    line-height: 1.7;
+  }
+
+  .legal-doc :global(ul) {
+    margin: 0 0 1rem;
+    padding-left: 1.35rem;
+    color: var(--color-light);
+    line-height: 1.65;
+  }
+
+  .legal-doc :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .legal-doc :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .legal-doc :global(a:hover) {
+    color: var(--color-content);
+  }
+
+  .legal-doc :global(.legal-summary) {
+    margin: 0 0 1.5rem;
+    padding: 1.15rem 1.25rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    font-size: 0.95rem;
+    color: var(--color-light);
+    line-height: 1.65;
+  }
+
+  .legal-doc :global(.legal-summary strong) {
+    color: var(--color-content);
+  }
+
+  .legal-doc :global(.legal-callout) {
+    margin: 1rem 0;
+    padding: 1rem 1.15rem;
+    background: var(--back-1);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--border-radius-1) var(--border-radius-1) 0;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+</style>

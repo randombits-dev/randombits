@@ -16,18 +16,18 @@
   --back-contrast: #f1f5f9;
   --back-code: #f1f5f9;
   --back-header: #ffffff;
-  --back-btn: #6366f1;
-  --back-btn-hover: #4f46e5;
+  --back-btn: #2563eb;
+  --back-btn-hover: #1d4ed8;
 
-  /* Accent */
-  --accent: #6366f1;
-  --accent-2: #8b5cf6;
-  --accent-teal: #14b8a6;
-  --accent-soft: rgba(99, 102, 241, 0.1);
-  --accent-soft-2: rgba(139, 92, 246, 0.08);
-  --accent-ring: rgba(99, 102, 241, 0.35);
-  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
-  --gradient-surface: linear-gradient(160deg, rgba(99, 102, 241, 0.06) 0%, rgba(139, 92, 246, 0.04) 50%, transparent 100%);
+  /* Accent — blue */
+  --accent: #2563eb;
+  --accent-2: #3b82f6;
+  --accent-teal: #0ea5e9;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --accent-soft-2: rgba(59, 130, 246, 0.08);
+  --accent-ring: rgba(37, 99, 235, 0.35);
+  --gradient-accent: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #0ea5e9 100%);
+  --gradient-surface: linear-gradient(160deg, rgba(37, 99, 235, 0.06) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 100%);
   --hero-shadow: var(--color-content);
   --landing-bits: #e2e8f0;
   --primary-contrast: #475569;
@@ -48,7 +48,7 @@
   --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
   --shadow-card: var(--shadow-md);
   --shadow-card-hover: var(--shadow-lg);
-  --shadow-accent: 0 8px 24px rgba(99, 102, 241, 0.25);
+  --shadow-accent: 0 8px 24px rgba(37, 99, 235, 0.22);
 
   /* Typography */
   --font-1: "Outfit", system-ui, sans-serif;

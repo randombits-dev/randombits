@@ -1,25 +1,29 @@
+<p class="legal-summary"><strong>In short:</strong> FontDash is free to use. You keep rights to designs you create. The app is provided as-is without warranty.</p>
+
 ## Introduction
 
-These terms govern the use of the FontDash app (referred to as "the app"), developed by © Random Bits. By using the app, you agree to these terms. 
+These Terms and Conditions govern your use of FontDash ("the app"), a Canva application developed by Random Bits LLC. By using the app, you agree to these terms.
 
-## Use of the App
+## Use of the app
 
-This app is free to use (except for the Premium content that requires purchasing a license to access). You will maintain the rights to any designs you create with the app, unless the Canva Terms of Use state otherwise.
+FontDash is free to use. You retain rights to designs you create, subject to [Canva's Terms of Use](https://www.canva.com/policies/terms-of-use/) where applicable.
 
-## Premium License
+## Acceptable use
 
-The Premium License is a one-time purchase that allows you to access the Premium features of the app. The license is non-transferable and non-refundable. The Premium License is valid for the lifetime of the app, and if the app is discontinued for any reason, the license will be voided without refund.
+You agree not to misuse the app or use it in violation of Canva's policies or applicable law.
 
-## Limited Liability
+## Disclaimer
 
-THE APP IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE APP OR THE USE OR OTHER DEALINGS IN THE
-APP.
+THE APP IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-## How can I contact you?
+## Limitation of liability
 
-You can email me at <a href="mailto:fontdash@randombits.dev">fontdash@randombits.dev</a>
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, RANDOM BITS LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP.
+
+## Changes to these terms
+
+We may update these terms from time to time. Continued use constitutes acceptance of updated terms.
+
+## Contact
+
+Questions? Email [fontdash@randombits.dev](mailto:fontdash@randombits.dev).

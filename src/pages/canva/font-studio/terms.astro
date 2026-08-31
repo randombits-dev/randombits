@@ -1,15 +1,15 @@
 ---
 import * as Terms from "../../../snippits/font-studio/terms.md";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import {Image} from 'astro:assets';
-import fontStudioLogo from '@/assets/canva/font-studio/logo.png';
+import CanvaLegalLayout from "@/components/canva/CanvaLegalLayout.astro";
+import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
 ---
-<BaseLayout title="FontFrame Terms and Conditions">
-  <div class="container-sm py-24 snippit">
-    <div class="flex items-center">
-      <Image width="100" src={fontStudioLogo} alt="FontStudio Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <h1>FontStudio Terms and Conditions</h1>
-    </div>
-    <Terms.Content></Terms.Content>
-  </div>
-</BaseLayout>
+<CanvaLegalLayout
+  appName="FontStudio"
+  appSlug="font-studio"
+  logo={FontStudioLogo}
+  pageTitle="FontStudio Terms and Conditions"
+  docTitle="Terms & Conditions"
+  docType="terms"
+>
+  <Terms.Content/>
+</CanvaLegalLayout>

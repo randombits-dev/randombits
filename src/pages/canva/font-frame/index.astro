@@ -1,46 +1,134 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
+import FontFrameLogo from '@/assets/canva/font-frame/logo.png';
 import fontFrameFeatured from '@/assets/canva/font-frame/1.png';
-import fontFrameLogo from '@/assets/canva/font-frame/logo.png';
-import * as About from "../../../snippits/font-frame/index.md";
-import * as PremiumFAQ from "../../../snippits/canva-premium-faq.md";
-import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
+import CanvaAppShell from '@/components/canva/CanvaAppShell.astro';
+import CanvaFeatureIcon from '@/components/canva/CanvaFeatureIcon.astro';
+import CanvaAppSupport from '@/components/canva/CanvaAppSupport.astro';
+
+const CANVA_URL = 'https://www.canva.com/apps/AAF5vGyV5TY/fontframe';
+
+const features = [
+  {title: 'Image-filled text', desc: 'Fill letters with photos, textures, or graphics — upload your own or pick from your design.', icon: 'image' as const},
+  {title: 'Typography control', desc: 'Choose fonts, adjust sizing, and fine-tune how the image sits inside each character.', icon: 'type' as const},
+  {title: '3D & shadow effects', desc: 'Add depth with projection and shadow layers for text that pops off the page.', icon: 'cube' as const},
+  {title: 'Export to your design', desc: 'Send finished text directly into your Canva canvas.', icon: 'export' as const},
+];
+
+const premiumFeatures = [
+  '15,000+ additional fonts',
+  '3D projection effects',
+  'Shadow effects',
+  'Special effects',
+];
+
+const faqs = [
+  {q: 'Are your fonts royalty-free?', a: 'Yes. All fonts can be used for commercial purposes with no restrictions.'},
+  {q: 'Why is the output blurry?', a: 'The app auto-sizes text to fit the page width. Create a larger custom page (e.g. 3000×3000), export there, then copy the result into your real design.'},
+  {q: 'Why is "Use selected image" disabled?', a: 'Only raster images (photos) work — not vector graphics. Download the image as PNG or JPG from a blank page, then select that file in the app.'},
+  {q: 'Why can\'t I access Canva fonts?', a: 'Canva does not allow third-party apps to access their font library. FontFrame includes its own font collection.'},
+  {q: 'I have Canva Pro — do I get Premium free?', a: 'No. FontFrame Premium is separate. As an independent developer, I charge a small fee to support ongoing development.'},
+  {q: 'I purchased Premium but it\'s not showing.', a: 'Click "Reload app" in the Premium section. Make sure you\'re on the same Canva account used at purchase.'},
+];
 ---
-<BaseLayout title="Font Frame Canva App" description="Font Frame is an app in the Canva marketplace. It allows a user to create vibrant text with image backgrounds.">
-  <div class="container-sm mb-40">
-    <div class="flex items-center mt-20 mb-10">
-      <Image width="100" src={fontFrameLogo} alt="FontFrame Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <div>
-        <h1 class="my-0">FontFrame</h1>
-        <div class="text-lg">Create vibrant text with image backgrounds</div>
+<BaseLayout
+  title="FontFrame — Image Text for Canva"
+  description="FontFrame is a Canva app for creating vibrant text filled with photos, textures, and image backgrounds."
+>
+  <CanvaAppShell>
+    <section class="fs-hero">
+      <div class="fs-hero__bg" aria-hidden="true"></div>
+      <div class="container-sm fs-hero__inner">
+        <div class="fs-hero__brand">
+          <Image width="80" height="80" src={FontFrameLogo} alt="" class="fs-hero__logo"/>
+          <div>
+            <p class="fs-hero__eyebrow">Canva app</p>
+            <h1 class="fs-hero__title">FontFrame</h1>
+            <p class="fs-hero__tagline">Create vibrant text filled with any image — photos, textures, and more.</p>
+          </div>
+        </div>
+        <div class="fs-hero__actions">
+          <a class="btn-primary decoration-0" href={CANVA_URL} target="_blank" rel="noopener">Try in Canva</a>
+        </div>
       </div>
-    </div>
-    <!--<div class="border-2 rounded-2xl border-solid border-red-700 text-red-700 px-10 py-3">There is a Canva bug affecting many apps right now. If you see a dark background that makes the app unusable, try switching to Dark theme in Canva until the bug is fixed.</div>-->
+    </section>
 
-    <br/>
-    <br/>
-    <a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAF5vGyV5TY/fontframe" target="_blank" rel="noopener">Try FontFrame</a>
-    <br/>
-    <br/>
-    <About.Content></About.Content>
-    <PremiumFAQ.Content></PremiumFAQ.Content>
-    <AppFAQ.Content></AppFAQ.Content>
+    <section class="fs-section">
+      <div class="container-sm">
+        <h2 class="fs-section__title">What you can do</h2>
+        <p class="fs-section__lead">Turn any image into typography — perfect for posters, social graphics, and bold headlines.</p>
+        <div class="fs-features">
+          {features.map((f) => (
+            <article class="fs-feature">
+              <CanvaFeatureIcon icon={f.icon}/>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    <div class="snippit mb-20">
-      <h2>Support</h2>
-      <p>If you have any questions or need support, please contact me at <a class="underline" href="mailto:fontframe@randombits.dev">fontframe@randombits.dev</a></p>
+    <section class="fs-section fs-section--premium">
+      <div class="container-sm fs-premium">
+        <div class="fs-premium__copy">
+          <p class="fs-premium__eyebrow">FontFrame Premium</p>
+          <h2>Unlock the full toolkit</h2>
+          <p class="fs-premium__lead">
+            Premium adds thousands of fonts, 3D projections, shadows, and special effects.
+            Purchase inside the Canva app — Canva Pro does not include FontFrame Premium.
+          </p>
+          <ul class="fs-premium__list">
+            {premiumFeatures.map((item) => (
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a class="btn-primary decoration-0" href={CANVA_URL} target="_blank" rel="noopener">Get Premium in Canva</a>
+        </div>
+        <div class="fs-premium__visual" aria-hidden="true">
+          <div class="fs-premium__card">
+            <span class="fs-premium__card-label">Premium</span>
+            <p class="fs-premium__card-stat">15,000<span>+</span></p>
+            <p class="fs-premium__card-caption">fonts unlocked</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <a href="/canva/font-frame/privacy">Privacy Policy</a>
-      <br/>
-      <a href="/canva/font-frame/terms">Terms and Conditions</a>
-    </div>
+    <section class="fs-section">
+      <div class="container-sm">
+        <h2 class="fs-section__title">Example</h2>
+        <p class="fs-section__lead">Image-filled text created with FontFrame.</p>
+        <div class="fs-showcase">
+          <Image width={800} src={fontFrameFeatured} alt="FontFrame example design"/>
+        </div>
+      </div>
+    </section>
 
-    <Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"
-           width="800" src={fontFrameFeatured} alt="FontFrame Featured Image"/>
+    <section class="fs-section fs-section--faq">
+      <div class="container-sm">
+        <h2 class="fs-section__title">FAQ</h2>
+        <div class="fs-faq">
+          {faqs.map((item) => (
+            <details class="fs-faq__item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
-    <!--       width="800" src={fontFrameSecondary} alt="FontFrame Featured Image"/>-->
-
-  </div>
+    <CanvaAppSupport
+      appSlug="font-frame"
+      email="fontframe@randombits.dev"
+      supportText="Questions about Premium, licensing, or how the app works — I'm happy to help."
+    />
+  </CanvaAppShell>
 </BaseLayout>

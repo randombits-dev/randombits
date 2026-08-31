@@ -1,35 +1,50 @@
-Last updated on February 10, 2026
+<p class="legal-summary"><strong>In short:</strong> FontStudio collects no personal information. App settings stay in your browser; the Premium license key is stored on our server. Anonymous usage analytics help improve the app.</p>
 
-## Premium License Payment Provider
+## Overview
 
-If you purchase a Premium license, the payment provider has its own privacy policy that is separate from this app.
+This privacy policy describes how FontStudio ("the app"), a Canva application developed by Random Bits LLC, handles information when you use it. By using the app, you agree to the practices described here.
+
+## Information we collect
+
+The app does **not** collect personal information such as your name, email address, or Canva account details.
+
+## Information we store
+
+**In your browser:** The app saves your last-used settings locally (for example, layer options and template choices) so they can be restored if you refresh the page or open a new tab. This data never leaves your device.
+
+**On our servers:** If you purchase FontStudio Premium, your license is stored on our server.
+
+## Information we share
+
+Output from the app is sent to Canva as part of adding elements to your design. We do not sell or share your data with advertisers or other third parties.
+
+## Cookies and sessions
+
+The app does not use cookies or session tracking.
+
+## Analytics
+
+We collect **anonymous** usage data to improve the app. Data is processed by [PostHog](https://posthog.com/), hosted in the United States.
+
+Analytics may include metadata about your design — such as font names, layer settings, or template names. We **never** collect:
+
+- Text you type into the app
+- Images you upload
+- IP addresses
+- Any information that identifies you personally
+
+## Premium payments
+
+If you purchase a Premium license, payment is handled by our payment provider, which has its own privacy policy:
 
 [Lemon Squeezy Privacy Policy](https://www.lemonsqueezy.com/privacy)
 
-## What information do you collect?
+We receive only the information needed to verify and manage your license.
 
-The app collects no personal information.
+## Changes to this policy
 
-## What information do you store?
+We may update this policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision.
 
-The app stores the settings you last used so that it can restore settings if you need to refresh the page or open a new tab. It also stores your license if you have purchased Premium. This information is stored only in the browser's storage and not sent over the internet.
+## Contact
 
-## What information do you share?
-
-The design you create in the app is shared with Canva. No other data is shared.
-
-## Do you use cookies or track sessions?
-
-NO
-
-## Do you collect analytics?
-
-Yes, anonymous usage data is collected to help improve the app. The data is sent and stored on the PostHog analytics platform, which is located in the United States.
-
-The usage data collected includes metadata about your design (font name, layer settings, template name, etc).
-
-Personal or user-identifying information is NEVER collected. This means that user-entered text, uploaded images, and IP addresses are never collected or stored.
-
-## How can I contact you?
-
-You can email me at <a href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>
+Questions about privacy? Email [fontstudio@randombits.dev](mailto:fontstudio@randombits.dev).

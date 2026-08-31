@@ -1,23 +1,33 @@
-## What information do you collect?
+<p class="legal-summary"><strong>In short:</strong> FontDash collects no personal information and stores no data on our servers. Output goes to your Canva design only. No cookies, sessions, or analytics.</p>
 
-No personal information is collected by the app.
+## Overview
 
-## What information do you store?
+This privacy policy describes how FontDash ("the app"), a Canva application developed by Random Bits LLC, handles information when you use it.
 
-The app stores no data.
+## Information we collect
 
-## What information do you share?
+The app does **not** collect personal information.
 
-The design you create in the app is shared with Canva. No other data is shared.
+## Information we store
 
-## Do you use cookies or track sessions?
+The app does **not** store data on our servers or persist information beyond your current browser session.
 
-NO
+## Information we share
 
-## Do you collect analytics?
+Design output is sent to Canva when you add elements to your design. No other data is shared with third parties.
 
-NO
+## Cookies and sessions
 
-## How can I contact you?
+The app does not use cookies or session tracking.
 
-You can email me at <a href="mailto:fontdash@randombits.dev">fontdash@randombits.dev</a>
+## Analytics
+
+We do **not** collect analytics or usage tracking.
+
+## Changes to this policy
+
+We may update this policy from time to time. The "Last updated" date at the top reflects the most recent revision.
+
+## Contact
+
+Questions about privacy? Email [fontdash@randombits.dev](mailto:fontdash@randombits.dev).

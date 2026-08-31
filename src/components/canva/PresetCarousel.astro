@@ -1,0 +1,209 @@
+---
+interface Props {
+  presets: string[];
+  cdnBase?: string;
+}
+
+const {presets, cdnBase = 'https://cdn.randombits.dev/font-studio/preset'} = Astro.props;
+const total = presets.length;
+---
+
+<div class="preset-carousel" data-total={total}>
+  <div class="preset-carousel__stage">
+    <button type="button" class="preset-carousel__arrow preset-carousel__arrow--prev" id="preset-prev" aria-label="Previous preset">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <div class="preset-carousel__viewport">
+      <div class="preset-carousel__track" id="preset-track">
+        {presets.map((name, i) => (
+          <figure class="preset-carousel__slide" data-index={i}>
+            <div class="preset-carousel__frame">
+              <img
+                src={`${cdnBase}/${name}.png`}
+                alt={`${name} text effect preset`}
+                width="400"
+                height="400"
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </div>
+            <figcaption class="preset-carousel__caption">{name.replace(/-/g, ' ')}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+
+    <button type="button" class="preset-carousel__arrow preset-carousel__arrow--next" id="preset-next" aria-label="Next preset">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+  </div>
+
+  <p class="preset-carousel__counter" id="preset-counter" aria-live="polite">1 / {total}</p>
+</div>
+
+<style>
+  .preset-carousel__stage {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .preset-carousel__viewport {
+    flex: 1;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    background: var(--back-1);
+  }
+
+  .preset-carousel__track {
+    display: flex;
+    transition: transform 320ms ease;
+  }
+
+  .preset-carousel__slide {
+    flex: 0 0 100%;
+    margin: 0;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .preset-carousel__frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    max-height: 360px;
+    padding: 1rem;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-1);
+  }
+
+  .preset-carousel__frame img {
+    max-width: 100%;
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .preset-carousel__caption {
+    margin: 0.75rem 0 0;
+    font-family: var(--font-1);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-content);
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .preset-carousel__arrow {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--border-color-strong);
+    border-radius: 999px;
+    background: var(--back-2);
+    color: var(--color-content);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+
+  .preset-carousel__arrow svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .preset-carousel__arrow:hover:not(:disabled) {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .preset-carousel__arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .preset-carousel__counter {
+    margin: 0.85rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    .preset-carousel__stage {
+      gap: 0.5rem;
+    }
+
+    .preset-carousel__arrow {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    .preset-carousel__slide {
+      padding: 1rem;
+    }
+
+    .preset-carousel__frame {
+      min-height: 200px;
+    }
+
+    .preset-carousel__frame img {
+      max-height: 220px;
+    }
+  }
+</style>
+
+<script>
+  const root = document.querySelector('.preset-carousel');
+  const track = document.getElementById('preset-track');
+  const prevBtn = document.getElementById('preset-prev');
+  const nextBtn = document.getElementById('preset-next');
+  const counter = document.getElementById('preset-counter');
+
+  if (root && track && prevBtn && nextBtn && counter) {
+    const total = parseInt(root.getAttribute('data-total') || '1', 10);
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      counter.textContent = `${index + 1} / ${total}`;
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index >= total - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = Math.max(0, index - 1);
+      update();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = Math.min(total - 1, index + 1);
+      update();
+    });
+
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        index = Math.max(0, index - 1);
+        update();
+      } else if (e.key === 'ArrowRight') {
+        index = Math.min(total - 1, index + 1);
+        update();
+      }
+    });
+
+    update();
+  }
+</script>

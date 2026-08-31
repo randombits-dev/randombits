@@ -2,42 +2,92 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import FontPixelLogo from '@/assets/canva/font-pixel/logo.png';
-import * as About from "../../../snippits/font-pixel/index.md";
-import * as AppFAQ from "../../../snippits/canva-apps-faq.md";
+import fontPixelFeatured from '@/assets/canva/font-pixel/1.png';
+import CanvaAppShell from '@/components/canva/CanvaAppShell.astro';
+import CanvaFeatureIcon from '@/components/canva/CanvaFeatureIcon.astro';
+import CanvaAppSupport from '@/components/canva/CanvaAppSupport.astro';
+
+const CANVA_URL = 'https://www.canva.com/apps/AAG8i91OhBw/fontpixel';
+
+const features = [
+  {title: 'Pixel text effects', desc: 'Turn any text into retro pixel art with crisp, blocky characters.', icon: 'grid' as const},
+  {title: 'Custom colors', desc: 'Pick colors for your pixels to match your brand or aesthetic.', icon: 'palette' as const},
+  {title: 'Adjustable detail', desc: 'Control resolution and pixel size until the look is just right.', icon: 'sliders' as const},
+  {title: 'Export to your design', desc: 'Add pixel text directly to your Canva canvas.', icon: 'export' as const},
+];
+
+const faqs = [
+  {q: 'Why is the output blurry?', a: 'The app auto-sizes text to fit the page width. Create a larger custom page (e.g. 3000×3000), export there, then copy the result into your real design.'},
+  {q: 'Why is "Use selected image" disabled?', a: 'Only raster images (photos) work — not vector graphics. Download the image as PNG or JPG from a blank page, then select that file in the app.'},
+  {q: 'Why can\'t I access Canva fonts?', a: 'Canva does not allow third-party apps to access their font library.'},
+];
 ---
-<BaseLayout title="FontPixel Canva App" description="FontPixel is an app in the Canva marketplace. It allows a user to create advanced text effects using layers of outlines, projections, and shadows.">
-  <div class="container-sm">
-    <div class="flex items-center mt-20 mb-10">
-      <Image width="100" src={FontPixelLogo} alt="FontPixel Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <div>
-        <h1 class="my-0">FontPixel</h1>
-
-        <div class="text-lg">A canva app. Create advanced pixel effects for text designs.</div>
-        <!--<button class="btn-small underline">Try FontPixel</button>-->
+<BaseLayout
+  title="FontPixel — Pixel Text for Canva"
+  description="FontPixel is a free Canva app for creating retro pixel art text effects in your designs."
+>
+  <CanvaAppShell>
+    <section class="fs-hero">
+      <div class="fs-hero__bg" aria-hidden="true"></div>
+      <div class="container-sm fs-hero__inner">
+        <div class="fs-hero__brand">
+          <Image width="80" height="80" src={FontPixelLogo} alt="" class="fs-hero__logo"/>
+          <div>
+            <p class="fs-hero__eyebrow">Canva app</p>
+            <h1 class="fs-hero__title">FontPixel</h1>
+            <p class="fs-hero__tagline">Retro pixel art text for designs with a nostalgic edge.</p>
+          </div>
+        </div>
+        <div class="fs-hero__actions">
+          <a class="btn-primary decoration-0" href={CANVA_URL} target="_blank" rel="noopener">Try in Canva</a>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <br/>
-    <br/>
-    <a class="btn-primary decoration-0" href="https://www.canva.com/apps/AAG8i91OhBw/fontpixel" target="_blank" rel="noopener">Try FontPixel</a>
-    <br/>
-    <br/>
+    <section class="fs-section">
+      <div class="container-sm">
+        <h2 class="fs-section__title">What you can do</h2>
+        <p class="fs-section__lead">Create pixelated typography for game-inspired graphics, posters, and social posts.</p>
+        <div class="fs-features">
+          {features.map((f) => (
+            <article class="fs-feature">
+              <CanvaFeatureIcon icon={f.icon}/>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    <About.Content></About.Content>
-    <AppFAQ.Content></AppFAQ.Content>
+    <section class="fs-section">
+      <div class="container-sm">
+        <h2 class="fs-section__title">Example</h2>
+        <p class="fs-section__lead">Pixel text created with FontPixel.</p>
+        <div class="fs-showcase">
+          <Image width={800} src={fontPixelFeatured} alt="FontPixel example design"/>
+        </div>
+      </div>
+    </section>
 
-    <div class="snippit">
-      <h2>Support</h2>
-      <p>If you have any questions or need support, please contact <a class="underline" href="mailto:fontpixel@randombits.dev">fontpixel@randombits.dev</a></p>
+    <section class="fs-section fs-section--faq">
+      <div class="container-sm">
+        <h2 class="fs-section__title">FAQ</h2>
+        <div class="fs-faq">
+          {faqs.map((item) => (
+            <details class="fs-faq__item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
 
-      <a href="/canva/font-pixel/privacy">Privacy Policy</a>
-      <br/>
-      <a href="/canva/font-pixel/terms">Terms and Conditions</a>
-    </div>
-
-
-    <!--<Image class="mx-auto border-solid border-4 rounded-2xl w-full h-auto m-width-[800px]"-->
-    <!--       width="800" src={FontPixelFeatured} alt="FontPixel Featured Image"/>-->
-
-  </div>
+    <CanvaAppSupport
+      appSlug="font-pixel"
+      email="fontpixel@randombits.dev"
+      supportText="Questions about how the app works? I'm happy to help."
+    />
+  </CanvaAppShell>
 </BaseLayout>

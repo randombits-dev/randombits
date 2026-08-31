@@ -1,29 +1,43 @@
-## Premium License Payment Provider
+<p class="legal-summary"><strong>In short:</strong> FontFrame collects no personal information. In-session state stays in your browser; Premium license data is stored on our server. We do not collect analytics.</p>
 
-If you purchase a Premium license, the payment provider has its own privacy policy that is separate from this app.
+## Overview
+
+This privacy policy describes how FontFrame ("the app"), a Canva application developed by Random Bits LLC, handles information when you use it. By using the app, you agree to the practices described here.
+
+## Information we collect
+
+The app does **not** collect personal information such as your name, email address, or Canva account details.
+
+## Information we store
+
+**In your browser:** Any settings used during a session exist only while you use the app. This data is not sent to our servers.
+
+**On our servers:** If you purchase FontFrame Premium, your license is stored on our server and linked to your Canva account so Premium features can be unlocked.
+
+## Information we share
+
+Output from the app is sent to Canva as part of adding elements to your design. We do not sell or share your data with advertisers or other third parties.
+
+## Cookies and sessions
+
+The app does not use cookies or session tracking.
+
+## Analytics
+
+We do **not** collect analytics or usage tracking. No usage data is sent to third-party analytics platforms.
+
+## Premium payments
+
+If you purchase a Premium license, payment is handled by our payment provider, which has its own privacy policy:
 
 [Lemon Squeezy Privacy Policy](https://www.lemonsqueezy.com/privacy)
 
-## What information do you collect?
+We receive only the information needed to verify and manage your license.
 
-The app collects no personal information.
+## Changes to this policy
 
-## What information do you store?
+We may update this policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision.
 
-The app stores no data.
+## Contact
 
-## What information do you share?
-
-The design you create in the app is shared with Canva. No other data is shared.
-
-## Do you use cookies or track sessions?
-
-NO
-
-## Do you collect analytics?
-
-NO
-
-## How can I contact you?
-
-You can email me at <a href="mailto:fontframe@randombits.dev">fontframe@randombits.dev</a>
+Questions about privacy? Email [fontframe@randombits.dev](mailto:fontframe@randombits.dev).

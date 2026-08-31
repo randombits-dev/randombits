@@ -9,9 +9,9 @@ interface Props {
 const {items} = Astro.props;
 
 const accents = [
-  'canva-card--indigo',
-  'canva-card--violet',
-  'canva-card--teal',
+  'canva-card--blue',
+  'canva-card--sky',
+  'canva-card--slate',
 ];
 ---
 
@@ -77,19 +77,19 @@ const accents = [
     transform: translateY(-2px);
   }
 
-  .canva-card--indigo {
-    --card-accent: #6366f1;
-    --card-accent-soft: rgba(99, 102, 241, 0.12);
+  .canva-card--blue {
+    --card-accent: #2563eb;
+    --card-accent-soft: rgba(37, 99, 235, 0.12);
   }
 
-  .canva-card--violet {
-    --card-accent: #8b5cf6;
-    --card-accent-soft: rgba(139, 92, 246, 0.12);
+  .canva-card--sky {
+    --card-accent: #0ea5e9;
+    --card-accent-soft: rgba(14, 165, 233, 0.12);
   }
 
-  .canva-card--teal {
-    --card-accent: #14b8a6;
-    --card-accent-soft: rgba(20, 184, 166, 0.12);
+  .canva-card--slate {
+    --card-accent: #475569;
+    --card-accent-soft: rgba(71, 85, 105, 0.1);
   }
 
   .canva-card__media {

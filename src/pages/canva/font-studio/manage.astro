@@ -50,11 +50,9 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
           <h2 class="mt-0">Support</h2>
         </div>
         <p class="fs-card__copy">
-          For support, see the main support page page
+          Questions about your license or Premium? Email
+          <a class="fs-manage__email" href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
         </p>
-        <a class="btn-secondary btn-small decoration-0 fs-manage__link-btn" href="/canva/font-studio">
-          Support
-        </a>
       </section>
 
       <section class="fs-card fs-card--wide">
@@ -155,8 +153,15 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
     color: var(--color-light);
   }
 
-  .fs-manage__link-btn {
-    display: inline-block;
+  .fs-manage__email {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .fs-manage__email:hover {
+    color: var(--color-content);
   }
 
   .fs-manage__grid {
@@ -257,7 +262,7 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
   .fs-badge--active {
     background: var(--accent-soft);
     color: var(--accent);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(37, 99, 235, 0.3);
   }
 
   .fs-badge--inactive {
@@ -297,7 +302,7 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
 
   .fs-plan--featured {
     background: linear-gradient(160deg, var(--back-0) 40%, var(--accent-soft));
-    border-color: rgba(99, 102, 241, 0.25);
+    border-color: rgba(37, 99, 235, 0.25);
   }
 
   .fs-plan__tag {

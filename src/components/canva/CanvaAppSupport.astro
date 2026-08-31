@@ -1,0 +1,22 @@
+---
+interface Props {
+  appSlug: string;
+  email: string;
+  supportText?: string;
+}
+
+const {appSlug, email, supportText = 'Questions about the app or your license? I\'m happy to help.'} = Astro.props;
+---
+<section class="fs-section fs-section--support">
+  <div class="container-sm fs-support">
+    <div>
+      <h2>Need help?</h2>
+      <p>{supportText}</p>
+    </div>
+    <div class="fs-support__links">
+      <a href={`mailto:${email}`} class="fs-support__email">{email}</a>
+      <a href={`/canva/${appSlug}/privacy`} class="fs-support__link">Privacy</a>
+      <a href={`/canva/${appSlug}/terms`} class="fs-support__link">Terms</a>
+    </div>
+  </div>
+</section>

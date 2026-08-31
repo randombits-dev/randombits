@@ -1,15 +1,15 @@
 ---
 import * as Terms from "../../../snippits/font-dash/terms.md";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import {Image} from 'astro:assets';
-import fontDashLogo from '@/assets/canva/font-dash/logo.png';
+import CanvaLegalLayout from "@/components/canva/CanvaLegalLayout.astro";
+import FontDashLogo from '@/assets/canva/font-dash/logo.png';
 ---
-<BaseLayout title="FontFrame Terms and Conditions">
-  <div class="container-sm py-24 snippit">
-    <div class="flex items-center">
-      <Image width="100" src={fontDashLogo} alt="FontDash Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <h1>FontDash Terms and Conditions</h1>
-    </div>
-    <Terms.Content></Terms.Content>
-  </div>
-</BaseLayout>
+<CanvaLegalLayout
+  appName="FontDash"
+  appSlug="font-dash"
+  logo={FontDashLogo}
+  pageTitle="FontDash Terms and Conditions"
+  docTitle="Terms & Conditions"
+  docType="terms"
+>
+  <Terms.Content/>
+</CanvaLegalLayout>

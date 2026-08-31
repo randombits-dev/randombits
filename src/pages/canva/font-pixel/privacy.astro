@@ -1,16 +1,15 @@
 ---
 import * as Privacy from "../../../snippits/font-pixel/privacy.md";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import {Image} from 'astro:assets';
+import CanvaLegalLayout from "@/components/canva/CanvaLegalLayout.astro";
 import FontPixelLogo from '@/assets/canva/font-pixel/logo.png';
 ---
-<BaseLayout title="FontPixel Privacy Policy">
-  <div class="container-sm py-24 snippit">
-
-    <div class="flex items-center">
-      <Image width="100" src={FontPixelLogo} alt="FontPixel Logo" class="border-solid border-2 rounded-lg mr-10"/>
-      <h1>FontPixel Privacy Policy</h1>
-    </div>
-    <Privacy.Content></Privacy.Content>
-  </div>
-</BaseLayout>
+<CanvaLegalLayout
+  appName="FontPixel"
+  appSlug="font-pixel"
+  logo={FontPixelLogo}
+  pageTitle="FontPixel Privacy Policy"
+  docTitle="Privacy Policy"
+  docType="privacy"
+>
+  <Privacy.Content/>
+</CanvaLegalLayout>

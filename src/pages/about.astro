@@ -1,102 +1,342 @@
 ---
-import * as AboutMe from "../snippits/about-me.md";
-import "@/styles/md.scss";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import "@/styles/article-container.scss";
-import "@/styles/article-body.scss";
 
-const envelopeSVG = await fetch("https://storage.googleapis.com/randombits/images/envelope.svg");
+const processSteps = [
+  {
+    num: '01',
+    title: 'Discovery',
+    desc: 'We talk through your goals, constraints, and whether I\'m the right fit for the project.',
+  },
+  {
+    num: '02',
+    title: 'Proposal',
+    desc: 'We define requirements together. I provide a timeline and cost estimate.',
+  },
+  {
+    num: '03',
+    title: 'Iterative build',
+    desc: 'Regular demos and feedback so changes happen early and the final product matches your vision.',
+  },
+  {
+    num: '04',
+    title: 'Launch',
+    desc: 'Staging for thorough testing, then production deployment once everything checks out.',
+  },
+  {
+    num: '05',
+    title: 'Support',
+    desc: 'Ongoing maintenance and support after go-live, as needed.',
+  },
+];
+
+const philosophy = [
+  {
+    title: 'Performance',
+    desc: 'Efficient data structures, caching, and lean code — fast apps that cost less to run.',
+  },
+  {
+    title: 'Privacy & security',
+    desc: 'Client-side and E2EE where it makes sense. Minimal data collection, anonymous analytics only.',
+  },
+  {
+    title: 'Offline-first',
+    desc: 'Service workers and smart caching for near-instant loads — even when offline isn\'t the goal.',
+  },
+  {
+    title: 'Prototype fast',
+    desc: 'Ship a working prototype quickly to validate the idea before committing to a full build.',
+  },
+];
+
+const techStack = {
+  Frontend: ['SolidJS', 'Svelte', 'React', 'Next.js', 'Angular', 'Astro', 'Tailwind'],
+  Databases: ['DynamoDB', 'Firestore', 'PostgreSQL', 'CouchDB', 'MongoDB', 'Redis'],
+  APIs: ['Node.js', 'AWS Lambda', 'Cloud Functions', 'Cloudflare Workers', 'Java & Spring'],
+  DevOps: ['AWS', 'Google Cloud', 'Cloudflare', 'Vercel', 'Docker', 'GitHub Actions'],
+};
 ---
 
-<BaseLayout title="About Random Bits" description="">
-  <div class="page-hero">
-    <h1 class="page-hero__title">About me</h1>
-    <p class="page-hero__subtitle">Software engineer from Duluth, Minnesota.</p>
-  </div>
-
-  <div class="container about-content pb-24">
-    <p class="about-intro">
-      Hi, I'm <strong>Matthew</strong>, a software engineer from Duluth, Minnesota, USA. I founded <em>Random Bits LLC</em> after working
-      for 14 years designing and building enterprise web applications in the corporate world. I'm passionate about building
-      high-quality, performant, and user-friendly web applications.
-    </p>
-
-    <section class="about-contact">
-      <h2>Contact me</h2>
-      <a href="mailto:matt@randombits.dev" class="about-email">
-        <div set:html={envelopeSVG} />
-        <span>matt@randombits.dev</span>
-      </a>
-      <p class="about-note">Free initial consultation to discuss your current ideas or challenges.</p>
-    </section>
-
-    <div class="article-body">
-      <AboutMe.Content />
+<BaseLayout title="About Random Bits" description="Matthew — software engineer and founder of Random Bits LLC, based in Duluth, Minnesota.">
+  <section class="about-hero">
+    <div class="about-hero__mesh" aria-hidden="true"></div>
+    <div class="container about-hero__inner">
+      <p class="about-hero__eyebrow">Random Bits LLC</p>
+      <h1 class="about-hero__title">Hi, I'm Matthew.</h1>
+      <p class="about-hero__lead">
+        Software engineer from Duluth, Minnesota. I founded Random Bits after 14 years building
+        enterprise web applications — now I help businesses ship high-quality, performant software.
+      </p>
+      <a href="mailto:matt@randombits.dev" class="about-hero__email">matt@randombits.dev</a>
     </div>
+  </section>
+
+  <div class="container about-layout">
+    <main class="about-main">
+      <section class="about-block">
+        <h2>How I work</h2>
+        <ol class="about-process">
+          {processSteps.map((step) => (
+            <li class="about-process__step">
+              <span class="about-process__num">{step.num}</span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="about-block">
+        <h2>Code philosophy</h2>
+        <div class="about-philosophy">
+          {philosophy.map((item) => (
+            <article class="about-philosophy__card">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="about-block">
+        <h2>Open source</h2>
+        <p class="about-text">
+          I contribute to open source when time allows. My biggest work has been with
+          <a href="https://standardnotes.com" class="about-link">Standard Notes</a> — plugins and
+          tooling infrastructure for the extension ecosystem.
+          See more on my <a href="https://github.com/randombits-dev" class="about-link">GitHub</a>.
+        </p>
+      </section>
+
+      <section class="about-block">
+        <h2>Tech stack</h2>
+        <div class="about-tech">
+          {Object.entries(techStack).map(([category, items]) => (
+            <div class="about-tech__group">
+              <h3>{category}</h3>
+              <div class="about-tech__tags">
+                {items.map((item) => (
+                  <span class="about-tech__tag">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="about-block about-block--last">
+        <h2>Beyond the keyboard</h2>
+        <p class="about-text">
+          Mountain biking, hiking, non-fiction books, and playing with our dog Basti.
+          BS in Computer Engineering from Michigan Technological University.
+        </p>
+      </section>
+    </main>
   </div>
 </BaseLayout>
 
-<style is:global>
-  .about-content h2 {
-    font-size: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .about-content li {
-    margin-bottom: 0.75rem;
-  }
-
-  main svg {
-    width: 22px;
-    height: 22px;
-    fill: var(--color-content);
-  }
-</style>
-
 <style>
-  .about-intro {
+  .about-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0 3.5rem;
+  }
+
+  .about-hero__mesh {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 10% 0%, rgba(37, 99, 235, 0.09), transparent 55%),
+      radial-gradient(ellipse 50% 50% at 90% 30%, rgba(14, 165, 233, 0.06), transparent 50%);
+    pointer-events: none;
+  }
+
+  .about-hero__inner {
+    position: relative;
+    max-width: 40rem;
+  }
+
+  .about-hero__eyebrow {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-1);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .about-hero__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .about-hero__lead {
+    margin: 1rem 0 1.75rem;
     font-size: 1.1rem;
-    line-height: 1.7;
     color: var(--color-light);
+    line-height: 1.65;
+  }
+
+  .about-hero__email {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .about-hero__email:hover {
+    color: var(--color-content);
+  }
+
+  .about-layout {
+    padding-bottom: 5rem;
+  }
+
+  .about-block {
+    margin-bottom: 3.5rem;
+  }
+
+  .about-block--last {
+    margin-bottom: 0;
+  }
+
+  .about-block h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .about-text {
+    margin: 0;
+    color: var(--color-light);
+    line-height: 1.7;
     max-width: 42rem;
   }
 
-  .about-contact {
-    margin-top: 2.5rem;
-    padding: 1.5rem;
+  .about-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .about-link:hover {
+    color: var(--color-content);
+  }
+
+  .about-process {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    overflow: hidden;
+    background: var(--back-2);
+  }
+
+  .about-process__step {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .about-process__step:last-child {
+    border-bottom: none;
+  }
+
+  .about-process__num {
+    flex-shrink: 0;
+    font-family: var(--font-1);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: 0.15rem;
+  }
+
+  .about-process__step h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .about-process__step p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    line-height: 1.55;
+  }
+
+  .about-philosophy {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .about-philosophy__card {
+    padding: 1.25rem;
     background: var(--back-2);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-2);
     box-shadow: var(--shadow-sm);
-    max-width: 32rem;
   }
 
-  .about-contact h2 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
+  .about-philosophy__card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
   }
 
-  .about-email {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--color-content);
-    text-decoration: none;
-    padding: 0.5rem 0.75rem;
-    margin: -0.5rem -0.75rem;
-    border-radius: var(--border-radius-1);
-    transition: background-color 150ms ease;
-  }
-
-  .about-email:hover {
-    background: var(--back-1);
-  }
-
-  .about-note {
-    margin: 1rem 0 0;
+  .about-philosophy__card p {
+    margin: 0;
     font-size: 0.9rem;
+    color: var(--color-light);
+    line-height: 1.55;
+  }
+
+  .about-tech {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .about-tech__group h3 {
+    margin: 0 0 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--color-muted);
+  }
+
+  .about-tech__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .about-tech__tag {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-light);
+    background: var(--back-1);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+  }
+
+  @media (max-width: 900px) {
+    .about-philosophy {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
