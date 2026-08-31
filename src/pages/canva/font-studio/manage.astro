@@ -2,6 +2,13 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {Image} from 'astro:assets';
 import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
+
+const API_BASE = import.meta.env.DEV
+  ? 'https://dev.api.randombits.dev'
+  : 'https://api.randombits.dev';
+
+// TODO: replace with the real license check endpoint
+const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
 ---
 <BaseLayout title="Manage FontStudio Premium" description="Manage your FontStudio Premium license, upgrade, or request data deletion." noIndex="true">
   <div class="container-sm py-24 fs-manage">
@@ -28,10 +35,8 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
           <h2 class="mt-0">Your license</h2>
         </div>
         <div class="fs-status">
-          <span id="license-badge" class="fs-badge fs-badge--idle">Not linked</span>
-          <p id="license-status" class="fs-status__text">
-            Open this page from the FontStudio app to link it to your Canva account.
-          </p>
+          <span id="license-badge" class="fs-badge fs-badge--idle">Checking…</span>
+          <p id="license-status" class="fs-status__text">Loading your license details…</p>
         </div>
       </section>
 
@@ -45,10 +50,10 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
           <h2 class="mt-0">Support</h2>
         </div>
         <p class="fs-card__copy">
-          Questions or problems with your license? Include your order number or forward your confirmation email.
+          For support, see the main support page page
         </p>
-        <a class="btn-secondary btn-small decoration-0 fs-manage__link-btn" href="mailto:fontstudio@randombits.dev">
-          fontstudio@randombits.dev
+        <a class="btn-secondary btn-small decoration-0 fs-manage__link-btn" href="/canva/font-studio">
+          Support
         </a>
       </section>
 
@@ -103,41 +108,28 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
         </a>
       </section>
 
-      <section class="fs-card fs-card--danger fs-card--wide">
-        <div class="fs-card__head">
-          <span class="fs-icon fs-icon--danger" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 6h18"/>
-              <path d="M8 6V4h8v2"/>
-              <path d="M19 6l-1 14H6L5 6"/>
-              <path d="M10 11v6M14 11v6"/>
-            </svg>
-          </span>
-          <div>
-            <h2 class="mt-0">Delete your data</h2>
-            <p class="fs-card__sub">Right to be forgotten — permanent and irreversible.</p>
-          </div>
-        </div>
-        <p class="fs-card__copy">
-          Removes your stored license and app settings. You will need to purchase again to restore Premium.
-          See the <a class="underline" href="/canva/font-studio/privacy">Privacy Policy</a> for details.
-        </p>
+      <!--<section class="fs-card fs-card&#45;&#45;danger fs-card&#45;&#45;wide">-->
+      <!--  <div class="fs-card__head">-->
+      <!--    <span class="fs-icon fs-icon&#45;&#45;danger" aria-hidden="true">-->
+      <!--      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">-->
+      <!--        <path d="M3 6h18"/>-->
+      <!--        <path d="M8 6V4h8v2"/>-->
+      <!--        <path d="M19 6l-1 14H6L5 6"/>-->
+      <!--        <path d="M10 11v6M14 11v6"/>-->
+      <!--      </svg>-->
+      <!--    </span>-->
+      <!--    <div>-->
+      <!--      <h2 class="mt-0">Delete your data</h2>-->
+      <!--    </div>-->
+      <!--  </div>-->
+      <!--  <p class="fs-card__copy">-->
+      <!--    The only personal information collected is while purchasing Premium through the payment provider Lemon Squeezy. See the <a href="https://www.lemonsqueezy.com/privacy-policy" target="_blank" rel="noopener noreferrer">Lemon Squeezy Privacy Policy</a> for more information about removing your data.-->
+      <!--  </p>-->
 
-        <label class="fs-check">
-          <input type="checkbox" id="delete-confirm"/>
-          <span>I understand this permanently deletes my FontStudio data.</span>
-        </label>
-
-        <div id="delete-form">
-          <button type="button" id="delete-btn" class="fs-btn-danger btn-small" disabled>
-            Delete my data
-          </button>
-        </div>
-
-        <div id="delete-success" class="fs-alert fs-is-hidden">
-          Your deletion request has been submitted. Your stored license and settings will be removed.
-        </div>
-      </section>
+      <!--  <div id="delete-success" class="fs-alert fs-is-hidden">-->
+      <!--    Your deletion request has been submitted. Your stored license and settings will be removed.-->
+      <!--  </div>-->
+      <!--</section>-->
     </div>
   </div>
 </BaseLayout>
@@ -175,10 +167,9 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
 
   .fs-card {
     padding: 1.35rem 1.4rem;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-2);
     background: #fff;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
   }
 
   .fs-card--hero {
@@ -192,7 +183,6 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
   .fs-card--danger {
     border-color: #b91c1c;
     background: linear-gradient(160deg, #fff 60%, rgba(185, 28, 28, 0.06));
-    box-shadow: 4px 4px 0 rgba(185, 28, 28, 0.35);
   }
 
   .fs-card__head {
@@ -226,7 +216,6 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-2);
     background: var(--back-btn);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
   }
 
   .fs-icon svg {
@@ -238,7 +227,6 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     background: #fff;
     border-color: #b91c1c;
     color: #b91c1c;
-    box-shadow: 2px 2px 0 rgba(185, 28, 28, 0.35);
   }
 
   .fs-status {
@@ -258,7 +246,6 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
   }
 
   .fs-badge--idle {
@@ -269,6 +256,17 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
   .fs-badge--active {
     background: var(--back-btn);
     color: var(--color-btn);
+  }
+
+  .fs-badge--inactive {
+    background: var(--back-0);
+    color: var(--color-light);
+  }
+
+  .fs-badge--error {
+    background: rgba(185, 28, 28, 0.08);
+    color: #b91c1c;
+    border-color: #b91c1c;
   }
 
   .fs-status__text {
@@ -293,7 +291,6 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-2);
     background: var(--back-0);
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
   }
 
   .fs-plan--featured {
@@ -313,7 +310,6 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
   }
 
   .fs-plan h3 {
@@ -360,19 +356,16 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     border-radius: var(--border-radius-2);
     background: transparent;
     color: #b91c1c;
-    box-shadow: 4px 4px 0 rgba(185, 28, 28, 0.4);
-    transition: transform 150ms ease, box-shadow 150ms ease;
+    transition: background 150ms ease;
   }
 
   .fs-btn-danger:not(:disabled):hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 rgba(185, 28, 28, 0.4);
+    background: rgba(185, 28, 28, 0.08);
   }
 
   .fs-btn-danger:disabled {
     opacity: 0.45;
     cursor: not-allowed;
-    box-shadow: none;
   }
 
   .fs-alert {
@@ -381,8 +374,18 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-2);
     background: var(--back-btn);
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
     font-size: 0.95rem;
+  }
+
+  .fs-manage :global(.btn-primary),
+  .fs-manage :global(.btn-secondary) {
+    box-shadow: none;
+  }
+
+  .fs-manage :global(.btn-primary:hover),
+  .fs-manage :global(.btn-secondary:hover) {
+    transform: none;
+    box-shadow: none;
   }
 
   .fs-is-hidden {
@@ -401,60 +404,120 @@ import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
   }
 </style>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const userId = params.get('userId') || '';
-  const teamId = params.get('teamId') || '';
-  const hasIds = Boolean(userId && teamId);
+<script define:vars={{LICENSE_CHECK_URL}}>
+  const hashParams = new URLSearchParams(window.location.hash.slice(1));
+  const userId = hashParams.get('userId') || '';
+  const teamId = hashParams.get('teamId') || '';
 
-  const statusEl = document.getElementById('license-status');
-  const badgeEl = document.getElementById('license-badge');
-  const confirmEl = document.getElementById('delete-confirm');
-  const deleteBtn = document.getElementById('delete-btn');
-  const deleteForm = document.getElementById('delete-form');
-  const deleteSuccess = document.getElementById('delete-success');
+  if (!userId || !teamId) {
+    window.location.replace('/canva/font-studio');
+  } else {
+    const statusEl = document.getElementById('license-status');
+    const badgeEl = document.getElementById('license-badge');
+    const confirmEl = document.getElementById('delete-confirm');
+    const deleteBtn = document.getElementById('delete-btn');
+    const deleteForm = document.getElementById('delete-form');
+    const deleteSuccess = document.getElementById('delete-success');
 
-  const linkIds = ['upgrade-yearly', 'upgrade-lifetime', 'buy-additional'];
+    const linkIds = ['upgrade-yearly', 'upgrade-lifetime', 'buy-additional'];
+    const linkHash = new URLSearchParams({userId, teamId}).toString();
 
-  linkIds.forEach((id) => {
-    const link = document.getElementById(id);
-    if (!link || !(link instanceof HTMLAnchorElement)) {
-      return;
+    linkIds.forEach((id) => {
+      const link = document.getElementById(id);
+      if (!link || !(link instanceof HTMLAnchorElement)) {
+        return;
+      }
+      const url = new URL(link.href, window.location.origin);
+      link.href = `${url.pathname}#${linkHash}`;
+    });
+
+    function setBadge(state, label) {
+      if (!badgeEl) {
+        return;
+      }
+      badgeEl.textContent = label;
+      badgeEl.classList.remove('fs-badge--idle', 'fs-badge--active', 'fs-badge--inactive', 'fs-badge--error');
+      badgeEl.classList.add(`fs-badge--${state}`);
     }
-    const url = new URL(link.href, window.location.origin);
-    if (userId) {
-      url.searchParams.set('userId', userId);
-    }
-    if (teamId) {
-      url.searchParams.set('teamId', teamId);
-    }
-    link.href = `${url.pathname}${url.search}`;
-  });
 
-  if (hasIds && statusEl && badgeEl) {
-    statusEl.textContent = 'Your FontStudio Premium license is linked to your Canva account.';
-    badgeEl.textContent = 'Active';
-    badgeEl.classList.remove('fs-badge--idle');
-    badgeEl.classList.add('fs-badge--active');
+    function formatPlanName(plan) {
+      const names = {
+        monthly: 'Monthly subscription',
+        yearly: 'Yearly subscription',
+        lifetime: 'Lifetime license',
+      };
+      return names[plan] || plan;
+    }
+
+    function renderLicense(data) {
+      const active = Boolean(data?.active ?? data?.hasLicense ?? data?.license);
+      const plan = data?.plan || data?.product?.split('-')?.[0] || '';
+      const licenseType = data?.type || data?.product?.split('-')?.[1] || '';
+
+      if (active) {
+        setBadge('active', 'Active');
+        const parts = ['Your FontStudio Premium license is active.'];
+        if (plan) {
+          parts.push(`Plan: ${formatPlanName(plan)}.`);
+        }
+        if (licenseType) {
+          parts.push(`Type: ${licenseType}.`);
+        }
+        if (statusEl) {
+          statusEl.textContent = parts.join(' ');
+        }
+        return;
+      }
+
+      setBadge('inactive', 'No license');
+      if (statusEl) {
+        statusEl.textContent = 'No active Premium license was found for this Canva account.';
+      }
+    }
+
+    function renderLicenseError() {
+      setBadge('error', 'Unavailable');
+      if (statusEl) {
+        statusEl.textContent = 'Could not load your license details. Try again later or contact support.';
+      }
+    }
+
+    async function checkLicense() {
+      try {
+        const url = new URL(LICENSE_CHECK_URL);
+        url.searchParams.set('userId', userId);
+        url.searchParams.set('teamId', teamId);
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`License check failed: ${response.status}`);
+        }
+        const data = await response.json();
+        renderLicense(data);
+      } catch {
+        renderLicenseError();
+      }
+    }
+
+    checkLicense();
+
+    confirmEl?.addEventListener('change', () => {
+      if (deleteBtn instanceof HTMLButtonElement) {
+        deleteBtn.disabled = !confirmEl.checked;
+      }
+    });
+
+    deleteBtn?.addEventListener('click', () => {
+      if (!confirmEl?.checked) {
+        return;
+      }
+      const confirmed = window.confirm(
+        'Are you sure you want to delete your FontStudio data? This cannot be undone.',
+      );
+      if (!confirmed) {
+        return;
+      }
+      deleteForm?.classList.add('fs-is-hidden');
+      deleteSuccess?.classList.remove('fs-is-hidden');
+    });
   }
-
-  confirmEl?.addEventListener('change', () => {
-    if (deleteBtn instanceof HTMLButtonElement) {
-      deleteBtn.disabled = !confirmEl.checked;
-    }
-  });
-
-  deleteBtn?.addEventListener('click', () => {
-    if (!confirmEl?.checked) {
-      return;
-    }
-    const confirmed = window.confirm(
-      'Are you sure you want to delete your FontStudio data? This cannot be undone.',
-    );
-    if (!confirmed) {
-      return;
-    }
-    deleteForm?.classList.add('fs-is-hidden');
-    deleteSuccess?.classList.remove('fs-is-hidden');
-  });
 </script>

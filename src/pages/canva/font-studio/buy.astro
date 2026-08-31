@@ -1,0 +1,189 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
+
+const API_BASE = import.meta.env.DEV
+  ? 'https://dev.api.randombits.dev'
+  : 'https://api.randombits.dev';
+---
+<BaseLayout title="FontStudio Premium" description="Purchase FontStudio Premium — yearly subscription or lifetime license." noIndex="true">
+  <div class="container-sm py-24">
+    <div class="flex items-center mb-10">
+      <Image width="100" src={FontStudioLogo} alt="FontStudio Logo" class="border-solid border-2 rounded-lg mr-10"/>
+      <div>
+        <h1 class="my-0">FontStudio Premium</h1>
+        <div class="text-lg">Choose a license and plan to continue to checkout.</div>
+      </div>
+    </div>
+
+    <!--<div id="missing-params" class="hidden border-2 rounded-2xl border-solid border-red-700 text-red-700 px-10 py-3 mb-8">-->
+    <!--  Open this page from the FontStudio Canva app so your account can be linked to the purchase.-->
+    <!--</div>-->
+
+    <div id="buy-form" class="snippit">
+      <h2 class="mt-0">License type</h2>
+      <div class="license-toggle" role="group" aria-label="License type">
+        <button type="button" class="license-option is-active" data-license="individual" aria-pressed="true">
+          Individual
+        </button>
+        <button type="button" class="license-option" data-license="team" aria-pressed="false">
+          Team
+        </button>
+      </div>
+      <p id="license-note" class="text-[var(--color-light)] mt-3 mb-8">
+        Individual licenses unlock Premium for one Canva account.
+      </p>
+
+      <h2>Plan</h2>
+      <div class="plan-list">
+        <div class="plan-row">
+          <div>
+            <div class="plan-name">Monthly subscription</div>
+            <div class="plan-price" data-price-yearly>$10 / month</div>
+          </div>
+          <button type="button" class="btn-primary btn-small checkout-btn" data-plan="monthly">
+            Continue to checkout
+          </button>
+        </div>
+        <div class="plan-row">
+          <div>
+            <div class="plan-name">Yearly subscription</div>
+            <div class="plan-price" data-price-yearly>$20 / year</div>
+          </div>
+          <button type="button" class="btn-primary btn-small checkout-btn" data-plan="yearly">
+            Continue to checkout
+          </button>
+        </div>
+        <div class="plan-row">
+          <div>
+            <div class="plan-name">Lifetime license</div>
+            <div class="plan-price" data-price-lifetime>$30 / one-time payment</div>
+          </div>
+          <button type="button" class="btn-secondary btn-small checkout-btn" data-plan="lifetime">
+            Continue to checkout
+          </button>
+        </div>
+      </div>
+
+      <p class="mt-8 mb-0 text-[var(--color-light)]">
+        Questions? Contact
+        <a class="underline" href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .license-toggle {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .license-option {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--font-1);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    background: transparent;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .license-option.is-active {
+    background: var(--back-btn);
+  }
+
+  .plan-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .plan-row:first-child {
+    border-top: 2px solid var(--border-color);
+  }
+
+  .plan-name {
+    font-family: var(--font-1);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .plan-price {
+    color: var(--color-light);
+    margin-top: 4px;
+  }
+</style>
+
+<script define:vars={{API_BASE}}>
+  const hashParams = new URLSearchParams(window.location.hash.slice(1));
+  const searchParams = new URLSearchParams(window.location.search);
+  const userId = hashParams.get('userId') || searchParams.get('userId') || '';
+  const teamId = hashParams.get('teamId') || searchParams.get('teamId') || '';
+  const hasIds = Boolean(userId && teamId);
+
+  const missingEl = document.getElementById('missing-params');
+  const formEl = document.getElementById('buy-form');
+  const noteEl = document.getElementById('license-note');
+  const licenseButtons = document.querySelectorAll('[data-license]');
+  const checkoutButtons = document.querySelectorAll('.checkout-btn');
+
+  let license = 'individual';
+
+  const notes = {
+    individual: 'Individual licenses unlock Premium for one Canva account.',
+    team: 'Team licenses unlock Premium for everyone on your Canva team.',
+  };
+
+  // if (!hasIds && missingEl) {
+  //   missingEl.classList.remove('hidden');
+  // }
+
+  licenseButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      license = btn.getAttribute('data-license') || 'individual';
+      licenseButtons.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if (noteEl) {
+        noteEl.textContent = notes[license] || notes.individual;
+      }
+    });
+  });
+
+  checkoutButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // if (!hasIds) {
+      //   missingEl?.scrollIntoView({behavior: 'smooth', block: 'center'});
+      //   return;
+      // }
+      const plan = btn.getAttribute('data-plan');
+      const product = `${plan}-${license}`;
+      const url = new URL(`${API_BASE}/stripe/font-studio/checkout`);
+      url.searchParams.set('userId', userId);
+      url.searchParams.set('teamId', teamId);
+      url.searchParams.set('product', product);
+      window.location.assign(url.toString());
+    });
+  });
+
+  if (!hasIds) {
+    checkoutButtons.forEach((btn) => {
+      btn.setAttribute('aria-disabled', 'true');
+    });
+  }
+</script>
