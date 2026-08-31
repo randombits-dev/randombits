@@ -2,17 +2,52 @@
 const { number, img } = Astro.props;
 ---
 
-<div class="container items-center flex pt-24">
-  <div class="category mb-2 flex items-center">
-    <div class="text-6xl"><b>{number}</b></div>
-    <div class="pl-5 container text-4xl font-header">
-      <slot />
-    </div>
-    <!--<div class="text-2xl pl-5"><slot/></div>-->
+<section class="service-section">
+  <div class="container service-section__header">
+    <span class="service-section__number">{number}</span>
+    <h2 class="service-section__title"><slot /></h2>
   </div>
-  <!--{img && <img class="hidden lg:block" src={img} width="500" height="250"/>}-->
-</div>
 
-<div class="container text-light text-lg leading-normal py-8">
-  <slot name="description" />
-</div>
+  <div class="container service-section__desc">
+    <slot name="description" />
+  </div>
+</section>
+
+<style>
+  .service-section {
+    padding: 3rem 0 1rem;
+  }
+
+  .service-section__header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .service-section__number {
+    font-family: var(--font-1);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    opacity: 0.85;
+  }
+
+  .service-section__title {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .service-section__desc {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--color-light);
+    line-height: 1.7;
+    max-width: 48rem;
+  }
+</style>

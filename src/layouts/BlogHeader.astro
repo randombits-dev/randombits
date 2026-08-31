@@ -4,22 +4,52 @@ const {
     group
 } = Astro.props;
 ---
-    <div class="">
-        <div class="">
-
-            {group && <h2 class="my-0">{group}</h2>}
-            <h1 class="my-0 decoration-6 underline-offset-6 decoration-solid underline decoration-amber-400 decoration">{title}</h1>
-            <p>{desc}</p>
-            {updated && <div class="italic">Last updated on {updated.toLocaleDateString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric'
-            })}</div>}
-        </div>
-    </div>
+<div class="blog-header">
+    {group && <p class="blog-header__group">{group}</p>}
+    <h1 class="blog-header__title">{title}</h1>
+    {desc && <p class="blog-header__desc">{desc}</p>}
+    {updated && <time class="blog-header__date">Last updated on {updated.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    })}</time>}
+</div>
 
 <style>
-    h2 {
-        margin-bottom: 10px !important;
-      }
+    .blog-header {
+        margin-bottom: 2rem;
+    }
+
+    .blog-header__group {
+        margin: 0 0 0.5rem;
+        font-family: var(--font-1);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+    }
+
+    .blog-header__title {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+    }
+
+    .blog-header__desc {
+        margin: 0.75rem 0 0;
+        font-size: 1.1rem;
+        color: var(--color-light);
+        line-height: 1.6;
+    }
+
+    .blog-header__date {
+        display: block;
+        margin-top: 0.75rem;
+        font-size: 0.875rem;
+        color: var(--color-muted);
+        font-style: normal;
+    }
 </style>

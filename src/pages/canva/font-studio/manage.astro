@@ -379,13 +379,13 @@ const LICENSE_CHECK_URL = `${API_BASE}/font-studio/license`;
 
   .fs-manage :global(.btn-primary),
   .fs-manage :global(.btn-secondary) {
-    box-shadow: none;
+    box-shadow: var(--shadow-sm);
   }
 
   .fs-manage :global(.btn-primary:hover),
   .fs-manage :global(.btn-secondary:hover) {
-    transform: none;
-    box-shadow: none;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
   }
 
   .fs-is-hidden {

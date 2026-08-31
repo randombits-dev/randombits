@@ -82,18 +82,21 @@ const API_BASE = import.meta.env.DEV
   }
 
   .license-option {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
     font-family: var(--font-1);
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color-strong);
     border-radius: var(--border-radius-2);
-    background: transparent;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+    background: var(--back-2);
+    box-shadow: var(--shadow-sm);
+    transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
   }
 
   .license-option.is-active {
     background: var(--back-btn);
+    border-color: transparent;
+    box-shadow: var(--shadow-md);
   }
 
   .plan-list {
@@ -107,12 +110,12 @@ const API_BASE = import.meta.env.DEV
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
-    padding: 16px 0;
-    border-bottom: 2px solid var(--border-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .plan-row:first-child {
-    border-top: 2px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
   }
 
   .plan-name {

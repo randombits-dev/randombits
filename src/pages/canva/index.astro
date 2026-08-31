@@ -4,49 +4,11 @@ import ProjectList from "../../components/ProjectList.astro";
 import {CANVA_APPS} from "../../data/projects.ts";
 ---
 <BaseLayout title="Projects by Random Bits" description="A list of all open source projects created by Random Bits">
-  <div class="text-5xl font-header text-center my-24">Canva Apps</div>
-  <div class="max-w-[1000px] mx-auto mb-10">
+  <div class="page-hero">
+    <h1 class="page-hero__title">Canva apps</h1>
+    <p class="page-hero__subtitle">Creative tools for the Canva marketplace, built by Random Bits.</p>
+  </div>
+  <div class="container pb-24">
     <ProjectList items={CANVA_APPS}/>
   </div>
 </BaseLayout>
-
-<style>
-  h1 {
-    color: var(--color-back);
-  }
-
-  img {
-    flex: 0 0 auto;
-    height: 230px;
-    width: auto;
-    object-fit: cover;
-  }
-
-  .image-card-v img {
-    border-bottom: var(--border-width) solid var(--border-color);
-    max-width: 100%;
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-  }
-
-  @media screen and (max-width: 500px) {
-    .card {
-      display: block !important;
-    }
-
-    img {
-      border-bottom: var(--border-width) solid var(--border-color);
-      max-width: 100%;
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-  }
-
-  a.secondary {
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: var(--font-size-caption);
-  }
-</style>

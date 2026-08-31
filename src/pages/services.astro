@@ -1,16 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/home/Hero.astro";
 import ServicesGrid from "../components/home/ServicesGrid.astro";
 import ServicesGridItem from "../components/home/ServicesGridItem.astro";
 import ServicesSection from "../components/home/ServicesSection.astro";
 ---
 
 <BaseLayout title="Web Application Development" description="">
-  <!--<div class="mt-24 text-center text-xl"><span class="px-3 py-1 rounded-xl border">Services</span></div>-->
-  <div class="container flex items-baseline mt-20">
-    <h1 class="text m-0 pr-4">Services.</h1>
-    <h2 class="text m-0">Turn your ideas into reality.</h2>
+  <div class="page-hero">
+    <h1 class="page-hero__title">Services</h1>
+    <p class="page-hero__subtitle">Turn your ideas into reality with modern web and mobile development.</p>
   </div>
 
   <ServicesSection number="01">
@@ -69,16 +67,16 @@ import ServicesSection from "../components/home/ServicesSection.astro";
     </div>
   </ServicesSection>
 
-  <div class="container flex items-center">
-    <div class="mr-10">
-      <div class="container text-4xl">Determine the right software, process, or technology for your business.</div>
-      <ul class="text-lg text-light">
+  <div class="container consulting-block">
+    <div class="consulting-block__content">
+      <p class="consulting-block__lead">Determine the right software, process, or technology for your business.</p>
+      <ul class="consulting-block__list">
         <li>Emerging technologies like AI and Machine Learning</li>
         <li>Choosing between existing software solutions and a custom implementation</li>
         <li>Determine how to make your business processes more efficient</li>
       </ul>
     </div>
-    <img src="/i1.svg" height="400" alt="" class="hidden lg:block" />
+    <img src="/i1.svg" height="400" alt="" class="consulting-block__img hidden lg:block" />
   </div>
 
   <ServicesSection number="04">
@@ -90,7 +88,7 @@ import ServicesSection from "../components/home/ServicesSection.astro";
     </div>
   </ServicesSection>
 
-  <div class="container services-grid grid grid-cols-1 md:grid-cols-2 gap-5">
+  <div class="container services-grid grid grid-cols-1 md:grid-cols-2 gap-5 pb-24">
     <ServicesGridItem title="Integrations & Workflows"
       >Implementation of custom integrations and workflows to connect your applications with each other or to external
       services.
@@ -112,19 +110,39 @@ import ServicesSection from "../components/home/ServicesSection.astro";
       >Accept crypto as payment, allow anonymous logins with web3 wallets, or integrate blockchain into your business.</ServicesGridItem
     >
   </div>
-  <div class="mb-48"></div>
 </BaseLayout>
 
 <style>
-  ul li {
-    padding: 5px 0;
+  .consulting-block {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 0 3rem;
   }
 
-  ol li {
-    padding: 5px;
+  .consulting-block__lead {
+    font-family: var(--font-1);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
+    line-height: 1.35;
   }
 
-  .services-grid p {
-    font-size: 16px;
+  .consulting-block__list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 1rem;
+    color: var(--color-light);
+    line-height: 1.7;
+  }
+
+  .consulting-block__list li {
+    padding: 0.35rem 0;
+  }
+
+  .consulting-block__img {
+    flex-shrink: 0;
+    opacity: 0.9;
   }
 </style>

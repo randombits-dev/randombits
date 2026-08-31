@@ -13,73 +13,53 @@
   --text-5xl: 3rem;
   --text-6xl: 4rem;
 
-  --color-primary: rgb(255, 191, 35);
-}
-
-@utility threed-md {
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
-}
-
-@utility rb-color-content {
-  background-color: var(--back-content);
-  color: var(--color-content);
-}
-
-@utility rb-color-header {
-  background-color: var(--back-content);
-  color: var(--color-content);
-}
-
-@utility outlined {
-  box-shadow:
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    #171717 4px 6px 0px 0px,
-    #171717 0px 6px 0px 0px;
-
-  &:hover {
-    box-shadow:
-      rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-      #171717 2px 4px 0px 0px,
-      #171717 0px 4px 0px 0px;
-  }
+  --color-primary: #f5c842;
 }
 
 @utility card-base {
-  @apply rounded-md bg-gray-100 threed-md border-2;
+  @apply rounded-2xl bg-white border border-[var(--border-color)] shadow-[var(--shadow-card)] transition-[box-shadow,transform,border-color] duration-200;
+}
+
+@utility card-base-hover {
+  @apply hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-0.5 hover:border-[var(--border-color-strong)];
 }
 
 @utility card {
-  @apply card-base px-5 py-3;
+  @apply card-base px-5 py-4;
 }
 
 @utility btn {
-  @apply text-center px-3 py-5 border rb-color-header cursor-pointer;
+  @apply text-center px-4 py-3 border border-[var(--border-color)] bg-white cursor-pointer rounded-xl;
 }
 
 @utility header-link {
-  @apply px-3 sm:px-5 py-3 md:px-8 hover:underline hover:decoration-2 hover:underline-offset-4 cursor-pointer;
+  @apply px-3 py-2 text-[0.95rem] font-medium text-[var(--color-light)] rounded-lg transition-colors duration-150 hover:text-[var(--color-content)] hover:bg-[var(--back-1)];
+}
+
+@utility header-link-active {
+  @apply text-[var(--color-content)] bg-[var(--accent-soft)];
 }
 
 @utility border-light {
-  border: var(--border-width-light) solid var(--border-color-light);
-  border-radius: var(--border-radius-1);
+  border: var(--border-width-light) solid var(--border-color);
+  border-radius: var(--border-radius-2);
 }
 
 @utility font-header {
   font-family: var(--font-1);
-  line-height: 1.2;
-  font-weight: 800;
-  text-transform: uppercase;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 @utility container {
-  @apply max-w-[1000px] mx-auto px-4;
+  @apply max-w-[1040px] mx-auto px-5;
 }
 
 @utility container-lg {
-  @apply max-w-[1200px] mx-auto px-4;
+  @apply max-w-[1200px] mx-auto px-5;
 }
 
 @utility container-sm {
-  @apply max-w-[800px] mx-auto px-4;
+  @apply max-w-[800px] mx-auto px-5;
 }

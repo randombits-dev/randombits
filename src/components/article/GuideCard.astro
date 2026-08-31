@@ -6,10 +6,12 @@ const {collection, title, desc, url, span} = Astro.props;
 const articles = await getNonHiddenSortedByOrder(collection);
 ---
 
-<div class={`card ${span ? 'lg:col-span-2' : ''}`}>
-  <div class="text-center px-5 pt-5 text-2xl font-bold">{title}</div>
-  <div class="text-center px-10 text-lg">{desc}</div>
-  <div class={`p-5 ${span ? 'grid gap-x-10 grid-cols-2' : ''}`}>
+<div class={`card-base ${span ? 'lg:col-span-2' : ''}`}>
+  <div class="guide-card__header">
+    <h3 class="guide-card__title">{title}</h3>
+    <p class="guide-card__desc">{desc}</p>
+  </div>
+  <div class={`guide-card__list ${span ? 'guide-card__list--wide' : ''}`}>
     {
       articles.map((post) => (
         <div class="card-row">
@@ -21,5 +23,42 @@ const articles = await getNonHiddenSortedByOrder(collection);
       ))
     }
   </div>
-
 </div>
+
+<style>
+  .guide-card__header {
+    text-align: center;
+    padding: 1.35rem 1.5rem 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .guide-card__title {
+    margin: 0;
+    font-family: var(--font-1);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .guide-card__desc {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--color-light);
+  }
+
+  .guide-card__list {
+    padding: 0.5rem;
+  }
+
+  .guide-card__list--wide {
+    display: grid;
+    gap: 0 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 768px) {
+    .guide-card__list--wide {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

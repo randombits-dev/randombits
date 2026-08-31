@@ -1,33 +1,56 @@
 :root {
-  --hero-shadow: var(--color-back);
-  --back-code: #fafafa;
+  /* Text */
+  --color-content: #1a1d26;
+  --color-light: #5c6370;
+  --color-muted: #8b92a0;
+  --color-header: #1a1d26;
+  --color-btn: #1a1d26;
   --color-back: var(--color-content);
-  --color-hero: var(--color-back);
-  --back-contrast: #ced4da;
-  --back-content: #e7ebef;
-  --back-header: rgb(255, 191, 35);
-  --back-btn: var(--back-header);
-  --color-content: #111111;
-  --color-light: #444;
-  --color-header: #111;
-  --color-btn: var(--color-header);
-  --border-radius-1: 5px;
-  --border-radius-2: 10px;
-  --border-width: 2px;
+  --color-hero: #ffffff;
+
+  /* Surfaces */
+  --back-0: #f6f7fb;
+  --back-1: #eef0f5;
+  --back-2: #ffffff;
+  --back-content: #ffffff;
+  --back-contrast: #eef0f5;
+  --back-code: #f3f4f8;
+  --back-header: #ffffff;
+  --back-btn: #f5c842;
+  --back-btn-hover: #e9b82e;
+
+  /* Accent */
+  --accent: #e6a817;
+  --accent-soft: rgba(230, 168, 23, 0.14);
+  --accent-ring: rgba(230, 168, 23, 0.35);
+  --hero-shadow: var(--color-content);
+  --landing-bits: #e8eaef;
+  --primary-contrast: #5c6370;
+
+  /* Borders */
+  --border-radius-1: 8px;
+  --border-radius-2: 12px;
+  --border-radius-3: 16px;
+  --border-width: 1px;
   --border-width-light: 1px;
-  --border-color: #111;
-  --border-color-light: #aaa;
-  --font-1: "Outfit", sans-serif;
-  --font-2: "Space Grotesk", sans-serif;
-  --font-size-text: 16px;
-  --font-size-1: 48px;
-  --font-size-2: 32px;
-  --letter-spacing-text: 0px;
-  --font-size-caption: 15px;
-  --shadow-color: var(--border-color);
-  --landing-bits: #c4c7ca;
-  --primary-contrast: #464b52;
-  --back-0: #e7ebef;
-  --back-1: #c1c7ce;
-  --back-2: #e7ebef;
+  --border-color: #e2e5eb;
+  --border-color-strong: #cdd2dc;
+  --shadow-color: rgba(16, 24, 40, 0.1);
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 4px 16px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 16px 40px rgba(16, 24, 40, 0.08), 0 4px 10px rgba(16, 24, 40, 0.04);
+  --shadow-card: var(--shadow-md);
+  --shadow-card-hover: var(--shadow-lg);
+
+  /* Typography */
+  --font-1: "Outfit", system-ui, sans-serif;
+  --font-2: "Space Grotesk", system-ui, sans-serif;
+  --font-size-text: 17px;
+  --font-size-1: clamp(2.25rem, 5vw, 3rem);
+  --font-size-2: clamp(1.5rem, 3vw, 2rem);
+  --font-size-caption: 0.875rem;
+  --letter-spacing-text: -0.01em;
+  --line-height-body: 1.65;
 }

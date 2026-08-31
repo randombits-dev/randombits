@@ -11,68 +11,100 @@ const {items, limit} = Astro.props;
 const projectsToShow = limit ? items.slice(0, limit) : items;
 ---
 
-<div class="grid lg:grid-cols-2 gap-10 px-5">
+<div class="grid lg:grid-cols-2 gap-6">
   {
     projectsToShow.map(({links, title, desc, img}) => {
       return (
-        <div class="card-base image-card image-card-v flex flex-col">
-          <a href={links[0][1]} class="nav">
-            <Image src={img} alt="Article Cover Image"/>
+        <article class="card-base card-base-hover image-card image-card-v flex flex-col">
+          <a href={links[0][1]} class="project-card__image-link">
+            <Image src={img} alt={`${title} cover`}/>
           </a>
-          <div class="card-row-text">
-            <div class="text-2xl font-bold">{title}</div>
-            <div class="card-row-desc mt-3!">{desc}</div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">{title}</h3>
+            <p class="project-card__desc">{desc}</p>
           </div>
           <div class="flex-1"/>
-
-          <div class="mx-5 mb-5 flex gap-5 items-center">
-            {links.map((link, i) => {
+          <div class="project-card__links">
+            {links.map((link) => {
               return (
-                <a class="secondary" href={link[1]}>
+                <a class="project-card__link" href={link[1]}>
                   {link[0]}
                 </a>
               );
             })}
           </div>
-        </div>
+        </article>
       );
     })
   }
 </div>
 
 <style>
+  .project-card__image-link {
+    display: block;
+    overflow: hidden;
+  }
+
   img {
     flex: 0 0 auto;
-    height: 230px;
-    width: auto;
+    height: 220px;
+    width: 100%;
     object-fit: cover;
+    transition: transform 300ms ease;
+  }
+
+  .project-card__image-link:hover img {
+    transform: scale(1.03);
   }
 
   .image-card-v img {
-    border-bottom: var(--border-width) solid var(--border-color);
-    max-width: 100%;
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    max-height: 280px;
+  }
+
+  .project-card__body {
+    padding: 1.35rem 1.5rem 0.5rem;
+  }
+
+  .project-card__title {
+    margin: 0;
+    font-family: var(--font-1);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .project-card__desc {
+    margin: 0.65rem 0 0;
+    font-size: 0.95rem;
+    color: var(--color-light);
+    line-height: 1.55;
+  }
+
+  .project-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1.5rem 1.35rem;
+  }
+
+  .project-card__link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  .project-card__link:hover {
+    color: var(--color-content);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   @media screen and (max-width: 500px) {
-    .card {
-      display: block !important;
-    }
-
     img {
-      border-bottom: var(--border-width) solid var(--border-color);
-      max-width: 100%;
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+      height: 200px;
     }
-  }
-
-  a.secondary {
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: var(--font-size-caption);
   }
 </style>

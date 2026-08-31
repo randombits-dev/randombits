@@ -40,18 +40,20 @@
 
   a {
     padding: 3px 10px;
-    //display: block;
   }
 
   a:hover {
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   [aria-selected="true"] {
-    text-decoration: 3px var(--back-header) underline;
+    text-decoration: none;
+    background: var(--accent-soft);
+    color: var(--color-content);
     border-radius: var(--border-radius-1);
-    //color: var(--color-header);
     display: inline-block;
+    font-weight: 600;
   }
 }
 

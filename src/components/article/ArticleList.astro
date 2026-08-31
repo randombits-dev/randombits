@@ -13,7 +13,7 @@ const posts = (await getCollection("articles"))
 const postsToShow = limit ? posts.slice(0, limit) : posts;
 ---
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-stretch">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 place-items-stretch">
   <GuideCard
     title="Standard Notes Plugins"
     desc="A guide to creating and using plugins"
@@ -30,21 +30,21 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
 
   {
     postsToShow.map((post) => (
-      <a href={"/articles/" + post.id} class="card overflow-hidden ">
-        <div class="text-xl px-5 pt-5 font-bold">{post.data.title}</div>
-        <div class="my-3 mx-5">
-          <div class="card-row-desc">{post.data.desc}</div>
-          <div class="mt-5 text-sm font-bold flex items-end">
-            <span class="flex-1">
+      <a href={"/articles/" + post.id} class="card-base card-base-hover article-card">
+        <div class="article-card__title">{post.data.title}</div>
+        <div class="article-card__body">
+          <p class="article-card__desc">{post.data.desc}</p>
+          <div class="article-card__meta">
+            <time class="article-card__date">
               {post.data.updated.toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
               })}
-            </span>
+            </time>
             <span class="tags">
               {post.data.tags?.map((tag) => (
-                <div class="article-tag">{tag}</div>
+                <span class="article-tag">{tag}</span>
               ))}
             </span>
           </div>
@@ -52,9 +52,61 @@ const postsToShow = limit ? posts.slice(0, limit) : posts;
       </a>
     ))
   }
-  <style>
-    .card-row-text {
-      cursor: pointer;
-    }
-  </style>
 </div>
+
+<style>
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+  }
+
+  .article-card__title {
+    padding: 1.25rem 1.35rem 0;
+    font-family: var(--font-1);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .article-card__body {
+    padding: 0.75rem 1.35rem 1.35rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-card__desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-light);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .article-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .article-card__date {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    flex: 1;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+</style>

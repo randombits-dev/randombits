@@ -4,18 +4,11 @@ import ProjectList from "../../components/ProjectList.astro";
 import {PROJECTS} from "../../data/projects.ts";
 ---
 <BaseLayout title="Projects by Random Bits" description="A list of all open source projects created by Random Bits">
-  <div class="text-5xl font-header text-center my-24">Open Source Projects</div>
-
-  <div class="max-w-[1000px] mx-auto mb-10">
-    <!--<h1 class="text-[60px] mb-0">Some of my fun side projects</h1>-->
-    <h2 class="text-[38px] mt-0"></h2>
-
+  <div class="page-hero">
+    <h1 class="page-hero__title">Open source projects</h1>
+    <p class="page-hero__subtitle">Side projects, tools, and experiments from Random Bits.</p>
+  </div>
+  <div class="container pb-24">
     <ProjectList items={PROJECTS}/>
   </div>
 </BaseLayout>
-
-<style>
-  h1 {
-    color: var(--color-back);
-  }
-</style>

@@ -5,26 +5,25 @@ const today = new Date();
 
 const githubSVG = await fetch("https://storage.googleapis.com/randombits/images/github.svg");
 const twitterSVG = await fetch("https://storage.googleapis.com/randombits/images/x.svg");
-const envelopeSVG = await fetch("https://storage.googleapis.com/randombits/images/envelope.svg");
 const linktree = await fetch("https://storage.googleapis.com/randombits/images/linktree.svg");
 const keybase = await fetch("https://storage.googleapis.com/randombits/images/keybase.svg");
 ---
 
-<footer class="mt-48">
+<footer class="site-footer">
   <div class="footer-content">
     <nav aria-label="Social Links" class="social-links">
-      <div class="text-xl ml-5 lowercase">matt@randombits.dev</div>
-      <div class="flex">
-        <a href="https://github.com/randombits-dev" target="_blank" aria-label="Github">
+      <a href="mailto:matt@randombits.dev" class="footer-email">matt@randombits.dev</a>
+      <div class="footer-icons">
+        <a href="https://github.com/randombits-dev" target="_blank" rel="noopener" aria-label="Github">
           <div set:html={githubSVG} />
         </a>
-        <a href="https://twitter.com/RandomBitsDev" target="_blank" aria-label="Twitter">
+        <a href="https://twitter.com/RandomBitsDev" target="_blank" rel="noopener" aria-label="Twitter">
           <div set:html={twitterSVG} />
         </a>
-        <a href="https://linktr.ee/randombits" target="_blank" aria-label="Linktree">
+        <a href="https://linktr.ee/randombits" target="_blank" rel="noopener" aria-label="Linktree">
           <div set:html={linktree} />
         </a>
-        <a href="https://keybase.io/randombitsdev" target="_blank" aria-label="Keybase">
+        <a href="https://keybase.io/randombitsdev" target="_blank" rel="noopener" aria-label="Keybase">
           <div set:html={keybase} />
         </a>
       </div>
@@ -37,9 +36,27 @@ const keybase = await fetch("https://storage.googleapis.com/randombits/images/ke
 </footer>
 
 <style>
-  .btn-email {
-    border: 3px solid #111;
-    border-radius: 10px;
-    padding: 10px 20px;
+  .site-footer {
+    margin-top: 6rem;
+  }
+
+  .footer-email {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-content);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius-1);
+    transition: background-color 150ms ease;
+  }
+
+  .footer-email:hover {
+    background-color: var(--back-1);
+  }
+
+  .footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 </style>

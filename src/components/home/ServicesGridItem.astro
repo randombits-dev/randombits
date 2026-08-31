@@ -2,14 +2,36 @@
 const { title, img } = Astro.props;
 ---
 
-<div class="border-light border-solid px-8 card">
-  <div class="flex items-center">
-    {img && <img class="mr-10" src={img} height="150px" />}
+<div class="border-light border-solid px-6 py-5 card-base">
+  <div class="flex items-start gap-5">
+    {img && <img class="service-item__img" src={img} height="120" alt="" />}
     <div>
-      <div class="mt-5 font-bold text-2xl font-header">{title}</div>
-      <p class="text-light">
+      <h3 class="service-item__title">{title}</h3>
+      <p class="service-item__text">
         <slot />
       </p>
     </div>
   </div>
 </div>
+
+<style>
+  .service-item__img {
+    flex-shrink: 0;
+    border-radius: var(--border-radius-1);
+  }
+
+  .service-item__title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-1);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .service-item__text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+</style>

@@ -2,10 +2,26 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Projects by Random Bits" description="A list of all open source projects created by Random Bits" noIndex="true">
-  <div class="text-5xl font-header text-center my-16">Exclusive Discount Code</div>
-  <div class="max-w-[1000px] mx-auto mb-10 text-center">
-    <div>Use the following discount code for 50% off FontFrame and FontStudio:</div>
-    <br/>
-    <div class="text-xl"><strong>JRPTEACHESCANVA</strong></div>
+  <div class="page-hero">
+    <h1 class="page-hero__title">Exclusive discount code</h1>
+    <p class="page-hero__subtitle">Use the following code for 50% off FontFrame and FontStudio.</p>
+  </div>
+  <div class="container pb-24 text-center">
+    <div class="discount-code">JRPTEACHESCANVA</div>
   </div>
 </BaseLayout>
+
+<style>
+  .discount-code {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-family: var(--font-1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-md);
+  }
+</style>

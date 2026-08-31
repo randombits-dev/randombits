@@ -5,59 +5,76 @@
 
   a {
     text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--color-content);
+  }
+
+  a:hover {
+    color: var(--accent);
   }
 
   h2 {
-    margin-top: 100px !important;
-    margin-bottom: 32px !important;
-    font-size: 48px;
-  }
-
-  h2:first-child {
-    //margin-top: 40px !important;
+    margin-top: 4rem !important;
+    margin-bottom: 1.25rem !important;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   h3 {
-    margin-top: 50px !important;
-    font-size: 32px;
+    margin-top: 2.5rem !important;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 600;
   }
-
 
   h1 {
     margin: 0;
   }
 
+  p {
+    color: var(--color-light);
+    line-height: 1.7;
+  }
+
   table {
-    /*table-layout: fixed;*/
     border-collapse: collapse;
-    border: var(--border-width-light) solid var(--border-color-light);
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-2);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
   }
 
   th {
     text-align: left;
+    background-color: var(--back-1);
+    font-weight: 600;
   }
 
-  td, th {
-    border-bottom: var(--border-width-light) solid var(--border-color-light);
-    padding: 5px 15px;
-    /*white-space: nowrap;*/
-    font-size: var(--font-size-caption)
+  td,
+  th {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.65rem 1rem;
+    font-size: var(--font-size-caption);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
   }
 
   .break-word td {
     word-wrap: break-word;
   }
 
-
   iframe {
     width: 100%;
-    border-width: var(--border-width-light) 0;
-    border-color: var(--border-color-light);
+    border-width: 1px 0;
+    border-color: var(--border-color);
+    border-radius: var(--border-radius-2);
   }
 
   li {
-    padding: 8px 0;
+    padding: 0.4rem 0;
+    color: var(--color-light);
   }
 
   ul.tight li {
@@ -66,14 +83,30 @@
 
   img {
     border: 1px solid var(--border-color);
-    margin: 20px 0;
+    border-radius: var(--border-radius-2);
+    margin: 1.25rem 0;
     max-width: 100%;
+    box-shadow: var(--shadow-sm);
   }
 
   img.full-img {
-    border-width: var(--border-width-light) 0;
-    border-color: var(--border-color-light);
+    border-width: 1px 0;
+    border-color: var(--border-color);
     width: calc(100%);
+    border-radius: 0;
+    box-shadow: none;
   }
 
+  code {
+    background: var(--back-code);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  pre {
+    border-radius: var(--border-radius-2);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+  }
 }

@@ -4,16 +4,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Articles by Random Bits" description="A list of all software engineering guides and articles by Random Bits">
-  <div class="container">
-    <div class="text-5xl font-header text-center my-24">Articles</div>
-
+  <div class="page-hero">
+    <h1 class="page-hero__title">Articles</h1>
+    <p class="page-hero__subtitle">Guides and deep dives on software engineering topics.</p>
+  </div>
+  <div class="container pb-24">
     <ArticleList/>
   </div>
 </BaseLayout>
-
-<style>
-  h1 {
-    color: var(--color-back);
-  }
-</style>
-
