@@ -8,6 +8,9 @@ const API_BASE = import.meta.env.DEV
   ? 'https://dev.api.randombits.dev'
   : 'https://api.randombits.dev';
 
+// TODO: replace with the real license activation endpoint
+const ACTIVATE_LICENSE_URL = `${API_BASE}/font-studio/license/activate`;
+
 const premiumFeatures = [
   '15,000+ additional fonts',
   '100+ premium templates',
@@ -138,6 +141,37 @@ const pricing = {
           ))}
         </ul>
       </section>
+
+      <section class="buy-redeem" aria-labelledby="buy-redeem-title">
+        <h2 id="buy-redeem-title" class="buy-redeem__title">Already have a license key?</h2>
+        <p class="buy-redeem__lead">
+          Enter the key from your purchase confirmation to activate Premium on this Canva account.
+        </p>
+        <form id="redeem-form" class="buy-redeem__form">
+          <label class="buy-redeem__label" for="license-key">License key</label>
+          <div class="buy-redeem__row">
+            <input
+              id="license-key"
+              class="buy-redeem__input"
+              type="text"
+              name="licenseKey"
+              placeholder="XXXX-XXXX-XXXX-XXXX"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+            <button type="submit" class="btn-primary buy-redeem__submit" id="redeem-submit">
+              Activate
+            </button>
+          </div>
+          <p id="redeem-status" class="buy-redeem__status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+
+      <p class="buy-footer">
+        Questions? Email{' '}
+        <a href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
+      </p>
     </div>
   </CanvaAppShell>
 </BaseLayout>
@@ -272,6 +306,94 @@ const pricing = {
   .buy-features__check svg {
     width: 0.8rem;
     height: 0.8rem;
+  }
+
+  .buy-redeem {
+    margin: 2rem 0 0;
+    padding: 1.35rem 1.5rem;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .buy-redeem__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .buy-redeem__lead {
+    margin: 0.4rem 0 1rem;
+    font-size: 0.9rem;
+    color: var(--color-light);
+    line-height: 1.55;
+    max-width: 36rem;
+  }
+
+  .buy-redeem__form {
+    margin: 0;
+  }
+
+  .buy-redeem__label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  .buy-redeem__row {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .buy-redeem__input {
+    flex: 1 1 12rem;
+    min-width: 0;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    font-family: var(--font-1);
+    color: var(--color-content);
+    background: var(--back-1);
+    border: 1px solid var(--border-color-strong);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-sm);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .buy-redeem__input::placeholder {
+    color: var(--color-muted);
+  }
+
+  .buy-redeem__input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .buy-redeem__submit {
+    flex-shrink: 0;
+  }
+
+  .buy-redeem__status {
+    margin: 0.75rem 0 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .buy-redeem__status--idle {
+    color: var(--color-light);
+  }
+
+  .buy-redeem__status--success {
+    color: #15803d;
+  }
+
+  .buy-redeem__status--error {
+    color: #b91c1c;
   }
 
   .buy-toggle-wrap {
@@ -484,7 +606,7 @@ const pricing = {
   }
 </style>
 
-<script define:vars={{API_BASE, pricing}}>
+<script define:vars={{API_BASE, pricing, ACTIVATE_LICENSE_URL}}>
   const hashParams = new URLSearchParams(window.location.hash.slice(1));
   const searchParams = new URLSearchParams(window.location.search);
   const userId = hashParams.get('userId') || searchParams.get('userId') || '';
@@ -563,4 +685,58 @@ const pricing = {
       btn.setAttribute('aria-disabled', 'true');
     });
   }
+
+  const redeemForm = document.getElementById('redeem-form');
+  const licenseKeyInput = document.getElementById('license-key');
+  const redeemSubmit = document.getElementById('redeem-submit');
+  const redeemStatus = document.getElementById('redeem-status');
+
+  function setRedeemStatus(message, type = 'idle') {
+    if (!redeemStatus) return;
+    redeemStatus.textContent = message;
+    redeemStatus.hidden = !message;
+    redeemStatus.className = `buy-redeem__status buy-redeem__status--${type}`;
+  }
+
+  redeemForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const licenseKey = licenseKeyInput?.value.trim() || '';
+    if (!licenseKey) {
+      setRedeemStatus('Please enter a license key.', 'error');
+      licenseKeyInput?.focus();
+      return;
+    }
+
+    if (!hasIds) {
+      setRedeemStatus('Open this page from the FontStudio Canva app so your account can be linked.', 'error');
+      return;
+    }
+
+    redeemSubmit?.setAttribute('disabled', 'true');
+    setRedeemStatus('Activating your license…', 'idle');
+
+    try {
+      const response = await fetch(ACTIVATE_LICENSE_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({userId, teamId, licenseKey}),
+      });
+
+      if (!response.ok) {
+        throw new Error('Activation failed');
+      }
+
+      setRedeemStatus('License activated. Reload FontStudio in Canva to unlock Premium.', 'success');
+      if (licenseKeyInput) licenseKeyInput.value = '';
+    } catch {
+      // Placeholder until the activation API is live
+      setRedeemStatus(
+        'Activation is not available yet. Your key has been noted — try again soon or email fontstudio@randombits.dev.',
+        'idle',
+      );
+    } finally {
+      redeemSubmit?.removeAttribute('disabled');
+    }
+  });
 </script>
