@@ -1,0 +1,546 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {Image} from 'astro:assets';
+import FontStudioLogo from '@/assets/canva/font-studio/logo.png';
+import CanvaAppShell from '@/components/canva/CanvaAppShell.astro';
+
+const API_BASE = import.meta.env.DEV
+  ? 'https://dev.api.randombits.dev'
+  : 'https://api.randombits.dev';
+
+const SESSION_URL = `${API_BASE}/stripe/font-studio/session`;
+const CANVA_APP_URL = 'https://www.canva.com/apps/AAGLHfr5ZM0/fontstudio';
+---
+<BaseLayout
+  title="FontStudio Premium — Purchase complete"
+  description="Your FontStudio Premium purchase was successful."
+  noIndex="true"
+>
+  <CanvaAppShell backHref="/canva/font-studio" backLabel="Back to FontStudio">
+    <section class="success-hero">
+      <div class="success-hero__bg" aria-hidden="true"></div>
+      <div class="container-sm success-hero__inner">
+        <div class="success-hero__brand">
+          <Image width="72" height="72" src={FontStudioLogo} alt="" class="success-hero__logo"/>
+          <div>
+            <p class="success-hero__eyebrow">FontStudio Premium</p>
+            <h1 class="success-hero__title">Thank you for your purchase</h1>
+            <!--<p class="success-hero__lead">Your order is being prepared. Details will appear below.</p>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-sm success-page">
+      <section class="success-link" aria-labelledby="success-link-title">
+        <p class="success-hero__eyebrow">Next Steps</p>
+
+        <h2 id="success-link-title" class="success-link__title">Link your license to the app</h2>
+        <p class="success-link__subtitle"></p>
+
+        <ol class="success-link__list">
+          <li>
+            Go back to the app
+          </li>
+          <li>
+            If you see the <strong>Waiting for payment</strong> screen, click <strong>Reload app</strong>.
+          </li>
+          <li>
+            Otherwise, click <strong>Upgrade to Premium</strong> again — your license will link automatically.
+          </li>
+        </ol>
+        <p class="success-link__note">
+          Note: It can take a few minutes after payment before your license is ready.
+        </p>
+        <!--<p class="success-link__cta">-->
+        <!--  <a href={CANVA_APP_URL} target="_blank" rel="noopener">Open FontStudio in Canva</a>-->
+        <!--</p>-->
+      </section>
+
+      <div id="success-loading" class="success-state">
+        <p class="success-state__message">Loading your order details…</p>
+      </div>
+
+      <div id="success-error" class="success-state success-state--error" hidden>
+        <h2 class="success-state__title">Unable to load order</h2>
+        <p id="success-error-text" class="success-state__message"></p>
+        <p class="success-state__help">
+          If you completed checkout, save your confirmation email and contact{' '}
+          <a href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
+        </p>
+      </div>
+
+      <div id="success-processing" class="success-card" hidden>
+        <div class="success-card__icon success-card__icon--pending" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 3"/>
+          </svg>
+        </div>
+        <h2 class="success-card__title">Processing your order</h2>
+        <p class="success-card__lead">
+          Payment was received. Your license is being created — this usually takes a few seconds.
+        </p>
+        <p id="success-processing-product" class="success-card__meta"></p>
+        <button type="button" class="btn-secondary btn-small" id="success-retry">Check again</button>
+      </div>
+
+      <div id="success-auto" class="success-card" hidden>
+        <div class="success-card__icon success-card__icon--done" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <h2 class="success-card__title">Premium is active</h2>
+        <p id="success-auto-product" class="success-card__meta"></p>
+        <ol class="success-steps">
+          <li>Open <a href={CANVA_APP_URL} target="_blank" rel="noopener">FontStudio in Canva</a>.</li>
+          <li>Scroll to the Premium section in the app.</li>
+          <li>Click <strong>Reload app</strong> to unlock Premium features.</li>
+        </ol>
+      </div>
+
+      <div id="success-key" class="success-card" hidden>
+        <div class="success-card__icon success-card__icon--done" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <h2 class="success-card__title">Your license key</h2>
+        <p id="success-key-product" class="success-card__meta"></p>
+        <p class="success-card__lead">Save this key — you'll need it to activate Premium on your Canva account.</p>
+        <div class="success-key-box">
+          <code id="success-license-key" class="success-key-box__code"></code>
+          <button type="button" class="btn-secondary btn-small success-key-box__copy" id="success-copy-key">
+            Copy key
+          </button>
+        </div>
+        <h3 class="success-steps__heading">How to activate</h3>
+        <ol class="success-steps">
+          <li>Open <a href={CANVA_APP_URL} target="_blank" rel="noopener">FontStudio in Canva</a>.</li>
+          <li>Go to the Premium section and choose to enter a license key, or visit the{' '}
+            <a id="success-activate-link" href="/canva/font-studio/buy">activation page</a>.
+          </li>
+          <li>Paste your license key and click <strong>Activate</strong>.</li>
+          <li>Click <strong>Reload app</strong> to unlock Premium features.</li>
+        </ol>
+      </div>
+
+      <p class="success-footer">
+        Need help? Email{' '}
+        <a href="mailto:fontstudio@randombits.dev">fontstudio@randombits.dev</a>.
+        {' '}Include your order reference: <code id="success-session-ref" class="success-footer__ref"></code>
+      </p>
+    </div>
+  </CanvaAppShell>
+</BaseLayout>
+
+<style>
+  .success-hero {
+    position: relative;
+    padding: 2rem 0 2.5rem;
+    overflow: hidden;
+  }
+
+  .success-hero__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-surface);
+    pointer-events: none;
+  }
+
+  .success-hero__inner {
+    position: relative;
+  }
+
+  .success-hero__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+  }
+
+  .success-hero__logo {
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+  }
+
+  .success-hero__eyebrow {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-1);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .success-hero__title {
+    margin: 0;
+    font-size: clamp(1.85rem, 4vw, 2.35rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .success-hero__lead {
+    margin: 0.5rem 0 0;
+    max-width: 34rem;
+    font-size: 1.02rem;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+
+  .success-page {
+    padding-bottom: 4rem;
+  }
+
+  .success-link {
+    margin-bottom: 1.5rem;
+    padding: 1.35rem 1.5rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.06) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.22);
+    border-radius: var(--border-radius-3);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.07);
+  }
+
+  .success-link__title {
+    margin: 0;
+    font-size: clamp(1.5rem, 3.5vw, 1.85rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .success-link__subtitle {
+    margin: 0.35rem 0 0.85rem;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .success-link__note {
+    margin: 0 0 0.85rem;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    line-height: 1.55;
+  }
+
+  .success-link__list {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+
+  .success-link__list li {
+    margin-bottom: 0.45rem;
+  }
+
+  .success-link__list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .success-link__cta {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .success-link__cta a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .success-link__cta a:hover {
+    color: var(--color-content);
+  }
+
+  .success-state {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-3);
+  }
+
+  .success-state--error {
+    border-color: rgba(185, 28, 28, 0.25);
+    background: #fef2f2;
+  }
+
+  .success-state__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .success-state__message {
+    margin: 0;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+
+  .success-state__help {
+    margin: 1rem 0 0;
+    font-size: 0.92rem;
+    color: var(--color-light);
+    line-height: 1.55;
+  }
+
+  .success-state__help a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .success-card {
+    padding: 1.75rem 1.5rem;
+    background: var(--back-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .success-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 1rem;
+    border-radius: 999px;
+  }
+
+  .success-card__icon svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .success-card__icon--done {
+    background: #dcfce7;
+    color: #15803d;
+  }
+
+  .success-card__icon--pending {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .success-card__title {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .success-card__lead {
+    margin: 0 0 1rem;
+    color: var(--color-light);
+    line-height: 1.6;
+  }
+
+  .success-card__meta {
+    margin: 0 0 1.25rem;
+    font-size: 0.92rem;
+    color: var(--color-muted);
+  }
+
+  .success-key-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.1rem;
+    background: var(--back-1);
+    border: 1px solid var(--border-color-strong);
+    border-radius: var(--border-radius-2);
+  }
+
+  .success-key-box__code {
+    flex: 1 1 12rem;
+    font-family: var(--font-1);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-content);
+    word-break: break-all;
+  }
+
+  .success-steps__heading {
+    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .success-steps {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--color-light);
+    line-height: 1.65;
+  }
+
+  .success-steps li {
+    margin-bottom: 0.5rem;
+  }
+
+  .success-steps li:last-child {
+    margin-bottom: 0;
+  }
+
+  .success-steps a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .success-footer {
+    margin: 1.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--color-light);
+    text-align: center;
+    line-height: 1.65;
+  }
+
+  .success-footer a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .success-footer__ref {
+    font-family: var(--font-1);
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    word-break: break-all;
+  }
+</style>
+
+<script define:vars={{SESSION_URL}}>
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id') || '';
+
+  const loadingEl = document.getElementById('success-loading');
+  const errorEl = document.getElementById('success-error');
+  const errorTextEl = document.getElementById('success-error-text');
+  const processingEl = document.getElementById('success-processing');
+  const autoEl = document.getElementById('success-auto');
+  const keyEl = document.getElementById('success-key');
+  const retryBtn = document.getElementById('success-retry');
+  const copyBtn = document.getElementById('success-copy-key');
+  const licenseKeyEl = document.getElementById('success-license-key');
+  const sessionRefEl = document.getElementById('success-session-ref');
+  const activateLinkEl = document.getElementById('success-activate-link');
+
+  const panels = [loadingEl, errorEl, processingEl, autoEl, keyEl];
+
+  function showPanel(panel) {
+    panels.forEach((el) => {
+      if (el) el.hidden = el !== panel;
+    });
+  }
+
+  function setSessionRef(id) {
+    if (sessionRefEl && id) {
+      sessionRefEl.textContent = id;
+    }
+  }
+
+  function buildActivateLink(userId, teamId) {
+    if (!activateLinkEl) return;
+    if (userId && teamId) {
+      activateLinkEl.href = `/canva/font-studio/buy#userId=${encodeURIComponent(userId)}&teamId=${encodeURIComponent(teamId)}`;
+    }
+  }
+
+  function renderResult(data) {
+    setSessionRef(data.sessionId || sessionId);
+    buildActivateLink(data.userId, data.teamId);
+
+    const productLine = data.productName ? `Product: ${data.productName}` : '';
+
+    if (data.status === 'processing' || data.status === 'pending') {
+      const productEl = document.getElementById('success-processing-product');
+      if (productEl) productEl.textContent = productLine;
+      showPanel(processingEl);
+      return;
+    }
+
+    if (data.status === 'complete' && data.autoActivated) {
+      const productEl = document.getElementById('success-auto-product');
+      if (productEl) productEl.textContent = productLine;
+      showPanel(autoEl);
+      return;
+    }
+
+    if (data.status === 'complete' && data.licenseKey) {
+      const productEl = document.getElementById('success-key-product');
+      if (productEl) {
+        productEl.textContent = [productLine, data.variant].filter(Boolean).join(' · ');
+      }
+      if (licenseKeyEl) licenseKeyEl.textContent = data.licenseKey;
+      showPanel(keyEl);
+      return;
+    }
+
+    showPanel(errorEl);
+    if (errorTextEl) {
+      errorTextEl.textContent = 'Your payment was received but license details are not available yet. Try again in a moment.';
+    }
+  }
+
+  async function loadSession() {
+    if (!sessionId) {
+      showPanel(errorEl);
+      if (errorTextEl) {
+        errorTextEl.textContent = 'No checkout session was found. Return to FontStudio in Canva and open the purchase link again.';
+      }
+      return;
+    }
+
+    setSessionRef(sessionId);
+    showPanel(loadingEl);
+
+    try {
+      const url = new URL(SESSION_URL);
+      url.searchParams.set('session_id', sessionId);
+      const response = await fetch(url.toString());
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      const data = await response.json();
+      renderResult(data);
+    } catch {
+      showPanel(errorEl);
+      if (errorTextEl) {
+        errorTextEl.textContent = 'Could not load your order details. Check your connection and try again.';
+      }
+    }
+  }
+
+  retryBtn?.addEventListener('click', loadSession);
+
+  copyBtn?.addEventListener('click', async () => {
+    const key = licenseKeyEl?.textContent?.trim();
+    if (!key) return;
+
+    try {
+      await navigator.clipboard.writeText(key);
+      copyBtn.textContent = 'Copied';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy key';
+      }, 2000);
+    } catch {
+      copyBtn.textContent = 'Copy failed';
+    }
+  });
+
+  loadSession();
+</script>

@@ -142,7 +142,7 @@ const pricing = {
         </ul>
       </section>
 
-      <section class="buy-redeem" aria-labelledby="buy-redeem-title">
+      <section id="buy-redeem" class="buy-redeem" aria-labelledby="buy-redeem-title" hidden>
         <h2 id="buy-redeem-title" class="buy-redeem__title">Already have a license key?</h2>
         <p class="buy-redeem__lead">
           Enter the key from your purchase confirmation to activate Premium on this Canva account.
@@ -160,7 +160,7 @@ const pricing = {
               spellcheck="false"
               required
             />
-            <button type="submit" class="btn-primary buy-redeem__submit" id="redeem-submit">
+            <button type="submit" class="btn-primary buy-redeem__submit" id="redeem-submit" disabled>
               Activate
             </button>
           </div>
@@ -686,6 +686,11 @@ const pricing = {
     });
   }
 
+  const redeemSection = document.getElementById('buy-redeem');
+  if (redeemSection && hasIds) {
+    redeemSection.hidden = false;
+  }
+
   const redeemForm = document.getElementById('redeem-form');
   const licenseKeyInput = document.getElementById('license-key');
   const redeemSubmit = document.getElementById('redeem-submit');
@@ -698,12 +703,21 @@ const pricing = {
     redeemStatus.className = `buy-redeem__status buy-redeem__status--${type}`;
   }
 
+  function updateRedeemSubmitState() {
+    const length = (licenseKeyInput?.value.trim() || '').length;
+    if (!redeemSubmit) return;
+    redeemSubmit.disabled = length < 16;
+  }
+
+  licenseKeyInput?.addEventListener('input', updateRedeemSubmitState);
+  updateRedeemSubmitState();
+
   redeemForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const licenseKey = licenseKeyInput?.value.trim() || '';
-    if (!licenseKey) {
-      setRedeemStatus('Please enter a license key.', 'error');
+    if (licenseKey.length < 16) {
+      setRedeemStatus('Please enter a valid license key.', 'error');
       licenseKeyInput?.focus();
       return;
     }
@@ -713,7 +727,7 @@ const pricing = {
       return;
     }
 
-    redeemSubmit?.setAttribute('disabled', 'true');
+    redeemSubmit.disabled = true;
     setRedeemStatus('Activating your license…', 'idle');
 
     try {
@@ -736,7 +750,7 @@ const pricing = {
         'idle',
       );
     } finally {
-      redeemSubmit?.removeAttribute('disabled');
+      updateRedeemSubmitState();
     }
   });
 </script>
