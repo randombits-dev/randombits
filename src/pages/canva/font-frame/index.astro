@@ -77,7 +77,6 @@ const faqs = [
           <h2>Unlock the full toolkit</h2>
           <p class="fs-premium__lead">
             Premium adds thousands of fonts, 3D projections, shadows, and special effects.
-            Purchase inside the Canva app — Canva Pro does not include FontFrame Premium.
           </p>
           <ul class="fs-premium__list">
             {premiumFeatures.map((item) => (
@@ -89,7 +88,8 @@ const faqs = [
               </li>
             ))}
           </ul>
-          <a class="btn-primary decoration-0" href={CANVA_URL} target="_blank" rel="noopener">Get Premium in Canva</a>
+          <p class="fs-premium__purchase-note">Purchase inside the Canva app.</p>
+          <a class="btn-primary decoration-0" href={CANVA_URL} target="_blank" rel="noopener">Open App</a>
         </div>
         <div class="fs-premium__visual" aria-hidden="true">
           <div class="fs-premium__card">
